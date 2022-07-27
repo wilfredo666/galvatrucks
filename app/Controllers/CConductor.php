@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-class CUsuario extends BaseController
+class CConductor extends BaseController
 {
   
 }
