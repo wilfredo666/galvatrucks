@@ -31,9 +31,9 @@
 
         <p class="login-box-msg">Ingresa al sistema con tu usuario</p>
 
-        <form action="../../index3.html" method="post">
+        <form action="<?php echo base_url();?>/Home/acceso" method="post">
           <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Ingrese su usuario">
+            <input type="text" class="form-control" placeholder="Ingrese su usuario" id="usuario" name="usuario">
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-user"></span>
@@ -41,7 +41,7 @@
             </div>
           </div>
           <div class="input-group mb-3">
-            <input type="password" class="form-control" placeholder="Ingrese su contraseña">
+            <input type="password" class="form-control" placeholder="Ingrese su contraseña" id="password" name="password">
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-lock"></span>

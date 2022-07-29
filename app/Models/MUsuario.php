@@ -13,4 +13,13 @@ class MUsuario extends Model
 
     protected $allowedFields = ['nombre_usuario', 'login_usuario', 'pass_usuario'];
 
+  
+  public function acceso($data){
+    $this->select("*");
+    $this->where("login_usuario",$data["usuario"]);
+    $this->where("pass_usuario",$data["password"]);
+    
+    $resultado=$this->first();
+    return $resultado;
+  }
 }
