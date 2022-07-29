@@ -63,10 +63,6 @@
           </div>
         </form>
 
-        <!-- /.social-auth-links -->
-        <p class="mb-1 ">
-          <a href="forgot-password.html">Olvide mi contraseña</a>
-        </p>
       </div>
       <!-- /.login-card-body -->
     </div>
