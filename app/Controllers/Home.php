@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 use App\Models\MUsuario;
-use COM;
+
 
 class Home extends BaseController
 {
@@ -28,7 +28,9 @@ class Home extends BaseController
     if($consulta==null){
       echo "error no encontrado";
     }else{
+      echo view('header');
       echo view('panel_principal');
+      echo view('footer');
     }
     
   }
