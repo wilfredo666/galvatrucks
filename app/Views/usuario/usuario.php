@@ -14,7 +14,7 @@
             <th>LOGIN</th>
             <th>CONTRASEÑA</th>
             <th>ROL</th>
-            <th> <button class="btn btn-block btn-primary"><i class="fas fa-plus-circle"></i> NUEVO </button> </th>
+            <th><button class="btn btn-block btn-primary" onclick="MNuevoUsuario()"><i class="fas fa-plus-circle"></i> NUEVO </button> </th>
           </tr>
         </thead>
         <tbody>

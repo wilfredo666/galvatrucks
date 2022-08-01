@@ -58,10 +58,10 @@
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                        <img src="<?php echo base_url(); ?>/assest/img/cliente2.jpg" class="img-circle elevation-5" alt="User Image"">
+                        <img src="<?php echo base_url(); ?>/assest/img/cliente2.jpg" class="img-circle elevation-5" alt="User Image">
                     </div>
                     <div class=" info">
-                        <a href="#" class="d-block">Elias Fernandezz</a>
+                        <a href="#" class="d-block">Elias Fernandez</a>
                     </div>
                 </div>
 
@@ -73,7 +73,7 @@
                with font-awesome or any other icon font library -->
                         <!--  Usuario  -->
                         <li class="nav-item">
-                            <a href="<?php echo base_url(); ?>/CUsuario/index" class="nav-link">
+                            <a href="<?php echo base_url(); ?>/CUsuario" class="nav-link">
                                 <i class="nav-icon fas fa-user"></i>
                                 <p>
                                     Usuario

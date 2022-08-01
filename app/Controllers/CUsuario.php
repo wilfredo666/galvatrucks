@@ -19,4 +19,24 @@ class CUsuario extends BaseController
     echo view('usuario/usuario', $data);
     echo view('footer');
   }
+  
+  public function FNuevoUsuario(){
+    echo view("usuario/FNuevoUsuario");
+  }
+  
+  public function RegUsuario(){
+    $nomUsuario=$_POST["nomUsuario"];
+    $loginUsuario=$_POST["loginUsuario"];
+    $password=$_POST["password"];
+    $rolUsuario=$_POST["rolUsuario"];
+    
+    $data=array(
+    "nombre_usuario"=>$nomUsuario,
+    "login_usuario"=>$loginUsuario,
+    "pass_usuario"=>$password,
+    "rol"=>$rolUsuario      
+    );
+    
+    $this->MUsuario->insert($data);
+  }
 }
