@@ -18,15 +18,13 @@
 
 <body class="hold-transition login-page">
   <div class="login-box">
-    <div class="login-logo">
-      <a href="../../index2.html"><b>Galvatrucks</b>SRL</a>
-    </div>
+   
     <!-- /.login-logo -->
     <div class="card">
       <div class="card-body login-card-body">
 
         <div class="login-logo">
-          <img src="<?php echo base_url(); ?>/assest/dist/img/logo.jpeg" alt="logo" width="50%">
+          <img src="<?php echo base_url(); ?>/assest/img/logo.jpg" alt="logo" width="50%">
         </div>
 
         <p class="login-box-msg">Ingresa al sistema con tu usuario</p>

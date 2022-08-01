@@ -16,7 +16,7 @@ class CUsuario extends BaseController
       );
     
     echo view('header');
-    echo view('usuario', $data);
+    echo view('usuario/usuario', $data);
     echo view('footer');
   }
 }

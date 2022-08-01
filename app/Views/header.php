@@ -15,10 +15,11 @@
     <!-- Theme style -->
     <link rel="stylesheet" href="<?php echo base_url(); ?>/assest/dist/css/adminlte.min.css">
 
-  <!-- DataTables -->
-  <link rel="stylesheet" href="<?php echo base_url(); ?>/assest/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
-  <link rel="stylesheet" href="<?php echo base_url(); ?>/assest/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
-  <link rel="stylesheet" href="<?php echo base_url(); ?>/assest/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+    <!-- DataTables -->
+    <link rel="stylesheet" href="<?php echo base_url(); ?>/assest/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>/assest/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+    <link rel="stylesheet" href="<?php echo base_url(); ?>/assest/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -48,7 +49,7 @@
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Brand Logo -->
             <a href="index3.html" class="brand-link">
-                <img src="<?php echo base_url(); ?>/assest/dist/img/logo.jpeg" alt="AdminLTE Logo" class="brand-image img-circle elevation-2" style="opacity: .8">
+                <img src="<?php echo base_url(); ?>/assest/img/logo.jpg" alt="AdminLTE Logo" class="brand-image img-circle elevation-2" style="opacity: .8">
                 <span class="brand-text font-weight-light">Galvatrucks SRL</span>
             </a>
 
@@ -57,10 +58,10 @@
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                        <img src="<?php echo base_url(); ?>/assest/dist/img/user8-128x128.jpg" class="img-circle elevation-2" alt="User Image">
+                        <img src="<?php echo base_url(); ?>/assest/img/cliente2.jpg" class="img-circle elevation-5" alt="User Image"">
                     </div>
-                    <div class="info">
-                        <a href="#" class="d-block">Elias Fernandez</a>
+                    <div class=" info">
+                        <a href="#" class="d-block">Elias Fernandezz</a>
                     </div>
                 </div>
 
@@ -72,7 +73,7 @@
                with font-awesome or any other icon font library -->
                         <!--  Usuario  -->
                         <li class="nav-item">
-                            <a href="<?php echo base_url();?>/CUsuario/index" class="nav-link">
+                            <a href="<?php echo base_url(); ?>/CUsuario/index" class="nav-link">
                                 <i class="nav-icon fas fa-user"></i>
                                 <p>
                                     Usuario
@@ -82,24 +83,29 @@
                         <!--  Asignaciones -->
                         <li class="nav-item">
                             <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-circle"></i>
+                            <i class="nav-icon fas fa-truck-moving"></i>
 
                                 <p>
-                                    Asignaciones
+                                    Camiones
                                     <i class="fas fa-angle-left right"></i>
-                                    <span class="badge badge-info right">2</span>
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="pages/layout/top-nav.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon text-info"></i>
+                                    <a href="<?php echo base_url(); ?>/CAsignacion/index" class="nav-link">
+                                        <i class="nav-icon fas fa-file-signature text-success"></i>
+                                        <p>Asignaciones</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="<?php echo base_url(); ?>/CCamion/index" class="nav-link">
+                                        <i class="nav-icon fas fa-shipping-fast text-warning"></i>
                                         <p>Camión</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon text-info"></i>
+                                    <a href="<?php echo base_url(); ?>/CContratoCamion/index" class="nav-link">
+                                        <i class="nav-icon fas fa-file-contract text-info"></i>
                                         <p>Contrato Camión</p>
                                     </a>
                                 </li>
@@ -108,8 +114,9 @@
                         </li>
                         <!-- Clientes  -->
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-copy"></i>
+                            <a href="<?php echo base_url(); ?>/CConductor/index" class="nav-link">
+
+                                <i class="nav-icon fas fa-universal-access"></i>
                                 <p>
                                     Conductores
                                 </p>
@@ -117,8 +124,8 @@
                         </li>
                         <!-- Clientes  -->
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-user-friends"></i>
+                            <a href="<?php echo base_url(); ?>/CCliente/index" class="nav-link">
+                                <i class="nav-icon fas fa-user-friends"></i>
                                 <p>
                                     Clientes
                                 </p>
@@ -126,8 +133,8 @@
                         </li>
                         <!--  Navieras  -->
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-copy"></i>
+                            <a href="<?php echo base_url(); ?>/CEmpresaMaritima/index" class="nav-link">
+                                <i class="nav-icon fas fa-ship"></i>
                                 <p>
                                     Navieras
                                 </p>
@@ -135,84 +142,44 @@
                         </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-circle"></i>
+                                <i class="nav-icon fab fa-shirtsinbulk"></i>
 
                                 <p>
                                     Servicio
-                                    <i class="fas fa-angle-left right"></i>
-                                    <span class="badge badge-info right">2</span>
                                 </p>
                             </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item">
-                                    <a href="pages/layout/top-nav.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon text-info"></i>
-                                        <p>Importación</p>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon text-info"></i>
-                                        <p>Exportación</p>
-                                    </a>
-                                </li>
-                            </ul>
                         </li>
 
-                        
-
-                        <li class="nav-header">DOCUMENTACION</li>
+                        <li class="nav-header">DOCUMENTACIÓN</li>
                         <li class="nav-item">
                             <a href="#" class="nav-link">
-                                <i class="nav-icon fas fa-circle"></i>
-
+                                <i class="nav-icon fas fa-folder-open"></i>
                                 <p>
                                     Documentos
                                     <i class="fas fa-angle-left right"></i>
-                                    <span class="badge badge-info right">3</span>
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
                                     <a href="pages/layout/top-nav.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon text-info"></i>
+                                        <i class="nav-icon fas fa-copy text-info"></i>
                                         <p>Clientes</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon text-info"></i>
+                                        <i class="nav-icon fas fa-copy text-info"></i>
                                         <p>Conductores</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
-                                        <i class="far fa-circle nav-icon text-info"></i>
+                                        <i class="nav-icon fas fa-copy text-info"></i>
                                         <p>Contrato Camiones</p>
                                     </a>
                                 </li>
 
                             </ul>
-                        </li>
-
-                        <li class="nav-header">OTROS</li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon far fa-circle text-danger"></i>
-                                <p>Importante</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon far fa-circle text-warning"></i>
-                                <p>Atencion</p>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon far fa-circle text-info"></i>
-                                <p>Information</p>
-                            </a>
                         </li>
 
                         <li class="nav-item">

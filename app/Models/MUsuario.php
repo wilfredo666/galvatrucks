@@ -11,7 +11,7 @@ class MUsuario extends Model
 
     protected $returnType     = 'array';
 
-    protected $allowedFields = ['nombre_usuario', 'login_usuario', 'pass_usuario'];
+    protected $allowedFields = ['nombre_usuario', 'login_usuario', 'pass_usuario','rol'];
 
   
   public function acceso($data){

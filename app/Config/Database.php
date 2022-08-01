@@ -35,7 +35,7 @@ class Database extends Config
         'hostname' => 'localhost',
         'username' => 'root',
         'password' => '',
-        'database' => 'galvatrucks',
+        'database' => 'bd_galvatrucks',
         'DBDriver' => 'MySQLi',
         'DBPrefix' => '',
         'pConnect' => false,
