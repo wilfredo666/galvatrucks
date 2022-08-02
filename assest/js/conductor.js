@@ -18,7 +18,7 @@ function MNuevoConductor() {
 Modal formulario nuevo Conductor
 =====================================*/
 function RegConductor() {
-  var form = new FormData($("#FNuevoConductor")[0]);
+  var form = new FormData($("#FNuevoConductor")[0])
 
   $.ajax({
     type: "POST",
@@ -31,6 +31,6 @@ function RegConductor() {
         setTimeout(function(){
             location.reload()
           },1200)
-    },
-  });
+    }
+  })
 }
