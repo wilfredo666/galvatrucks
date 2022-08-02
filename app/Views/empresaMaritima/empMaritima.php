@@ -6,13 +6,13 @@
   <section class="content">
 
     <div class="container-fluid">
-      <table id="DataTableUsuario" class="table table-bordered table-striped">
+      <table id="DataTableEmpresaMaritima" class="table table-bordered table-striped">
         <thead>
           <tr>
             <th>ID</th>
             <th>RAZON SOCIAL</th>
             <th>NIT </th>
-            <th>DIRECCION </th>
+
             <th>CORREO</th>
             <th>CONTACTO</th>
             <th> <button class="btn btn-block btn-primary"><i class="fas fa-plus-circle"></i> NUEVO </button> </th>
@@ -33,11 +33,11 @@
               <td><?php echo $idEmp; ?></td>
               <td><?php echo $razonSocial; ?></td>
               <td><?php echo $nit; ?></td>
-              <td><?php echo $direccion; ?></td>
+
               <td><?php echo $correo; ?></td>
               <td><?php echo $contacto; ?></td>
               <td>
-                <div>
+                <div class="text-center">
                   <button class="btn btn-info btn-circle">
                     <i class="fas fa-eye"></i>
                   </button>

@@ -32,6 +32,8 @@
 <script src="<?php echo base_url(); ?>/assest/plugins/datatables-buttons/js/buttons.print.min.js"></script>
 <script src="<?php echo base_url(); ?>/assest/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
 <script src="<?php echo base_url();?>/assest/js/usuario.js"></script>
+<script src="<?php echo base_url();?>/assest/js/conductor.js"></script>
+<script src="<?php echo base_url();?>/assest/js/cliente.js"></script>
 
 <script>
 
@@ -47,6 +49,41 @@
       "responsive": true, "lengthChange": false, "autoWidth": false,
       "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
     }).buttons().container().appendTo('#DataTableCamion_wrapper .col-md-6:eq(0)');
+  });
+
+  $(function () {
+    $("#DataTableConductor").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#DataTableConductor_wrapper .col-md-6:eq(0)');
+  });
+
+  $(function () {
+    $("#DataTableCliente").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#DataTableCliente_wrapper .col-md-6:eq(0)');
+  });
+
+  $(function () {
+    $("#DataTableEmpresaMaritima").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#DataTableEmpresaMaritima_wrapper .col-md-6:eq(0)');
+  });
+
+  $(function () {
+    $("#DataTableAsignacion").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#DataTableAsignacion_wrapper .col-md-6:eq(0)');
+  });
+
+  $(function () {
+    $("#DataTableContratoCamion").DataTable({
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#DataTableContratoCamion_wrapper .col-md-6:eq(0)');
   });
 
 </script>

@@ -6,16 +6,16 @@
     <section class="content">
 
         <div class="container-fluid">
-            <table id="DataTableUsuario" class="table table-bordered table-striped">
+            <table id="DataTableContratoCamion" class="table table-bordered table-striped">
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>INICIO DE CONTRATO</th>
-                        <th>FIN DE CONTRATO</th>
                         <th>NRO DE CONTRATO</th>
+                        <th>INICIO DE CONTRATO</th>
+
                         <th>PLACA</th>
                         <th>PROPIETARIO DE CAMION</th>
-                        <th>OBSERVACIONES</th>
+
                         <th> <button class="btn btn-block btn-primary"><i class="fas fa-plus-circle"></i> NUEVO </button> </th>
                     </tr>
                 </thead>
@@ -33,15 +33,14 @@
 
                     <tr>
                         <td><?php echo $idContrato; ?></td>
-                        <td><?php echo $fechaIni; ?></td>
-                        <td><?php echo $fechaFin; ?></td>
                         <td><?php echo $numContrato; ?></td>
+                        <td><?php echo $fechaIni; ?></td>
                         <td><?php echo $placa; ?></td>
                         <td><?php echo $propietario; ?></td>
-                        <td><?php echo $observacion; ?></td>
+
                         <td>
-                            <div>
-                                <button class="btn btn-info btn-circle">
+                            <div class="text-center">
+                                <button class="btn btn-info btn-circle btn-sm">
                                     <i class="fas fa-eye"></i>
                                 </button>
                                 <button class="btn btn-warning btn-circle">

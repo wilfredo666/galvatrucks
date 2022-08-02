@@ -1,6 +1,6 @@
 
 <div class="modal-header">
-  <h4 class="modal-title">Registro nuevo usuario</h4>
+  <h4 class="modal-title">  Registro Nuevo Usuario</h4>
   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button>
@@ -9,8 +9,8 @@
   <form id="FNuevoUsuario">
     <div class="card-body">
       <div class="form-group">
-        <label>Nombre usuario</label>
-        <input type="text" class="form-control" id="nomUsuario" name="nomUsuario" placeholder="Enter email">
+        <label>Nombre Usuario</label>
+        <input type="text" class="form-control" id="nomUsuario" name="nomUsuario">
       </div>
       <div class="form-group">
         <label>Login Usuario</label>

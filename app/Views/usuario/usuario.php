@@ -34,14 +34,14 @@
               <td><?php echo $pass; ?></td>
               <td><?php echo $rol; ?></td>
               <td>
-                <div>
-                  <button class="btn btn-info btn-circle">
+                <div class="text-center">
+                  <button class="btn btn-info btn-circle" onclick="MVerUsuario()">
                     <i class="fas fa-eye"></i>
                   </button>
-                  <button class="btn btn-warning btn-circle">
+                  <button class="btn btn-warning btn-circle" onclick="MEditarUsuario()">
                     <i class="fas fa-edit"></i>
                   </button>
-                  <button class="btn btn-danger btn-circle">
+                  <button class="btn btn-danger btn-circle" onclick="MEliminarUsuario()">
                     <i class="fas fa-trash-alt"></i>
                   </button>
                 </div>

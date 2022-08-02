@@ -19,7 +19,8 @@
     <link rel="stylesheet" href="<?php echo base_url(); ?>/assest/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>/assest/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>/assest/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
-
+ <!-- Theme style -->
+ <link rel="stylesheet" href="<?php echo base_url(); ?>/assest/dist/css/style.css">
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -92,19 +93,19 @@
                             </a>
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
-                                    <a href="<?php echo base_url(); ?>/CAsignacion/index" class="nav-link">
+                                    <a href="<?php echo base_url(); ?>/CAsignacion" class="nav-link">
                                         <i class="nav-icon fas fa-file-signature text-success"></i>
                                         <p>Asignaciones</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="<?php echo base_url(); ?>/CCamion/index" class="nav-link">
+                                    <a href="<?php echo base_url(); ?>/CCamion" class="nav-link">
                                         <i class="nav-icon fas fa-shipping-fast text-warning"></i>
                                         <p>Camión</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="<?php echo base_url(); ?>/CContratoCamion/index" class="nav-link">
+                                    <a href="<?php echo base_url(); ?>/CContratoCamion" class="nav-link">
                                         <i class="nav-icon fas fa-file-contract text-info"></i>
                                         <p>Contrato Camión</p>
                                     </a>
@@ -114,7 +115,7 @@
                         </li>
                         <!-- Clientes  -->
                         <li class="nav-item">
-                            <a href="<?php echo base_url(); ?>/CConductor/index" class="nav-link">
+                            <a href="<?php echo base_url(); ?>/CConductor" class="nav-link">
 
                                 <i class="nav-icon fas fa-universal-access"></i>
                                 <p>
@@ -124,7 +125,7 @@
                         </li>
                         <!-- Clientes  -->
                         <li class="nav-item">
-                            <a href="<?php echo base_url(); ?>/CCliente/index" class="nav-link">
+                            <a href="<?php echo base_url(); ?>/CCliente" class="nav-link">
                                 <i class="nav-icon fas fa-user-friends"></i>
                                 <p>
                                     Clientes
@@ -133,7 +134,7 @@
                         </li>
                         <!--  Navieras  -->
                         <li class="nav-item">
-                            <a href="<?php echo base_url(); ?>/CEmpresaMaritima/index" class="nav-link">
+                            <a href="<?php echo base_url(); ?>/CEmpresaMaritima" class="nav-link">
                                 <i class="nav-icon fas fa-ship"></i>
                                 <p>
                                     Navieras

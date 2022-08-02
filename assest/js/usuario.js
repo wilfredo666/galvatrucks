@@ -1,6 +1,6 @@
-/*==============
+/*===================================
 Modal formulario nuevo usuario
-===============*/
+=====================================*/
 function MNuevoUsuario(){
   $("#modal-lg").modal("show");
 
@@ -15,9 +15,9 @@ function MNuevoUsuario(){
   })
 }
 
-/*==============
+/*===================================
 Modal formulario nuevo usuario
-===============*/
+=====================================*/
 function RegUsuario(){
   var pass_1=document.getElementById("password").value
   var pass_2=document.getElementById("password2").value
@@ -39,7 +39,7 @@ function RegUsuario(){
       }
     })
   }else{
-    document.getElementById("error-password").innerHTML="Las contraseñas no coinsiden"
+    document.getElementById("error-password").innerHTML="Las contraseñas no coinciden"
 
   }
 

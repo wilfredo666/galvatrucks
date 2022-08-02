@@ -5,24 +5,17 @@
     <section class="content">
 
         <div class="container-fluid">
-            <table id="DataTableUsuario" class="table table-bordered table-striped">
+            <table id="DataTableConductor" class="table table-bordered table-striped">
                 <thead>
                     <tr>
                         <th>ID</th>
                         <th>NOMBRES</th>
                         <th>APELLIDOS</th>
                         <th> C.I.</th>
-                        <th>CATEGORIA LICENCIA</th>
-                        <th>FECHA DE NACIMIENTO</th>
-                        <th>DIRECCION</th>
-                        <th>CORREO ELECTRONICO</th>
-                        <th>NUMERO DE TELEFONO</th>
-                        <th>PERSONA DE CONTACTO / CELULAR</th>
-                        <th>ESTADO CIVIL</th>
-                        <th>CUENTA BANCARIA 1</th>
-                        <th>CUENTA BANCARIA 2</th>
+                        <th>CAT. LICENCIA</th>
+                        <th>CONTACTO</th>
                         <th>IMAGEN</th>
-                        <th><button class="btn btn-block btn-primary"><i class="fas fa-plus-circle"></i> NUEVO</button></th>
+                        <th><button class="btn btn-block btn-primary" onclick="MNuevoConductor()"><i class="fas fa-plus-circle"></i> NUEVO</button></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -49,24 +42,17 @@
                             <td><?php echo  $apellidoCond; ?></td>
                             <td><?php echo  $ciCocnd; ?></td>
                             <td><?php echo  $categoriaCond; ?></td>
-                            <td><?php echo  $fechaNac; ?></td>
-                            <td><?php echo  $direccionCond; ?></td>
-                            <td><?php echo  $email; ?></td>
                             <td><?php echo  $telefono; ?></td>
-                            <td><?php echo  $persContacto; ?></td>
-                            <td><?php echo  $estadoCivil; ?></td>
-                            <td><?php echo  $cuentaBanc1; ?></td>
-                            <td><?php echo  $cuentaBanc2; ?></td>
                             <td><?php echo  $imagenCond; ?></td>
-                            <td>
+                            <td class="text-center">
                                 <div>
-                                    <button class="btn btn-info btn-circle">
+                                    <button class="btn btn-info btn-circle" onclick="MVerConductor()">
                                         <i class="fas fa-eye"></i>
                                     </button>
-                                    <button class="btn btn-warning btn-circle">
+                                    <button class="btn btn-warning btn-circle" onclick="MEditarConductor()">
                                         <i class="fas fa-edit"></i>
                                     </button>
-                                    <button class="btn btn-danger btn-circle">
+                                    <button class="btn btn-danger btn-circle" onclick="MEliminarConductor()">
                                         <i class="fas fa-trash-alt"></i>
                                     </button>
                                 </div>

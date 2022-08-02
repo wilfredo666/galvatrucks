@@ -12,11 +12,8 @@
             <th>ID</th>
             <th>PLACA</th>
             <th>CLASE DE CAMIÓN</th>
-            <th>NRO DE EJES</th>
-             <th>CAPACIDAD DE CARGA</th> 
-            <th>NRO DE CHASIS</th>
+            <th>CAPACIDAD DE CARGA</th> 
             <th>MARCA DEL CAMIÓN</th>
-            <th>COLOR</th>
             <th> <button class="btn btn-block btn-primary"><i class="fas fa-plus-circle"></i> NUEVO </button> </th>
           </tr>
         </thead>
@@ -35,13 +32,10 @@
                 <td><?php echo $idCam;?></td>
                 <td><?php echo $placa;?></td>
                 <td><?php echo $clase;?></td>
-                <td><?php echo $ejes;?></td>
                 <td><?php echo $capacidad;?></td>
-                <td><?php echo $chasis;?></td>
                 <td><?php echo $marca;?></td>
-                <td><?php echo $color;?></td>
                 <td>
-                <div>
+                <div class="text-center">
                   <button class="btn btn-info btn-circle">
                     <i class="fas fa-eye"></i>
                   </button>
