@@ -11,11 +11,16 @@
         <div class="form-group col-md-12">
           <label>Nombre Usuario</label>
           <input type="text" class="form-control" id="nomUsuario" name="nomUsuario">
+          <p class="text-danger" id="error-nomUsuario"></p>
         </div>
+      </div>
+      <div class="row">
         <div class="form-group col-md-6">
           <label>Login Usuario</label>
           <input type="text" class="form-control" id="loginUsuario" name="loginUsuario">
+          <p class="text-danger" id="error-loginUsuario"></p>
         </div>
+
         <div class="form-group col-md-6">
           <label>Rol de Usuario</label>
           <select name="rolUsuario" id="rolUsuario" class="form-control">
@@ -25,6 +30,8 @@
             <option value="Cliente">Cliente</option>
           </select>
         </div>
+      </div>
+      <div class="row">
         <div class="form-group col-md-6">
           <label>Password</label>
           <input type="password" class="form-control" id="password" name="password">
