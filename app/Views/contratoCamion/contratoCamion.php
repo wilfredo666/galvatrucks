@@ -16,7 +16,7 @@
                         <th>PLACA</th>
                         <th>PROPIETARIO DE CAMION</th>
 
-                        <th> <button class="btn btn-block btn-primary"><i class="fas fa-plus-circle"></i> NUEVO </button> </th>
+                        <th> <button class="btn btn-block btn-primary" onclick="MNuevoContratoCam()" ><i class="fas fa-plus-circle"></i> NUEVO </button> </th>
                     </tr>
                 </thead>
                 <tbody>
@@ -40,13 +40,13 @@
 
                         <td>
                             <div class="text-center">
-                                <button class="btn btn-info btn-circle btn-sm">
+                                <button class="btn btn-info btn-circle btn-sm" onclick="MVerContratoCam()">
                                     <i class="fas fa-eye"></i>
                                 </button>
-                                <button class="btn btn-warning btn-circle">
+                                <button class="btn btn-warning btn-circle" onclick="MEditarContratoCam()">
                                     <i class="fas fa-edit"></i>
                                 </button>
-                                <button class="btn btn-danger btn-circle">
+                                <button class="btn btn-danger btn-circle" onclick="MEliminarContratoCam()">
                                     <i class="fas fa-trash-alt"></i>
                                 </button>
                             </div>

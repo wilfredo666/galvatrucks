@@ -1,28 +1,28 @@
 /*===================================
-Modal formulario nuevo Cliente
+Modal formulario nuevo Contrato de Camion
 =====================================*/
-function MNuevoCliente() {
-    $("#modal-lg").modal("show");
+function MNuevoContratoCam() {
+    $("#modal-lg").modal("show")
   
     var obj = "";
     $.ajax({
       type: "POST",
-      url: "CCliente/FNuevoCliente",
+      url: "CContratoCamion/FNuevoContratoCam",
       data: obj,
       success: function (data) {
-        $("#content-lg").html(data);
-      },
-    });
+        $("#content-lg").html(data)
+      }
+    })
   }
   /*===================================
-  Modal formulario nuevo Cliente
+  Modal formulario nuevo Contrato de Camion
   =====================================*/
-  function RegCliente() {
-    var form = new FormData($("#FNuevoCliente")[0])
+  function RegContratoCam() {
+    var form = new FormData($("#FNuevoContratoCam")[0])
   
     $.ajax({
       type: "POST",
-      url: "CCliente/RegCliente",
+      url: "CContratoCamion/RegContratoCam",
       data: form,
       cache: false,
       contentType: false,

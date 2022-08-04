@@ -2,7 +2,7 @@
 Modal formulario nuevo Conductor
 =====================================*/
 function MNuevoConductor() {
-  $("#modal-lg").modal("show");
+  $("#modal-lg").modal("show")
 
   var obj = "";
   $.ajax({
@@ -10,9 +10,9 @@ function MNuevoConductor() {
     url: "CConductor/FNuevoConductor",
     data: obj,
     success: function (data) {
-      $("#content-lg").html(data);
-    },
-  });
+      $("#content-lg").html(data)
+    }
+  })
 }
 /*===================================
 Modal formulario nuevo Conductor

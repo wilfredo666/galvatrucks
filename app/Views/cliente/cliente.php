@@ -45,7 +45,16 @@
               <td><?php echo $contacto; ?></td>
 
               <td><?php echo $tipoCli; ?></td>
-              <td><?php echo $imagen; ?></td>
+              <?php if ($imagen == "") {
+              ?>
+                <td><img src="<?php echo base_url(); ?>/assest/img/conductor/img-conductor-default.png" style="width:70px;"></td>
+              <?php
+              } else {
+              ?>
+                <td><img src="<?php echo base_url(); ?>/assest/img/cliente/<?php echo $imagen; ?>" style="width:70px;"></td>
+              <?php
+              }
+              ?>
 
               <td class="text-center">
                 <div>

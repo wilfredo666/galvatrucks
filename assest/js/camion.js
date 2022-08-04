@@ -1,28 +1,28 @@
 /*===================================
-Modal formulario nuevo Cliente
+Modal formulario nuevo Camion
 =====================================*/
-function MNuevoCliente() {
-    $("#modal-lg").modal("show");
+function MNuevoCamion() {
+    $("#modal-lg").modal("show")
   
     var obj = "";
     $.ajax({
       type: "POST",
-      url: "CCliente/FNuevoCliente",
+      url: "CCamion/FNuevoCamion",
       data: obj,
       success: function (data) {
-        $("#content-lg").html(data);
-      },
-    });
+        $("#content-lg").html(data)
+      }
+    })
   }
   /*===================================
-  Modal formulario nuevo Cliente
+  Modal formulario nuevo Camion
   =====================================*/
-  function RegCliente() {
-    var form = new FormData($("#FNuevoCliente")[0])
+  function RegCamion() {
+    var form = new FormData($("#FNuevoCamion")[0])
   
     $.ajax({
       type: "POST",
-      url: "CCliente/RegCliente",
+      url: "CCamion/RegCamion",
       data: form,
       cache: false,
       contentType: false,

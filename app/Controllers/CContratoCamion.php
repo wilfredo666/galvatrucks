@@ -19,5 +19,28 @@ class CContratoCamion extends BaseController
         echo view('contratoCamion/contratoCamion',$data);
         echo view('footer');
     }
-  
+    public function FNuevoContratoCam(){
+        echo view("contratoCamion/FNuevoContratoCam");
+      }
+    
+      public function RegContratoCam(){
+        $nomContrato=$_POST["nomContrato"];
+        $placaCon=$_POST["placaCon"];
+        $fechaIni=$_POST["fechaIni"];
+        $fechaFin=$_POST["fechaFin"];
+        $propietario=$_POST["propietario"];
+        $obsCon=$_POST["obsCon"];
+
+            
+        $data= array( 
+          "fecha_inicio_contrato"=> $fechaIni,
+          "fecha_fin_contrato"=> $fechaFin,
+          "num_contrato"=> $nomContrato,
+          "placa"=> $placaCon,
+          "propietario_camion"=> $propietario,
+          "observacion"=> $obsCon          
+        );
+    
+        $this->MContratoCamion->insert($data);
+      } 
 }

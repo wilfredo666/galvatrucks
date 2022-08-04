@@ -1,5 +1,5 @@
-<div class="modal-header">
-    <h4 class="modal-title"> REGISTRO NUEVO CLIENTE</h4>
+<div class="modal-header bg-primary">
+    <h3 class="modal-title"> <b> REGISTRO NUEVO CLIENTE</b></h3>
     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
         <span aria-hidden="true">&times;</span>
     </button>
@@ -10,72 +10,78 @@
             <div class="container">
                 <div class="row">
 
-                    <div class="form-group col-md-12">
+                    <div class="form-group col-md-6">
                         <label>Razón Social</label>
-                        <input type="text" class="form-control" id="nomConductor" name="nomConductor">
+                        <input type="text" class="form-control" id="razonSocial" name="razonSocial">
                     </div>
-                    <div class="col-md-6 form-group">
+                    <div class="col-md-3 form-group">
                         <label>N. I. T.</label>
-                        <input type="text" class="form-control" id="ciCond" name="ciCond">
+                        <input type="text" class="form-control" id="nit" name="nit">
                     </div>
-                    <div class="col-md-6 form-group">
+                    <div class="col-md-3 form-group">
                         <label>Tipo de Cliente</label>
-                        <select name="categoria" id="categoria" class="form-control">
+                        <select name="tipoCli" id="tipoCli" class="form-control">
                             <option value="null">Seleccionar</option>
-                            <option value="Persona Natural">Persona Natural</option>
-                            <option value="Persona Jurídica">Persona Jurídica</option>
+                            <option value="PERSONA NATURAL">Persona Natural</option>
+                            <option value="PERSONA JURÍDICA">Persona Jurídica</option>
                         </select>
                     </div>
-                    <div class="form-group col-md-12">
+                    <div class="form-group col-md-6">
                         <label>Nombres del Representante Legal</label>
-                        <input type="text" class="form-control" id="nomConductor" name="nomConductor">
-                    </div>
-                    <div class="form-group col-md-12">
-                        <label>Apellidos del Representante Legal</label>
-                        <input type="text" class="form-control" id="apConductor" name="apConductor">
-                    </div>
-
-                    <div class="col-md-6 form-group">
-                        <label>Cédula de Identidad</label>
-                        <input type="text" class="form-control" id="ciCond" name="ciCond">
+                        <input type="text" class="form-control" id="nombreCli" name="nombreCli">
                     </div>
                     <div class="form-group col-md-6">
+                        <label>Apellidos del Representante Legal</label>
+                        <input type="text" class="form-control" id="apellidoCli" name="apellidoCli">
+                    </div>
+
+                    <div class="form-group col-md-3">
+                        <label>Estado Civil</label>
+                        <select name="estadoCli" id="estadoCli" class="form-control">
+                            <option value="null">Seleccionar</option>
+                            <option value="Soltero/a">Soltero/a</option>
+                            <option value="Casado/a">Casado/a</option>
+                            <option value="Viudo/a">Viudo/a</option>
+                            <option value="Divorciado/a">Divorciado/a</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-3">
                         <label>fecha de nacimiento</label>
-                        <input type="date" class="form-control" id="fechaNac" name="fechaNac">
+                        <input type="date" class="form-control" id="fechaNacCli" name="fechaNacCli">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label>Número de Contacto</label>
+                        <input type="text" class="form-control" id="contactoCli" name="contactoCli">
                     </div>
                     <div class="form-group col-md-12">
                         <label>Dirección</label>
-                        <input type="text" class="form-control" id="dirCond" name="dirCond">
+                        <input type="text" class="form-control" id="dirCli" name="dirCli">
                     </div>
 
                     <div class="form-group col-md-6">
                         <label>Correo Electrónico</label>
-                        <input type="email" class="form-control" id="correoCond" name="correoCond" placeholder="Ingrese correo electrónico con @">
+                        <input type="email" class="form-control" id="correoCli" name="correoCli" placeholder="Ingrese correo electrónico">
                     </div>
-                    <div class="form-group col-md-6">
-                        <label>Número de Contacto</label>
-                        <input type="text" class="form-control" id="contactoCond" name="contactoCond">
+                    <div class="form-group col-6">
+                        <label>Persona de Contacto - Referencia</label>
+                        <input type="text" class="form-control" id="personaContactoCli" name="personaContactoCli">
                     </div>
 
-                    <div class="form-group col-md-12">
+                    <div class="form-group col-md-4">
                         <label>Número de Cuenta Bancaria 1</label>
-                        <input type="text" class="form-control" id="ctaCond" name="ctaCond">
+                        <input type="text" class="form-control" id="ctaCli" name="ctaCli">
                     </div>
-                    <div class="form-group col-md-12">
+                    <div class="form-group col-md-4">
                         <label>Número de Cuenta Bancaria 2</label>
-                        <input type="text" class="form-control" id="cta2Cond" name="cta2Cond">
+                        <input type="text" class="form-control" id="cta2Cli" name="cta2Cli">
                     </div>
-                    <div class="form-group col-7">
-                        <label>Persona de Contacto - Referencia</label>
-                        <input type="text" class="form-control" id="personaContacto" name="personaContacto">
-                    </div>
-                    <div class="form-group col-5 ">
+                  
+                    <div class="form-group col-4 ">
                         <label>Subir Imagen/Fotografía</label>
-                        <input type="file" class="form-control" id="fotoCond" name="fotoCond">
+                        <input type="file" class="form-control" id="fotoCli" name="fotoCli">
                     </div>
                 </div>
             </div>
-            <p class="text-danger" id="error-password"></p>
         </div>
         <!-- /.card-body -->
     </form>
@@ -83,5 +89,5 @@
 </div>
 <div class="modal-footer justify-content-between">
     <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-    <button type="button" class="btn btn-primary" onclick="RegConductor()">Guardar</button>
+    <button type="button" class="btn btn-primary" onclick="RegCliente()">Guardar</button>
 </div>

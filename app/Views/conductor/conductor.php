@@ -45,11 +45,11 @@
             <td><?php echo  $telefono; ?></td>
             <?php if($imagenCond==""){
             ?>
-            <td><img src="<?php echo base_url();?>/assest/img/conductor/img-conductor-default.png" style="width:80px;"></td>
+            <td><img src="<?php echo base_url();?>/assest/img/conductor/img-conductor-default.png" style="width:70px;"></td>
             <?php
           }else{
             ?>
-            <td><img src="<?php echo base_url();?>/assest/img/conductor/<?php echo $imagenCond;?>" style="width:80px;"></td>
+            <td><img src="<?php echo base_url();?>/assest/img/conductor/<?php echo $imagenCond;?>" style="width:70px;"></td>
             <?php
           }
             ?>

@@ -28,35 +28,41 @@ class CCliente extends BaseController
 
     public function RegCliente()
     {
-        $nomConductor = $_POST["nomConductor"];
-        $apConductor = $_POST["apConductor"];
-        $ciCond = $_POST["ciCond"];
-        $categoria = $_POST["categoria"];
-        $fechaNac = $_POST["fechaNac"];
-        $estadoCond = $_POST["estadoCond"];
-        $dirCond = $_POST["dirCond"];
-        $correoCond = $_POST["correoCond"];
-        $contactoCond = $_POST["contactoCond"];
-        $ctaCond = $_POST["ctaCond"];
-        $cta2Cond = $_POST["cta2Cond"];
-        $personaContacto = $_POST["personaContacto"];
-        // $fotoCond=$_POST["fotoCond"];
+        $razonSocial = $_POST["razonSocial"];
+        $nit = $_POST["nit"];
+        $tipoCli = $_POST["tipoCli"];
+        $nombreCli = $_POST["nombreCli"];
+        $apellidoCli = $_POST["apellidoCli"];
+        $estadoCli = $_POST["estadoCli"];
+        $fechaNacCli = $_POST["fechaNacCli"];
+        $dirCli = $_POST["dirCli"];
+        $correoCli = $_POST["correoCli"];
+        $contactoCli = $_POST["contactoCli"];
+        $ctaCli = $_POST["ctaCli"];
+        $cta2Cli = $_POST["cta2Cli"];
+        $personaContactoCli = $_POST["personaContactoCli"];
+        $fotoCli=$_FILES["fotoCli"];
+
+        $ruta="assest/img/cliente/";
+        $foto=$fotoCli["name"];
+        $tmpFoto=$fotoCli["tmp_name"];
+        move_uploaded_file($tmpFoto,$ruta.$foto);
 
         $data = array(
-            "nombre_cli" => $nomConductor,
-            "apellido_cli" => $apConductor,
-            "ci_nit_cli" => $ciCond,
-            "fecha_nac_cli" => $categoria,
-            "estado_civil_cli" => $estadoCond,
-            "num_cuenta_cli" => $cta2Cond,
-            "num_cuenta2_cli" => $cta2Cond,
-            "razon_social_cli" => $fechaNac,
-            "direccion_cli" => $dirCond,
-            "email_cli" => $correoCond,
-            "contacto_cli" => $contactoCond,
-            "persona_contacto_cli" => $personaContacto,
-            "tipo_cli" => $estadoCond
-            // "imagen_cli" => $ctaCond
+            "nombre_cli" => $nombreCli,
+            "apellido_cli" => $apellidoCli,
+            "ci_nit_cli" => $nit,
+            "fecha_nac_cli" => $fechaNacCli,
+            "estado_civil_cli" => $estadoCli,
+            "num_cuenta_cli" => $ctaCli,
+            "num_cuenta2_cli" => $cta2Cli,
+            "razon_social_cli" => $razonSocial,
+            "direccion_cli" => $dirCli,
+            "email_cli" => $correoCli,
+            "contacto_cli" => $contactoCli,
+            "persona_contacto_cli" => $personaContactoCli,
+            "tipo_cli" => $tipoCli,
+            "imagen_cli" => $foto
         );
 
         $this->MCliente->insert($data);

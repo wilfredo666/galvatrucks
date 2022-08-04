@@ -1,4 +1,3 @@
-
 <!-- Main Footer -->
 <footer class="main-footer">
   <!-- To the right -->
@@ -31,61 +30,76 @@
 <script src="<?php echo base_url(); ?>/assest/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
 <script src="<?php echo base_url(); ?>/assest/plugins/datatables-buttons/js/buttons.print.min.js"></script>
 <script src="<?php echo base_url(); ?>/assest/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
-<script src="<?php echo base_url();?>/assest/js/usuario.js"></script>
-<script src="<?php echo base_url();?>/assest/js/conductor.js"></script>
-<script src="<?php echo base_url();?>/assest/js/cliente.js"></script>
+<script src="<?php echo base_url(); ?>/assest/js/usuario.js"></script>
+<script src="<?php echo base_url(); ?>/assest/js/conductor.js"></script>
+<script src="<?php echo base_url(); ?>/assest/js/cliente.js"></script>
+<script src="<?php echo base_url(); ?>/assest/js/empMaritima.js"></script>
+<script src="<?php echo base_url(); ?>/assest/js/camion.js"></script>
+<script src="<?php echo base_url(); ?>/assest/js/contratoCamion.js"></script>
 
 <script>
-
-  $(function () {
+  $(function() {
     $("#DataTableUsuario").DataTable({
-      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "responsive": true,
+      "lengthChange": false,
+      "autoWidth": false,
       "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
     }).buttons().container().appendTo('#DataTableUsuario_wrapper .col-md-6:eq(0)');
   });
 
-  $(function () {
+  $(function() {
     $("#DataTableCamion").DataTable({
-      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "responsive": true,
+      "lengthChange": false,
+      "autoWidth": false,
       "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
     }).buttons().container().appendTo('#DataTableCamion_wrapper .col-md-6:eq(0)');
   });
 
-  $(function () {
+  $(function() {
     $("#DataTableConductor").DataTable({
-      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "responsive": true,
+      "lengthChange": false,
+      "autoWidth": false,
       "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
     }).buttons().container().appendTo('#DataTableConductor_wrapper .col-md-6:eq(0)');
   });
 
-  $(function () {
+  $(function() {
     $("#DataTableCliente").DataTable({
-      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "responsive": true,
+      "lengthChange": false,
+      "autoWidth": false,
       "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
     }).buttons().container().appendTo('#DataTableCliente_wrapper .col-md-6:eq(0)');
   });
 
-  $(function () {
+  $(function() {
     $("#DataTableEmpresaMaritima").DataTable({
-      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "responsive": true,
+      "lengthChange": false,
+      "autoWidth": false,
       "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
     }).buttons().container().appendTo('#DataTableEmpresaMaritima_wrapper .col-md-6:eq(0)');
   });
 
-  $(function () {
+  $(function() {
     $("#DataTableAsignacion").DataTable({
-      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "responsive": true,
+      "lengthChange": false,
+      "autoWidth": false,
       "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
     }).buttons().container().appendTo('#DataTableAsignacion_wrapper .col-md-6:eq(0)');
   });
 
-  $(function () {
+  $(function() {
     $("#DataTableContratoCamion").DataTable({
-      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "responsive": true,
+      "lengthChange": false,
+      "autoWidth": false,
       "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
     }).buttons().container().appendTo('#DataTableContratoCamion_wrapper .col-md-6:eq(0)');
   });
-
 </script>
 
 <!--===============
@@ -95,7 +109,21 @@ seccion de modal
 <div class="modal fade" id="modal-lg">
   <div class="modal-dialog modal-lg">
     <div class="modal-content" id="content-lg">
-     
+
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+<!--===============
+MODAL Default
+=================-->
+<div class="modal fade" id="modal-default">
+  <div class="modal-dialog">
+    <div class="modal-content" id="content-default">
+
     </div>
     <!-- /.modal-content -->
   </div>

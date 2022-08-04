@@ -14,7 +14,7 @@
             <th>CLASE DE CAMIÓN</th>
             <th>CAPACIDAD DE CARGA</th> 
             <th>MARCA DEL CAMIÓN</th>
-            <th> <button class="btn btn-block btn-primary"><i class="fas fa-plus-circle"></i> NUEVO </button> </th>
+            <th> <button class="btn btn-block btn-primary" onclick="MNuevoCamion()"><i class="fas fa-plus-circle"></i> NUEVO </button> </th>
           </tr>
         </thead>
         <tbody>
@@ -36,13 +36,13 @@
                 <td><?php echo $marca;?></td>
                 <td>
                 <div class="text-center">
-                  <button class="btn btn-info btn-circle">
+                  <button class="btn btn-info btn-circle" onclick="MVerCamion()">
                     <i class="fas fa-eye"></i>
                   </button>
-                  <button class="btn btn-warning btn-circle">
+                  <button class="btn btn-warning btn-circle" onclick="MEditarCamion()">
                     <i class="fas fa-edit"></i>
                   </button>
-                  <button class="btn btn-danger btn-circle">
+                  <button class="btn btn-danger btn-circle" onclick="MEliminarCamion()">
                     <i class="fas fa-trash-alt"></i>
                   </button>
                 </div>

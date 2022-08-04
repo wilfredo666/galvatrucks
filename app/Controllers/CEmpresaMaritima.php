@@ -19,5 +19,26 @@ class CEmpresaMaritima extends BaseController
         echo view('empresaMaritima/empMaritima',$data);
         echo view('footer');
     }
+
+    public function FNuevoEmpMaritima(){
+        echo view('empresaMaritima/FNuevoEmpMaritima');
+    }
+
+    public function RegEmpMaritima(){
+       $razonSocial=$_POST["razonSocial"];
+       $nitEmp=$_POST["nitEmp"];
+       $contactoEmp=$_POST["contactoEmp"];
+       $correoEmp=$_POST["correoEmp"];
+       $dirEmp=$_POST["dirEmp"];
+    // llenado en campos como en la base de datos
+       $data= array(
+           "razon_social_emp"=>$razonSocial,
+           "nit_emp"=>$nitEmp,
+           "direccion_emp"=>$dirEmp,
+           "correo_emp"=>$correoEmp,
+           "contacto_emp"=>$contactoEmp
+       );
+       $this->MEmpresaMaritima->insert($data);
+    }
   
 }
