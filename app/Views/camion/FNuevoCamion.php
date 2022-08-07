@@ -14,6 +14,7 @@
                     <div class="form-group col-md-6">
                         <label>Placa</label>
                         <input type="text" class="form-control" id="placa" name="placa">
+                        <p class="text-danger" id="error-placa"></p>
                     </div>
                     <div class="form-group col-md-6">
                         <label>Clase de Camión</label>
@@ -25,6 +26,7 @@
                             <option value="REMOLQUE">REMOLQUE</option>
                             <option value="SEMIREMOLQUE CON BARANDAS">SEMIREMOLQUE CON BARANDAS</option>
                         </select>
+                        <p class="text-danger" id="error-clase"></p>
                     </div>
 
                     
@@ -38,6 +40,7 @@
                             <option value="24 TONELADAS">24 TONELADAS</option>
                             <option value="25 TONELADAS">25 TONELADAS</option>
                         </select>
+                        <p class="text-danger" id="error-capacidad"></p>
                     </div>
                    
                     <div class="form-group col-md-6">

@@ -17,19 +17,34 @@ function MNuevoEmpMaritima(){
 
 
 function RegEmpMaritima(){
-    var form= new FormData($("#FNuevoEmpMaritima")[0])
+    let form= new FormData($("#FNuevoEmpMaritima")[0])
 
-    $.ajax({
-        type:"POST",
-        url:"CEmpresaMaritima/RegEmpMaritima",
-        data:form,
-        cache:false,
-        contentType:false,
-        processData:false,
-        success: function(data){
-           setTimeout(function(){
-               location.reload()
-           },1200)
-        }
-    })
+    let razonSocial=document.getElementById("razonSocial").value
+    let correoEmp=document.getElementById("correoEmp").value
+
+    if(razonSocial == null || razonSocial.length == 0){
+        document.getElementById("error-razonSocial").innerHTML="El campo Razon Social Naviera no puede estar vacio"
+      }
+    else if( !(/^[A-Z]{2,}/g.test(razonSocial))) {
+        document.getElementById("error-razonSocial").innerHTML="Escriba en Mayúsculas: Ejem. 'ABC'"
+      }
+    else if(!(/^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i.test(correoEmp))){
+        document.getElementById("error-correoEmp").innerHTML="Llene el correo en este formato: Ejm. 'ejemplo@gmail.com' "
+    }
+    
+    else{
+        $.ajax({
+            type:"POST",
+            url:"CEmpresaMaritima/RegEmpMaritima",
+            data:form,
+            cache:false,
+            contentType:false,
+            processData:false,
+            success: function(data){
+               setTimeout(function(){
+                   location.reload()
+               },1200)
+            }
+        })
+    }   
 }

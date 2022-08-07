@@ -14,6 +14,7 @@
                     <div class="form-group col-md-12">
                         <label>Razón Social</label>
                         <input type="text" class="form-control" id="razonSocial" name="razonSocial">
+                        <p class="text-danger" id="error-razonSocial"></p>
                     </div>
                     <div class="col-md-6 form-group">
                         <label>N. I. T.</label>
@@ -26,6 +27,7 @@
                     <div class="form-group col-md-12">
                         <label>Correo Electrónico</label>
                         <input type="email" class="form-control" id="correoEmp" name="correoEmp" placeholder="Ingrese correo electrónico">
+                        <p class="text-danger" id="error-correoEmp"></p>
                     </div>
 
                     <div class="form-group col-md-12">

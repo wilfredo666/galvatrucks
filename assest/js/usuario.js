@@ -24,12 +24,17 @@ function RegUsuario(){
 
   let nomUsuario=document.getElementById("nomUsuario").value
   let loginUsuario=document.getElementById("loginUsuario").value
+  let rolUsuario = document.getElementById("rolUsuario").selectedIndex;
 
   if(nomUsuario == null || nomUsuario.length == 0){
     document.getElementById("error-nomUsuario").innerHTML="El campo usuario no puede estar vacio"
   }else if(loginUsuario == null || loginUsuario.length == 0){
     document.getElementById("error-loginUsuario").innerHTML="El campo login no puede estar vacio"
-  }else{
+  }else if(rolUsuario == null || rolUsuario == 0){
+    document.getElementById("error-rolUsuario").innerHTML="Debes seleccionar un ROL para este usuario"
+  }
+  
+  else{
     
     if(pass_1==pass_2){
       var form=new FormData($("#FNuevoUsuario")[0])

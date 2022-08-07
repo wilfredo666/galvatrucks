@@ -18,19 +18,35 @@ function MNuevoCamion() {
   Modal formulario nuevo Camion
   =====================================*/
   function RegCamion() {
-    var form = new FormData($("#FNuevoCamion")[0])
-  
-    $.ajax({
-      type: "POST",
-      url: "CCamion/RegCamion",
-      data: form,
-      cache: false,
-      contentType: false,
-      processData: false,
-      success: function (data) {
-          setTimeout(function(){
-              location.reload()
-            },1200)
-      }
-    })
+    let form = new FormData($("#FNuevoCamion")[0])
+
+    let placa=document.getElementById("placa").value
+    let clase = document.getElementById("clase").selectedIndex;
+    let capacidad = document.getElementById("capacidad").selectedIndex;
+
+    if(!(/^\d{3,4}[-]\w{3}$/.test(placa))){
+      document.getElementById("error-placa").innerHTML="Llene la placa en este formato: Ejm. '2452-DSE' "
+    }
+    else if(clase == null || clase == 0){
+      document.getElementById("error-clase").innerHTML="Debes seleccionar una clase para este camión"
+    }else if(capacidad == null || capacidad == 0){
+      document.getElementById("error-capacidad").innerHTML="Seleccione la capacidad de carga para el camión"
+    }
+
+    else{
+      $.ajax({
+        type: "POST",
+        url: "CCamion/RegCamion",
+        data: form,
+        cache: false,
+        contentType: false,
+        processData: false,
+        success: function (data) {
+            setTimeout(function(){
+                location.reload()
+              },1200)
+        }
+      })
+    }
+   
   }

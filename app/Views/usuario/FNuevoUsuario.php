@@ -29,6 +29,7 @@
             <option value="Conductor">Conductor</option>
             <option value="Cliente">Cliente</option>
           </select>
+          <p class="text-danger" id="error-rolUsuario"></p>
         </div>
       </div>
       <div class="row">
@@ -39,8 +40,9 @@
         <div class="form-group col-md-6">
           <label>Repetir password</label>
           <input type="password" class="form-control" id="password2" name="password2">
+          <p class="text-danger" id="error-password"></p>
         </div>
-        <p class="text-danger" id="error-password"></p>
+       
       </div>
     </div>
     <!-- /.card-body -->

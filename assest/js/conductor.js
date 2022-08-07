@@ -18,8 +18,27 @@ function MNuevoConductor() {
 Modal formulario nuevo Conductor
 =====================================*/
 function RegConductor() {
-  var form = new FormData($("#FNuevoConductor")[0])
+  let form = new FormData($("#FNuevoConductor")[0])
+  
+  let nomConductor=document.getElementById("nomConductor").value
+  let correoCond=document.getElementById("correoCond").value
+  let categoria = document.getElementById("categoria").selectedIndex;
+  let contactoCond=document.getElementById("contactoCond").value
 
+  if(nomConductor == null || nomConductor.length == 0){
+    document.getElementById("error-nomConductor").innerHTML="El campo Nombre Conductor no puede estar vacio"
+  }
+  else if(!(/\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)/.test(correoCond))){
+    document.getElementById("error-correoCond").innerHTML="Llene el correo en este formato: Ejm. 'ejemplo@gmail.com' "
+  }
+  if(contactoCond == null || contactoCond.length == 0){
+    document.getElementById("error-contactoCond").innerHTML="Digite un número de contacto"
+  }
+  else if(categoria == null || categoria == 0){
+    document.getElementById("error-categoria").innerHTML="Seleccione la categoria de su Licencia"
+  }
+
+  else{
   $.ajax({
     type: "POST",
     url: "CConductor/RegConductor",
@@ -33,4 +52,5 @@ function RegConductor() {
           },1200)
     }
   })
+ }
 }
