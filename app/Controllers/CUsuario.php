@@ -39,4 +39,13 @@ class CUsuario extends BaseController
     
     $this->MUsuario->insert($data);
   }
+  
+  public function MVerUsuario(){
+    $id=$this->request->uri->getSegment(3);
+   
+    $data=array(
+    "usuario"=>$this->MUsuario->InfoUsuario($id)
+    );
+    echo view("usuario/MVerUsuario", $data);
+  }
 }

@@ -22,4 +22,12 @@ class MUsuario extends Model
     $resultado=$this->first();
     return $resultado;
   }
+  
+  public function InfoUsuario($id){
+    $this->select("*");
+    $this->where("id_usuario",$id);
+    
+    $resultado=$this->first();
+    return $resultado;
+  }
 }

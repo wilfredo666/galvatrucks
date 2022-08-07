@@ -35,13 +35,13 @@
               <td><?php echo $rol; ?></td>
               <td>
                 <div class="text-center">
-                  <button class="btn btn-info btn-circle" onclick="MVerUsuario()">
+                  <button class="btn btn-info btn-circle" onclick="MVerUsuario(<?php echo $idUsu; ?>)">
                     <i class="fas fa-eye"></i>
                   </button>
-                  <button class="btn btn-warning btn-circle" onclick="MEditarUsuario()">
+                  <button class="btn btn-warning btn-circle" onclick="MEditarUsuario(<?php echo $idUsu; ?>)">
                     <i class="fas fa-edit"></i>
                   </button>
-                  <button class="btn btn-danger btn-circle" onclick="MEliminarUsuario()">
+                  <button class="btn btn-danger btn-circle" onclick="MEliminarUsuario(<?php echo $idUsu; ?>)">
                     <i class="fas fa-trash-alt"></i>
                   </button>
                 </div>
