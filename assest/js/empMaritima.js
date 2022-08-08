@@ -48,3 +48,18 @@ function RegEmpMaritima(){
         })
     }   
 }
+
+function MVerEmpMaritima(id){
+    $("#modal-default").modal("show")
+  
+    var obj = "";
+    $.ajax({
+      type: "POST",
+      url: "CEmpresaMaritima/MVerEmpMaritima/"+id,
+      data: obj,
+      success: function (data) {
+        $("#content-default").html(data)
+      
+      }
+    })
+  }

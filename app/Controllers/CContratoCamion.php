@@ -43,4 +43,13 @@ class CContratoCamion extends BaseController
     
         $this->MContratoCamion->insert($data);
       } 
+
+      public function MVerContratoCam(){
+        $id= $this->request->uri->getSegment(3);
+        
+        $data=array(
+          "contratoCam"=>$this->MContratoCamion->InfoContratoCam($id)
+        );
+        echo view("contratoCamion/MVerContratoCam", $data);
+       }
 }

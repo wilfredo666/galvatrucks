@@ -67,4 +67,13 @@ class CCliente extends BaseController
 
         $this->MCliente->insert($data);
     }
+
+    public function MVerCliente(){
+        $id= $this->request->uri->getSegment(3);
+        
+        $data=array(
+          "cliente"=>$this->MCliente->InfoCliente($id)
+        );
+        echo view("cliente/MVerCliente", $data);
+       }
 }

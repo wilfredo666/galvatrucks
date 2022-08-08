@@ -13,4 +13,11 @@ class MContratoCamion extends Model
 
     protected $allowedFields = ['fecha_inicio_contrato', 'fecha_fin_contrato', 'num_contrato', 'placa', 'propietario_camion', 'observacion'];
 
+    public function InfoContratoCam($id)
+    {
+        $this->select("*");
+        $this->where("id_contrato_camion", $id);
+        $resultado = $this->first();
+        return $resultado;
+    }
 }

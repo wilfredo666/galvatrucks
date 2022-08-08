@@ -54,3 +54,18 @@ function RegConductor() {
   })
  }
 }
+
+function MVerConductor(id){
+  $("#modal-lg").modal("show")
+
+  var obj = "";
+  $.ajax({
+    type: "POST",
+    url: "CConductor/MVerConductor/"+id,
+    data: obj,
+    success: function (data) {
+      $("#content-lg").html(data)
+    
+    }
+  })
+}

@@ -13,4 +13,12 @@ class MEmpresaMaritima extends Model
 
     protected $allowedFields = ['razon_social_emp', 'nit_emp', 'direccion_emp', 'correo_emp', 'contacto_emp'];
 
+
+    public function InfoEmpMaritima($id)
+    {
+        $this->select("*");
+        $this->where("id_emp_maritima", $id);
+        $resultado = $this->first();
+        return $resultado;
+    }
 }

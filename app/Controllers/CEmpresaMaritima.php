@@ -40,5 +40,16 @@ class CEmpresaMaritima extends BaseController
        );
        $this->MEmpresaMaritima->insert($data);
     }
+
+    public function MVerEmpMaritima(){
+        $id= $this->request->uri->getSegment(3);
+        
+        $data=array(
+          "empMaritima"=>$this->MEmpresaMaritima->InfoEmpMaritima($id)
+        );
+        echo view("empresaMaritima/MVerEmpMaritima", $data);
+       }
+
+    
   
 }

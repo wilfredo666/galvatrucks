@@ -48,5 +48,19 @@ function MNuevoCamion() {
         }
       })
     }
-   
+  }
+
+  function MVerCamion(id){
+    $("#modal-lg").modal("show")
+  
+    var obj = "";
+    $.ajax({
+      type: "POST",
+      url: "CCamion/MVerCamion/"+id,
+      data: obj,
+      success: function (data) {
+        $("#content-lg").html(data)
+      
+      }
+    })
   }

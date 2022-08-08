@@ -46,4 +46,13 @@ class CCamion extends BaseController
     
         $this->MCamion->insert($data);
       }  
+
+      public function MVerCamion(){
+        $id= $this->request->uri->getSegment(3);
+        
+        $data=array(
+          "camion"=>$this->MCamion->InfoCamion($id)
+        );
+        echo view("camion/MVerCamion", $data);
+       }
 }

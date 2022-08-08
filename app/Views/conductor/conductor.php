@@ -23,7 +23,7 @@
   $idCond = $lista['id_conductor'];
   $nomCond = $lista['nombre_cond'];
   $apellidoCond = $lista['apellido_cond'];
-  $ciCocnd = $lista['ci_cond'];
+  $ciCond = $lista['ci_cond'];
   $categoriaCond = $lista['tipo_licencia'];
   $fechaNac = $lista['fecha_nac_cond'];
   $direccionCond = $lista['direccion_cond'];
@@ -40,7 +40,7 @@
             <td><?php echo  $idCond; ?></td>
             <td><?php echo  $nomCond; ?></td>
             <td><?php echo  $apellidoCond; ?></td>
-            <td><?php echo  $ciCocnd; ?></td>
+            <td><?php echo  $ciCond; ?></td>
             <td><?php echo  $categoriaCond; ?></td>
             <td><?php echo  $telefono; ?></td>
             <?php if($imagenCond==""){
@@ -56,13 +56,13 @@
 
             <td class="text-center">
               <div>
-                <button class="btn btn-info btn-circle" onclick="MVerConductor()">
+                <button class="btn btn-info btn-circle" onclick="MVerConductor(<?php echo  $idCond; ?>)">
                   <i class="fas fa-eye"></i>
                 </button>
-                <button class="btn btn-warning btn-circle" onclick="MEditarConductor()">
+                <button class="btn btn-warning btn-circle" onclick="MEditarConductor(<?php echo  $idCond; ?>)">
                   <i class="fas fa-edit"></i>
                 </button>
-                <button class="btn btn-danger btn-circle" onclick="MEliminarConductor()">
+                <button class="btn btn-danger btn-circle" onclick="MEliminarConductor(<?php echo  $idCond; ?>)">
                   <i class="fas fa-trash-alt"></i>
                 </button>
               </div>

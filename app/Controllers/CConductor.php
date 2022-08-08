@@ -64,4 +64,13 @@ class CConductor extends BaseController
     $this->MConductor->insert($data);
   }
 
+  public function MVerConductor(){
+   $id= $this->request->uri->getSegment(3);
+   
+   $data=array(
+     "conductor"=>$this->MConductor->InfoConductor($id)
+   );
+   echo view("conductor/MVerConductor", $data);
+  }
+
 }

@@ -54,3 +54,18 @@ function MNuevoCliente() {
       })
     }  
   }
+
+  function MVerCliente(id){
+    $("#modal-lg").modal("show")
+
+    var obj = "";
+    $.ajax({
+      type: "POST",
+      url: "CCliente/MVerCliente/"+id,
+      data: obj,
+      success: function (data) {
+        $("#content-lg").html(data)
+      
+      }
+    })
+  }

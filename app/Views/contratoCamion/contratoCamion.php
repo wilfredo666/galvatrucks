@@ -40,13 +40,13 @@
 
                         <td>
                             <div class="text-center">
-                                <button class="btn btn-info btn-circle btn-sm" onclick="MVerContratoCam()">
+                                <button class="btn btn-info btn-circle btn-sm" onclick="MVerContratoCam(<?php echo $idContrato; ?>)">
                                     <i class="fas fa-eye"></i>
                                 </button>
-                                <button class="btn btn-warning btn-circle" onclick="MEditarContratoCam()">
+                                <button class="btn btn-warning btn-circle" onclick="MEditarContratoCam(<?php echo $idContrato; ?>)">
                                     <i class="fas fa-edit"></i>
                                 </button>
-                                <button class="btn btn-danger btn-circle" onclick="MEliminarContratoCam()">
+                                <button class="btn btn-danger btn-circle" onclick="MEliminarContratoCam(<?php echo $idContrato; ?>)">
                                     <i class="fas fa-trash-alt"></i>
                                 </button>
                             </div>
