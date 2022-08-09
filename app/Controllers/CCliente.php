@@ -41,12 +41,12 @@ class CCliente extends BaseController
         $ctaCli = $_POST["ctaCli"];
         $cta2Cli = $_POST["cta2Cli"];
         $personaContactoCli = $_POST["personaContactoCli"];
-        $fotoCli=$_FILES["fotoCli"];
+        $fotoCli = $_FILES["fotoCli"];
 
-        $ruta="assest/img/cliente/";
-        $foto=$fotoCli["name"];
-        $tmpFoto=$fotoCli["tmp_name"];
-        move_uploaded_file($tmpFoto,$ruta.$foto);
+        $ruta = "assest/img/cliente/";
+        $foto = $fotoCli["name"];
+        $tmpFoto = $fotoCli["tmp_name"];
+        move_uploaded_file($tmpFoto, $ruta . $foto);
 
         $data = array(
             "nombre_cli" => $nombreCli,
@@ -68,12 +68,68 @@ class CCliente extends BaseController
         $this->MCliente->insert($data);
     }
 
-    public function MVerCliente(){
-        $id= $this->request->uri->getSegment(3);
-        
-        $data=array(
-          "cliente"=>$this->MCliente->InfoCliente($id)
+    public function MVerCliente()
+    {
+        $id = $this->request->uri->getSegment(3);
+
+        $data = array(
+            "cliente" => $this->MCliente->InfoCliente($id)
         );
         echo view("cliente/MVerCliente", $data);
-       }
+    }
+
+    public function FEditCliente()
+    {
+        $id = $this->request->uri->getSegment(3);
+
+        $data = array(
+            "cliente" => $this->MCliente->InfoCliente($id)
+        );
+
+        echo view("cliente/FEditCliente", $data);
+    }
+
+    public function EditCliente()
+    {
+        $id = $this->request->uri->getSegment(3);
+
+        $razonSocial = $_POST["razonSocial"];
+        $nit = $_POST["nit"];
+        $tipoCli = $_POST["tipoCli"];
+        $nombreCli = $_POST["nombreCli"];
+        $apellidoCli = $_POST["apellidoCli"];
+        $estadoCli = $_POST["estadoCli"];
+        $fechaNacCli = $_POST["fechaNacCli"];
+        $dirCli = $_POST["dirCli"];
+        $correoCli = $_POST["correoCli"];
+        $contactoCli = $_POST["contactoCli"];
+        $ctaCli = $_POST["ctaCli"];
+        $cta2Cli = $_POST["cta2Cli"];
+        $personaContactoCli = $_POST["personaContactoCli"];
+        $fotoCli = $_FILES["fotoCli"];
+
+        $ruta = "assest/img/cliente/";
+        $foto = $fotoCli["name"];
+        $tmpFoto = $fotoCli["tmp_name"];
+        move_uploaded_file($tmpFoto, $ruta . $foto);
+
+        $data = array(
+            "nombre_cli" => $nombreCli,
+            "apellido_cli" => $apellidoCli,
+            "ci_nit_cli" => $nit,
+            "fecha_nac_cli" => $fechaNacCli,
+            "estado_civil_cli" => $estadoCli,
+            "num_cuenta_cli" => $ctaCli,
+            "num_cuenta2_cli" => $cta2Cli,
+            "razon_social_cli" => $razonSocial,
+            "direccion_cli" => $dirCli,
+            "email_cli" => $correoCli,
+            "contacto_cli" => $contactoCli,
+            "persona_contacto_cli" => $personaContactoCli,
+            "tipo_cli" => $tipoCli,
+            "imagen_cli" => $foto
+        );
+
+        $this->MCliente->update($id,$data);
+    }
 }
