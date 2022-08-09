@@ -48,4 +48,30 @@ class CUsuario extends BaseController
     );
     echo view("usuario/MVerUsuario", $data);
   }
+  
+  public function FEditUsuario(){
+    $id=$this->request->uri->getSegment(3);
+    
+    $data=array(
+    "usuario"=>$this->MUsuario->InfoUsuario($id)
+    );
+    
+    echo view("usuario/FEditUsuario", $data);
+  }
+  
+  public function EditUsuario(){
+    $id=$this->request->uri->getSegment(3);
+    
+    $nomUsuario=$_POST["nomUsuario"];
+    $password=$_POST["password"];
+    $rolUsuario=$_POST["rolUsuario"];
+    
+    $data=array(
+    "nombre_usuario"=>$nomUsuario,
+    "pass_usuario"=>$password,
+    "rol"=>$rolUsuario      
+    );
+    
+    $this->MUsuario->update($id,$data);
+  }
 }
