@@ -38,7 +38,7 @@ class CConductor extends BaseController
     $cta2Cond=$_POST["cta2Cond"];
     $personaContacto=$_POST["personaContacto"];
     $fotoCond=$_FILES["fotoCond"];
-    
+
     $ruta="assest/img/conductor/";
     $foto=$fotoCond["name"];
     $tmpFoto=$fotoCond["tmp_name"];
@@ -65,12 +65,12 @@ class CConductor extends BaseController
   }
 
   public function MVerConductor(){
-   $id= $this->request->uri->getSegment(3);
-   
-   $data=array(
-     "conductor"=>$this->MConductor->InfoConductor($id)
-   );
-   echo view("conductor/MVerConductor", $data);
+    $id= $this->request->uri->getSegment(3);
+
+    $data=array(
+      "conductor"=>$this->MConductor->InfoConductor($id)
+    );
+    echo view("conductor/MVerConductor", $data);
   }
 
   public function FEditConductor(){
@@ -83,7 +83,7 @@ class CConductor extends BaseController
   }
 
   public function EditConductor(){
-    $id= $this->request->uri->getSegment(3);
+    $id=$this->request->uri->getSegment(3);
 
     $nomConductor=$_POST["nomConductor"];
     $apConductor=$_POST["apConductor"];
@@ -98,11 +98,15 @@ class CConductor extends BaseController
     $cta2Cond=$_POST["cta2Cond"];
     $personaContacto=$_POST["personaContacto"];
     $fotoCond=$_FILES["fotoCond"];
-    
-    $ruta="assest/img/conductor/";
-    $foto=$fotoCond["name"];
-    $tmpFoto=$fotoCond["tmp_name"];
-    move_uploaded_file($tmpFoto,$ruta.$foto);
+
+    if($fotoCond["name"]==""){
+      $foto=$_POST["fotoCondActual"];
+    }else{
+      $ruta="assest/img/conductor/";
+      $foto=$fotoCond["name"];
+      $tmpFoto=$fotoCond["tmp_name"];
+      move_uploaded_file($tmpFoto,$ruta.$foto);
+    }
 
 
     $data= array( 
@@ -121,5 +125,16 @@ class CConductor extends BaseController
       "imagen_cond"=> $foto
     );
     $this->MConductor->update($id,$data);
+  }
+  
+  public function FEliConductor(){
+    $id=$this->request->uri->getSegment(3);
+    
+    echo view("conductor/FEliConductor",compact("id"));
+  }
+  
+  public function EliConductor(){
+    $id=$this->request->uri->getSegment(3);
+    $this->MConductor->delete($id);
   }
 }

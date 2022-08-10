@@ -19,7 +19,7 @@ Modal formulario nuevo Conductor
 =====================================*/
 function RegConductor() {
   let form = new FormData($("#FNuevoConductor")[0])
-  
+
   let nomConductor=document.getElementById("nomConductor").value
   let correoCond=document.getElementById("correoCond").value
   let categoria = document.getElementById("categoria").selectedIndex;
@@ -39,20 +39,20 @@ function RegConductor() {
   }
 
   else{
-  $.ajax({
-    type: "POST",
-    url: "CConductor/RegConductor",
-    data: form,
-    cache: false,
-    contentType: false,
-    processData: false,
-    success: function (data) {
+    $.ajax({
+      type: "POST",
+      url: "CConductor/RegConductor",
+      data: form,
+      cache: false,
+      contentType: false,
+      processData: false,
+      success: function (data) {
         setTimeout(function(){
-            location.reload()
-          },1200)
-    }
-  })
- }
+          location.reload()
+        },1200)
+      }
+    })
+  }
 }
 
 function MVerConductor(id){
@@ -65,7 +65,7 @@ function MVerConductor(id){
     data: obj,
     success: function (data) {
       $("#content-lg").html(data)
-    
+
     }
   })
 }
@@ -86,7 +86,7 @@ function MEditarConductor(id){
 
 function EditConductor(id){
   let form = new FormData($("#FEditConductor")[0])
-  
+
   let nomConductor=document.getElementById("nomConductor").value
   let correoCond=document.getElementById("correoCond").value
   let categoria = document.getElementById("categoria").selectedIndex;
@@ -106,18 +106,57 @@ function EditConductor(id){
   }
 
   else{
+    $.ajax({
+      type: "POST",
+      url: "CConductor/EditConductor/"+id,
+      data: form,
+      cache: false,
+      contentType: false,
+      processData: false,
+      success: function (data) {
+        setTimeout(function(){
+          location.reload()
+        },1200)
+      }
+    })
+  }
+}
+
+function MEliminarConductor(id){
+  $("#modal-default").modal("show")
+
+  var obj = "";
   $.ajax({
     type: "POST",
-    url: "CConductor/EditConductor/"+id,
-    data: form,
+    url: "CConductor/FEliConductor/"+id,
+    data: obj,
+    success: function (data) {
+      $("#content-default").html(data)
+    }
+  })
+}
+
+function EliConductor(id){
+  var obj=""
+  $.ajax({
+    type: "POST",
+    url: "CConductor/EliConductor/"+id,
+    data: obj,
     cache: false,
     contentType: false,
     processData: false,
     success: function (data) {
-        setTimeout(function(){
-            location.reload()
-          },1200)
+      
+      Swal.fire({
+        title: 'Registro eliminado',
+        icon: 'success',
+        showConfirmButton: false,
+        timer:1000
+      })
+      
+      setTimeout(function(){
+        location.reload()
+      },1200)
     }
   })
- }
 }

@@ -85,7 +85,8 @@
                     </div>
                     <div class="form-group col-4 ">
                         <label>Fotografía</label>
-                        <input type="file" class="form-control" id="fotoCond" name="fotoCond" value="<?php echo $conductor["imagen_cond"]?>">
+                        <input type="file" class="form-control" id="fotoCond" name="fotoCond">
+                        <input type="hidden" class="form-control" id="fotoCondActual" name="fotoCondActual" value="<?php echo $conductor["imagen_cond"]?>">
                     </div>
                 </div>
             </div>
