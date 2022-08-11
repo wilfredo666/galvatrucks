@@ -47,6 +47,12 @@ function RegConductor() {
       contentType: false,
       processData: false,
       success: function (data) {
+        Swal.fire({
+          title: 'Registro Exitoso',
+          icon: 'success',
+          showConfirmButton: false,
+          timer: 1000
+        })
         setTimeout(function(){
           location.reload()
         },1200)
@@ -54,7 +60,9 @@ function RegConductor() {
     })
   }
 }
-
+/*===================================
+Modal formulario VER Conductor
+=====================================*/
 function MVerConductor(id){
   $("#modal-lg").modal("show")
 
@@ -69,7 +77,9 @@ function MVerConductor(id){
     }
   })
 }
-
+/*===================================
+Modal formulario EDITAR Conductor
+=====================================*/
 function MEditarConductor(id){
   $("#modal-lg").modal("show")
 
@@ -83,7 +93,9 @@ function MEditarConductor(id){
     }
   })
 }
-
+/*===================================
+EDITAR  Conductor
+=====================================*/
 function EditConductor(id){
   let form = new FormData($("#FEditConductor")[0])
 
@@ -114,6 +126,12 @@ function EditConductor(id){
       contentType: false,
       processData: false,
       success: function (data) {
+        Swal.fire({
+          title: 'Registro Actualizado',
+          icon: 'success',
+          showConfirmButton: false,
+          timer: 1000
+        })
         setTimeout(function(){
           location.reload()
         },1200)
@@ -121,7 +139,9 @@ function EditConductor(id){
     })
   }
 }
-
+/*===================================
+Modal formulario ELIMINAR Conductor
+=====================================*/
 function MEliminarConductor(id){
   $("#modal-default").modal("show")
 
@@ -135,7 +155,9 @@ function MEliminarConductor(id){
     }
   })
 }
-
+/*===================================
+ELIMINAR Conductor
+=====================================*/
 function EliConductor(id){
   var obj=""
   $.ajax({

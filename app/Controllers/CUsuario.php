@@ -21,12 +21,13 @@ class CUsuario extends BaseController
     echo view('usuario/usuario', $data);
     echo view('footer');
   }
-
+  /* --------------------------------------
+      FUNCIONES PARA REGISTRAR NUEVA USUARIO
+    --------------------------------------*/
   public function FNuevoUsuario()
   {
     echo view("usuario/FNuevoUsuario");
   }
-
   public function RegUsuario()
   {
     $nomUsuario = $_POST["nomUsuario"];
@@ -44,6 +45,9 @@ class CUsuario extends BaseController
     $this->MUsuario->insert($data);
   }
 
+  /* --------------------------------------
+      FUNCIONES PARA VER USUARIO
+    --------------------------------------*/
   public function MVerUsuario()
   {
     $id = $this->request->uri->getSegment(3);
@@ -54,6 +58,9 @@ class CUsuario extends BaseController
     echo view("usuario/MVerUsuario", $data);
   }
 
+  /* --------------------------------------
+      FUNCIONES PARA EDITAR USUARIO
+    --------------------------------------*/
   public function FEditUsuario()
   {
     $id = $this->request->uri->getSegment(3);
@@ -64,7 +71,6 @@ class CUsuario extends BaseController
 
     echo view("usuario/FEditUsuario", $data);
   }
-
   public function EditUsuario()
   {
     $id = $this->request->uri->getSegment(3);
@@ -81,4 +87,20 @@ class CUsuario extends BaseController
 
     $this->MUsuario->update($id, $data);
   }
+
+  /* --------------------------------------
+      FUNCIONES PARA ELIMINAR USUARIO
+    --------------------------------------*/
+  public  function FEliUsuario()
+  {
+    $id = $this->request->uri->getSegment(3);
+
+    echo view("usuario/FEliUsuario", compact("id"));
+  }
+  public function EliUsuario()
+  {
+    $id = $this->request->uri->getSegment(3);
+    $this->MUsuario->delete($id);
+  }
+
 }

@@ -15,7 +15,9 @@ function MNuevoEmpMaritima(){
     })
 }
 
-
+/*===================================
+Modal formulario REGISTRAR Empresa Maritima
+=====================================*/
 function RegEmpMaritima(){
     let form= new FormData($("#FNuevoEmpMaritima")[0])
 
@@ -41,6 +43,12 @@ function RegEmpMaritima(){
             contentType:false,
             processData:false,
             success: function(data){
+              Swal.fire({
+                title: 'Registro Exitoso',
+                icon: 'success',
+                showConfirmButton: false,
+                timer: 1000
+              })
                setTimeout(function(){
                    location.reload()
                },1200)
@@ -48,7 +56,9 @@ function RegEmpMaritima(){
         })
     }   
 }
-
+/*===================================
+Modal formulario VER Empresa Maritima
+=====================================*/
 function MVerEmpMaritima(id){
     $("#modal-default").modal("show")
   
@@ -63,7 +73,9 @@ function MVerEmpMaritima(id){
       }
     })
   }
-
+/*===================================
+Modal formulario EDITAR Empresa Maritima
+=====================================*/
   function MEditarEmpMaritima(id){
   $("#modal-default").modal("show");
 
@@ -77,7 +89,9 @@ function MVerEmpMaritima(id){
         }
     })
   }
-
+/*===================================
+EDITAR Empresa Maritima
+=====================================*/
   function EditEmpMaritima(id){
     let form= new FormData($("#FEditEmpMaritima")[0])
 
@@ -103,10 +117,59 @@ function MVerEmpMaritima(id){
             contentType:false,
             processData:false,
             success: function(data){
+              Swal.fire({
+                title: 'Registro Actualizado',
+                icon: 'success',
+                showConfirmButton: false,
+                timer: 1000
+              })
                setTimeout(function(){
                    location.reload()
                },1200)
             }
         })
     }   
+  }
+/*===================================
+Modal formulario ELIMINAR Empresa Maritima
+=====================================*/
+  function MEliminarEmpMaritima(id){
+    $("#modal-default").modal("show");
+
+    var obj="";
+    $.ajax({
+        type:"POST",
+        url:"CEmpresaMaritima/FEliEmpMaritima/"+id,
+        data:obj,
+        success: function(data){
+            $("#content-default").html(data)
+        }
+    })
+  }
+/*===================================
+ELIMINAR Empresa Maritima
+=====================================*/
+  function EliEmpMaritima(id){
+    var obj="";
+    $.ajax({
+      type:"POST",
+      url:"CEmpresaMaritima/EliEmpMaritima/"+id,
+      data:obj,
+      cache:false,
+      contentType:false,
+      processData:false,
+      success: function(data){
+          /*swit alerts */
+        Swal.fire({
+          title: 'Registro Eliminado',
+          icon: 'success',
+          showConfirmButton: false,
+          timer: 1000
+        })
+
+         setTimeout(function(){
+             location.reload()
+         },1200)
+      }
+  })
   }

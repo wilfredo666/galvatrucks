@@ -46,6 +46,12 @@ function MNuevoContratoCam() {
         contentType: false,
         processData: false,
         success: function (data) {
+          Swal.fire({
+            title: 'Registro Exitoso',
+            icon: 'success',
+            showConfirmButton: false,
+            timer: 1000
+          })
             setTimeout(function(){
                 location.reload()
               },1200)
@@ -53,7 +59,9 @@ function MNuevoContratoCam() {
       })
     }
   }
-
+/*===================================
+Modal formulario VER Contrato de Camion
+=====================================*/
   function MVerContratoCam(id){
     $("#modal-lg").modal("show")
   
@@ -68,7 +76,9 @@ function MNuevoContratoCam() {
       }
     })
   }
-  
+ /*===================================
+Modal formulario EDITAR Contrato de Camion
+=====================================*/ 
   function MEditarContratoCam(id){
     $("#modal-lg").modal("show")
   
@@ -82,7 +92,9 @@ function MNuevoContratoCam() {
       }
     })
   }
-
+/*===================================
+EDITAR Contrato de Camion
+=====================================*/
   function EditContratoCam(id){
     let form = new FormData($("#FEditContratoCam")[0])
 
@@ -112,6 +124,12 @@ function MNuevoContratoCam() {
         contentType: false,
         processData: false,
         success: function (data) {
+          Swal.fire({
+            title: 'Registro Actualizado',
+            icon: 'success',
+            showConfirmButton: false,
+            timer: 1000
+          })
             setTimeout(function(){
                 location.reload()
               },1200)
@@ -119,3 +137,45 @@ function MNuevoContratoCam() {
       })
     }
   }
+/*===================================
+Modal formulario ELIMINAR Contrato de Camion
+=====================================*/
+function MEliminarContratoCam(id){
+  $("#modal-default").modal("show")
+  
+    var obj = "";
+    $.ajax({
+      type: "POST",
+      url: "CContratoCamion/FEliContratoCam/"+id,
+      data: obj,
+      success: function (data) {
+        $("#content-default").html(data)
+      }
+    })
+}
+/*===================================
+ELIMINAR Contrato de Camion
+=====================================*/
+function EliContratoCam(id){
+  var obj="";
+  $.ajax({
+    type: "POST",
+    url: "CContratoCamion/EliContratoCam/"+id,
+    data: obj,
+    cache: false,
+    contentType: false,
+    processData: false,
+    success: function (data) {
+        /*swit alerts */
+        Swal.fire({
+          title: 'Registro Eliminado',
+          icon: 'success',
+          showConfirmButton: false,
+          timer: 1000
+        })
+        setTimeout(function(){
+            location.reload()
+          },1200)
+    }
+  })
+}

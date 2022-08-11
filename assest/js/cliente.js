@@ -24,9 +24,13 @@ function MNuevoCliente() {
     let tipoCli = document.getElementById("tipoCli").selectedIndex;
     let contactoCli=document.getElementById("contactoCli").value
     let correoCli=document.getElementById("correoCli").value
+    let nit=document.getElementById("nit").value
     
     if(razonSocial == null || razonSocial.length == 0){
       document.getElementById("error-razonSocial").innerHTML="El campo Razón Social no puede estar vacio"
+    }
+    else if(nit == null || nit == 0){
+      document.getElementById("error-nit").innerHTML="Debe Introducir en Número de NIT"
     }
     else if(tipoCli == null || tipoCli == 0){
       document.getElementById("error-tipoCli").innerHTML="Seleccionar el tipo"
@@ -47,6 +51,12 @@ function MNuevoCliente() {
         contentType: false,
         processData: false,
         success: function (data) {
+          Swal.fire({
+            title: 'Registro Exitoso',
+            icon: 'success',
+            showConfirmButton: false,
+            timer: 1000
+          })
             setTimeout(function(){
                 location.reload()
               },1200)
@@ -54,7 +64,9 @@ function MNuevoCliente() {
       })
     }  
   }
-
+  /*===================================
+  Modal formulario VER Cliente
+  =====================================*/
   function MVerCliente(id){
     $("#modal-lg").modal("show")
 
@@ -69,7 +81,9 @@ function MNuevoCliente() {
       }
     })
   }
-
+  /*===================================
+  Modal formulario EDITAR Cliente
+  =====================================*/
   function MEditarCliente(id){
     $("#modal-lg").modal("show");
   
@@ -83,7 +97,9 @@ function MNuevoCliente() {
       },
     });
   }
-
+  /*===================================
+  Modal formulario EDITAR Cliente
+  =====================================*/
   function EditCliente(id){
     let form = new FormData($("#FEditCliente")[0])
 
@@ -114,10 +130,58 @@ function MNuevoCliente() {
         contentType: false,
         processData: false,
         success: function (data) {
+          Swal.fire({
+            title: 'Registro Actualizado',
+            icon: 'success',
+            showConfirmButton: false,
+            timer: 1000
+          })
             setTimeout(function(){
                 location.reload()
               },1200)
         }
       })
     }  
+  }
+  /*===================================
+  Modal formulario ELIMINAR Cliente
+  =====================================*/
+  function MEliminarCliente(id){
+    $("#modal-default").modal("show");
+  
+    var obj = "";
+    $.ajax({
+      type: "POST",
+      url: "CCliente/FEliCliente/"+id,
+      data: obj,
+      success: function (data) {
+        $("#content-default").html(data);
+      },
+    });
+  }
+ /*===================================
+  ELIMINAR Cliente
+  =====================================*/
+  function EliCliente(id){
+    var obj = "";
+    $.ajax({
+      type: "POST",
+      url: "CCliente/EliCliente/"+id,
+      data: obj,
+      cache: false,
+      contentType: false,
+      processData: false,
+      success: function (data) {
+           /*swit alerts */
+          Swal.fire({
+            title: 'Registro Eliminado',
+            icon: 'success',
+            showConfirmButton: false,
+            timer: 1000
+          })
+          setTimeout(function(){
+              location.reload()
+            },1200)
+      }
+    })
   }

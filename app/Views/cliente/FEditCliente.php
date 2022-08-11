@@ -88,7 +88,8 @@
 
                     <div class="form-group col-4 ">
                         <label>Subir Imagen/Fotografía</label>
-                        <input type="file" class="form-control" id="fotoCli" name="fotoCli" value="<?php echo $cliente["imagen_cli"]?>">
+                        <input type="file" class="form-control" id="fotoCli" name="fotoCli">
+                        <input type="hidden" class="form-control" id="fotoCliActual" name="fotoCliActual" value="<?php echo $cliente["imagen_cli"]?>">
                     </div>
                 </div>
             </div>

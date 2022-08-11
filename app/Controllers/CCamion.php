@@ -21,7 +21,9 @@ class CCamion extends BaseController
     echo view('camion/camion', $data);
     echo view('footer');
   }
-
+ /* --------------------------------------
+      FUNCIONES PARA REGISTRAR NUEVO CAMION 
+    --------------------------------------*/
   public function FNuevoCamion()
   {
     echo view("camion/FNuevoCamion");
@@ -50,7 +52,9 @@ class CCamion extends BaseController
 
     $this->MCamion->insert($data);
   }
-
+ /* --------------------------------------
+      FUNCIONES PARA VER CAMION 
+    --------------------------------------*/
   public function MVerCamion()
   {
     $id = $this->request->uri->getSegment(3);
@@ -61,6 +65,9 @@ class CCamion extends BaseController
     echo view("camion/MVerCamion", $data);
   }
 
+   /* --------------------------------------
+      FUNCIONES PARA EDITAR CAMION 
+    --------------------------------------*/
   public function FEditCamion()
   {
     $id = $this->request->uri->getSegment(3);
@@ -71,7 +78,8 @@ class CCamion extends BaseController
     echo view("camion/FEditCamion", $data);
   }
 
-  public function EditCamion(){
+  public function EditCamion()
+  {
     $id = $this->request->uri->getSegment(3);
 
     $placa = $_POST["placa"];
@@ -94,5 +102,19 @@ class CCamion extends BaseController
     );
 
     $this->MCamion->update($id, $data);
+  }
+ /* --------------------------------------
+      FUNCIONES PARA ELIMINAR CAMION 
+    --------------------------------------*/
+  public function FEliCamion()
+  {
+    $id = $this->request->uri->getSegment(3);
+    echo view("camion/FEliCamion", compact("id"));
+  }
+
+  public function EliCamion()
+  {
+    $id = $this->request->uri->getSegment(3);
+    $this->MCamion->delete($id);
   }
 }

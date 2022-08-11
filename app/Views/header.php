@@ -19,9 +19,9 @@
     <link rel="stylesheet" href="<?php echo base_url(); ?>/assest/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>/assest/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
     <link rel="stylesheet" href="<?php echo base_url(); ?>/assest/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
-      <!-- SweetAlert2 -->
-  <link rel="stylesheet" href="<?php echo base_url(); ?>/assest/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
-    
+    <!-- SweetAlert2 -->
+    <link rel="stylesheet" href="<?php echo base_url(); ?>/assest/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+
 </head>
 
 <body class="hold-transition sidebar-mini">
@@ -85,7 +85,7 @@
                         <!--  Asignaciones -->
                         <li class="nav-item">
                             <a href="#" class="nav-link">
-                            <i class="nav-icon fas fa-truck-moving"></i>
+                                <i class="nav-icon fas fa-truck-moving"></i>
 
                                 <p>
                                     Camiones

@@ -21,12 +21,13 @@ class CEmpresaMaritima extends BaseController
         echo view('empresaMaritima/empMaritima', $data);
         echo view('footer');
     }
-
+    /* --------------------------------------
+      FUNCIONES PARA REGISTRAR NUEVA EMPRESA MARITIMA
+    --------------------------------------*/
     public function FNuevoEmpMaritima()
     {
         echo view('empresaMaritima/FNuevoEmpMaritima');
     }
-
     public function RegEmpMaritima()
     {
         $razonSocial = $_POST["razonSocial"];
@@ -45,6 +46,9 @@ class CEmpresaMaritima extends BaseController
         $this->MEmpresaMaritima->insert($data);
     }
 
+    /* --------------------------------------
+      FUNCIONES PARA REGISTRAR VER EMPRESA MARITIMA
+    --------------------------------------*/
     public function MVerEmpMaritima()
     {
         $id = $this->request->uri->getSegment(3);
@@ -55,6 +59,9 @@ class CEmpresaMaritima extends BaseController
         echo view("empresaMaritima/MVerEmpMaritima", $data);
     }
 
+    /* --------------------------------------
+      FUNCIONES PARA REGISTRAR EDITAR EMPRESA MARITIMA
+    --------------------------------------*/
     public function FEditEmpMaritima()
     {
         $id = $this->request->uri->getSegment(3);
@@ -65,7 +72,8 @@ class CEmpresaMaritima extends BaseController
 
         echo view("empresaMaritima/FEditEmpMaritima", $data);
     }
-    public function EditEmpMaritima(){
+    public function EditEmpMaritima()
+    {
         $id = $this->request->uri->getSegment(3);
 
         $razonSocial = $_POST["razonSocial"];
@@ -82,6 +90,21 @@ class CEmpresaMaritima extends BaseController
             "contacto_emp" => $contactoEmp
         );
 
-        $this->MEmpresaMaritima->update($id,$data);
+        $this->MEmpresaMaritima->update($id, $data);
+    }
+
+    /* --------------------------------------
+      FUNCIONES PARA REGISTRAR ELIMINAR EMPRESA MARITIMA
+    --------------------------------------*/
+    public function FEliEmpMaritima()
+    {
+        $id = $this->request->uri->getSegment(3);
+
+        echo view("empresaMaritima/FEliEmpMaritima", compact("id"));
+    }
+    public function EliEmpMaritima()
+    {
+        $id = $this->request->uri->getSegment(3);
+        $this->MEmpresaMaritima->delete($id);
     }
 }

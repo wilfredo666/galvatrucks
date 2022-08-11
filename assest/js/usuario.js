@@ -47,6 +47,12 @@ function RegUsuario(){
         contentType:false,
         processData:false,
         success:function(data){
+          Swal.fire({
+            title: 'Registro Exitoso',
+            icon: 'success',
+            showConfirmButton: false,
+            timer: 1000
+          })
           setTimeout(function(){
             location.reload()
           },1200)
@@ -58,7 +64,9 @@ function RegUsuario(){
   }
 
 }
-
+/*===================================
+Modal formulario Ver usuario
+=====================================*/
 function MVerUsuario(id){
   
    $("#modal-lg").modal("show");
@@ -73,7 +81,9 @@ function MVerUsuario(id){
     }
   })
 }
-
+/*===================================
+Modal formulario Editar usuario
+=====================================*/
 function MEditarUsuario(id){
   $("#modal-lg").modal("show");
 
@@ -87,7 +97,9 @@ function MEditarUsuario(id){
     }
   })
 }
-
+/*===================================
+Modal formulario Editar usuario
+=====================================*/
 function EditUsuario(id){
   let pass_1=document.getElementById("password").value
   let pass_2=document.getElementById("password2").value
@@ -117,6 +129,12 @@ function EditUsuario(id){
         contentType:false,
         processData:false,
         success:function(data){
+          Swal.fire({
+            title: 'Registro Actualizado',
+            icon: 'success',
+            showConfirmButton: false,
+            timer: 1000
+          })
           setTimeout(function(){
             location.reload()
           },1200)
@@ -126,5 +144,46 @@ function EditUsuario(id){
       document.getElementById("error-password").innerHTML="Las contraseñas no coinciden"
     }
   }
+}
+/*===================================
+Modal formulario ELIMINAR usuario
+=====================================*/
+function MEliminarUsuario(id){
+  $("#modal-default").modal("show");
 
+  var obj=""
+  $.ajax({
+    type:"POST",
+    url:"CUsuario/FEliUsuario/"+id,
+    data:obj,
+    success:function(data){
+      $("#content-default").html(data)
+    }
+  })
+}
+/*===================================
+ ELIMINAR usuario
+=====================================*/
+function EliUsuario(id){
+  var obj="";
+  $.ajax({
+    type:"POST",
+    url:"CUsuario/EliUsuario/"+id,
+    data:obj,
+    cache:false,
+    contentType:false,
+    processData:false,
+    success:function(data){
+      /*swit alerts */
+      Swal.fire({
+        title: 'Registro Eliminado',
+        icon: 'success',
+        showConfirmButton: false,
+        timer: 1000
+      })
+      setTimeout(function(){
+        location.reload()
+      },1200)
+    }
+  })
 }

@@ -21,6 +21,10 @@ class CContratoCamion extends BaseController
     echo view('contratoCamion/contratoCamion', $data);
     echo view('footer');
   }
+
+  /* --------------------------------------
+      FUNCIONES PARA REGISTRAR NUEVO CONTRATO DE CAMION
+    --------------------------------------*/
   public function FNuevoContratoCam()
   {
     echo view("contratoCamion/FNuevoContratoCam");
@@ -47,7 +51,9 @@ class CContratoCamion extends BaseController
 
     $this->MContratoCamion->insert($data);
   }
-
+  /* --------------------------------------
+      FUNCIONES PARA VER CONTRATO DE CAMION
+    --------------------------------------*/
   public function MVerContratoCam()
   {
     $id = $this->request->uri->getSegment(3);
@@ -57,8 +63,11 @@ class CContratoCamion extends BaseController
     );
     echo view("contratoCamion/MVerContratoCam", $data);
   }
-
-  public function FEditContratoCam(){
+  /* --------------------------------------
+      FUNCIONES PARA EDITAR CONTRATO DE CAMION
+    --------------------------------------*/
+  public function FEditContratoCam()
+  {
     $id = $this->request->uri->getSegment(3);
 
     $data = array(
@@ -67,7 +76,8 @@ class CContratoCamion extends BaseController
     echo view("contratoCamion/FEditContratoCam", $data);
   }
 
-  public function EditContratoCam(){
+  public function EditContratoCam()
+  {
     $id = $this->request->uri->getSegment(3);
 
     $nomContrato = $_POST["nomContrato"];
@@ -87,6 +97,19 @@ class CContratoCamion extends BaseController
       "observacion" => $obsCon
     );
 
-    $this->MContratoCamion->update($id,$data);
+    $this->MContratoCamion->update($id, $data);
+  }
+
+  /* --------------------------------------
+      FUNCIONES PARA ELIMINAR CONTRATO DE CAMION
+    --------------------------------------*/
+  public function FEliContratoCam()
+  {
+    $id = $this->request->uri->getSegment(3);
+    echo view("contratoCamion/FEliContratoCamion", compact("id"));
+  }
+  public function EliContratoCam(){
+    $id = $this->request->uri->getSegment(3);
+    $this->MContratoCamion->delete($id);
   }
 }

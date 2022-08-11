@@ -42,6 +42,12 @@ function MNuevoCamion() {
         contentType: false,
         processData: false,
         success: function (data) {
+          Swal.fire({
+            title: 'Registro Exitoso',
+            icon: 'success',
+            showConfirmButton: false,
+            timer: 1000
+          })
             setTimeout(function(){
                 location.reload()
               },1200)
@@ -49,7 +55,9 @@ function MNuevoCamion() {
       })
     }
   }
-
+/*===================================
+Modal formulario VER Camion
+=====================================*/
   function MVerCamion(id){
     $("#modal-lg").modal("show")
   
@@ -64,7 +72,9 @@ function MNuevoCamion() {
       }
     })
   }
-
+/*===================================
+Modal formulario EDITAR Camion
+=====================================*/
   function MEditarCamion(id){
     $("#modal-lg").modal("show")
   
@@ -78,7 +88,9 @@ function MNuevoCamion() {
       }
     })
   }
-
+/*===================================
+EDITAR nuevo Camion
+=====================================*/
   function EditCamion(id){
     let form = new FormData($("#FEditCamion")[0])
 
@@ -104,6 +116,12 @@ function MNuevoCamion() {
         contentType: false,
         processData: false,
         success: function (data) {
+          Swal.fire({
+            title: 'Registro Actualizado',
+            icon: 'success',
+            showConfirmButton: false,
+            timer: 1000
+          })
             setTimeout(function(){
                 location.reload()
               },1200)
@@ -111,3 +129,45 @@ function MNuevoCamion() {
       })
     }
   }
+/*===================================
+Modal formulario ELIMNAR Camion
+=====================================*/
+  function MEliminarCamion(id){
+    $("#modal-default").modal("show")
+  
+    var obj = "";
+    $.ajax({
+      type: "POST",
+      url: "CCamion/FEliCamion/"+id,
+      data: obj,
+      success: function (data) {
+        $("#content-default").html(data)
+      }
+    })
+  }
+/*===================================
+ELIMINAR nuevo Camion
+=====================================*/
+function EliCamion(id){
+ var obj= ""
+    $.ajax({
+      type: "POST",
+      url: "CCamion/EliCamion/"+id,
+      data: obj,
+      cache: false,
+      contentType: false,
+      processData: false,
+      success: function (data) {
+          /*swit alerts */
+        Swal.fire({
+          title: 'Registro Eliminado',
+          icon: 'success',
+          showConfirmButton: false,
+          timer: 1000
+        })
+          setTimeout(function(){
+              location.reload()
+            },1200)
+      }
+    })
+}

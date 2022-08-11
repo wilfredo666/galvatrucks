@@ -21,6 +21,10 @@ class CCliente extends BaseController
         echo view('cliente/cliente', $data);
         echo view('footer');
     }
+
+    /* --------------------------------------
+      FUNCIONES PARA REGISTRAR NUEVO CLIENTE 
+    --------------------------------------*/
     public function FNuevoCliente()
     {
         echo view("cliente/FNuevoCliente");
@@ -67,7 +71,9 @@ class CCliente extends BaseController
 
         $this->MCliente->insert($data);
     }
-
+    /* --------------------------------------
+      FUNCIONES PARA VER CLIENTE 
+    --------------------------------------*/
     public function MVerCliente()
     {
         $id = $this->request->uri->getSegment(3);
@@ -77,7 +83,9 @@ class CCliente extends BaseController
         );
         echo view("cliente/MVerCliente", $data);
     }
-
+    /* --------------------------------------
+      FUNCIONES PARA EDITAR CLIENTE 
+    --------------------------------------*/
     public function FEditCliente()
     {
         $id = $this->request->uri->getSegment(3);
@@ -108,10 +116,14 @@ class CCliente extends BaseController
         $personaContactoCli = $_POST["personaContactoCli"];
         $fotoCli = $_FILES["fotoCli"];
 
-        $ruta = "assest/img/cliente/";
-        $foto = $fotoCli["name"];
-        $tmpFoto = $fotoCli["tmp_name"];
-        move_uploaded_file($tmpFoto, $ruta . $foto);
+        if ($fotoCli["name"] == "") {
+            $foto = $_POST["fotoCliActual"];
+        } else {
+            $ruta = "assest/img/cliente/";
+            $foto = $fotoCli["name"];
+            $tmpFoto = $fotoCli["tmp_name"];
+            move_uploaded_file($tmpFoto, $ruta . $foto);
+        }
 
         $data = array(
             "nombre_cli" => $nombreCli,
@@ -130,6 +142,20 @@ class CCliente extends BaseController
             "imagen_cli" => $foto
         );
 
-        $this->MCliente->update($id,$data);
+        $this->MCliente->update($id, $data);
+    }
+    /* --------------------------------------
+      FUNCIONES PARA ELIMNAR CLIENTE 
+    --------------------------------------*/
+    public function FEliCliente()
+    {
+        $id = $this->request->uri->getSegment(3);
+        echo view("cliente/FEliCliente", compact("id"));
+    }
+
+    public function EliCliente()
+    {
+        $id = $this->request->uri->getSegment(3);
+        $this->MCliente->delete($id);
     }
 }
