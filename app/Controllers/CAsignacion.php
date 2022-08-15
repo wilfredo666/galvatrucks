@@ -3,7 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\MAsignacion;
-use App\Models\MConductor;
+
 
 class CAsignacion extends BaseController
 {

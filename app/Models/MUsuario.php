@@ -17,7 +17,7 @@ class MUsuario extends Model
   public function acceso($data){
     $this->select("*");
     $this->where("login_usuario",$data["usuario"]);
-    $this->where("pass_usuario",$data["password"]);
+    //$this->where("pass_usuario",$data["password"]);
     
     $resultado=$this->first();
     return $resultado;
@@ -27,6 +27,20 @@ class MUsuario extends Model
     $this->select("*");
     $this->where("id_usuario",$id);
     
+    $resultado=$this->first();
+    return $resultado;
+  }
+
+  public function buscar_usuario($dato_buscar){
+    $this->select("*");
+    $this->like("login_usuario",$dato_buscar);
+    $resultado=$this->findAll();
+    return $resultado;
+  }
+
+  public function comprobar_usuario($dato_buscar){
+    $this->select("*");
+    $this->where("login_usuario",$dato_buscar);
     $resultado=$this->first();
     return $resultado;
   }

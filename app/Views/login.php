@@ -18,7 +18,7 @@
 
 <body class="hold-transition login-page">
   <div class="login-box">
-   
+
     <!-- /.login-logo -->
     <div class="card">
       <div class="card-body login-card-body">
@@ -29,15 +29,16 @@
 
         <p class="login-box-msg">Ingresa al sistema con tu usuario</p>
 
-        <form action="<?php echo base_url();?>/Home/acceso" method="post">
+        <form action="<?php echo base_url(); ?>/Home/acceso" method="post">
           <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Ingrese su usuario" id="usuario" name="usuario">
+            <input type="text" class="form-control" placeholder="Ingrese su usuario" id="usuario" name="usuario" autocomplete="off">
             <div class="input-group-append">
               <div class="input-group-text">
                 <span class="fas fa-user"></span>
               </div>
             </div>
           </div>
+          <p class="text-danger"><?= session("errors.usuario") ?></p>
           <div class="input-group mb-3">
             <input type="password" class="form-control" placeholder="Ingrese su contraseña" id="password" name="password">
             <div class="input-group-append">
@@ -46,6 +47,7 @@
               </div>
             </div>
           </div>
+          <p class="text-danger"><?= session("errors.password") ?></p>
           <div class="row">
             <div class="col-3">
 
@@ -60,6 +62,7 @@
             <!-- /.col -->
           </div>
         </form>
+        <p class="text-danger font-italic"><?= session("errors.credenciales") ?></p>
 
       </div>
       <!-- /.login-card-body -->

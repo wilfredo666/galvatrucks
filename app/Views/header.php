@@ -63,7 +63,8 @@
                         <img src="<?php echo base_url(); ?>/assest/img/cliente2.jpg" class="img-circle elevation-5" alt="User Image">
                     </div>
                     <div class=" info">
-                        <a href="#" class="d-block">Elias Fernandez</a>
+                        <!-- colocar para sessiones session('usuario') y descomentar la lineas SESSIONS Del controlador HOME linea 30,31 -->
+                        <a href="#" class="d-block"><?php echo session('usuario') ?></a>
                     </div>
                 </div>
 
@@ -185,7 +186,7 @@
                         </li>
 
                         <li class="nav-item">
-                            <a href="" class="nav-link">
+                            <a href="<?php echo base_url(); ?>/Home/salir" class="nav-link">
                                 <i class="nav-icon fas fa-door-open text-info "></i>
                                 <p>Salir</p>
                             </a>
