@@ -21,7 +21,7 @@ class CUsuario extends BaseController
     echo view('usuario/usuario', $data);
     echo view('footer');
   }
-
+ 
   /* --------------------------------------
       FUNCIONES PARA REGISTRAR NUEVA USUARIO
     --------------------------------------*/
@@ -50,20 +50,19 @@ class CUsuario extends BaseController
   /* --------------------------------------
       FUNCIONES PARA COMPROBAR EL USUARIO
     --------------------------------------*/
-  public function ComprobarUsuario()
-  {
-    $usuario = trim($_POST["user"]);
-
-    // $busqueda_usuario=array(
-    //  "resBusUsuario"=>$this->MUsuario->comprobar_usuario($usuario)
-    // );
-    $busqueda_usuario = $this->MUsuario->comprobar_usuario($usuario);
-    if ($usuario == $busqueda_usuario["login_usuario"]) {
-      echo "<p class='text-danger' >Este usuario, ya está en uso...!!!</p>";
-    } else {
-      echo "<p class='text-success' >El nombre elegido, está disponible</p>";
+    public function ComprobarUsuario(){
+      $usuario = trim($_POST["user"]);
+  
+      // $busqueda_usuario=array(
+      //  "resBusUsuario"=>$this->MUsuario->comprobar_usuario($usuario)
+      // );
+      $busqueda_usuario=$this->MUsuario->comprobar_usuario($usuario);
+      if($usuario==$busqueda_usuario["login_usuario"]){
+        echo "<p class='text-danger' >Este usuario, ya está en uso...!!!</p>";
+      }else{
+        echo "<p class='text-success' >El nombre elegido, está disponible</p>";
+      }
     }
-  }
   /* --------------------------------------
       FUNCIONES PARA VER USUARIO
     --------------------------------------*/
@@ -121,4 +120,5 @@ class CUsuario extends BaseController
     $id = $this->request->uri->getSegment(3);
     $this->MUsuario->delete($id);
   }
+
 }

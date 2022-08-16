@@ -64,7 +64,7 @@
                     </div>
                     <div class=" info">
                         <!-- colocar para sessiones session('usuario') y descomentar la lineas SESSIONS Del controlador HOME linea 30,31 -->
-                        <a href="#" class="d-block"><?php echo session('usuario') ?></a>
+                        <a href="#" class="d-block"><?php echo ('usuario') ?></a>
                     </div>
                 </div>
 

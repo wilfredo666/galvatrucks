@@ -14,7 +14,7 @@ class Home extends BaseController
   public function acceso()
   {
     $MUsuario = new MUsuario();
-
+    
     // Validamos los campos de usuario
     if (!$this->validate(
       [
@@ -22,7 +22,8 @@ class Home extends BaseController
         "password" => "required|min_length[3]"
       ]
     )) {
-      return redirect()->to(base_url('/'))->with("errors", $this->validator->getErrors());
+      //DESCOMENTAR
+      // return redirect()->to(base_url('/'))->with("errors", $this->validator->getErrors());
     }
 
     $usuario = $_POST["usuario"];
@@ -30,19 +31,22 @@ class Home extends BaseController
     //fin de la validación
     $data = array(
       "usuario" => $usuario
+      /*solo quitar para pass no hasheados */
       // "password" => $password
     );
 
 
     $consulta = $MUsuario->acceso($data);
     /*para cuando nos da un nulo */
-    if ($consulta == null || password_verify( $password,$consulta['pass_usuario'])==false) {
-      return redirect()->to(base_url('/'))->with("errors", ["credenciales" => "Credenciales de acceso inválidas"]);
-    }
+    //DESCOMENTAR 3 LINEAS
+    // if ($consulta == null || password_verify( $password,$consulta['pass_usuario'])==false) {
+    //   return redirect()->to(base_url('/'))->with("errors", ["credenciales" => "Credenciales de acceso inválidas"]);
+    // }
 
     if (sizeof($consulta) > 0 && password_verify($password, $consulta['pass_usuario'])) {
-      $session = session();
-      $session->set($data);
+      //DESCOMENTAR
+      // $session = session();
+      // $session->set($data);
 
       echo view('header');
       echo view('panel_principal');
@@ -55,8 +59,9 @@ FUNCION SALIR
   public function salir()
   {
     /*Descomentar estas dos lineas para destruir sessiones */
-    $session = session();
-    $session->destroy();
+    //DESCOMENTAR
+    // $session = session();
+    // $session->destroy();
     return redirect()->to(base_url('/'));
   }
 }

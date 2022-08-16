@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="<?php echo base_url(); ?>/assest/dist/css/adminlte.min.css">
 </head>
 
+
 <body class="hold-transition login-page">
   <div class="login-box">
 
@@ -38,7 +39,8 @@
               </div>
             </div>
           </div>
-          <p class="text-danger"><?= session("errors.usuario") ?></p>
+          <!-- //DESCOMENTAR Y ANTES DEL = FALTA ?-->
+          <!-- <p class="text-danger"><=session("errors.usuario") ?></p> -->
           <div class="input-group mb-3">
             <input type="password" class="form-control" placeholder="Ingrese su contraseña" id="password" name="password">
             <div class="input-group-append">
@@ -47,7 +49,8 @@
               </div>
             </div>
           </div>
-          <p class="text-danger"><?= session("errors.password") ?></p>
+           <!-- //DESCOMENTAR Y ANTES DEL = FALTA ?-->
+          <!-- <p class="text-danger"><=session("errors.password")?></p> -->
           <div class="row">
             <div class="col-3">
 
@@ -62,8 +65,10 @@
             <!-- /.col -->
           </div>
         </form>
-        <p class="text-danger font-italic"><?= session("errors.credenciales") ?></p>
-
+        <!-- poner ?=session("errors.credenciales) -->
+         <!-- //DESCOMENTAR Y ANTES DEL = FALTA ?-->
+        <!-- <p class="text-danger font-italic"><=session("errors.credenciales")?></p> -->
+        
       </div>
       <!-- /.login-card-body -->
     </div>
