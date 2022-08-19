@@ -13,4 +13,20 @@ class MAsignacion extends Model
 
     protected $allowedFields = ['nombre_asig', 'fecha_asig', 'fecha_baja_asig','id_camion','id_conductor','activo'];
 
+
+    public function InfoAsignacion($id)
+    {
+        $this->select("*");
+        $this->where("id_asignacion", $id);
+        $resultado = $this->first();
+        return $resultado;
+    }
+
+    public function lista_consultas(){
+        $this->select("*");
+        $this->join('camion','camion.id_camion=asignacion.id_camion');
+        $this->join('conductor','conductor.id_conductor=asignacion.id_conductor');
+        $resultado=$this->findAll();
+        return $resultado;
+    }
 }

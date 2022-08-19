@@ -38,6 +38,7 @@
 <script src="<?php echo base_url(); ?>/assest/js/empMaritima.js"></script>
 <script src="<?php echo base_url(); ?>/assest/js/camion.js"></script>
 <script src="<?php echo base_url(); ?>/assest/js/contratoCamion.js"></script>
+<script src="<?php echo base_url(); ?>/assest/js/asignacion.js"></script>
 
 <script>
   $(function() {

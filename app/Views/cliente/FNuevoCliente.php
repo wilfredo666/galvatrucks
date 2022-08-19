@@ -5,7 +5,7 @@
     </button>
 </div>
 <div class="modal-body">
-    <form id="FNuevoCliente">
+    <form id="FNuevoCliente" enctype="multipart/form-data">
         <div class="card-body">
             <div class="container">
                 <div class="row">
