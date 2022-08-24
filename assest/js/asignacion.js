@@ -171,3 +171,18 @@ function EliAsignacion(id){
       }
     })
 }
+
+function codAsignacion(){
+  /*nombre conductor*/
+  let idConductor=document.getElementById("conductorAsig")
+  let nomConductor=idConductor.options[idConductor.selectedIndex].text
+  let arrayNombre=nomConductor.split(" ")
+  let nombre=arrayNombre[0]+arrayNombre[1]
+  /*placa camion*/
+  let idCamion=document.getElementById("placaAsig")
+  let placa=idCamion.options[idCamion.selectedIndex].text
+ 
+  let codAsig=nombre+"_"+placa
+  document.getElementById("asignacion").value=codAsig
+  
+}

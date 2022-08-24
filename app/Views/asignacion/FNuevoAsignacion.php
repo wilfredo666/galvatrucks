@@ -12,8 +12,8 @@
             <div class="container">
                 <div class="row">
                     <div class="form-group col-md-4">
-                        <label>Asignación <span class="text-danger"> *</span></label>
-                        <input type="text" class="form-control" id="asignacion" name="asignacion">
+                        <label>Cod. Asignación <span class="text-danger"> *</span></label>
+                        <input type="text" class="form-control" id="asignacion" name="asignacion" readonly>
                         <p class="text-danger" id="error-asignacion"></p>
                     </div>
                     <div class="form-group col-md-4">
@@ -29,7 +29,7 @@
                 <div class="row">
                     <div class="form-group col-md-8">
                         <label>Coductor <span class="text-danger"> *</span></label>
-                        <select name="conductorAsig" id="conductorAsig" class="form-control">
+                        <select name="conductorAsig" id="conductorAsig" class="form-control" onchange="codAsignacion()">
                             <option value="">-- Seleccionar --</option>
                             <?php
                             foreach ($lista_conductor as $conductor) {
@@ -45,7 +45,7 @@
                     </div>
                     <div class="form-group col-md-4">
                         <label>Placa <span class="text-danger"> *</span></label>
-                        <select name="placaAsig" id="placaAsig" class="form-control">
+                        <select name="placaAsig" id="placaAsig" class="form-control" onchange="codAsignacion()">
                             <option value="">-- Seleccionar --</option>
                             <?php
                             foreach ($lista_camion as $camion) {
