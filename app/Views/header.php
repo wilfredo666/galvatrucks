@@ -21,6 +21,11 @@
     <link rel="stylesheet" href="<?php echo base_url(); ?>/assest/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
     <!-- SweetAlert2 -->
     <link rel="stylesheet" href="<?php echo base_url(); ?>/assest/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+    <!-- BS Stepper -->
+    <link rel="stylesheet" href="<?php echo base_url(); ?>/assest/plugins/bs-stepper/css/bs-stepper.min.css">
+
+
+
 
 </head>
 
@@ -102,7 +107,7 @@
                                 </li>
                                 <li class="nav-item">
                                     <a href="<?php echo base_url(); ?>/CCamion" class="nav-link">
-                                        <i class="nav-icon fas fa-shipping-fast text-warning"></i>
+                                        <i class="nav-icon fas fa-shipping-fast text-info"></i>
                                         <p>Camión</p>
                                     </a>
                                 </li>
@@ -143,14 +148,38 @@
                                 </p>
                             </a>
                         </li>
+                        <!--  Rutas  -->
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
-                                <i class="nav-icon fab fa-shirtsinbulk"></i>
-
+                            <a href="<?php echo base_url(); ?>/CRuta" class="nav-link">
+                                <i class="nav-icon fas fa-map-marker-alt"></i>
                                 <p>
-                                    Servicio
+                                    Rutas
                                 </p>
                             </a>
+                        </li>
+                        <!--  SERVICIOS-->
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fab fa-docker"></i>
+                                <p>
+                                    Servicios
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="<?php echo base_url(); ?>/CServicio" class="nav-link">
+                                        <i class="nav-icon fab fa-shirtsinbulk text-info"></i>
+                                        <p>Nuevo Servicio</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="<?php echo base_url(); ?>/CCamion" class="nav-link">
+                                        <i class="nav-icon fas fa-credit-card text-info"></i>
+                                        <p>Pagos</p>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
 
                         <li class="nav-header">DOCUMENTACIÓN</li>

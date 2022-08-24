@@ -30,6 +30,8 @@
 <script src="<?php echo base_url(); ?>/assest/plugins/datatables-buttons/js/buttons.html5.min.js"></script>
 <script src="<?php echo base_url(); ?>/assest/plugins/datatables-buttons/js/buttons.print.min.js"></script>
 <script src="<?php echo base_url(); ?>/assest/plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+<!-- Bootstrap Switch -->
+<script src="<?php echo base_url(); ?>/assest/plugins/bootstrap-switch/js/bootstrap-switch.min.js"></script>
 <!-- SweetAlert2 -->
 <script src="<?php echo base_url(); ?>/assest/plugins/sweetalert2/sweetalert2.min.js"></script>
 <script src="<?php echo base_url(); ?>/assest/js/usuario.js"></script>
@@ -39,6 +41,13 @@
 <script src="<?php echo base_url(); ?>/assest/js/camion.js"></script>
 <script src="<?php echo base_url(); ?>/assest/js/contratoCamion.js"></script>
 <script src="<?php echo base_url(); ?>/assest/js/asignacion.js"></script>
+<script src="<?php echo base_url(); ?>/assest/js/ruta.js"></script>
+<script src="<?php echo base_url(); ?>/assest/js/servicio.js"></script>
+
+<!-- BS-Stepper -->
+<script src="<?php echo base_url(); ?>/assest/plugins/bs-stepper/js/bs-stepper.min.js"></script>
+
+
 
 <script>
   $(function() {
@@ -103,7 +112,14 @@
       "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
     }).buttons().container().appendTo('#DataTableContratoCamion_wrapper .col-md-6:eq(0)');
   });
+
+  // BS-Stepper Init
+  /* document.addEventListener('DOMContentLoaded', function() {
+    window.stepper = new Stepper(document.querySelector('.bs-stepper'))
+  }) */
+  
 </script>
+
 
 <!--===============
 seccion de modal
@@ -124,8 +140,22 @@ seccion de modal
 MODAL Default
 =================-->
 <div class="modal fade" id="modal-default">
-  <div class="modal-dialog">
+  <div class="modal-dialog modal-default">
     <div class="modal-content" id="content-default">
+
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
+<!--===============
+MODAL Default
+=================-->
+<div class="modal fade" id="modal-xl">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content" id="content-xl">
 
     </div>
     <!-- /.modal-content -->

@@ -1,42 +1,41 @@
 /*===================================
-Modal formulario nuevo Asignacion
+Modal formulario nuevo Camion
 =====================================*/
-function MNuevoAsignacion() {
-    $("#modal-lg").modal("show")
-  
+function MNuevoServicio(){
+    $("#modal-xl").modal("show")
     var obj = "";
     $.ajax({
       type: "POST",
-      url: "CAsignacion/FNuevoAsignacion",
+      url: "CServicio/FNuevoServicio",
       data: obj,
       success: function (data) {
-        $("#content-lg").html(data)
+        $("#content-xl").html(data)
       }
     })
-  }
+}
   /*===================================
-  Modal formulario nuevo Asignacion
+  Modal formulario nuevo SERVICIO
   =====================================*/
-  function RegAsignacion() {
-    let form = new FormData($("#FNuevoAsignacion")[0])
+  function RegServicio() {
+    let form = new FormData($("#FNuevoServicio")[0])
 
-    let asignacion=document.getElementById("asignacion").value
-    /* let clase = document.getElementById("clase").selectedIndex;
-    let capacidad = document.getElementById("capacidad").selectedIndex; */
+ /*    let placa=document.getElementById("placa").value
+    let clase = document.getElementById("clase").selectedIndex;
+    let capacidad = document.getElementById("capacidad").selectedIndex;
 
-    if(!(/^Asig\-\w{4}$/.test(asignacion))){
-      document.getElementById("error-asignacion").innerHTML="Llene la placa en este formato: Ejm. 'Asig-0001' "
+    if(!(/^\d{3,4}[-]\w{3}$/.test(placa))){
+      document.getElementById("error-placa").innerHTML="Llene la placa en este formato: Ejm. '2452-DSE' "
     }
-    /* else if(clase == null || clase == 0){
+    else if(clase == null || clase == 0){
       document.getElementById("error-clase").innerHTML="Debes seleccionar una clase para este camión"
     }else if(capacidad == null || capacidad == 0){
       document.getElementById("error-capacidad").innerHTML="Seleccione la capacidad de carga para el camión"
-    } */
+    }
 
-    else{
+    else{ */
       $.ajax({
         type: "POST",
-        url: "CAsignacion/RegAsignacion",
+        url: "CServicio/RegServicio",
         data: form,
         cache: false,
         contentType: false,
@@ -46,71 +45,70 @@ function MNuevoAsignacion() {
             title: 'Registro Exitoso',
             icon: 'success',
             showConfirmButton: false,
-            timer: 1100
+            timer: 1000
           })
             setTimeout(function(){
                 location.reload()
-              },1300)
+              },1200)
         }
       })
     }
-  }
 /*===================================
-Modal formulario VER Asignacion
+Modal formulario VER SERVICIO
 =====================================*/
-  function MVerAsignacion(id){
-    $("#modal-default").modal("show")
+  function MVerServicio(id){
+    $("#modal-xl").modal("show")
   
     var obj = "";
     $.ajax({
       type: "POST",
-      url: "CAsignacion/MVerAsignacion/"+id,
+      url: "CServicio/MVerServicio/"+id,
       data: obj,
       success: function (data) {
-        $("#content-default").html(data)
+        $("#content-xl").html(data)
       
       }
     })
   }
 /*===================================
-Modal formulario EDITAR Asignacion
+Modal formulario EDITAR SERVICIO
 =====================================*/
-  function MEditarAsignacion(id){
-    $("#modal-lg").modal("show")
+  function MEditarServicio(id){
+    $("#modal-xl").modal("show")
   
     var obj = "";
     $.ajax({
       type: "POST",
-      url: "CAsignacion/FEditAsignacion/"+id,
+      url: "CServicio/FEditServicio/"+id,
       data: obj,
       success: function (data) {
-        $("#content-lg").html(data)
+        $("#content-xl").html(data)
       }
     })
   }
 /*===================================
-EDITAR nuevo Asignacion
+EDITAR nuevo SERVICIO
 =====================================*/
-  function EditAsignacion(id){
-    let form = new FormData($("#FEditAsignacion")[0])
+  function EditServicio(id){
+    let form = new FormData($("#FEditServicio")[0])
 
-    let asignacion=document.getElementById("asignacion").value
-    /* let clase = document.getElementById("clase").selectedIndex;
-    let capacidad = document.getElementById("capacidad").selectedIndex; */
+   /*  let placa=document.getElementById("placa").value
+    let clase = document.getElementById("clase").selectedIndex;
+    let capacidad = document.getElementById("capacidad").selectedIndex;
 
-    if(!(/^Asig\-\w{4}$/.test(asignacion))){
-      document.getElementById("error-asignacion").innerHTML="Llene la placa en este formato: Ejm. 'Asig-0001' "
+    if(!(/^\d{3,4}[-]\w{3}$/.test(placa))){
+      document.getElementById("error-placa").innerHTML="Llene la placa en este formato: Ejm. '2452-DSE' "
     }
-    /* else if(clase == null || clase == 0){
+    else if(clase == null || clase == 0){
       document.getElementById("error-clase").innerHTML="Debes seleccionar una clase para este camión"
     }else if(capacidad == null || capacidad == 0){
       document.getElementById("error-capacidad").innerHTML="Seleccione la capacidad de carga para el camión"
-    } */
+    }
 
-    else{
+    else{  */
       $.ajax({
         type: "POST",
-        url: "CAsignacion/EditAsignacion/"+id,
+        url: "CServicio/EditServicio/"+id,
         data: form,
         cache: false,
         contentType: false,
@@ -128,17 +126,17 @@ EDITAR nuevo Asignacion
         }
       })
     }
-  }
+  
 /*===================================
-Modal formulario ELIMNAR Asignacion
+Modal formulario ELIMNAR SERVICIO
 =====================================*/
-  function MEliminarAsignacion(id){
+  function MEliminarServicio(id){
     $("#modal-default").modal("show")
   
     var obj = "";
     $.ajax({
       type: "POST",
-      url: "CAsignacion/FEliAsignacion/"+id,
+      url: "CServicio/FEliServicio/"+id,
       data: obj,
       success: function (data) {
         $("#content-default").html(data)
@@ -146,13 +144,13 @@ Modal formulario ELIMNAR Asignacion
     })
   }
 /*===================================
-ELIMINAR nuevo Asignacion
+ELIMINAR nuevo Camion
 =====================================*/
-function EliAsignacion(id){
+function EliServicio(id){
  var obj= ""
     $.ajax({
       type: "POST",
-      url: "CAsignacion/EliAsignacion/"+id,
+      url: "CServicio/EliServicio/"+id,
       data: obj,
       cache: false,
       contentType: false,

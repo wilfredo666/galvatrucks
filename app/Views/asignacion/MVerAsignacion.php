@@ -11,32 +11,23 @@
           <!-- Add the bg color to the header using any of the bg-* classes -->
           <div class="widget-user-header bg-warning">
             <div class="widget-user-image">
-              <img class="img-circle elevation-2" src="<?php echo base_url(); ?>/assest/img/asignacion.png" alt="stack photo" class="img" alt="User Avatar">
+              <img class="img-circle elevation-2" src="<?php echo base_url(); ?>/assest/img/conductor/<?php echo $asignacion["imagen_cond"] ?>" alt="stack photo" class="img" alt="User Avatar" width="80%">
             </div>
             <!-- /.widget-user-image -->
-            <h3 class="widget-user-username">Conductor:
+            <h4 class="widget-user-desc font-italic">Conductor:<br>
               <?php
-              foreach ($lista_conductor as $conductor) {
-                $idCond = $conductor["id_conductor"];
-                $nomCond = $conductor['nombre_cond'];
-                $apellidoCond = $conductor['apellido_cond'];
-              }
+              echo $asignacion["nombre_cond"] . " " . $asignacion["apellido_cond"];
               ?>
-              <?php
-              if ($idCond == $asignacion["id_conductor"]) {
-                echo $nomCond;
-              }
-              ?>
-            </h3>
-            <h5 class="widget-user-desc">Nro de Asignación: <?php echo $asignacion["nombre_asig"] ?></h5>
+            </h4>
+            <h4 class="widget-user-desc font-italic">Placa: <?php echo $asignacion["placa"] ?></h4>
           </div>
           <div class="card-footer p-0">
             <ul class="nav flex-column">
               <li class="nav-item">
                 <h5 class="nav-link font-weight-normal">
-                  Placa: <span class="float-right font-weight-light"><?php echo $asignacion["id_camion"] ?></span>
+                  Nro de Asignación: <span class="float-right font-weight-light"><?php echo $asignacion["nombre_asig"] ?></span>
                 </h5>
-                
+
               </li>
               <li class="nav-item">
                 <h5 class="nav-link font-weight-normal">
@@ -46,6 +37,23 @@
               <li class="nav-item">
                 <h5 class="nav-link font-weight-normal">
                   Fecha Baja de Asignación: <span class="float-right font-weight-light"><?php echo $asignacion["fecha_baja_asig"] ?></span>
+                </h5>
+              </li>
+              <li class="nav-item">
+                <h5 class="nav-link font-weight-normal">
+                  Estado:
+
+                  <?php
+                  if ($asignacion["activo_asig"] == 1) {
+                  ?>
+                    <span class="float-right  badge bg-success">Activo</span>
+                  <?php
+                  } else {
+                  ?>
+                    <span class="float-right  badge bg-danger">Inactivo</span>
+                  <?php
+                  }
+                  ?>
                 </h5>
               </li>
             </ul>

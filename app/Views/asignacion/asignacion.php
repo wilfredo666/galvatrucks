@@ -16,7 +16,6 @@
             <th>ID</th>
             <th>ASIGNACIÓN</th>
             <th>FECHA DE ASIGNACIÓN</th>
-            <th>PLACA</th>
             <th>CONDUCTOR</th>
             <th>ESTADO</th>
             <th> <button class="btn btn-block btn-primary" onclick="MNuevoAsignacion()"><i class="fas fa-plus-circle"></i> NUEVO </button> </th>
@@ -32,34 +31,41 @@
             $placaCamion = $lista['placa'];
             $nomCond = $lista['nombre_cond'];
             $apCond = $lista['apellido_cond'];
-            $estado = $lista['activo'];
+            $estado = $lista['activo_asig'];
           ?>
             <tr>
               <td><?php echo $idAsig; ?></td>
               <td><?php echo $nombreAsig; ?></td>
               <td><?php echo $fechaAsig; ?></td>
-              <td><?php echo $placaCamion; ?></td>
-              <td><?php echo $nomCond." ".$apCond; ?></td>
-              <td><?php echo $estado; ?></td>
+              <td><?php echo $nomCond . " " . $apCond; ?></td>
+              <?php
+              if ($estado == 1) {
+              ?>
+                <td><span class="badge bg-success">Activo</span></td>
+              <?php
+              } else {
+              ?>
+                <td><span class="badge bg-danger">Inactivo</span></td>
+              <?php
+              }
+              ?>
+
               <td>
                 <div class="text-center">
-                  <button class="btn btn-info btn-circle" onclick="MVerAsignacion(<?php echo $idAsig;?>)">
+                  <button class="btn btn-outline-info btn-circle" onclick="MVerAsignacion(<?php echo $idAsig; ?>)">
                     <i class="fas fa-eye"></i>
                   </button>
-                  <button class="btn btn-warning btn-circle" onclick="MEditarAsignacion(<?php echo $idAsig;?>)">
+                  <button class="btn btn-warning btn-circle" onclick="MEditarAsignacion(<?php echo $idAsig; ?>)">
                     <i class="fas fa-edit"></i>
                   </button>
-                  <button class="btn btn-danger btn-circle" onclick="MEliminarAsignacion(<?php echo $idAsig;?>)">
+                  <button class="btn btn-outline-danger btn-circle" onclick="MEliminarAsignacion(<?php echo $idAsig; ?>)">
                     <i class="fas fa-trash-alt"></i>
                   </button>
-                  <a href="#" class="btn btn-outline-dark btn-circle">
-                    <i class="fas fa-print"></i>
-                  </a>
                 </div>
               </td>
             </tr>
-
           <?php } ?>
+
         </tbody>
       </table>
     </div>

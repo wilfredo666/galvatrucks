@@ -1,42 +1,42 @@
 /*===================================
-Modal formulario nuevo Asignacion
+Modal formulario nuevo ruta
 =====================================*/
-function MNuevoAsignacion() {
-    $("#modal-lg").modal("show")
+function MNuevoRuta() {
+    $("#modal-default").modal("show")
   
     var obj = "";
     $.ajax({
       type: "POST",
-      url: "CAsignacion/FNuevoAsignacion",
+      url: "CRuta/FNuevoRuta",
       data: obj,
       success: function (data) {
-        $("#content-lg").html(data)
+        $("#content-default").html(data)
       }
     })
   }
   /*===================================
-  Modal formulario nuevo Asignacion
+  Modal formulario nuevo ruta
   =====================================*/
-  function RegAsignacion() {
-    let form = new FormData($("#FNuevoAsignacion")[0])
+  function RegRuta() {
+    let form = new FormData($("#FNuevoRuta")[0])
 
-    let asignacion=document.getElementById("asignacion").value
-    /* let clase = document.getElementById("clase").selectedIndex;
-    let capacidad = document.getElementById("capacidad").selectedIndex; */
+/*     let placa=document.getElementById("placa").value
+    let clase = document.getElementById("clase").selectedIndex;
+    let capacidad = document.getElementById("capacidad").selectedIndex;
 
-    if(!(/^Asig\-\w{4}$/.test(asignacion))){
-      document.getElementById("error-asignacion").innerHTML="Llene la placa en este formato: Ejm. 'Asig-0001' "
+    if(!(/^\d{3,4}[-]\w{3}$/.test(placa))){
+      document.getElementById("error-placa").innerHTML="Llene la placa en este formato: Ejm. '2452-DSE' "
     }
-    /* else if(clase == null || clase == 0){
+    else if(clase == null || clase == 0){
       document.getElementById("error-clase").innerHTML="Debes seleccionar una clase para este camión"
     }else if(capacidad == null || capacidad == 0){
       document.getElementById("error-capacidad").innerHTML="Seleccione la capacidad de carga para el camión"
-    } */
+    }
 
-    else{
+    else{ */
       $.ajax({
         type: "POST",
-        url: "CAsignacion/RegAsignacion",
+        url: "CRuta/RegRuta",
         data: form,
         cache: false,
         contentType: false,
@@ -46,71 +46,70 @@ function MNuevoAsignacion() {
             title: 'Registro Exitoso',
             icon: 'success',
             showConfirmButton: false,
-            timer: 1100
+            timer: 1000
           })
             setTimeout(function(){
                 location.reload()
-              },1300)
+              },1200)
         }
       })
-    }
   }
 /*===================================
-Modal formulario VER Asignacion
+Modal formulario VER ruta
 =====================================*/
-  function MVerAsignacion(id){
-    $("#modal-default").modal("show")
-  
-    var obj = "";
-    $.ajax({
-      type: "POST",
-      url: "CAsignacion/MVerAsignacion/"+id,
-      data: obj,
-      success: function (data) {
-        $("#content-default").html(data)
-      
-      }
-    })
-  }
-/*===================================
-Modal formulario EDITAR Asignacion
-=====================================*/
-  function MEditarAsignacion(id){
+  function MVerRuta(id){
     $("#modal-lg").modal("show")
   
     var obj = "";
     $.ajax({
       type: "POST",
-      url: "CAsignacion/FEditAsignacion/"+id,
+      url: "Cruta/MVerRuta/"+id,
       data: obj,
       success: function (data) {
         $("#content-lg").html(data)
+      
       }
     })
   }
 /*===================================
-EDITAR nuevo Asignacion
+Modal formulario EDITAR ruta
 =====================================*/
-  function EditAsignacion(id){
-    let form = new FormData($("#FEditAsignacion")[0])
+  function MEditarRuta(id){
+    $("#modal-default").modal("show")
+  
+    var obj = "";
+    $.ajax({
+      type: "POST",
+      url: "CRuta/FEditRuta/"+id,
+      data: obj,
+      success: function (data) {
+        $("#content-default").html(data)
+      }
+    })
+  }
+/*===================================
+EDITAR nuevo ruta
+=====================================*/
+  function EditRuta(id){
+    let form = new FormData($("#FEditRuta")[0])
+/* 
+    let placa=document.getElementById("placa").value
+    let clase = document.getElementById("clase").selectedIndex;
+    let capacidad = document.getElementById("capacidad").selectedIndex;
 
-    let asignacion=document.getElementById("asignacion").value
-    /* let clase = document.getElementById("clase").selectedIndex;
-    let capacidad = document.getElementById("capacidad").selectedIndex; */
-
-    if(!(/^Asig\-\w{4}$/.test(asignacion))){
-      document.getElementById("error-asignacion").innerHTML="Llene la placa en este formato: Ejm. 'Asig-0001' "
+    if(!(/^\d{3,4}[-]\w{3}$/.test(placa))){
+      document.getElementById("error-placa").innerHTML="Llene la placa en este formato: Ejm. '2452-DSE' "
     }
-    /* else if(clase == null || clase == 0){
+    else if(clase == null || clase == 0){
       document.getElementById("error-clase").innerHTML="Debes seleccionar una clase para este camión"
     }else if(capacidad == null || capacidad == 0){
       document.getElementById("error-capacidad").innerHTML="Seleccione la capacidad de carga para el camión"
-    } */
+    }
 
-    else{
+    else{ */
       $.ajax({
         type: "POST",
-        url: "CAsignacion/EditAsignacion/"+id,
+        url: "CRuta/EditRuta/"+id,
         data: form,
         cache: false,
         contentType: false,
@@ -128,17 +127,16 @@ EDITAR nuevo Asignacion
         }
       })
     }
-  }
 /*===================================
-Modal formulario ELIMNAR Asignacion
+Modal formulario ELIMNAR ruta
 =====================================*/
-  function MEliminarAsignacion(id){
+  function MEliminarRuta(id){
     $("#modal-default").modal("show")
   
     var obj = "";
     $.ajax({
       type: "POST",
-      url: "CAsignacion/FEliAsignacion/"+id,
+      url: "CRuta/FEliRuta/"+id,
       data: obj,
       success: function (data) {
         $("#content-default").html(data)
@@ -146,13 +144,13 @@ Modal formulario ELIMNAR Asignacion
     })
   }
 /*===================================
-ELIMINAR nuevo Asignacion
+ELIMINAR nuevo ruta
 =====================================*/
-function EliAsignacion(id){
+function EliRuta(id){
  var obj= ""
     $.ajax({
       type: "POST",
-      url: "CAsignacion/EliAsignacion/"+id,
+      url: "CRuta/EliRuta/"+id,
       data: obj,
       cache: false,
       contentType: false,

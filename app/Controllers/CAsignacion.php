@@ -69,9 +69,7 @@ class CAsignacion extends BaseController
         $id = $this->request->uri->getSegment(3);
 
         $data = array(
-            "asignacion" => $this->MAsignacion->InfoAsignacion($id),
-            'lista_conductor'=>$this->MConductor->findAll(),
-            'lista_camion'=>$this->MCamion->findAll()
+            "asignacion" => $this->MAsignacion->InfoAsignacion($id)
         );
         echo view("asignacion/MVerAsignacion", $data);
     }
@@ -84,7 +82,9 @@ class CAsignacion extends BaseController
         $id = $this->request->uri->getSegment(3);
 
         $data = array(
-            "asignacion" => $this->MAsignacion->InfoAsignacion($id)
+            "asignacion" => $this->MAsignacion->InfoAsignacion($id),
+            'lista_conductor'=>$this->MConductor->findAll(),
+            'lista_camion'=>$this->MCamion->findAll()
         );
         echo view("asignacion/FEditAsignacion", $data);
     }
@@ -93,23 +93,20 @@ class CAsignacion extends BaseController
     {
         $id = $this->request->uri->getSegment(3);
 
-        $placa = $_POST["placa"];
-        $clase = $_POST["clase"];
-        $capacidad = $_POST["capacidad"];
-        $chasis = $_POST["chasis"];
-        $ejes = $_POST["ejes"];
-        $marca = $_POST["marca"];
-        $color = $_POST["colorCamion"];
+        $asignacion = $_POST["asignacion"];
+        $fechaIni = $_POST["fechaIni"];
+        $fechaFin = $_POST["fechaFin"];
+        $conductorAsig = $_POST["conductorAsig"];
+        $placaAsig = $_POST["placaAsig"];
+        $estado = $_POST["estado"];
 
         $data = array(
-            "placa" => $placa,
-            "clase" => $clase,
-            "ejes" => $ejes,
-            "capacidad" => $capacidad,
-            "chasis" => $chasis,
-            "marca" => $marca,
-            "color" => $color
-
+            "nombre_asig" => $asignacion,
+            "fecha_asig" => $fechaIni,
+            "fecha_baja_asig" => $fechaFin,
+            "id_camion" => $placaAsig,
+            "id_conductor" => $conductorAsig,
+            "activo_asig" => $estado
         );
 
         $this->MAsignacion->update($id, $data);

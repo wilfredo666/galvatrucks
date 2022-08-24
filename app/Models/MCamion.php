@@ -11,7 +11,7 @@ class MCamion extends Model
 
     protected $returnType     = 'array';
 
-    protected $allowedFields = ['placa', 'clase', 'ejes', 'capacidad', 'chasis', 'marca', 'color', 'activo'];
+    protected $allowedFields = ['placa', 'clase', 'ejes', 'capacidad', 'chasis', 'marca', 'color', 'activo_cam'];
 
 
     public function InfoCamion($id)
