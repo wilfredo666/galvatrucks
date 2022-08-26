@@ -31,5 +31,14 @@ class MAsignacion extends Model
         $resultado=$this->findAll();
         return $resultado;
     }
+  
+  public function ListaAsignaciones()
+    {
+        $this->select("id_asignacion, nombre_cond, placa");
+        $this-> join("conductor",'conductor.id_conductor=asignacion.id_conductor');
+        $this-> join("camion",'camion.id_camion=asignacion.id_camion');
+        $resultado = $this->findAll();
+        return $resultado;
+    }
 
 }

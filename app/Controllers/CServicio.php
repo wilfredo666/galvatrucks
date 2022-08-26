@@ -41,7 +41,7 @@ class CServicio extends BaseController
         $data = array(
             'cliente' => $this->MCliente->findAll(),
             'empMaritima' => $this->MEmpresaMaritima->findAll(),
-            'asignacion' => $this->MAsignacion->findAll(),
+            'asignacion' => $this->MAsignacion->ListaAsignaciones(),
             'contratoCam' => $this->MContratoCamion->findAll(),
             'ruta' => $this->MRuta->findAll()
         );

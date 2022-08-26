@@ -115,13 +115,13 @@
                 <div class="row">
                     <div class="form-group col-md-4">
                         <label>Conductor Asignado</label>
-                        <select name="conductorAsig" id="conductorAsig" class="form-control ">
+                        <select name="conductorAsig" id="conductorAsig" class="form-control">
                             <option value="">-- Seleccionar --</option>
                             <?php
                             foreach ($asignacion as $asig) {
                                 $idAsig = $asig['id_asignacion'];
-                                $nomCond = $asig['id_conductor'];
-                                $placa = $asig['id_camion'];
+                                $nomCond = $asig['nombre_cond'];
+                                $placa = $asig['placa'];
                             ?>
                                 <option value="<?php echo $idAsig ?>"><?php echo $nomCond . " - " . $placa ?></option>
                             <?php
