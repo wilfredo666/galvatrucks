@@ -10,7 +10,7 @@
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>NRO DE CONTRATO</th>
+                        <th>CÓD. DE CONTRATO</th>
                         <th>INICIO DE CONTRATO</th>
 
                         <th>PLACA</th>

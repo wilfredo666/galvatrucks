@@ -10,22 +10,7 @@
     <form id="FNuevoAsignacion">
         <div class="card-body">
             <div class="container">
-                <div class="row">
-                    <div class="form-group col-md-4">
-                        <label>Cod. Asignación <span class="text-danger"> *</span></label>
-                        <input type="text" class="form-control" id="asignacion" name="asignacion" readonly>
-                        <p class="text-danger" id="error-asignacion"></p>
-                    </div>
-                    <div class="form-group col-md-4">
-                        <label>Fecha de Asignación <span class="text-danger"> *</span></label>
-                        <input type="date" class="form-control" id="fechaIni" name="fechaIni">
-                        <p class="text-danger" id="error-fechaIni"></p>
-                    </div>
-                    <div class="form-group col-md-4">
-                        <label>Fecha Conclusión de Asig.<span class="text-primary"> °</span></label>
-                        <input type="date" class="form-control" id="fechaFin" name="fechaFin">
-                    </div>
-                </div>
+
                 <div class="row">
                     <div class="form-group col-md-8">
                         <label>Coductor <span class="text-danger"> *</span></label>
@@ -52,14 +37,30 @@
                                 $idCam = $camion['id_camion'];
                                 $placa = $camion['placa'];
                             ?>
-                                <option value="<?php echo $idCam?>"><?php echo $placa?></option>
+                                <option value="<?php echo $idCam ?>"><?php echo $placa ?></option>
                             <?php
                             }
                             ?>
                         </select>
                     </div>
                 </div>
-                <p class="font-italic text-danger" style="padding-bottom: 0%;">Nota: - (*) Llenar de manera Obligatoria <br> - (°) Llenar, solo si se tiene la fecha de Conclusión</p>    
+                <div class="row">
+                    <div class="form-group col-md-4">
+                        <label>Fecha de Asignación <span class="text-danger"> *</span></label>
+                        <input type="date" class="form-control" id="fechaIni" name="fechaIni">
+                        <p class="text-danger" id="error-fechaIni"></p>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label>Fecha Conclusión de Asig.<span class="text-primary"> °</span></label>
+                        <input type="date" class="form-control" id="fechaFin" name="fechaFin">
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label>Código de Asignación <span class="text-danger"> *</span></label>
+                        <input type="text" class="form-control" id="asignacion" name="asignacion" readonly>
+                        <p class="text-danger" id="error-asignacion"></p>
+                    </div>
+                </div>
+                <p class="font-italic text-danger" style="padding-bottom: 0%;">Nota: - (*) Llenar de manera Obligatoria <br> - (°) Llenar, solo si se tiene la fecha de Conclusión</p>
             </div>
         </div>
         <!-- /.card-body -->

@@ -17,7 +17,11 @@ function MNuevoServicio(){
   Modal formulario nuevo SERVICIO
   =====================================*/
   function RegServicio() {
+
     let form = new FormData($("#FNuevoServicio")[0])
+   /*  let form1 = new FormData($("#FNuevoServicio1")[0])
+    let form2 = new FormData($("#FNuevoServicio2")[0])
+    let form3 = new FormData($("#FNuevoServicio3")[0]) */
 
  /*    let placa=document.getElementById("placa").value
     let clase = document.getElementById("clase").selectedIndex;
@@ -37,6 +41,7 @@ function MNuevoServicio(){
         type: "POST",
         url: "CServicio/RegServicio",
         data: form,
+    /*     data: form1,form2,form3, */
         cache: false,
         contentType: false,
         processData: false,

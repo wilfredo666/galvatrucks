@@ -11,14 +11,13 @@
         <div class="card-body">
 
             <div class="row">
-                <div class="form-group col-md-6">
-                    <label>Nro de Contrato</label>
-                    <input type="text" class="form-control" id="nomContrato" name="nomContrato">
-                    <p class="text-danger" id="error-nomContrato"></p>
+            <div class="form-group col-md-6">
+                    <label>Propietario de Camión / Celular</label>
+                    <input type="text" class="form-control" id="propietario" name="propietario" onchange="codigoContrato()">
                 </div>
                 <div class="form-group col-md-6">
                     <label>Placa</label>
-                    <input type="text" class="form-control" id="placaCon" name="placaCon">
+                    <input type="text" class="form-control" id="placaCon" name="placaCon" onchange="codigoContrato()">
                     <p class="text-danger" id="error-placaCon"></p>
                 </div>
             </div>
@@ -35,12 +34,13 @@
             </div>
             <div class="row">
                 <div class="form-group col-md-6">
-                    <label>Propietario de Camión / Celular</label>
-                    <input type="text" class="form-control" id="propietario" name="propietario">
-                </div>
-                <div class="form-group col-md-6">
                     <label>Observaciones</label>
                     <input type="text" class="form-control" id="obsCon" name="obsCon">
+                </div>
+                <div class="form-group col-md-6">
+                    <label>Código de Contrato</label>
+                    <input type="text" class="form-control" id="nomContrato" name="nomContrato" readonly>
+                    <p class="text-danger" id="error-nomContrato"></p>
                 </div>
             </div>
 

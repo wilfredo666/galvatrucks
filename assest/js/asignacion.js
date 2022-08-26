@@ -20,20 +20,20 @@ function MNuevoAsignacion() {
   function RegAsignacion() {
     let form = new FormData($("#FNuevoAsignacion")[0])
 
-    let asignacion=document.getElementById("asignacion").value
-    /* let clase = document.getElementById("clase").selectedIndex;
-    let capacidad = document.getElementById("capacidad").selectedIndex; */
+ /*    let asignacion=document.getElementById("asignacion").value
+     let clase = document.getElementById("clase").selectedIndex;
+    let capacidad = document.getElementById("capacidad").selectedIndex; 
 
     if(!(/^Asig\-\w{4}$/.test(asignacion))){
       document.getElementById("error-asignacion").innerHTML="Llene la placa en este formato: Ejm. 'Asig-0001' "
     }
-    /* else if(clase == null || clase == 0){
+     else if(clase == null || clase == 0){
       document.getElementById("error-clase").innerHTML="Debes seleccionar una clase para este camión"
     }else if(capacidad == null || capacidad == 0){
       document.getElementById("error-capacidad").innerHTML="Seleccione la capacidad de carga para el camión"
-    } */
+    } 
 
-    else{
+    else{ */
       $.ajax({
         type: "POST",
         url: "CAsignacion/RegAsignacion",
@@ -54,7 +54,7 @@ function MNuevoAsignacion() {
         }
       })
     }
-  }
+  
 /*===================================
 Modal formulario VER Asignacion
 =====================================*/
@@ -94,9 +94,9 @@ EDITAR nuevo Asignacion
   function EditAsignacion(id){
     let form = new FormData($("#FEditAsignacion")[0])
 
-    let asignacion=document.getElementById("asignacion").value
-    /* let clase = document.getElementById("clase").selectedIndex;
-    let capacidad = document.getElementById("capacidad").selectedIndex; */
+/*     let asignacion=document.getElementById("asignacion").value
+    let clase = document.getElementById("clase").selectedIndex;
+    let capacidad = document.getElementById("capacidad").selectedIndex; 
 
     if(!(/^Asig\-\w{4}$/.test(asignacion))){
       document.getElementById("error-asignacion").innerHTML="Llene la placa en este formato: Ejm. 'Asig-0001' "
@@ -105,9 +105,9 @@ EDITAR nuevo Asignacion
       document.getElementById("error-clase").innerHTML="Debes seleccionar una clase para este camión"
     }else if(capacidad == null || capacidad == 0){
       document.getElementById("error-capacidad").innerHTML="Seleccione la capacidad de carga para el camión"
-    } */
+    } 
 
-    else{
+    else{ */
       $.ajax({
         type: "POST",
         url: "CAsignacion/EditAsignacion/"+id,
@@ -128,7 +128,7 @@ EDITAR nuevo Asignacion
         }
       })
     }
-  }
+  
 /*===================================
 Modal formulario ELIMNAR Asignacion
 =====================================*/
@@ -176,8 +176,9 @@ function codAsignacion(){
   /*nombre conductor*/
   let idConductor=document.getElementById("conductorAsig")
   let nomConductor=idConductor.options[idConductor.selectedIndex].text
+  
   let arrayNombre=nomConductor.split(" ")
-  let nombre=arrayNombre[0]+arrayNombre[1]
+  let nombre=arrayNombre[0]+"-"+arrayNombre[1]
   /*placa camion*/
   let idCamion=document.getElementById("placaAsig")
   let placa=idCamion.options[idCamion.selectedIndex].text

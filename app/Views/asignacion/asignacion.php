@@ -14,7 +14,7 @@
         <thead>
           <tr>
             <th>ID</th>
-            <th>ASIGNACIÓN</th>
+            <th>CÓDIGO DE ASIGNACIÓN</th>
             <th>FECHA DE ASIGNACIÓN</th>
             <th>CONDUCTOR</th>
             <th>ESTADO</th>

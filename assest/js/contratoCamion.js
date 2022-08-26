@@ -20,17 +20,17 @@ function MNuevoContratoCam() {
   function RegContratoCam() {
     let form = new FormData($("#FNuevoContratoCam")[0])
 
-    let nomContrato=document.getElementById("nomContrato").value
+/*     let nomContrato=document.getElementById("nomContrato").value */
     let placaCon=document.getElementById("placaCon").value
     let fechaIni=document.getElementById("fechaIni").value
   
-    if(nomContrato == null || nomContrato.length == 0){
+    /* if(nomContrato == null || nomContrato.length == 0){
       document.getElementById("error-nomContrato").innerHTML="El campo Nombre del Cotrato no puede estar vacio"
     }
     else if(!(/^GALVA\-\d/g.test(nomContrato))){
       document.getElementById("error-nomContrato").innerHTML="Inicie con el prefijo: Ejm. 'GALVA-0001' "
     }
-    else if(!(/^\d{3,4}[-]\w{3}$/.test(placaCon))){
+    else */ if(!(/^\d{3,4}[-]\w{3}$/.test(placaCon))){
       document.getElementById("error-placaCon").innerHTML="Llene la placa en este formato: Ejm. '2452-DSE' "
     }
     else if(fechaIni == null || fechaIni.length == 0){
@@ -98,17 +98,17 @@ EDITAR Contrato de Camion
   function EditContratoCam(id){
     let form = new FormData($("#FEditContratoCam")[0])
 
-    let nomContrato=document.getElementById("nomContrato").value
+  /*   let nomContrato=document.getElementById("nomContrato").value */
     let placaCon=document.getElementById("placaCon").value
     let fechaIni=document.getElementById("fechaIni").value
   
-    if(nomContrato == null || nomContrato.length == 0){
+    /* if(nomContrato == null || nomContrato.length == 0){
       document.getElementById("error-nomContrato").innerHTML="El campo Nombre del Cotrato no puede estar vacio"
     }
     else if(!(/^GALVA\-\d/g.test(nomContrato))){
       document.getElementById("error-nomContrato").innerHTML="Inicie con el prefijo: Ejm. 'GALVA-0001' "
     }
-    else if(!(/^\d{3,4}[-]\w{3}$/.test(placaCon))){
+    else */ if(!(/^\d{3,4}[-]\w{3}$/.test(placaCon))){
       document.getElementById("error-placaCon").innerHTML="Llene la placa en este formato: Ejm. '2452-DSE' "
     }
     else if(fechaIni == null || fechaIni.length == 0){
@@ -178,4 +178,21 @@ function EliContratoCam(id){
           },1200)
     }
   })
+}
+
+function codigoContrato(){
+  let placaCon = document.getElementById("placaCon").value
+  let propietario = document.getElementById("propietario").value
+
+  let arrayPropietario=propietario.split(" ")
+  let nombre=arrayPropietario[0]+" "+arrayPropietario[1]
+  /* let placa=placaCon.options[placaCon.selectedIndex].text */
+
+/*   const fill = (number, len) =>
+  "0".repeat(len - number.toString().length) + number.toString(); */
+
+  let codCon =nombre+"_"+placaCon
+  /* console.log(codAsig) */
+  document.getElementById("nomContrato").value=codCon 
+   
 }
