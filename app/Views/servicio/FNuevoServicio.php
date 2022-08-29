@@ -114,16 +114,17 @@
 
                 <div class="row">
                     <div class="form-group col-md-4">
-                        <label>Conductor Asignado</label>
-                        <select name="conductorAsig" id="conductorAsig" class="form-control">
+                        <label>Conductor Asignado / Placa</label>
+                        <select name="conductorAsig" id="conductorAsig" class="form-control"  onchange="SeleccionServicio()">
                             <option value="">-- Seleccionar --</option>
                             <?php
                             foreach ($asignacion as $asig) {
                                 $idAsig = $asig['id_asignacion'];
                                 $nomCond = $asig['nombre_cond'];
+                                $apCond = $asig['apellido_cond'];
                                 $placa = $asig['placa'];
                             ?>
-                                <option value="<?php echo $idAsig ?>"><?php echo $nomCond . " - " . $placa ?></option>
+                                <option value="<?php echo $idAsig ?>"><?php echo $nomCond . $apCond . " - " . $placa ?></option>
                             <?php
                             }
                             ?>
@@ -131,7 +132,7 @@
                     </div>
                     <div class="form-group col-md-4">
                         <label>Contrato Camión</label>
-                        <select name="contratoCam" id="contratoCam" class="form-control ">
+                        <select name="contratoCam" id="contratoCam" class="form-control" onchange="SeleccionServicio()">
                             <option value="">-- Seleccionar --</option>
                             <?php
                             foreach ($contratoCam as $contrato) {

@@ -12,10 +12,9 @@
       <table id="DataTableCamion" class="table table-bordered table-striped">
         <thead>
           <tr>
-            <th>ID</th>
             <th>COD. SERVICIO</th>
             <th>NOMBRE CLIENTE</th>
-            <th>NAVIERA</th>
+<!--             <th>NAVIERA</th> -->
             <th>NRO BL/BILL</th>
             <th>FECHA ARRIBO</th>
             <th>ESTADO</th>
@@ -33,10 +32,9 @@
             $estadoServicio = $lista['activo_serv'];
           ?>
             <tr>
-              <td><?php echo $idServicio; ?></td>
               <td><?php echo $codServicio; ?></td>
               <td><?php echo $cli; ?></td>
-              <td><?php echo $naviera; ?></td>
+             
               <td><?php echo $nroBl; ?></td>
               <td><?php echo $fechaArribo; ?></td>
 

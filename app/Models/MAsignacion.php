@@ -34,7 +34,7 @@ class MAsignacion extends Model
   
   public function ListaAsignaciones()
     {
-        $this->select("id_asignacion, nombre_cond, placa");
+        $this->select("id_asignacion, nombre_cond, apellido_cond, placa");
         $this-> join("conductor",'conductor.id_conductor=asignacion.id_conductor');
         $this-> join("camion",'camion.id_camion=asignacion.id_camion');
         $resultado = $this->findAll();

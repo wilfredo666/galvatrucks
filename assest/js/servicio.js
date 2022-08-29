@@ -174,3 +174,19 @@ function EliServicio(id){
       }
     })
 }
+/*===================================
+Seleccion de Contrato O Asignación
+=====================================*/
+function SeleccionServicio(){
+  let asignacion = document.getElementById("conductorAsig").value
+  let contrato = document.getElementById("contratoCam").value
+
+  if(asignacion != 0){
+    document.getElementById("contratoCam").disabled=true
+   /*  document.getElementById("contratoCam").value="" */
+  } 
+  if(contrato != 0){
+    document.getElementById("conductorAsig").disabled=true
+    document.getElementById("contratoCam").disabled=false
+  } 
+}
