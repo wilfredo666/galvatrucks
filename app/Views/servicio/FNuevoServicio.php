@@ -74,7 +74,7 @@
                     </div>
                     <div class="form-group col-md-2">
                         <label>Tamaño Contenedor</label>
-                        <select name="tamañoCont" id="tamañoCont" class="form-control">
+                        <select name="tamCont" id="tamCont" class="form-control">
                             <option value="">-- Seleccionar --</option>
                             <option value="1x20">1x20</option>
                             <option value="1x40">1x40</option>
@@ -116,7 +116,7 @@
                     <div class="form-group col-md-4">
                         <label>Conductor Asignado / Placa</label>
                         <select name="conductorAsig" id="conductorAsig" class="form-control"  onchange="SeleccionServicio()">
-                            <option value="">-- Seleccionar --</option>
+                            <option value=0>-- Seleccionar --</option>
                             <?php
                             foreach ($asignacion as $asig) {
                                 $idAsig = $asig['id_asignacion'];
@@ -133,7 +133,7 @@
                     <div class="form-group col-md-4">
                         <label>Contrato Camión</label>
                         <select name="contratoCam" id="contratoCam" class="form-control" onchange="SeleccionServicio()">
-                            <option value="">-- Seleccionar --</option>
+                            <option value=0>-- Seleccionar --</option>
                             <?php
                             foreach ($contratoCam as $contrato) {
                                 $idContrato = $contrato['id_contrato_camion'];

@@ -183,10 +183,13 @@ function SeleccionServicio(){
 
   if(asignacion != 0){
     document.getElementById("contratoCam").disabled=true
-   /*  document.getElementById("contratoCam").value="" */
-  } 
+  }else{
+    document.getElementById("contratoCam").disabled=false
+  }
+  
   if(contrato != 0){
     document.getElementById("conductorAsig").disabled=true
-    document.getElementById("contratoCam").disabled=false
+  }else{
+     document.getElementById("conductorAsig").disabled=false
   } 
 }

@@ -14,7 +14,7 @@ class Home extends BaseController
   public function acceso()
   {
     $MUsuario = new MUsuario();
-    
+
     // Validamos los campos de usuario
     if (!$this->validate(
       [
@@ -45,9 +45,9 @@ class Home extends BaseController
 
     if (sizeof($consulta) > 0 && password_verify($password, $consulta['pass_usuario'])) {
       //DESCOMENTAR
-      // $session = session();
-      // $session->set($data);
-
+      $session = session();
+      $session->set($consulta);
+      
       echo view('header');
       echo view('panel_principal');
       echo view('footer');

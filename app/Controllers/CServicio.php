@@ -56,7 +56,7 @@ class CServicio extends BaseController
         $servIni = $_POST["servIni"];
         $nroBill = $_POST["nroBill"];
         $nroCont = $_POST["nroCont"];
-        $tamañoCont = $_POST["tamañoCont"];
+        $tamCont = $_POST["tamCont"];
         $pesoMerc = $_POST["pesoMerc"];
         $detalleMerc = $_POST["detalleMerc"];
         $origenMerc = $_POST["origenMerc"];
@@ -84,7 +84,7 @@ class CServicio extends BaseController
             "fecha_inicio_servicio" => $servIni,
             "num_bill" => $nroBill,
             "nro_contenedor" => $nroCont,
-            "medida_contenedor" => $tamañoCont,
+            "medida_contenedor" => $tamCont,
             "peso_mercaderia" => $pesoMerc,
             "detalle_mercaderia" => $detalleMerc,
             "origen_mercaderia" => $origenMerc,
