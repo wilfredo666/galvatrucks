@@ -23,7 +23,7 @@ class Home extends BaseController
       ]
     )) {
       //DESCOMENTAR
-      // return redirect()->to(base_url('/'))->with("errors", $this->validator->getErrors());
+      return redirect()->to(base_url('/'))->with("errors", $this->validator->getErrors());
     }
 
     $usuario = $_POST["usuario"];
@@ -39,11 +39,11 @@ class Home extends BaseController
     $consulta = $MUsuario->acceso($data);
     /*para cuando nos da un nulo */
     //DESCOMENTAR 3 LINEAS
-    // if ($consulta == null || password_verify( $password,$consulta['pass_usuario'])==false) {
-    //   return redirect()->to(base_url('/'))->with("errors", ["credenciales" => "Credenciales de acceso inválidas"]);
-    // }
+    if ($consulta == null || password_verify( $password,$consulta['pass_usuario'])==false) {
+      return redirect()->to(base_url('/'))->with("errors", ["credenciales" => "Credenciales de acceso inválidas"]);
+     }
 
-    if (sizeof($consulta) > 0 && password_verify($password, $consulta['pass_usuario'])) {
+    if (sizeof($consulta) > 0 && password_verify($password, $consulta['pass_usuario'])) { 
       //DESCOMENTAR
       $session = session();
       $session->set($consulta);
@@ -60,8 +60,8 @@ FUNCION SALIR
   {
     /*Descomentar estas dos lineas para destruir sessiones */
     //DESCOMENTAR
-    // $session = session();
-    // $session->destroy();
+    $session = session();
+    $session->destroy();
     return redirect()->to(base_url('/'));
   }
 }

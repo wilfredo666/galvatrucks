@@ -67,7 +67,9 @@ class Filters extends BaseConfig
                 "/CConductor",
                 "/CContratoCamion",
                 "/CEmpresaMaritima",
-                "/CUsuario"
+                "/CUsuario",
+                "/CServicio",
+                "/CRuta"
             ]
             
         ]

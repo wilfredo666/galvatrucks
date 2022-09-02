@@ -20,54 +20,82 @@
         </thead>
         <tbody>
           <?php foreach ($conductor as $lista) {
-  $idCond = $lista['id_conductor'];
-  $nomCond = $lista['nombre_cond'];
-  $apellidoCond = $lista['apellido_cond'];
-  $ciCond = $lista['ci_cond'];
-  $categoriaCond = $lista['tipo_licencia'];
-  $fechaNac = $lista['fecha_nac_cond'];
-  $direccionCond = $lista['direccion_cond'];
-  $email = $lista['email_cond'];
-  $telefono = $lista['contacto_cond'];
-  $persContacto = $lista['persona_contacto_cond'];
-  $estadoCivil = $lista['estado_civil_cond'];
-  $cuentaBanc1 = $lista['num_cuenta_cond'];
-  $cuentaBanc2 = $lista['num_cuenta2_cond'];
-  $imagenCond = $lista['imagen_cond'];
+            $idCond = $lista['id_conductor'];
+            $nomCond = $lista['nombre_cond'];
+            $apellidoCond = $lista['apellido_cond'];
+            $ciCond = $lista['ci_cond'];
+            $categoriaCond = $lista['tipo_licencia'];
+            $fechaNac = $lista['fecha_nac_cond'];
+            $direccionCond = $lista['direccion_cond'];
+            $email = $lista['email_cond'];
+            $telefono = $lista['contacto_cond'];
+            $persContacto = $lista['persona_contacto_cond'];
+            $estadoCivil = $lista['estado_civil_cond'];
+            $cuentaBanc1 = $lista['num_cuenta_cond'];
+            $cuentaBanc2 = $lista['num_cuenta2_cond'];
+            $imagenCond = $lista['imagen_cond'];
 
           ?>
-          <tr>
-            <td><?php echo  $idCond; ?></td>
-            <td><?php echo  $nomCond; ?></td>
-            <td><?php echo  $apellidoCond; ?></td>
-            <td><?php echo  $ciCond; ?></td>
-            <td><?php echo  $categoriaCond; ?></td>
-            <td><?php echo  $telefono; ?></td>
-            <?php if($imagenCond==""){
-            ?>
-            <td><img src="<?php echo base_url();?>/assest/img/conductor/img-conductor-default.png" style="width:70px;"></td>
-            <?php
-          }else{
-            ?>
-            <td><img src="<?php echo base_url();?>/assest/img/conductor/<?php echo $imagenCond;?>" style="width:70px;"></td>
-            <?php
-          }
-            ?>
+            <tr>
+              <td><?php echo  $idCond; ?></td>
+              <td><?php echo  $nomCond; ?></td>
+              <td><?php echo  $apellidoCond; ?></td>
+              <td><?php echo  $ciCond; ?></td>
+              <td><?php echo  $categoriaCond; ?></td>
+              <td><?php echo  $telefono; ?></td>
+              <?php if ($imagenCond == "") {
+              ?>
+                <td><img src="<?php echo base_url(); ?>/assest/img/conductor/img-conductor-default.png" style="width:70px;"></td>
+              <?php
+              } else {
+              ?>
+                <td><img src="<?php echo base_url(); ?>/assest/img/conductor/<?php echo $imagenCond; ?>" style="width:70px;"></td>
+              <?php
+              }
+              ?>
 
-            <td class="text-center">
-              <div>
-                <button class="btn btn-info btn-circle" onclick="MVerConductor(<?php echo  $idCond; ?>)">
-                  <i class="fas fa-eye"></i>
-                </button>
-                <button class="btn btn-warning btn-circle" onclick="MEditarConductor(<?php echo  $idCond; ?>)">
-                  <i class="fas fa-edit"></i>
-                </button>
-                <button class="btn btn-danger btn-circle" onclick="MEliminarConductor(<?php echo  $idCond; ?>)">
-                  <i class="fas fa-trash-alt"></i>
-                </button>
-              </div>
-            </td>
-          </tr>
+              <td class="text-center">
+                <div>
+
+                  <!-- <button class="btn btn-info btn-circle" onclick="MVerConductor(<?php echo  $idCond; ?>)">
+                    <i class="fas fa-eye"></i>
+                  </button>
+                  <button class="btn btn-warning btn-circle" onclick="MEditarConductor(<?php echo  $idCond; ?>)">
+                    <i class="fas fa-edit"></i>
+                  </button>
+                  <button class="btn btn-danger btn-circle" onclick="MEliminarConductor(<?php echo  $idCond; ?>)">
+                    <i class="fas fa-trash-alt"></i>
+                  </button> -->
+
+
+                  <!-- Custom Tabs -->
+
+
+                  <ul class="nav nav-pills ml-auto p-2 col-md-12 ">
+
+                    <li class="nav-item dropdown ">
+                      <a class="nav-link dropdown-toggle btn-info" data-toggle="dropdown" href="#" style="color: #fff;">
+                        Acción<span class="caret"></span>
+                      </a>
+                      <div class="dropdown-menu ">
+                        <button class="btn btn-info btn-circle dropdown-item" tabindex="-1" onclick="MVerConductor(<?php echo  $idCond; ?>)">
+                          <i class="fas fa-eye"></i> Ver
+                        </button>
+                        <button class="btn btn-warning btn-circle dropdown-item" tabindex="-1" onclick="MEditarConductor(<?php echo  $idCond; ?>)">
+                          <i class="fas fa-edit"></i> Editar
+                        </button>
+                        <button class="btn btn-danger btn-circle dropdown-item" tabindex="-1" onclick="MEliminarConductor(<?php echo  $idCond; ?>)">
+                          <i class="fas fa-trash-alt"></i> Eliminar
+                        </button>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item " tabindex="-1" href="#">Servicios Realizados</a>
+                      </div>
+                    </li>
+                  </ul>
+
+
+              </td>
+            </tr>
           <?php } ?>
         </tbody>
       </table>

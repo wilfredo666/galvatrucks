@@ -13,11 +13,11 @@ class acceso implements FilterInterface
     {
         // Do something here
         //DESCOMENTAR
-        // if(session("usuario")==null){
-        //     return redirect()->to(base_url('/'))->with('errors',["credenciales"=>"No ha iniciado sesión"])
+        if(session("nombre_usuario")==null){
+            return redirect()->to(base_url('/'))->with('errors',["credenciales"=>"No ha iniciado sesión"])
  
-        //     ;
-        // }
+            ;
+        }
     }
 
     public function after(RequestInterface $request, ResponseInterface $response, $arguments = null)

@@ -40,7 +40,7 @@
             </div>
           </div>
           <!-- //DESCOMENTAR Y ANTES DEL = FALTA ?-->
-          <!-- <p class="text-danger"><=session("errors.usuario") ?></p> -->
+          <p class="text-danger"><?=session("errors.usuario") ?></p>
           <div class="input-group mb-3">
             <input type="password" class="form-control" placeholder="Ingrese su contraseña" id="password" name="password">
             <div class="input-group-append">
@@ -50,7 +50,7 @@
             </div>
           </div>
            <!-- //DESCOMENTAR Y ANTES DEL = FALTA ?-->
-          <!-- <p class="text-danger"><=session("errors.password")?></p> -->
+          <p class="text-danger"><?=session("errors.password")?></p>
           <div class="row">
             <div class="col-3">
 
@@ -67,7 +67,7 @@
         </form>
         <!-- poner ?=session("errors.credenciales) -->
          <!-- //DESCOMENTAR Y ANTES DEL = FALTA ?-->
-        <!-- <p class="text-danger font-italic"><=session("errors.credenciales")?></p> -->
+        <p class="text-danger font-italic"><?=session("errors.credenciales")?></p>
         
       </div>
       <!-- /.login-card-body -->
