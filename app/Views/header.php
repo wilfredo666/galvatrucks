@@ -146,7 +146,7 @@ with font-awesome or any other icon font library -->
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="<?php echo base_url(); ?>/CConductor/repConductor" class="nav-link">
                       <i class="nav-icon far fa-circle text-warning"></i>
                       <p>Reporte por Conductor</p>
                     </a>

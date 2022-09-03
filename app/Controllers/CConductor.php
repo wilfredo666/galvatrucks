@@ -154,4 +154,16 @@ class CConductor extends BaseController
     $id = $this->request->uri->getSegment(3);
     $this->MConductor->delete($id);
   }
+
+  /*Reportes de servicio por conductor */
+  public function repConductor()
+  {
+    $data = array(
+      "conductor" => $this->MConductor->findAll()
+    );
+
+    echo view('header');
+    echo view('conductor/repConductor', $data);
+    echo view('footer');
+  }
 }
