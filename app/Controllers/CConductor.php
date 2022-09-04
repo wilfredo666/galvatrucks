@@ -171,23 +171,34 @@ class CConductor extends BaseController
 
   public function reporteCond()
   {
-    
 
-    /* var_dump($id);  */
-    $nomConductor = $_POST["conductor"];
+    $id = $_POST["conductor"];
     $fechaDesde = $_POST["fechaDesde"];
     $fechaHasta = $_POST["fechaHasta"];
 
-  /*   echo $_POST["conductor"];
+    $sql=array(
+      "idConductor"=>$id,
+      "fechaDesde"=>$fechaDesde,
+      "fechaHasta"=>$fechaHasta
+    );
+
+
+    $data = array(
+      "conductor" => $this->MConductor->InfoConductor($id),
+      "servicios" => $this->MServicio->InfoServConductor($sql)
+    );
+    
+    var_dump($data["servicios"]);
+    
+    /*   echo $_POST["conductor"];
     echo ($fechaDesde);
     echo ($fechaHasta); */
 
     /* $id = $this->request->uri->getSegment(3);*/
- 
-    $data = array(
-      "conduc" => $this->MServicio->InfoCond($nomConductor)
+
+    /*
     );
-       var_dump($data); 
+       var_dump($data); */
     /* echo view("conductor/repConductor", $data);   */
   }
 }
