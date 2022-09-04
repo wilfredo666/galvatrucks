@@ -188,17 +188,6 @@ class CConductor extends BaseController
       "servicios" => $this->MServicio->InfoServConductor($sql)
     );
     
-    var_dump($data["servicios"]);
     
-    /*   echo $_POST["conductor"];
-    echo ($fechaDesde);
-    echo ($fechaHasta); */
-
-    /* $id = $this->request->uri->getSegment(3);*/
-
-    /*
-    );
-       var_dump($data); */
-    /* echo view("conductor/repConductor", $data);   */
   }
 }
