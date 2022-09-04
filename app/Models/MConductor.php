@@ -21,4 +21,19 @@ class MConductor extends Model
         $resultado = $this->first();
         return $resultado;
     }
+
+    /* public function InfoCond($nomConductor)
+    {
+        $this->select("*");
+
+        $this->from("servicio");
+
+        $this-> join("ruta",'ruta.id_ruta=servicio.id_ruta');
+        $this-> join("asignacion",'asignacion.id_asignacion=servicio.id_asignacion'); 
+
+        $this->where("id_servicio", $nomConductor);
+        $resultado = $this->first();
+        return $resultado;
+    }
+ */
 }

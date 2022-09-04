@@ -182,3 +182,26 @@ function EliConductor(id){
     }
   })
 }
+
+function reporteConductor(){
+  let idConductor=document.getElementById("conductor")
+  let nomConductor=idConductor.options[idConductor.selectedIndex].text
+  let fechaDesde=document.getElementById("fechaDesde").value
+  let fechaHasta=document.getElementById("fechaHasta").value
+
+  let form = new FormData($("#ReporteConductor")[0])
+
+  $.ajax({
+    type: "POST",
+    url: "reporteCond",
+    data: form,
+    cache: false,
+    contentType: false,
+    processData: false,
+    success: function (data) {
+      console.log(data)
+      /* console.log(nomConductor,fechaDesde,fechaHasta) */
+     
+    }
+  })
+}

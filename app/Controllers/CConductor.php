@@ -3,12 +3,14 @@
 namespace App\Controllers;
 
 use App\Models\MConductor;
+use App\Models\MServicio;
 
 class CConductor extends BaseController
 {
   public function __construct()
   {
     $this->MConductor = new MConductor();
+    $this->MServicio = new MServicio();
   }
 
   public function index()
@@ -165,5 +167,27 @@ class CConductor extends BaseController
     echo view('header');
     echo view('conductor/repConductor', $data);
     echo view('footer');
+  }
+
+  public function reporteCond()
+  {
+    
+
+    /* var_dump($id);  */
+    $nomConductor = $_POST["conductor"];
+    $fechaDesde = $_POST["fechaDesde"];
+    $fechaHasta = $_POST["fechaHasta"];
+
+  /*   echo $_POST["conductor"];
+    echo ($fechaDesde);
+    echo ($fechaHasta); */
+
+    /* $id = $this->request->uri->getSegment(3);*/
+ 
+    $data = array(
+      "conduc" => $this->MServicio->InfoCond($nomConductor)
+    );
+       var_dump($data); 
+    /* echo view("conductor/repConductor", $data);   */
   }
 }

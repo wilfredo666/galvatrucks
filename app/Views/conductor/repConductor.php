@@ -6,7 +6,7 @@
 
     <div class="modal-body" style="padding-bottom: 0;">
         <div class="card">
-            <form id="">
+            <form id="ReporteConductor">
                 <div class="card-body" style="padding-bottom: 0;">
                     <div class="container col-md-12">
                         <div class="row">
@@ -20,7 +20,7 @@
                                         $nomCond = $cond['nombre_cond'];
                                         $apellidoCond = $cond['apellido_cond'];
                                     ?>
-                                        <option value="<?php echo $idCond?>"> <?php echo $nomCond ." ".$apellidoCond?> </option>
+                                        <option value="<?php echo $idCond ?>"> <?php echo $nomCond . " " . $apellidoCond ?> </option>
                                     <?php
                                     }
                                     ?>
@@ -34,13 +34,12 @@
                             <div class="form-group col-md-2">
                                 <label>Fecha hasta:</label>
                                 <input type="date" class="form-control" id="fechaHasta" name="fechaHasta">
-                              <!--   max="<?php echo date("Y-m-d");?>" -->
                             </div>
                             <div class="form-group col-md-3" style=" display: flex; align-items: center;">
-                                <button class="btn btn-navbar btn-app bg-warning ">
+                                <button type="button" class="btn btn-navbar btn-app bg-warning" onclick="reporteConductor();">
                                     <i class="fas fa-search "></i>
                                 </button>
-                                <button class="btn btn-navbar  btn-app bg-primary">
+                                <button type="button" class="btn btn-navbar  btn-app bg-primary">
                                     <i class="fas fa-print"></i>
                                 </button>
                             </div>
@@ -48,6 +47,7 @@
                     </div>
                 </div>
             </form>
+
         </div>
     </div>
 
@@ -56,7 +56,7 @@
     <section class="content">
 
         <div class="container-fluid">
-            <table id="" class="table table-bordered table-striped">
+            <table id="Tabla2" class="table table-bordered table-striped">
                 <thead class="thead-dark">
                     <tr>
                         <th>COD. SERVICIO</th>
@@ -70,17 +70,19 @@
                 </thead>
                 <tbody>
                     <?php foreach ($conductor as $lista) {
-
+                        $idCond = $lista["id_conductor"];
+                        $nombreCond = $lista["nombre_cond"];
 
                     ?>
                         <tr>
-                            <td>a</td>
-                            <td>b</td>
-                            <td>c</td>
-                            <td>d</td>
-                            <td>e</td>
-                            <td>f</td>
-                            
+                            <td><?php echo $idCond ?></td>
+                            <td><?php echo $nombreCond ?></td>
+                            <td><?php echo $nombreCond ?></td>
+                            <td><?php echo $nombreCond ?></td>
+                            <td><?php echo $nombreCond ?></td>
+                            <td><?php echo $nombreCond ?></td>
+
+
                         </tr>
                     <?php } ?>
                 </tbody>

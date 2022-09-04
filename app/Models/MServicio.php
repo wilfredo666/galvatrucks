@@ -16,22 +16,37 @@ class MServicio extends Model
     public function InfoServicio($id)
     {
         $this->select("*");
-        $this-> join("cliente",'cliente.id_cliente=servicio.id_cliente');
-        $this-> join("empresa_maritima",'empresa_maritima.id_emp_maritima=servicio.id_emp_maritima');
-        $this-> join("ruta",'ruta.id_ruta=servicio.id_ruta');
-        $this-> join("asignacion",'asignacion.id_asignacion=servicio.id_asignacion');
+        $this->join("cliente", 'cliente.id_cliente=servicio.id_cliente');
+        $this->join("empresa_maritima", 'empresa_maritima.id_emp_maritima=servicio.id_emp_maritima');
+        $this->join("ruta", 'ruta.id_ruta=servicio.id_ruta');
+        $this->join("asignacion", 'asignacion.id_asignacion=servicio.id_asignacion');
         $this->where("id_servicio", $id);
         $resultado = $this->first();
         return $resultado;
     }
 
-    public function lista_consultas(){
+    public function lista_consultas()
+    {
         $this->select("*");
-        $this-> join("cliente",'cliente.id_cliente=servicio.id_cliente');
-        $this-> join("empresa_maritima",'empresa_maritima.id_emp_maritima=servicio.id_emp_maritima');
-         $this-> join("asignacion",'asignacion.id_asignacion=servicio.id_asignacion');
-        $this-> join("ruta",'ruta.id_ruta=servicio.id_ruta');
-        $resultado=$this->findAll();
+        $this->join("cliente", 'cliente.id_cliente=servicio.id_cliente');
+        $this->join("empresa_maritima", 'empresa_maritima.id_emp_maritima=servicio.id_emp_maritima');
+        $this->join("asignacion", 'asignacion.id_asignacion=servicio.id_asignacion');
+        $this->join("ruta", 'ruta.id_ruta=servicio.id_ruta');
+        $resultado = $this->findAll();
+        return $resultado;
+    }
+
+    /*para mostrar los datos de reporte por conductor */
+    public function InfoCond($nomConductor)
+    {
+        $this->select("*");
+
+        $this->join("ruta", 'ruta.id_ruta=servicio.id_ruta');
+        $this->join("asignacion", 'asignacion.id_asignacion=servicio.id_asignacion');
+
+        $this->where("asignacion.id_conductor", $nomConductor);
+        /* $this->where("asignacion.id_conductor", $nomConductor && "fecha_inicio_servicio" Between "$fechaDesde" and "$fechaHasta" ); */
+        $resultado = $this->findAll();
         return $resultado;
     }
 }
