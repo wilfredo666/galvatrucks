@@ -37,23 +37,14 @@ class MServicio extends Model
   }
 
   /*para mostrar los datos de reporte por conductor */
-  public function InfoCond($nomConductor)
-  {
-    $this->select("*");
-
-    $this->join("ruta", 'ruta.id_ruta=servicio.id_ruta');
-    $this->join("asignacion", 'asignacion.id_asignacion=servicio.id_asignacion');
-
-    $this->where("asignacion.id_conductor", $nomConductor);
-    /* $this->where("asignacion.id_conductor", $nomConductor && "fecha_inicio_servicio" Between "$fechaDesde" and "$fechaHasta" ); */
-    $resultado = $this->findAll();
-    return $resultado;
-  }
-
   public function InfoServConductor($data){
     $id=$data["idConductor"];
     $fechaDesde=$data["fechaDesde"];
     $fechaHasta=$data["fechaHasta"];
+
+    /* var_dump($id);
+    var_dump($id);
+    var_dump($id); */
     
     $this->select("cod_servicio, num_bill, fecha_inicio_servicio, ruta_inicio, ruta_fin, id_conductor, fecha_inicio_servicio");
 
@@ -61,7 +52,9 @@ class MServicio extends Model
     $this->join("asignacion", 'asignacion.id_asignacion=servicio.id_asignacion');
     
     $this->where("asignacion.id_conductor=$id");
-    $this->where("fecha_inicio_servicio $fechaDesde and $fechaHasta");
+ /*    $this->where("asignacion.id_conductor=$id") AND ("fecha_inicio_servicio BETWEEN $fechaDesde and $fechaHasta"); */
+   /*  $this->where("fecha_inicio_servicio $fechaDesde and $fechaHasta"); */
+
 
     $resultado = $this->findAll();
     return $resultado;

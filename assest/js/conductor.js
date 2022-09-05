@@ -201,6 +201,7 @@ function reporteConductor(){
     success: function (data) {
       console.log(data)
       /* console.log(nomConductor,fechaDesde,fechaHasta) */
+      $("#datosConductor").html(data)
      
     }
   })

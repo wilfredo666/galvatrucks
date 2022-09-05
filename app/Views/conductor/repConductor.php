@@ -69,22 +69,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($conductor as $lista) {
-                        $idCond = $lista["id_conductor"];
-                        $nombreCond = $lista["nombre_cond"];
-
-                    ?>
-                        <tr>
-                            <td><?php echo $idCond ?></td>
-                            <td><?php echo $nombreCond ?></td>
-                            <td><?php echo $nombreCond ?></td>
-                            <td><?php echo $nombreCond ?></td>
-                            <td><?php echo $nombreCond ?></td>
-                            <td><?php echo $nombreCond ?></td>
-
-
-                        </tr>
-                    <?php } ?>
+                    
                 </tbody>
             </table>
         </div>
