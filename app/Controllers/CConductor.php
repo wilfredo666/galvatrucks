@@ -187,11 +187,8 @@ class CConductor extends BaseController
       "conductor" => $this->MConductor->InfoConductor($id),
       "servicios" => $this->MServicio->InfoServConductor($sql)
     );
-    /* var_dump($data); */
-    echo view('conductor/conductors', $data);
-    
-   /*  echo view('header');
-    echo view('conductor/repConductor', $data);
-    echo view('footer'); */
+
+  echo view('conductor/conductors', $data);
+
   }
 }

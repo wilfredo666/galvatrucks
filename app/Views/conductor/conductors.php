@@ -1,28 +1,17 @@
-<div class="datosConductor">
-    <table>
-        <th>
-            <tr>
-                <td>Cod Servicio</td>
-                <td>Lugar PARTIDA</td>
-                <td>Destino</td>
-            </tr>
-        </th>
-        <tr>
-            <?php
-            foreach ($servicios as $ser) {
-
-                $codigo = $ser["cod_servicio"];
-                $fecha = $ser["fecha_inicio_servicio"];
-            ?>
-
-                <td><?php echo ($codigo) ?></td>
-                <td><?php echo ($fecha) ?></td>
-            <?php
-            } ?>
-        </tr>
-    </table>
-</div>
 <?php
-
-
+foreach ($servicios as $value) {
+  $cod_servicio = $value['cod_servicio'];
+  $num_bill = $value['num_bill'];
+  $servicioFecha = $value['fecha_inicio_servicio'];
+  $ruta_inicio = $value['ruta_inicio'];
+  $ruta_fin = $value['ruta_fin'];
 ?>
+<tr>
+  <td><?php echo $cod_servicio; ?></td>
+  <td><?php echo $num_bill; ?></td>
+  <td><?php echo $ruta_inicio; ?></td>
+  <td><?php echo $ruta_fin; ?></td>
+  <td><?php echo $servicioFecha; ?></td>
+</tr>
+
+<?php } ?>
