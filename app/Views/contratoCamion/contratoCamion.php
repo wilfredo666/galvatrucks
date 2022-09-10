@@ -1,7 +1,9 @@
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <section class="content-header">
-
+        <div class="card-header">
+            <h3 class="font-weight-light ">Lista de Contrato de Camiones</h3>
+        </div>
     </section>
     <section class="content">
 
@@ -16,7 +18,7 @@
                         <th>PLACA</th>
                         <th>PROPIETARIO DE CAMION</th>
 
-                        <th> <button class="btn btn-block btn-primary" onclick="MNuevoContratoCam()" ><i class="fas fa-plus-circle"></i> NUEVO </button> </th>
+                        <th> <button class="btn btn-block btn-primary" onclick="MNuevoContratoCam()"><i class="fas fa-plus-circle"></i> NUEVO </button> </th>
                     </tr>
                 </thead>
                 <tbody>
@@ -31,28 +33,28 @@
                         $observacion = $lista['observacion'];
                     ?>
 
-                    <tr>
-                        <td><?php echo $idContrato; ?></td>
-                        <td><?php echo $numContrato; ?></td>
-                        <td><?php echo $fechaIni; ?></td>
-                        <td><?php echo $placa; ?></td>
-                        <td><?php echo $propietario; ?></td>
+                        <tr>
+                            <td><?php echo $idContrato; ?></td>
+                            <td><?php echo $numContrato; ?></td>
+                            <td><?php echo $fechaIni; ?></td>
+                            <td><?php echo $placa; ?></td>
+                            <td><?php echo $propietario; ?></td>
 
-                        <td>
-                            <div class="text-center">
-                                <button class="btn btn-info btn-circle btn-sm" onclick="MVerContratoCam(<?php echo $idContrato; ?>)">
-                                    <i class="fas fa-eye"></i>
-                                </button>
-                                <button class="btn btn-warning btn-circle" onclick="MEditarContratoCam(<?php echo $idContrato; ?>)">
-                                    <i class="fas fa-edit"></i>
-                                </button>
-                                <button class="btn btn-danger btn-circle" onclick="MEliminarContratoCam(<?php echo $idContrato; ?>)">
-                                    <i class="fas fa-trash-alt"></i>
-                                </button>
-                            </div>
-                        </td>
-                    </tr>
-                    <?php }?>
+                            <td>
+                                <div class="text-center">
+                                    <button class="btn btn-info btn-circle btn-sm" onclick="MVerContratoCam(<?php echo $idContrato; ?>)">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                    <button class="btn btn-warning btn-circle" onclick="MEditarContratoCam(<?php echo $idContrato; ?>)">
+                                        <i class="fas fa-edit"></i>
+                                    </button>
+                                    <button class="btn btn-danger btn-circle" onclick="MEliminarContratoCam(<?php echo $idContrato; ?>)">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </button>
+                                </div>
+                            </td>
+                        </tr>
+                    <?php } ?>
                 </tbody>
             </table>
         </div>

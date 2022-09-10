@@ -1,10 +1,9 @@
-
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
   <section class="content-header">
-      <div class="card-header">
-        <h3 class="font-weight-light ">Lista de los Servicios</h3>
-      </div>
+    <div class="card-header">
+      <h3 class="font-weight-light ">Lista de Servicios</h3>
+    </div>
   </section>
 
   <section class="content">
@@ -14,7 +13,7 @@
           <tr>
             <th>COD. SERVICIO</th>
             <th>NOMBRE CLIENTE</th>
-<!--             <th>NAVIERA</th> -->
+            <!--             <th>NAVIERA</th> -->
             <th>NRO BL/BILL</th>
             <th>FECHA ARRIBO</th>
             <th>ESTADO</th>
@@ -34,7 +33,7 @@
             <tr>
               <td><?php echo $codServicio; ?></td>
               <td><?php echo $cli; ?></td>
-             
+
               <td><?php echo $nroBl; ?></td>
               <td><?php echo $fechaArribo; ?></td>
 
@@ -49,7 +48,7 @@
               <?php
               }
               ?>
-              
+
               <td>
                 <div class="text-center">
                   <button class="btn btn-outline-info btn-circle" onclick="MVerServicio(<?php echo $idServicio; ?>)">

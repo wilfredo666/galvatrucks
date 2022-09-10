@@ -1,6 +1,6 @@
 <div class="content-wrapper">
   <section class="content-header" style="padding-bottom: 0;">
-    <h3 class="">Servicios por Conductor <small class="font-weight-lighter">Reportes</small></h3>
+    <h3 class="content-header">Servicios realizados por Conductor <small class="font-weight-lighter">Reportes</small></h3>
     <hr style="border-color: #72C5CF; margin: 0;">
   </section>
 

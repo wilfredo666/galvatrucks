@@ -1,7 +1,9 @@
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
   <section class="content-header">
-
+    <div class="card-header">
+      <h3 class="font-weight-light ">Lista de Clientes </h3>
+    </div>
   </section>
   <section class="content">
 

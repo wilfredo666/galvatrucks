@@ -53,7 +53,7 @@ class MServicio extends Model
     
     $this->where("asignacion.id_conductor=$id");
  /*    $this->where("asignacion.id_conductor=$id") AND ("fecha_inicio_servicio BETWEEN $fechaDesde and $fechaHasta"); */
-   /*  $this->where("fecha_inicio_servicio $fechaDesde and $fechaHasta"); */
+    $this->where("fecha_inicio_servicio between '$fechaDesde' and '$fechaHasta' "); 
 
 
     $resultado = $this->findAll();

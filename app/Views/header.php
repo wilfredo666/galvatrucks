@@ -131,27 +131,12 @@ with font-awesome or any other icon font library -->
 
               <!--  CONDUCTORES -->
               <li class="nav-item">
-                <a href="#" class="nav-link">
-                <i class="nav-icon fas fa-universal-access"></i></i>
+                <a href="<?php echo base_url(); ?>/CConductor" class="nav-link">
+                  <i class="nav-icon fas fa-universal-access"></i></i>
                   <p>
                     Conductores
-                    <i class="fas fa-angle-left right"></i>
                   </p>
                 </a>
-                <ul class="nav nav-treeview">
-                  <li class="nav-item">
-                    <a href="<?php echo base_url(); ?>/CConductor" class="nav-link">
-                      <i class="nav-icon far fa-circle text-warning"></i>
-                      <p>Lista de Conductores</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="<?php echo base_url(); ?>/CConductor/repConductor" class="nav-link">
-                      <i class="nav-icon far fa-circle text-warning"></i>
-                      <p>Reporte por Conductor</p>
-                    </a>
-                  </li>
-                </ul>
               </li>
 
               <!-- Clientes  -->
@@ -219,6 +204,32 @@ with font-awesome or any other icon font library -->
                 </li>
               </ul>
             </li>
+
+            <!--  REPORTES -->
+            <li class="nav-item">
+              <a href="#" class="nav-link">
+                <i class="nav-icon  fas fa-poll"></i>
+                <p>
+                  Reportes
+                  <i class="fas fa-angle-left right"></i>
+                </p>
+              </a>
+              <ul class="nav nav-treeview">
+                <li class="nav-item">
+                  <a href="<?php echo base_url(); ?>/CServicio" class="nav-link">
+                    <i class="nav-icon far fa-circle text-warning"></i>
+                    <p>Reporte por Cliente</p>
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="<?php echo base_url(); ?>/CConductor/repConductor" class="nav-link">
+                    <i class="nav-icon far fa-circle text-warning"></i>
+                    <p>Reporte por Conductor</p>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
 
 
             <?php if (session("rol") == "Administrador") {
