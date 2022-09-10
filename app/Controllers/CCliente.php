@@ -158,4 +158,14 @@ class CCliente extends BaseController
         $id = $this->request->uri->getSegment(3);
         $this->MCliente->delete($id);
     }
+
+    public function repCliente(){
+        $data = array(
+            "cliente" => $this->MCliente->findAll()
+        );
+
+        echo view('header');
+        echo view('cliente/repCliente', $data);
+        echo view('footer');
+    }
 }
