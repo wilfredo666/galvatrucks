@@ -91,11 +91,7 @@ with font-awesome or any other icon font library -->
                   </p>
                 </a>
               </li>
-            <?php
-            } ?>
 
-            <?php if (session("rol") == "Administrador") {
-            ?>
               <!--  Asignaciones -->
               <li class="nav-item">
                 <a href="#" class="nav-link">
@@ -157,13 +153,12 @@ with font-awesome or any other icon font library -->
                   </p>
                 </a>
               </li>
-            <?php
-            } ?>
-            <!-- Para Conductor y tambien Administrador -->
 
-            <?php
+              <!-- Para Conductor y tambien Administrador -->
+
+              <!--  <php
             if (session("rol") == "Conductor" || session("rol") == "Administrador") {
-            ?>
+            ?> -->
               <!--  Rutas  -->
               <li class="nav-item">
                 <a href="<?php echo base_url(); ?>/CRuta" class="nav-link">
@@ -173,63 +168,64 @@ with font-awesome or any other icon font library -->
                   </p>
                 </a>
               </li>
-            <?php
+              <!--   <php
             }
-            ?>
+            ?> -->
 
-            <!-- Para Conductor y tambien Administrador -->
+              <!-- Para Conductor y tambien Administrador -->
 
 
-            <!--  SERVICIOS-->
-            <li class="nav-item">
-              <a href="#" class="nav-link">
-                <i class="nav-icon fab fa-docker"></i>
-                <p>
-                  Servicios
-                  <i class="fas fa-angle-left right"></i>
-                </p>
-              </a>
-              <ul class="nav nav-treeview">
-                <li class="nav-item">
-                  <a href="<?php echo base_url(); ?>/CServicio" class="nav-link">
-                    <i class="nav-icon fab fa-shirtsinbulk text-info"></i>
-                    <p>Nuevo Servicio</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="<?php echo base_url(); ?>/CPagos" class="nav-link">
-                    <i class="nav-icon fas fa-credit-card text-info"></i>
-                    <p>Pagos</p>
-                  </a>
-                </li>
-              </ul>
-            </li>
+              <!--  SERVICIOS-->
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fab fa-docker"></i>
+                  <p>
+                    Servicios
+                    <i class="fas fa-angle-left right"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="<?php echo base_url(); ?>/CServicio" class="nav-link">
+                      <i class="nav-icon fab fa-shirtsinbulk text-info"></i>
+                      <p>Nuevo Servicio</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="<?php echo base_url(); ?>/CPagos" class="nav-link">
+                      <i class="nav-icon fas fa-credit-card text-info"></i>
+                      <p>Pagos</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
 
-            <!--  REPORTES -->
-            <li class="nav-item">
-              <a href="#" class="nav-link">
-                <i class="nav-icon  fas fa-poll"></i>
-                <p>
-                  Reportes
-                  <i class="fas fa-angle-left right"></i>
-                </p>
-              </a>
-              <ul class="nav nav-treeview">
-                <li class="nav-item">
-                  <a href="<?php echo base_url(); ?>/CCliente/repCliente" class="nav-link">
-                    <i class="nav-icon far fa-circle text-warning"></i>
-                    <p>Reporte por Cliente</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="<?php echo base_url(); ?>/CConductor/repConductor" class="nav-link">
-                    <i class="nav-icon far fa-circle text-warning"></i>
-                    <p>Reporte por Conductor</p>
-                  </a>
-                </li>
-              </ul>
-            </li>
-
+              <!--  REPORTES -->
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon  fas fa-poll"></i>
+                  <p>
+                    Reportes
+                    <i class="fas fa-angle-left right"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="<?php echo base_url(); ?>/CCliente/repCliente" class="nav-link">
+                      <i class="nav-icon far fa-circle text-warning"></i>
+                      <p>Reporte por Cliente</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="<?php echo base_url(); ?>/CConductor/repConductor" class="nav-link">
+                      <i class="nav-icon far fa-circle text-warning"></i>
+                      <p>Reporte por Conductor</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            <?php
+            } ?>
 
 
             <?php if (session("rol") == "Administrador") {
@@ -263,6 +259,65 @@ with font-awesome or any other icon font library -->
                     </a>
                   </li>
 
+                </ul>
+              </li>
+            <?php
+            }
+            ?>
+            <!-- PARA LAS VISTAS DEL ROL CLIENTE -->
+            <?php
+            if (session("rol") == "Cliente") {
+            ?>
+              <!-- MI PERFIL -->
+              <li class="nav-item">
+                <a href="<?php echo base_url(); ?>" class="nav-link">
+                  <i class="nav-icon fas fa-user-cog"></i>
+                  <p>
+                    Mi Perfil
+                  </p>
+                </a>
+              </li>
+              <!-- FUNCIONES DEL ROL CLIENTE -->
+              <li class="nav-header">OPCIONES</li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fas fa-layer-group"></i>
+                  <p>
+                    Funciones
+                    <i class="fas fa-angle-left right"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="pages/layout/top-nav.html" class="nav-link">
+                      <i class="nav-icon far fa-plus-square text-warning"></i>
+                      <p>Solicitar Servicio</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+                      <i class="nav-icon far fa-circle text-warning"></i>
+                      <p>Seguimiento de contenedores</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+                      <i class="nav-icon far fa-circle text-warning"></i>
+                      <p>Subir Archivos de Importacion</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+                      <i class="nav-icon far fa-circle text-warning"></i>
+                      <p>Mis Reportes</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+                      <i class="nav-icon far fa-circle text-warning"></i>
+                      <p>Mis notas de Débito</p>
+                    </a>
+                  </li>
                 </ul>
               </li>
             <?php
