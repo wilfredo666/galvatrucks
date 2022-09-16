@@ -1,4 +1,7 @@
-<div class="content-wrapper">
+<?php 
+$razon_social= $cliente["razon_social_cli"];
+?>
+   <div class="content-wrapper">
     <div class="container bootstrap snippet col-md-12">
         <div class="container col-md-11">
             <div class="modal-header bg-info col-sm-12">
@@ -33,7 +36,7 @@
                                 <div class="row">
                                     <div class="form-group col-md-6">
                                         <label>Razón Social </label>
-                                        <input type="text" class="form-control" name="razonSocial" id="razonSocial" title="Actualiza tu Nombre.">
+                                        <input type="text" class="form-control" name="razonSocial" id="razonSocial" title="Actualiza tu Nombre." value="<?php echo $razon_social;?>">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="last_name">N.I.T.</label>
@@ -55,7 +58,7 @@
                                 <div class="row">
                                     <div class="form-group col-md-6">
                                         <label>Correo electrónico</label>
-                                        <input type="text" class="form-control" name="correoCli" id="correoCli">
+                                        <input type="text" class="form-control" name="correoCli" id="correoCli" value="<?php echo $cliente["email_cli"];?>">
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label>Número de Contacto</label>

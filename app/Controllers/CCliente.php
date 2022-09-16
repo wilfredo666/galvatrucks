@@ -174,8 +174,13 @@ class CCliente extends BaseController
     ---------------------------------------------------*/
     public function miPerfil()
     {
+      $id_usuario=session("id_usuario");
+      
+      $data=array(
+       "cliente" => $this->MCliente->InfoClienteUsuario($id_usuario)
+      );
         echo view('header');
-        echo view('cliente/rolCliente/miPerfil');
+        echo view('cliente/rolCliente/miPerfil', $data);
         echo view('footer');
     }
 

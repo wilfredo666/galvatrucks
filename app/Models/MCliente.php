@@ -21,4 +21,12 @@ class MCliente extends Model
         $resultado = $this->first();
         return $resultado;
     }
+  
+  public function InfoClienteUsuario($id)
+    {
+        $this->select("*");
+        $this->where("id_usuario", $id);
+        $resultado = $this->first();
+        return $resultado;
+    }
 }
