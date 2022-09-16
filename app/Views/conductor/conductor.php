@@ -59,21 +59,21 @@
               <td class="text-center">
                 <div>
 
-                  <!-- <button class="btn btn-info btn-circle" onclick="MVerConductor(<?php echo  $idCond; ?>)">
+                  <button class="btn btn-outline-info btn-circle" onclick="MVerConductor(<?php echo  $idCond; ?>)">
                     <i class="fas fa-eye"></i>
                   </button>
                   <button class="btn btn-warning btn-circle" onclick="MEditarConductor(<?php echo  $idCond; ?>)">
                     <i class="fas fa-edit"></i>
                   </button>
-                  <button class="btn btn-danger btn-circle" onclick="MEliminarConductor(<?php echo  $idCond; ?>)">
+                  <button class="btn btn-outline-danger btn-circle" onclick="MEliminarConductor(<?php echo  $idCond; ?>)">
                     <i class="fas fa-trash-alt"></i>
-                  </button> -->
+                  </button>
 
 
                   <!-- Custom Tabs -->
 
 
-                  <ul class="nav nav-pills ml-auto p-2 col-md-12 ">
+                 <!--  <ul class="nav nav-pills ml-auto p-2 col-md-12 ">
 
                     <li class="nav-item dropdown ">
                       <a class="nav-link dropdown-toggle btn-info" data-toggle="dropdown" href="#" style="color: #fff;">
@@ -93,7 +93,7 @@
                         <a class="dropdown-item " tabindex="-1" href="#">Servicios Realizados</a>
                       </div>
                     </li>
-                  </ul>
+                  </ul> -->
 
 
               </td>

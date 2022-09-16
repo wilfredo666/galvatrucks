@@ -270,7 +270,7 @@ with font-awesome or any other icon font library -->
             ?>
               <!-- MI PERFIL -->
               <li class="nav-item">
-                <a href="<?php echo base_url(); ?>" class="nav-link">
+                <a href="<?php echo base_url(); ?>/CCliente/miPerfil" class="nav-link">
                   <i class="nav-icon fas fa-user-cog"></i>
                   <p>
                     Mi Perfil
@@ -289,31 +289,31 @@ with font-awesome or any other icon font library -->
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="pages/layout/top-nav.html" class="nav-link">
+                    <a href="<?php echo base_url();?>/CCliente/solicitarServicio" class="nav-link">
                       <i class="nav-icon far fa-plus-square text-warning"></i>
                       <p>Solicitar Servicio</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+                    <a href="<?php echo base_url();?>/CCliente/seguimientoCont" class="nav-link">
                       <i class="nav-icon far fa-circle text-warning"></i>
                       <p>Seguimiento de contenedores</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+                    <a href="#" class="nav-link">
                       <i class="nav-icon far fa-circle text-warning"></i>
                       <p>Subir Archivos de Importacion</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+                    <a href="#" class="nav-link">
                       <i class="nav-icon far fa-circle text-warning"></i>
                       <p>Mis Reportes</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
+                    <a href="#" class="nav-link">
                       <i class="nav-icon far fa-circle text-warning"></i>
                       <p>Mis notas de Débito</p>
                     </a>

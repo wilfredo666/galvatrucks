@@ -159,13 +159,37 @@ class CCliente extends BaseController
         $this->MCliente->delete($id);
     }
 
-    public function repCliente(){
+    public function repCliente()
+    {
         $data = array(
             "cliente" => $this->MCliente->findAll()
         );
 
         echo view('header');
         echo view('cliente/repCliente', $data);
+        echo view('footer');
+    }
+    /* -----------------------------------------------
+    FUNCIONES PARA EL ROL CLIENTE
+    ---------------------------------------------------*/
+    public function miPerfil()
+    {
+        echo view('header');
+        echo view('cliente/rolCliente/miPerfil');
+        echo view('footer');
+    }
+
+    public function solicitarServicio()
+    {
+        echo view('header');
+        echo view('cliente/rolCliente/solicitudServ');
+        echo view('footer');
+    }
+
+    public function seguimientoCont()
+    {
+        echo view('header');
+        echo view('cliente/rolCliente/seguimiento');
         echo view('footer');
     }
 }
