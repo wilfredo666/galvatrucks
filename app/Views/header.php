@@ -296,25 +296,26 @@ with font-awesome or any other icon font library -->
                   </li>
                   <li class="nav-item">
                     <a href="<?php echo base_url();?>/CCliente/seguimientoCont" class="nav-link">
-                      <i class="nav-icon far fa-circle text-warning"></i>
+                      <i class="nav-icon fas fa-map-marked-alt text-warning"></i>
+                      
                       <p>Seguimiento de contenedores</p>
                     </a>
                   </li>
                   <li class="nav-item">
                     <a href="#" class="nav-link">
-                      <i class="nav-icon far fa-circle text-warning"></i>
+                      <i class="nav-icon fas fa-file-upload text-warning"></i>
                       <p>Subir Archivos de Importacion</p>
                     </a>
                   </li>
                   <li class="nav-item">
                     <a href="#" class="nav-link">
-                      <i class="nav-icon far fa-circle text-warning"></i>
+                      <i class="nav-icon fas fa-print text-warning"></i>
                       <p>Mis Reportes</p>
                     </a>
                   </li>
                   <li class="nav-item">
                     <a href="#" class="nav-link">
-                      <i class="nav-icon far fa-circle text-warning"></i>
+                      <i class="nav-icon fas fa-money-check text-warning"></i>
                       <p>Mis notas de Débito</p>
                     </a>
                   </li>

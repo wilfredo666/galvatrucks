@@ -204,3 +204,43 @@ function MNuevoCliente() {
       }
     })
   }
+   /*===================================
+  ACTUALIZAR PERFIL DEL CLIENTE
+  =====================================*/
+ 
+    function ActualizarCli(id) {
+      let pass1 = document.getElementById("password").value
+      let pass2 = document.getElementById("password2").value
+      let correoCli = document.getElementById("correoCli").value
+
+      if(!(/^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i.test(correoCli))){
+        document.getElementById("error-correoCli").innerHTML="Llene el correo en este formato: Ejm. 'ejemplo@gmail.com' "
+      }
+      else if (pass1 == pass2) {
+        let form = new FormData($("#actualizarDatosCli")[0])
+
+      $.ajax({
+        type: "POST",
+        url: "ActualizarCli/"+id,
+        data: form,
+        cache: false,
+        contentType: false,
+        processData: false,
+        success: function (data) {
+          Swal.fire({
+            title: 'Datos Actualizados',
+            icon: 'success',
+            showConfirmButton: false,
+            timer: 1000
+          })
+          setTimeout(function(){
+              location.reload()
+            },1200)
+      
+        }
+      })
+    }  else {
+      document.getElementById("error-password").innerHTML = "Las contraseñas no coinciden"
+      document.getElementById("error-password2").innerHTML = "Las contraseñas no coinciden"
+    }
+  } 

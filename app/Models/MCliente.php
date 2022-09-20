@@ -25,7 +25,8 @@ class MCliente extends Model
   public function InfoClienteUsuario($id)
     {
         $this->select("*");
-        $this->where("id_usuario", $id);
+        $this->join("usuario", "usuario.id_usuario=cliente.id_usuario");
+        $this->where("cliente.id_usuario", $id);
         $resultado = $this->first();
         return $resultado;
     }

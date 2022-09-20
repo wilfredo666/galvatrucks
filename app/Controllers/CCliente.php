@@ -3,12 +3,14 @@
 namespace App\Controllers;
 
 use App\Models\MCliente;
+use App\Models\MUsuario;
 
 class CCliente extends BaseController
 {
     public function __construct()
     {
         $this->MCliente = new MCliente();
+        $this->MUsuario = new MUsuario();
     }
 
     public function index()
@@ -174,14 +176,56 @@ class CCliente extends BaseController
     ---------------------------------------------------*/
     public function miPerfil()
     {
-      $id_usuario=session("id_usuario");
-      
-      $data=array(
-       "cliente" => $this->MCliente->InfoClienteUsuario($id_usuario)
-      );
+        $id_usuario = session("id_usuario");
+        /* para enviar ID a miPerfil */
+        /* $data=array(
+        "idUsuario"=>$id_usuario
+          ); */
+        $data = array(
+            "cliente" => $this->MCliente->InfoClienteUsuario($id_usuario)
+        );
         echo view('header');
         echo view('cliente/rolCliente/miPerfil', $data);
         echo view('footer');
+    }
+
+    public function ActualizarCli(){
+        $id = $this->request->uri->getSegment(3);
+        
+        $correo = $_POST["correoCli"];
+        $contacto= $_POST["contactoCli"];
+        $nombreCli = $_POST["nombreCli"];
+        $apellidoCli = $_POST["apellidoCli"];
+        $direccion = $_POST["direccionCli"];
+        $ctaBancaria = $_POST["cuentaCli"];
+        /* $fotoCli = $_FILES["fotoCli"];
+
+        if ($fotoCli["name"] == "") {
+            $foto = $_POST["fotoCliActual"];
+        } else {
+            $ruta = "assest/img/cliente/";
+            $foto = $fotoCli["name"];
+            $tmpFoto = $fotoCli["tmp_name"];
+            move_uploaded_file($tmpFoto, $ruta . $foto);
+        }  */
+
+        $pass1 = password_hash($_POST["password"], PASSWORD_DEFAULT);
+        /* $pass2= $_POST["password2"]; */
+
+        $data = array(
+            "contacto_cli" => $contacto,
+            "nombre_cli" => $nombreCli,
+            "apellido_cli" => $apellidoCli,
+            "num_cuenta_cli" => $ctaBancaria,
+            "direccion_cli" => $direccion,       
+            "email_cli" => $correo      
+            /* "imagen_cli" => $foto    */   
+        );
+        $datoPassword = array(
+            "pass_usuario" => $pass1
+        );
+        $this->MCliente->update($id, $data);
+        $this->MUsuario->update($id, $datoPassword);
     }
 
     public function solicitarServicio()
