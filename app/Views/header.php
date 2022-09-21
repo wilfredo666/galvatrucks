@@ -289,7 +289,7 @@ with font-awesome or any other icon font library -->
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="<?php echo base_url();?>/CCliente/solicitarServicio" class="nav-link">
+                    <a href="<?php echo base_url();?>/CSolicitudServicio" class="nav-link">
                       <i class="nav-icon far fa-plus-square text-warning"></i>
                       <p>Solicitar Servicio</p>
                     </a>

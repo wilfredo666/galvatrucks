@@ -228,13 +228,6 @@ class CCliente extends BaseController
         $this->MUsuario->update($id, $datoPassword);
     }
 
-    public function solicitarServicio()
-    {
-        echo view('header');
-        echo view('cliente/rolCliente/solicitudServ');
-        echo view('footer');
-    }
-
     public function seguimientoCont()
     {
         echo view('header');

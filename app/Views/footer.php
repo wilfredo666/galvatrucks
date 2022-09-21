@@ -113,6 +113,15 @@
     }).buttons().container().appendTo('#DataTableContratoCamion_wrapper .col-md-6:eq(0)');
   });
 
+  $(function() {
+    $("#DataTableSolicitud").DataTable({
+      "responsive": true,
+      "lengthChange": false,
+      "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#DataTableSolicitud_wrapper .col-md-6:eq(0)');
+  });
+
   $(function () {
     $("#Tabla1").DataTable({
       "responsive": true, "lengthChange": false, "autoWidth": false,
