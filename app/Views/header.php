@@ -137,13 +137,29 @@ with font-awesome or any other icon font library -->
 
               <!-- Clientes  -->
               <li class="nav-item">
-                <a href="<?php echo base_url(); ?>/CCliente" class="nav-link">
+                <a href="#" class="nav-link">
                   <i class="nav-icon fas fa-user-friends"></i>
                   <p>
                     Clientes
+                    <i class="fas fa-angle-left right"></i>
                   </p>
                 </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="<?php echo base_url(); ?>/CCliente" class="nav-link">
+                      <i class="nav-icon fas fa-users text-info"></i>
+                      <p>Lista de Clientes</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="<?php echo base_url();?>/CCliente/solicitudServ" class="nav-link">
+                      <i class="nav-icon fas fa-check-circle text-info"></i>
+                      <p>Solicitud de Servicios</p>
+                    </a>
+                  </li>
+                </ul>
               </li>
+
               <!--  Navieras  -->
               <li class="nav-item">
                 <a href="<?php echo base_url(); ?>/CEmpresaMaritima" class="nav-link">
@@ -289,15 +305,15 @@ with font-awesome or any other icon font library -->
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="<?php echo base_url();?>/CSolicitudServicio" class="nav-link">
+                    <a href="<?php echo base_url(); ?>/CSolicitudServicio" class="nav-link">
                       <i class="nav-icon far fa-plus-square text-warning"></i>
                       <p>Solicitar Servicio</p>
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="<?php echo base_url();?>/CCliente/seguimientoCont" class="nav-link">
+                    <a href="<?php echo base_url(); ?>/CCliente/seguimientoCont" class="nav-link">
                       <i class="nav-icon fas fa-map-marked-alt text-warning"></i>
-                      
+
                       <p>Seguimiento de contenedores</p>
                     </a>
                   </li>

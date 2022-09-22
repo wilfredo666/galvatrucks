@@ -227,7 +227,8 @@ function MNuevoCliente() {
         contentType: false,
         processData: false,
         success: function (data) {
-          Swal.fire({
+          console.log(data)
+          /* Swal.fire({
             title: 'Datos Actualizados',
             icon: 'success',
             showConfirmButton: false,
@@ -235,7 +236,7 @@ function MNuevoCliente() {
           })
           setTimeout(function(){
               location.reload()
-            },1200)
+            },1200) */
       
         }
       })

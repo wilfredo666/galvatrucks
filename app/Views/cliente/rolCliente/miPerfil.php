@@ -11,17 +11,19 @@ $razon_social = $cliente["razon_social_cli"];
 
             <br>
             <div class="row">
+
                 <div class="col-sm-3">
                     <!--left col 3-->
+                    <form id="actualizarDatosCliente">
 
+                        <div class="text-center">
+                            <img src="<?php echo base_url(); ?>/assest/img/cliente/<?php echo $cliente["imagen_cli"] ?>" class="avatar img-circle img-thumbnail" alt="avatar" width="75%">
 
-                    <div class="text-center">
-                        <img src="<?php echo base_url(); ?>/assest/img/cliente/<?php echo $cliente["imagen_cli"] ?>" class="avatar img-circle img-thumbnail" alt="avatar" width="75%">
-
-                        <h6>Cargar Logotipo de la Empresa</h6>
-                        <input type="file" class="form-control" id="fotoCli" name="fotoCli">
-                        <input type="hidden" class="form-control" id="fotoCliActual" name="fotoCliActual" value="<?php echo $cliente["imagen_cli"] ?>">
-                    </div>
+                            <h6>Cargar Logotipo de la Empresa</h6>
+                            <input type="file" class="form-control" id="fotoCli" name="fotoCli">
+                            <input type="hidden" class="form-control" id="fotoCliActual" name="fotoCliActual" value="<?php echo $cliente["imagen_cli"] ?>">
+                        </div>
+                    </form>
                     </hr><br>
                     <ul class="list-group">
                         <li class="list-group-item text-center bg-info">Información Importante <i class="fas fa-info-circle"></i></li>
@@ -30,7 +32,9 @@ $razon_social = $cliente["razon_social_cli"];
                         <li class="list-group-item text-right"><span class="pull-left"><strong>Tipo Cliente:</strong></span> <?php echo $cliente["tipo_cli"] ?></li>
                         <li class="list-group-item text-right"><span class="pull-left"><strong>N.I.T / C.I:</strong></span> <?php echo $cliente["ci_nit_cli"] ?></li>
                     </ul>
+
                 </div>
+
                 <!-- col 9 -->
                 <div class="col-sm-9">
                     <div class="tab-content">
@@ -40,11 +44,11 @@ $razon_social = $cliente["razon_social_cli"];
                                 <div class="row">
                                     <div class="form-group col-md-6">
                                         <label>Razón Social </label>
-                                        <input type="text" class="form-control" name="razonSocial" id="razonSocial" title="Actualiza tu Nombre." value="<?php echo $razon_social; ?>" disabled>
+                                        <input type="text" class="form-control" name="razonSocial" id="razonSocial" title="Actualiza tu Nombre." value="<?php echo $razon_social; ?>" readonly>
                                     </div>
                                     <div class="form-group col-md-6">
                                         <label for="last_name">N.I.T.</label>
-                                        <input type="text" class="form-control" name="nit" id="nit" value="<?php echo $cliente["ci_nit_cli"] ?>" disabled>
+                                        <input type="text" class="form-control" name="nit" id="nit" value="<?php echo $cliente["ci_nit_cli"] ?>" readonly>
                                     </div>
                                 </div>
 

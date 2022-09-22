@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\MCliente;
 use App\Models\MUsuario;
+use App\Models\MSolicitudServicio;
 
 class CCliente extends BaseController
 {
@@ -11,6 +12,7 @@ class CCliente extends BaseController
     {
         $this->MCliente = new MCliente();
         $this->MUsuario = new MUsuario();
+        $this->MSolicitudServicio = new MSolicitudServicio();
     }
 
     public function index()
@@ -189,11 +191,12 @@ class CCliente extends BaseController
         echo view('footer');
     }
 
-    public function ActualizarCli(){
+    public function ActualizarCli()
+    {
         $id = $this->request->uri->getSegment(3);
-        
+
         $correo = $_POST["correoCli"];
-        $contacto= $_POST["contactoCli"];
+        $contacto = $_POST["contactoCli"];
         $nombreCli = $_POST["nombreCli"];
         $apellidoCli = $_POST["apellidoCli"];
         $direccion = $_POST["direccionCli"];
@@ -210,6 +213,7 @@ class CCliente extends BaseController
         }  */
 
         $pass1 = password_hash($_POST["password"], PASSWORD_DEFAULT);
+        /* var_dump($pass1); */
         /* $pass2= $_POST["password2"]; */
 
         $data = array(
@@ -217,9 +221,9 @@ class CCliente extends BaseController
             "nombre_cli" => $nombreCli,
             "apellido_cli" => $apellidoCli,
             "num_cuenta_cli" => $ctaBancaria,
-            "direccion_cli" => $direccion,       
-            "email_cli" => $correo      
-            /* "imagen_cli" => $foto    */   
+            "direccion_cli" => $direccion,
+            "email_cli" => $correo
+            /* "imagen_cli" => $foto    */
         );
         $datoPassword = array(
             "pass_usuario" => $pass1
@@ -227,6 +231,30 @@ class CCliente extends BaseController
         $this->MCliente->update($id, $data);
         $this->MUsuario->update($id, $datoPassword);
     }
+    /* ===============================================
+PARA LA RESPUESTA A SOLICITUD DE SERVICIO DE CLIENTES
+======================================================*/
+    public function solicitudServ()
+    {
+
+        $data = array(
+            "solicitud" => $this->MSolicitudServicio->findAll()
+        );
+
+        echo view('header');
+        echo view('solicitudServicio/respSolicitud', $data);
+        echo view('footer');
+    }
+
+    public function soliServicio()
+    {
+        $estado = $_POST["estado"];
+        $fechaDesde = $_POST["fechaDesde"];
+        $fechaHasta = $_POST["fechaHasta"];
+        
+       var_dump($estado,$fechaDesde,$fechaHasta);
+    }
+    /*------------fin de respuesta solicitud clientes ---------*/
 
     public function seguimientoCont()
     {

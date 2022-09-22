@@ -43,6 +43,7 @@
 <script src="<?php echo base_url(); ?>/assest/js/asignacion.js"></script>
 <script src="<?php echo base_url(); ?>/assest/js/ruta.js"></script>
 <script src="<?php echo base_url(); ?>/assest/js/servicio.js"></script>
+<script src="<?php echo base_url(); ?>/assest/js/solicitudServicio.js"></script>
 
 <!-- BS-Stepper -->
 <script src="<?php echo base_url(); ?>/assest/plugins/bs-stepper/js/bs-stepper.min.js"></script>
@@ -142,7 +143,7 @@
   /* document.addEventListener('DOMContentLoaded', function() {
     window.stepper = new Stepper(document.querySelector('.bs-stepper'))
   }) */
-  
+
 </script>
 
 
