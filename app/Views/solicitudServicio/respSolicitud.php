@@ -61,7 +61,7 @@
             <th>ACCIONES</th>
           </tr>
         </thead>
-        <tbody id="repServConductor">
+        <tbody id="repServSolicitud">
 
         </tbody>
       </table>
