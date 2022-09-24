@@ -193,14 +193,29 @@ class CCliente extends BaseController
 
     public function ActualizarCli()
     {
+        /* id del cliente */
         $id = $this->request->uri->getSegment(3);
-
+        
+        /* id del usuario */
+        $idUsuario= session("id_usuario");
+ 
         $correo = $_POST["correoCli"];
         $contacto = $_POST["contactoCli"];
         $nombreCli = $_POST["nombreCli"];
         $apellidoCli = $_POST["apellidoCli"];
         $direccion = $_POST["direccionCli"];
         $ctaBancaria = $_POST["cuentaCli"];
+        $pass1 = $_POST["password"];
+        $passActual = $_POST["passwordActual"];
+
+        $password ="";
+
+        if($pass1==$passActual){
+            $password = $pass1;
+        } else{
+            $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
+        }
+        
         /* $fotoCli = $_FILES["fotoCli"];
 
         if ($fotoCli["name"] == "") {
@@ -212,7 +227,7 @@ class CCliente extends BaseController
             move_uploaded_file($tmpFoto, $ruta . $foto);
         }  */
 
-        $pass1 = password_hash($_POST["password"], PASSWORD_DEFAULT);
+        /* $pass1 = password_hash($_POST["password"], PASSWORD_DEFAULT); */
         /* var_dump($pass1); */
         /* $pass2= $_POST["password2"]; */
 
@@ -226,10 +241,10 @@ class CCliente extends BaseController
             /* "imagen_cli" => $foto    */
         );
         $datoPassword = array(
-            "pass_usuario" => $pass1
+            "pass_usuario" => $password
         );
         $this->MCliente->update($id, $data);
-        $this->MUsuario->update($id, $datoPassword);
+        $this->MUsuario->update($idUsuario, $datoPassword);
     }
     /* ===============================================
 PARA LA RESPUESTA A SOLICITUD DE SERVICIO DE CLIENTES
@@ -252,7 +267,18 @@ PARA LA RESPUESTA A SOLICITUD DE SERVICIO DE CLIENTES
         $fechaDesde = $_POST["fechaDesde"];
         $fechaHasta = $_POST["fechaHasta"];
         
-       var_dump($estado,$fechaDesde,$fechaHasta);
+        $sql = array(
+            "estado" => $estado,
+            "fechaDesde" => $fechaDesde,
+            "fechaHasta" => $fechaHasta,
+        );
+
+        $data = array(
+            "EstadoSolicitud" => $this -> MSolicitudServicio -> DetalleSolicitud($sql)
+        );
+
+      /*  var_dump($sql); */
+       echo view('solicitudServicio/resulSolicitud', $data);
     }
     /*------------fin de respuesta solicitud clientes ---------*/
 

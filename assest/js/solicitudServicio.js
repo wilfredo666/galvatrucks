@@ -173,8 +173,8 @@ function reporteSolicitudes(){
         contentType: false,
         processData: false,
         success: function (data) {
-          /* $("#repServConductor").html(data) */
-          console.log(data)
+          $("#repServConductor").html(data)
+          /* console.log(data) */
         }
       })
 }

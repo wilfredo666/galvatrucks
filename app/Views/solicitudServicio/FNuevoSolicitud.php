@@ -67,6 +67,7 @@
 
                 </span></div>
             </div>
+            <input type="hidden" class="form-control" id="idCliente" name="idCliente" value="<?php echo $cliente2["id_cliente"]?>"> 
     </form>
 
 </div>

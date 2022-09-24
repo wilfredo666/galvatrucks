@@ -1,6 +1,6 @@
 <div class="content-wrapper">
   <section class="content-header" style="padding-bottom: 0;">
-    <h3 class="content-header">Servicios realizados por Conductor <small class="font-weight-lighter">Reportes</small></h3>
+    <h3 class="content-header">Solicitud de Servicios<small class="font-weight-lighter h5"> Reportes</small></h3>
     <hr style="border-color: #72C5CF; margin: 0;">
   </section>
 
@@ -11,25 +11,14 @@
           <div class="container col-md-12">
             <div class="row">
               <div class="form-group col-md-5">
-                <label>Nombre y Apellido del Conductor</label>
+                <label>Mostrar por Estado de Solicitud:</label>
                 <select class="form-control" name="estado" id="estado">
-                  <option value="Seleccionar">-- Seleccionar --</option>
-                  <option value="Pendientes">Pendientes</option>
-                  <option value="Rechazados">Rechazados</option>
-                  <option value="Aceptados">Aceptados</option>
+                  <option value="">-- Seleccionar --</option>
+                  <option value="pendiente">Pendientes</option>
+                  <option value="rechazado">Rechazados</option>
+                  <option value="aceptado">Aceptados</option>
                   <option value="Todos">Todos</option>
-                  <!-- <php
-                  foreach ($solicitud as $soli) {
-                    $idSolicitud = $soli["id_solicitud"];
-                    $estadoSoli = $soli['activo_solicitud'];
-                    $numeroBill = $soli['numero_bill'];
-                  ?>
-                  <option value="<php echo $idSolicitud ?>"> <php echo $estadoSoli  ?> </option>
-                  <php
-                  }
-                  ?> -->
                 </select>
-                <p class="text-danger" id="error-nomConductor"></p>
               </div>
               <div class="form-group col-md-2">
                 <label>Fecha desde:</label>
@@ -62,12 +51,14 @@
     <div class="container-fluid">
       <table id="Tabla2" class="table table-bordered table-striped">  
         <thead class="thead-dark">
-          <tr>
-            <th>COD. SERVICIO</th>
-            <th>NRO BL/BILL</th>
-            <th>LUGAR PARTIDA</th>
-            <th>DESTINO</th>
-            <th>FECHA</th>
+          <tr class="text-center">
+            <th>ID</th>
+            <th>RAZON SOCIAL</th>
+            <th>NAVIERA</th>
+            <th>FECHA SOLICI.</th>
+            <th>OBSERVACIONES</th>
+            <th>ESTADO</th>
+            <th>ACCIONES</th>
           </tr>
         </thead>
         <tbody id="repServConductor">

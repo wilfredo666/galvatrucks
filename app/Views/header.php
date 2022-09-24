@@ -137,27 +137,12 @@ with font-awesome or any other icon font library -->
 
               <!-- Clientes  -->
               <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="nav-icon fas fa-user-friends"></i>
+                <a href="<?php echo base_url(); ?>/CCliente" class="nav-link">
+                  <i class="nav-icon fas fa-users "></i></i>
                   <p>
                     Clientes
-                    <i class="fas fa-angle-left right"></i>
                   </p>
                 </a>
-                <ul class="nav nav-treeview">
-                  <li class="nav-item">
-                    <a href="<?php echo base_url(); ?>/CCliente" class="nav-link">
-                      <i class="nav-icon fas fa-users text-info"></i>
-                      <p>Lista de Clientes</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="<?php echo base_url();?>/CCliente/solicitudServ" class="nav-link">
-                      <i class="nav-icon fas fa-check-circle text-info"></i>
-                      <p>Solicitud de Servicios</p>
-                    </a>
-                  </li>
-                </ul>
               </li>
 
               <!--  Navieras  -->
@@ -201,6 +186,12 @@ with font-awesome or any other icon font library -->
                   </p>
                 </a>
                 <ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="<?php echo base_url();?>/CCliente/solicitudServ" class="nav-link">
+                      <i class="nav-icon fas fa-check-circle text-warning"></i>
+                      <p>Solicitud de Servicios</p>
+                    </a>
+                  </li>
                   <li class="nav-item">
                     <a href="<?php echo base_url(); ?>/CServicio" class="nav-link">
                       <i class="nav-icon fab fa-shirtsinbulk text-info"></i>

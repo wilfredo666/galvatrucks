@@ -98,6 +98,7 @@ $razon_social = $cliente["razon_social_cli"];
                                     <div class="form-group col-md-6">
                                         <label>Contraseña</label>
                                         <input type="password" class="form-control" name="password" id="password" value="<?php echo $cliente["pass_usuario"]; ?>">
+                                        <input type="hidden" name="passwordActual"  value="<?php echo $cliente["pass_usuario"]; ?>">
                                         <p class="text-danger font-italic" id="error-password"></p>
                                     </div>
                                     <div class="form-group col-md-6">

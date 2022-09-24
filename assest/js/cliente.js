@@ -211,6 +211,8 @@ function MNuevoCliente() {
     function ActualizarCli(id) {
       let pass1 = document.getElementById("password").value
       let pass2 = document.getElementById("password2").value
+     
+
       let correoCli = document.getElementById("correoCli").value
 
       if(!(/^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i.test(correoCli))){
@@ -227,8 +229,8 @@ function MNuevoCliente() {
         contentType: false,
         processData: false,
         success: function (data) {
-          console.log(data)
-          /* Swal.fire({
+
+          Swal.fire({
             title: 'Datos Actualizados',
             icon: 'success',
             showConfirmButton: false,
@@ -236,7 +238,7 @@ function MNuevoCliente() {
           })
           setTimeout(function(){
               location.reload()
-            },1200) */
+            },1200)
       
         }
       })
