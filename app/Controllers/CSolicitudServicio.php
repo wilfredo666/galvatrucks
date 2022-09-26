@@ -17,8 +17,9 @@ class CSolicitudServicio extends BaseController
 
   public function index()
   {
+    $id_cliente=session("id_cliente");
     $data = array(
-      "solicitud" => $this->MSolicitudServicio->lista_consultas()
+      "solicitud" => $this->MSolicitudServicio->lista_consultas($id_cliente)
     );
     echo view('header');
     echo view('solicitudServicio/solicitudServ', $data);

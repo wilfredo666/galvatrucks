@@ -3,6 +3,7 @@
 namespace App\Controllers;
 
 use App\Models\MUsuario;
+use App\Models\MCliente;
 
 class Home extends BaseController
 {
@@ -14,6 +15,7 @@ class Home extends BaseController
   public function acceso()
   {
     $MUsuario = new MUsuario();
+    $MCliente = new MCliente();
 
     // Validamos los campos de usuario
     if (!$this->validate(
@@ -41,13 +43,19 @@ class Home extends BaseController
     //DESCOMENTAR 3 LINEAS
     if ($consulta == null || password_verify( $password,$consulta['pass_usuario'])==false) {
       return redirect()->to(base_url('/'))->with("errors", ["credenciales" => "Credenciales de acceso inválidas"]);
-     }
+    }
 
-    if (sizeof($consulta) > 0 && password_verify($password, $consulta['pass_usuario'])) { 
-      //DESCOMENTAR
+    if (sizeof($consulta) > 0 && password_verify($password, $consulta['pass_usuario'])) {
+      $id=$consulta["id_usuario"];
+      $data=$MCliente->InfoClienteUsuario($id);
       $session = session();
-      $session->set($consulta);
-      
+
+      if($data>0){
+        $session->set($data);
+      }else{
+        $session->set($consulta);
+      }      
+
       echo view('header');
       echo view('panel_principal');
       echo view('footer');
