@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Models\MCliente;
 use App\Models\MUsuario;
 use App\Models\MSolicitudServicio;
+use App\Models\MEmpresaMaritima;
 
 class CCliente extends BaseController
 {
@@ -13,6 +14,7 @@ class CCliente extends BaseController
         $this->MCliente = new MCliente();
         $this->MUsuario = new MUsuario();
         $this->MSolicitudServicio = new MSolicitudServicio();
+        $this->MEmpresaMaritima = new MEmpresaMaritima();
     }
 
     public function index()
@@ -195,10 +197,10 @@ class CCliente extends BaseController
     {
         /* id del cliente */
         $id = $this->request->uri->getSegment(3);
-        
+
         /* id del usuario */
-        $idUsuario= session("id_usuario");
- 
+        $idUsuario = session("id_usuario");
+
         $correo = $_POST["correoCli"];
         $contacto = $_POST["contactoCli"];
         $nombreCli = $_POST["nombreCli"];
@@ -208,14 +210,14 @@ class CCliente extends BaseController
         $pass1 = $_POST["password"];
         $passActual = $_POST["passwordActual"];
 
-        $password ="";
+        $password = "";
 
-        if($pass1==$passActual){
+        if ($pass1 == $passActual) {
             $password = $pass1;
-        } else{
+        } else {
             $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
         }
-        
+
         /* $fotoCli = $_FILES["fotoCli"];
 
         if ($fotoCli["name"] == "") {
@@ -264,24 +266,59 @@ PARA LA RESPUESTA A SOLICITUD DE SERVICIO DE CLIENTES
     public function soliServicio()
     {
         $estado = $_POST["estado"];
-        $fechaDesde = $_POST["fechaDesde"];
-        $fechaHasta = $_POST["fechaHasta"];
-        
+        /* $fechaDesde = $_POST["fechaDesde"];
+        $fechaHasta = $_POST["fechaHasta"]; */
+
         $sql = array(
             "estado" => $estado,
-            "fechaDesde" => $fechaDesde,
-            "fechaHasta" => $fechaHasta,
+            /* "fechaDesde" => $fechaDesde,
+            "fechaHasta" => $fechaHasta, */
         );
 
         $data = array(
-            "EstadoSolicitud" => $this -> MSolicitudServicio -> DetalleSolicitud($sql)
+            "EstadoSolicitud" => $this->MSolicitudServicio->DetalleSolicitud($sql)
         );
 
-      /*  var_dump($sql); */
-       echo view('solicitudServicio/resulSolicitud', $data);
+        /*  var_dump($sql); */
+        echo view('solicitudServicio/resulSolicitud', $data);
+    }
+
+    public function FVerSolicitud()
+    {
+        $id = $this->request->uri->getSegment(3);
+
+        $data = array(
+            "solicitudServ" => $this->MSolicitudServicio->InfoSolicitud($id)
+        );
+        echo view("solicitudServicio/MVerSolicitud", $data);
+    }
+    /* FUNCION PARA ELIMINAR SOLICITUD POR EL ADMINISTRADOR */
+    public function FEliSolicitudAdmi()
+    {
+        $id = $this->request->uri->getSegment(3);
+
+        echo view("solicitudServicio/FEliSolicitudAdmi", compact("id"));
+    }
+    public function EliSolicitudAdmin()
+    {
+        $id = $this->request->uri->getSegment(3);
+        $this->MSolicitudServicio->delete($id);
+    }
+
+    /* solicitud para aceptar o rechazr solicitud por el administrador */
+    public function EditSolicitudAdmin()
+    {
+        $id = $this->request->uri->getSegment(3);
+        $observaciones = $_POST["observaciones"];
+        $estadoSoli = $_POST["estadoSoli"];
+
+        $data = array(
+            "observaciones" => $observaciones,
+            "activo_solicitud" => $estadoSoli
+        );
+        $this -> MSolicitudServicio->update($id, $data);
     }
     /*------------fin de respuesta solicitud clientes ---------*/
-
     public function seguimientoCont()
     {
         echo view('header');

@@ -178,3 +178,89 @@ function reporteSolicitudes(){
         }
       })
 }
+
+  /* ==========================================
+FUNCION PARA VER LAS SOLICITUDES Y DOCUMENTOS
+=============================================*/
+function MVerDocumento(id){
+    $("#modal-lg").modal("show")
+    var obj="";
+    $.ajax({
+        type: "POST",
+        url: "FVerSolicitud/"+id,
+        data: obj,
+        success: function (data){
+            $("#content-lg").html(data)
+            /* console.log(data) */
+        }
+    })
+  }
+
+  /* ==========================================
+FUNCION PARA ELIMINAR SOLICITUD POR PARTE DEL ADMINISTRADOR
+=============================================*/
+function MEliminarSolicitud(id){
+    $("#modal-default").modal("show")
+
+  var obj = "";
+  $.ajax({
+    type: "POST",
+    url: "FEliSolicitudAdmi/"+id,
+    data: obj,
+    success: function (data) {
+      $("#content-default").html(data)
+    }
+  })
+}
+
+function EliServicioAdmin (id){
+    var obj=""
+    $.ajax({
+      type: "POST",
+      url: "EliSolicitudAdmin/"+id,
+      data: obj,
+      cache: false,
+      contentType: false,
+      processData: false,
+      success: function (data) {
+        
+        Swal.fire({
+          title: 'Solicitud eliminada',
+          icon: 'success',
+          showConfirmButton: false,
+          timer:1000
+        })
+        
+        setTimeout(function(){
+          location.reload()
+        },1200)
+      }
+    })
+}
+  /* ==========================================
+FUNCION PARA CEPTAR, RECHAZAR SOLICITUD POR PARTE DEL ADMINISTRADOR
+=============================================*/
+function EditSolicitudAdmin(id){
+    let form = new FormData($("#FEditSolicitudAdmin")[0])
+  
+    $.ajax({
+        type: "POST",
+        url: "EditSolicitudAdmin/"+id,
+        data: form,
+        cache: false,
+        contentType: false,
+        processData: false,
+        success: function (data) {
+            /* console.log(data) */
+          Swal.fire({
+            title: 'Registro Actualizado',
+            icon: 'success',
+            showConfirmButton: false,
+            timer: 1000
+          })
+          setTimeout(function(){
+            location.reload()
+          },1200)
+        }
+      })
+}

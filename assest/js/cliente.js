@@ -247,3 +247,5 @@ function MNuevoCliente() {
       document.getElementById("error-password2").innerHTML = "Las contraseñas no coinciden"
     }
   } 
+
+

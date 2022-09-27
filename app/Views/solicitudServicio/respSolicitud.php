@@ -20,14 +20,14 @@
                   <option value="Todos">Todos</option>
                 </select>
               </div>
-              <div class="form-group col-md-2">
+              <!-- <div class="form-group col-md-2">
                 <label>Fecha desde:</label>
                 <input type="date" class="form-control" id="fechaDesde" name="fechaDesde">
               </div>
               <div class="form-group col-md-2">
                 <label>Fecha hasta:</label>
                 <input type="date" class="form-control" id="fechaHasta" name="fechaHasta">
-              </div>
+              </div> -->
               <div class="form-group col-md-3" style=" display: flex; align-items: center;">
                 <button type="button" class="btn btn-navbar btn-app bg-warning" onclick="reporteSolicitudes();">
                   <i class="fas fa-search "></i>
@@ -48,9 +48,9 @@
   <!-- /.card-body -->
   <section class="content">
 
-    <div class="container-fluid">
-      <table id="Tabla2" class="table table-bordered table-striped">  
-        <thead class="thead-dark">
+    <div class="container-fluid ">
+      <table id="Tabla2" class="table table-bordered table-striped ">  
+        <thead class="thead-dark ">
           <tr class="text-center">
             <th>ID</th>
             <th>RAZON SOCIAL</th>

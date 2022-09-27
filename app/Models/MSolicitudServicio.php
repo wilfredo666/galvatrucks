@@ -25,6 +25,7 @@ class MSolicitudServicio extends Model
 
   public function InfoSolicitud($id){
     $this->select("*");
+    $this->join("cliente", 'cliente.id_cliente = solicitud_servicio.id_cliente');
     $this->join('empresa_maritima','empresa_maritima.id_emp_maritima = solicitud_servicio.id_emp_maritima');
     $this->where("id_solicitud", $id);
     $resultado=$this->first();
@@ -33,8 +34,8 @@ class MSolicitudServicio extends Model
 
   public function DetalleSolicitud($data){
     $estado= $data["estado"];
-    $fechaDesde= $data["fechaDesde"];
-    $fechaHasta= $data["fechaHasta"];
+    /* $fechaDesde= $data["fechaDesde"];
+    $fechaHasta= $data["fechaHasta"]; */
 
     $this->select("id_solicitud, razon_social_emp, razon_social_cli, fecha_solicitud, doc_bill, doc_factura, doc_lista_empaque, doc_otros, observaciones, activo_solicitud");
 
@@ -45,7 +46,8 @@ class MSolicitudServicio extends Model
       $this->where("activo_solicitud", $estado);
     }
 
-    $this->where("fecha_solicitud between '$fechaDesde' and '$fechaHasta' ORDER BY id_solicitud DESC"); 
+    /* $this->where("fecha_solicitud between '$fechaDesde' and '$fechaHasta' ORDER BY id_solicitud DESC");  */
+    $this->where("id_solicitud ORDER BY id_solicitud DESC"); 
 
     $resultado=$this->findAll();
     return $resultado;

@@ -33,13 +33,10 @@ foreach ($EstadoSolicitud as $value) {
         ?>
         <td>
             <div class="text-center">
-                <button class="btn btn-info btn-circle" title="Ver documentos" onclick="MVerDocumento()">
-                <i class="fas fa-arrow-alt-circle-down"></i> Ver doc.
+                <button class="btn btn-sm btn-info btn-circle" title="Ver documentos" onclick="MVerDocumento(<?php echo $idServ; ?>)">
+                <i class="fas fa-eye"></i>
                 </button>
-                <button class="btn btn-warning btn-circle" onclick="MEditarSolicitud()">
-                    <i class="fas fa-edit"></i>
-                </button>
-                <button class="btn btn-outline-danger btn-circle" onclick="MEliminarSolicitud()">
+                <button class="btn btn-sm  btn-outline-danger btn-circle" title="Eliminar documentos" onclick="MEliminarSolicitud(<?php echo $idServ; ?>)">
                     <i class="fas fa-trash-alt"></i>
                 </button>
             </div>
