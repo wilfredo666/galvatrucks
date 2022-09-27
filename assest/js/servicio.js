@@ -46,7 +46,7 @@ function MNuevoServicio(){
         contentType: false,
         processData: false,
         success: function (data) {
-          Swal.fire({
+          /*Swal.fire({
             title: 'Registro Exitoso',
             icon: 'success',
             showConfirmButton: false,
@@ -54,7 +54,8 @@ function MNuevoServicio(){
           })
             setTimeout(function(){
                 location.reload()
-              },1200)
+              },1200)*/
+          console.log(data);
         }
       })
     }
