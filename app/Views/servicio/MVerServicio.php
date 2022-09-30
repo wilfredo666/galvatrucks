@@ -104,7 +104,7 @@
                                 <div class="row">
                                     <div class="col-sm-4">
                                         <p class="m-b-10 f-w-600">Conductor Asignado</p>
-                                        <h6 class="text-muted f-w-400"><?php echo $servicio["id_conductor"] ?></h6>
+                                        <h6 class="text-muted f-w-400"><?php echo $servicio2["id_conductor"] ?></h6>
                                     </div>
                                     <div class="col-sm-4">
                                         <p class="m-b-10 f-w-600">Contrato Camion</p>

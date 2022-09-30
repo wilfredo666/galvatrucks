@@ -19,7 +19,19 @@ class MServicio extends Model
     $this->join("cliente", 'cliente.id_cliente=servicio.id_cliente');
     $this->join("empresa_maritima", 'empresa_maritima.id_emp_maritima=servicio.id_emp_maritima');
     $this->join("ruta", 'ruta.id_ruta=servicio.id_ruta');
+    /* $this->join("asignacion", 'asignacion.id_asignacion=servicio.id_asignacion'); */
+    /* $this->join("contrato_camion", 'contrato_camion.id_contrato_camion=servicio.id_contrato_camion'); */
+    $this->where("id_servicio", $id);
+    
+    $resultado = $this->first();
+    return $resultado;
+  }
+  public function InfoServicio2($id)
+  {
+    $this->select("*");
+
     $this->join("asignacion", 'asignacion.id_asignacion=servicio.id_asignacion');
+    /* $this->join("contrato_camion", 'contrato_camion.id_contrato_camion=servicio.id_contrato_camion'); */
     $this->where("id_servicio", $id);
     $resultado = $this->first();
     return $resultado;
@@ -32,6 +44,17 @@ class MServicio extends Model
     $this->join("empresa_maritima", 'empresa_maritima.id_emp_maritima=servicio.id_emp_maritima');
     $this->join("asignacion", 'asignacion.id_asignacion=servicio.id_asignacion');
     $this->join("ruta", 'ruta.id_ruta=servicio.id_ruta');
+    $resultado = $this->findAll();
+    return $resultado;
+  }
+
+  public function lista_consultas2()
+  {
+    $this->select("*");
+    $this->join("cliente", 'cliente.id_cliente=servicio.id_cliente');
+    $this->join("empresa_maritima", 'empresa_maritima.id_emp_maritima=servicio.id_emp_maritima');
+    $this->join("ruta", 'ruta.id_ruta=servicio.id_ruta');
+    /* $this->where("fecha_arribo ORDER BY fecha_arribo");  */
     $resultado = $this->findAll();
     return $resultado;
   }

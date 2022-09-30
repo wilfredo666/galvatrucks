@@ -24,7 +24,7 @@
   <!-- BS Stepper -->
   <link rel="stylesheet" href="<?php echo base_url(); ?>/assest/plugins/bs-stepper/css/bs-stepper.min.css">
 
-
+  <link rel="stylesheet" href="<?php echo base_url(); ?>/assest/dist/css/style.css">
 
 
 </head>
@@ -186,8 +186,8 @@ with font-awesome or any other icon font library -->
                   </p>
                 </a>
                 <ul class="nav nav-treeview">
-                <li class="nav-item">
-                    <a href="<?php echo base_url();?>/CCliente/solicitudServ" class="nav-link">
+                  <li class="nav-item">
+                    <a href="<?php echo base_url(); ?>/CCliente/solicitudServ" class="nav-link">
                       <i class="nav-icon fas fa-check-circle text-warning"></i>
                       <p>Solicitud de Servicios</p>
                     </a>
@@ -205,6 +205,16 @@ with font-awesome or any other icon font library -->
                     </a>
                   </li>
                 </ul>
+              </li>
+
+              <!--  SEGUIMIENTOS DE CONTENEDOR -->
+              <li class="nav-item">
+                <a href="<?php echo base_url(); ?>/CServicio/seguimientoContenedor" class="nav-link">
+                  <i class="nav-icon  fas fa-flag-checkered"></i>
+                  <p>
+                    Seguimiento de Contenedores
+                  </p>
+                </a>
               </li>
 
               <!--  REPORTES -->
@@ -271,6 +281,9 @@ with font-awesome or any other icon font library -->
             <?php
             }
             ?>
+
+
+
             <!-- PARA LAS VISTAS DEL ROL CLIENTE -->
             <?php
             if (session("rol") == "Cliente") {

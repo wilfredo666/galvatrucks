@@ -51,13 +51,16 @@
 
               <td>
                 <div class="text-center">
-                  <button class="btn btn-outline-info btn-circle" onclick="MVerServicio(<?php echo $idServicio; ?>)">
+                  <button class="btn btn-sm btn-outline-success btn-circle" title="Seguimiento de Contenedor" onclick="MSeguimientoServicio(<?php echo $idServicio; ?>)">
+                    <i class="fas fa-flag-checkered"></i>
+                  </button>
+                  <button class="btn btn-sm btn-outline-info btn-circle" title="Ver detalles de Servicio" onclick="MVerServicio(<?php echo $idServicio; ?>)">
                     <i class="fas fa-eye"></i>
                   </button>
-                  <button class="btn btn-warning btn-circle" onclick="MEditarServicio(<?php echo $idServicio; ?>)">
+                  <button class="btn btn-sm btn-warning btn-circle" title="Editar Servicio" onclick="MEditarServicio(<?php echo $idServicio; ?>)">
                     <i class="fas fa-edit"></i>
                   </button>
-                  <button class="btn btn-outline-danger btn-circle" onclick="MEliminarServicio(<?php echo $idServicio; ?>)">
+                  <button class="btn btn-sm btn-outline-danger btn-circle" title="Eliminar Servicio" onclick="MEliminarServicio(<?php echo $idServicio; ?>)">
                     <i class="fas fa-trash-alt"></i>
                   </button>
                 </div>

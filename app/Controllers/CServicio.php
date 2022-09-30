@@ -25,7 +25,7 @@ class CServicio extends BaseController
   {
 
     $data = array(
-      "servicio" => $this->MServicio->lista_consultas()
+      "servicio" => $this->MServicio->lista_consultas2()
     );
 
     echo view('header');
@@ -110,8 +110,8 @@ class CServicio extends BaseController
       "documento" => $doc,
       "observaciones" => $observacion
     );
-    var_dump($data);
-    //$this->MServicio->insert($data);
+    /* var_dump($data); */
+    $this->MServicio->insert($data);
   }
 
   /* --------------------------------------
@@ -122,7 +122,8 @@ class CServicio extends BaseController
     $id = $this->request->uri->getSegment(3);
 
     $data = array(
-      "servicio" => $this->MServicio->InfoServicio($id)
+      "servicio" => $this->MServicio->InfoServicio($id),
+      "servicio2" => $this->MServicio->InfoServicio2($id)
     );
     echo view("servicio/MVerServicio", $data);
   }
@@ -225,4 +226,16 @@ class CServicio extends BaseController
     $id = $this->request->uri->getSegment(3);
     $this->MServicio->delete($id);
   }
+  /* --------------------------------------
+      FUNCIONES PARA  SEGUIMIENTO DE CONTENEDORES
+    --------------------------------------*/
+  public function seguimientoContenedor(){
+
+
+    echo view('header');
+    echo view("servicio/seguimientoContenedor");
+    echo view('footer');
+    
+  }
 }
+

@@ -46,7 +46,7 @@ function MNuevoServicio(){
         contentType: false,
         processData: false,
         success: function (data) {
-          /*Swal.fire({
+          Swal.fire({
             title: 'Registro Exitoso',
             icon: 'success',
             showConfirmButton: false,
@@ -54,8 +54,8 @@ function MNuevoServicio(){
           })
             setTimeout(function(){
                 location.reload()
-              },1200)*/
-          console.log(data);
+              },1200)
+         /*  console.log(data); */
         }
       })
     }
@@ -193,4 +193,11 @@ function SeleccionServicio(){
   }else{
      document.getElementById("conductorAsig").disabled=false
   } 
+}
+/*===========================================================
+    Seguimiento y actualizacion de contenedor del cliente 
+               por parte del ADMINISTRADOR
+==========================================================*/
+function MSeguimientoServicio(){
+
 }
