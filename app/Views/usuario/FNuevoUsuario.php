@@ -1,5 +1,5 @@
-<div class="modal-header bg-primary">
-  <h3 class="modal-title"> <b> REGISTRO NUEVO USUARIO </b></h3>
+<div class="encabezado modal-header">
+  <h4 class="modal-title"> REGISTRO NUEVO USUARIO </h4>
   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button>
@@ -26,7 +26,7 @@
           <select name="rolUsuario" id="rolUsuario" class="form-control">
             <option value="null">Seleccionar</option>
             <option value="Administrador">Administrador</option>
-            <option value="Conductor">Conductor</option>
+            <option value="Auxiliar">Auxiliar</option>
             <option value="Cliente">Cliente</option>
           </select>
           <p class="text-danger" id="error-rolUsuario"></p>

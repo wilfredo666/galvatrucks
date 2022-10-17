@@ -1,4 +1,4 @@
-<div class="modal-header bg-info" >
+<div class="modal-header encabezado" >
     <h4 class="modal-title">EDITAR DATOS DEL CAMIÓN</h4>
     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
         <span aria-hidden="true">&times;</span>
@@ -86,5 +86,5 @@
 </div>
 <div class="modal-footer justify-content-between">
     <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-    <button type="button" class="btn btn-primary" onclick="EditCamion(<?php echo $camion["id_camion"];?>)">Actualizar</button>
+    <button type="button" class="btn btn-success" onclick="EditCamion(<?php echo $camion["id_camion"];?>)">Actualizar</button>
 </div>

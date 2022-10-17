@@ -80,12 +80,12 @@ class CServicio extends BaseController
     $rutas = $_POST["ruta"];
     $costoServ = $_POST["costoServ"];
 
-    $docImportacion = $_FILES["docImportacion"];
-
+    
+  /*   $docImportacion = $_FILES["docImportacion"];
     $ruta = "assest/documentos/servicios/";
     $doc = $docImportacion["name"];
     $tmpDoc = $docImportacion["tmp_name"];
-    move_uploaded_file($tmpDoc, $ruta . $doc);
+    move_uploaded_file($tmpDoc, $ruta . $doc); */
 
     $observacion = $_POST["observacion"];
 
@@ -107,7 +107,7 @@ class CServicio extends BaseController
       "id_contrato_camion" => $contratoCam,
       "id_ruta" => $rutas,
       "costo_servicio" => $costoServ,
-      "documento" => $doc,
+      /* "documento" => $doc, */
       "observaciones" => $observacion
     );
     /* var_dump($data); */
@@ -123,7 +123,8 @@ class CServicio extends BaseController
 
     $data = array(
       "servicio" => $this->MServicio->InfoServicio($id),
-      "servicio2" => $this->MServicio->InfoServicio2($id)
+      "servicio2" => $this->MServicio->InfoServicio2($id),
+      "servicio3" => $this->MServicio->InfoServicio3($id)
     );
     echo view("servicio/MVerServicio", $data);
   }
@@ -140,11 +141,12 @@ class CServicio extends BaseController
 
       'cliente' => $this->MCliente->findAll(),
       'empMaritima' => $this->MEmpresaMaritima->findAll(),
-      'asignacion' => $this->MAsignacion->findAll(),
+      'asignacion' => $this->MAsignacion->ListaAsignaciones(),
       'contratoCam' => $this->MContratoCamion->findAll(),
       'ruta' => $this->MRuta->findAll()
     );
     echo view("servicio/FEditServicio", $data);
+    /* var_dump($data); */
   }
 
   public function EditServicio()
@@ -164,10 +166,22 @@ class CServicio extends BaseController
     $destMerc = $_POST["destMerc"];
     $fechaArribo = $_POST["fechaArribo"];
     $fechaAlmacen = $_POST["fechaAlmacen"];
-    $conductorAsig = $_POST["conductorAsig"];
-    $contratoCam = $_POST["contratoCam"];
+
+
+    if(isset($_POST["conductorAsig"])){
+      $conductorAsig = $_POST["conductorAsig"];
+    }else{
+      $conductorAsig=0;
+    }
+    if(isset($_POST["contratoCam"])){
+      $contratoCam = $_POST["contratoCam"];
+    }else{
+      $contratoCam=0;
+    }
+
     $rutas = $_POST["ruta"];
     $costoServ = $_POST["costoServ"];
+
 
     $docImportacion = $_FILES["docImportacion"];
 
@@ -179,8 +193,6 @@ class CServicio extends BaseController
       $tmpDoc = $docImportacion["tmp_name"];
       move_uploaded_file($tmpDoc, $ruta . $doc);
     }
-
-
 
     $observacion = $_POST["observacion"];
     $estado = $_POST["estado"];
@@ -209,7 +221,7 @@ class CServicio extends BaseController
 
     );
 
-
+/* var_dump($data); */
     $this->MServicio->update($id, $data);
   }
   /* --------------------------------------

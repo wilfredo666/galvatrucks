@@ -94,8 +94,17 @@ class CUsuario extends BaseController
     $id = $this->request->uri->getSegment(3);
 
     $nomUsuario = $_POST["nomUsuario"];
-    $password = $_POST["password"];
     $rolUsuario = $_POST["rolUsuario"];
+    $pass1 = $_POST["password"];
+    $passActual = $_POST["passwordActual"];
+    
+    $password = "";
+
+    if ($pass1 == $passActual) {
+        $password = $pass1;
+    } else {
+        $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
+    }
 
     $data = array(
       "nombre_usuario" => $nomUsuario,

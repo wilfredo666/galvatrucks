@@ -1,4 +1,4 @@
-<div class="modal-header bg-info" >
+<div class="modal-header encabezado" >
     <h4 class="modal-title">EDITAR DATOS DE LA NAVIERA</h4>
     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
         <span aria-hidden="true">&times;</span>
@@ -43,5 +43,5 @@
 
 <div class="modal-footer justify-content-between">
     <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-    <button type="button" class="btn btn-primary" onclick="EditEmpMaritima(<?php echo $empMaritima["id_emp_maritima"];?>)">Actualizar</button>
+    <button type="button" class="btn btn-success" onclick="EditEmpMaritima(<?php echo $empMaritima["id_emp_maritima"];?>)">Actualizar</button>
 </div>

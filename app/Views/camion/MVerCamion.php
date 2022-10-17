@@ -1,9 +1,9 @@
-<div class="page-content page-container" id="page-content">
+<div class="page-content page-container fondo-modal"  id="page-content">
   <div class="padding">
     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
       <span aria-hidden="true">&times;</span>
     </button>
-    <div class="row container d-flex justify-content-center">
+    <div class="row container d-flex justify-content-center ">
       <div class="col-xl-12 col-md-12">
         <div class="card user-card-full">
           <div class="row m-l-0 m-r-0">

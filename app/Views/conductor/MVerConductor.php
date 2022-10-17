@@ -1,4 +1,4 @@
-<div class="page-content page-container" id="page-content">
+<div class="page-content page-container fondo-modal" id="page-content">
     <div class="padding">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
@@ -53,7 +53,7 @@
                                     </div>
                                     <div class="col-sm-4">
                                         <p class="m-b-10 f-w-600">Fecha de Nacimiento</p>
-                                        <p class="text-muted f-w-400"><?php echo $conductor["fecha_nac_cond"] ?></p>
+                                        <p class="text-muted f-w-400"><?php echo date('d-m-Y', strtotime($conductor["fecha_nac_cond"]))  ?></p>
                                     </div>
                                     <div class="col-sm-4">
                                         <p class="m-b-10 f-w-600">Contácto</p>

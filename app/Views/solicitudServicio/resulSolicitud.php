@@ -10,12 +10,14 @@ foreach ($EstadoSolicitud as $value) {
     $docOtros = $value['doc_otros'];
     $observaciones = $value['observaciones'];
     $estadoSoli = $value['activo_solicitud'];
+
+    $fechaSolicitud = date('d-m-Y', strtotime($fechaSoli));
 ?>
     <tr>
         <td><?php echo $idServ; ?></td>
         <td><?php echo $razonSocialCli; ?></td>
         <td><?php echo $razonSocialEmp; ?></td>
-        <td><?php echo $fechaSoli; ?></td>
+        <td><?php echo $fechaSolicitud; ?></td>
         <td><?php echo $observaciones; ?></td>
         <?php
         if ($estadoSoli == "pendiente") {

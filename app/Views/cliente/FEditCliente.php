@@ -1,5 +1,5 @@
-<div class="modal-header bg-info">
-    <h3 class="modal-title"> <b> EDITAR DATOS DEL CLIENTE</b></h3>
+<div class="modal-header encabezado">
+    <h4 class="modal-title">  EDITAR DATOS DEL CLIENTE</h4>
     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
         <span aria-hidden="true">&times;</span>
     </button>
@@ -101,5 +101,5 @@
 </div>
 <div class="modal-footer justify-content-between">
     <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-    <button type="button" class="btn btn-primary" onclick="EditCliente(<?php echo $cliente["id_cliente"];?>)">Actualizar</button>
+    <button type="button" class="btn btn-success" onclick="EditCliente(<?php echo $cliente["id_cliente"];?>)">Actualizar</button>
 </div>

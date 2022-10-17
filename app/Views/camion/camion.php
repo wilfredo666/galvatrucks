@@ -9,14 +9,14 @@
 
     <div class="container-fluid">
       <table id="DataTableCamion" class="table table-bordered table-striped">
-        <thead>
+        <thead class="text-center align-items-center justify-content-center">
           <tr>
             <th>ID</th>
             <th>PLACA</th>
             <th>CLASE DE CAMIÓN</th>
             <th>CAPACIDAD DE CARGA</th>
             <th>MARCA DEL CAMIÓN</th>
-            <th> <button class="btn btn-block btn-primary" onclick="MNuevoCamion()"><i class="fas fa-plus-circle"></i> NUEVO </button> </th>
+            <th> <button class="btn  btn-primary" style="width: 80%;" onclick="MNuevoCamion()"><i class="fas fa-plus-circle"></i> NUEVO </button> </th>
           </tr>
         </thead>
         <tbody>

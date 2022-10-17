@@ -26,6 +26,9 @@
 
   <link rel="stylesheet" href="<?php echo base_url(); ?>/assest/dist/css/style.css">
 
+<style>
+ 
+</style>
 
 </head>
 

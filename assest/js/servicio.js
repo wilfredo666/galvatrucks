@@ -23,6 +23,9 @@ function MNuevoServicio(){
     let form2 = new FormData($("#FNuevoServicio2")[0])
     let form3 = new FormData($("#FNuevoServicio3")[0]) */
 
+    let cliente = document.getElementById("servCliente").selectedIndex;
+    let ruta = document.getElementById("ruta").selectedIndex;
+
  /*    let placa=document.getElementById("placa").value
     let clase = document.getElementById("clase").selectedIndex;
     let capacidad = document.getElementById("capacidad").selectedIndex;
@@ -37,6 +40,12 @@ function MNuevoServicio(){
     }
 
     else{ */
+    if(cliente == null || cliente == 0){
+      document.getElementById("error-cliente").innerHTML="Seleccione el cliente"
+    }
+    else if(ruta == null || ruta == 0){
+      document.getElementById("error-ruta").innerHTML="Selecciona una ruta para este servicio"
+    }else{
       $.ajax({
         type: "POST",
         url: "CServicio/RegServicio",
@@ -59,6 +68,7 @@ function MNuevoServicio(){
         }
       })
     }
+  }
 /*===================================
 Modal formulario VER SERVICIO
 =====================================*/
@@ -89,6 +99,7 @@ Modal formulario EDITAR SERVICIO
       data: obj,
       success: function (data) {
         $("#content-xl").html(data)
+        /* console.log(data) */
       }
     })
   }
@@ -120,6 +131,7 @@ EDITAR nuevo SERVICIO
         contentType: false,
         processData: false,
         success: function (data) {
+          /* console.log(data) */
           Swal.fire({
             title: 'Registro Actualizado',
             icon: 'success',

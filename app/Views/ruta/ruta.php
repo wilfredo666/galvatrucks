@@ -9,14 +9,14 @@
   <section class="content">
     <div class="container-fluid">
       <table id="DataTableCamion" class="table table-bordered table-striped">
-        <thead>
+        <thead class="text-center align-items-center justify-content-center">
           <tr>
             <th>ID</th>
             <th>RUTA PARTIDA</th>
             <th>RUTA DE LLEGADA</th>
             <th>TOTAL KILOMETROS</th>
             <th>COMBUSTIBLE</th>
-            <th> <button class="btn btn-block btn-primary" onclick="MNuevoRuta()"><i class="fas fa-plus-circle"></i> NUEVO </button> </th>
+            <th> <button class="btn btn-primary" style="width: 80%;" onclick="MNuevoRuta()"><i class="fas fa-plus-circle"></i> NUEVO </button> </th>
           </tr>
         </thead>
         <tbody>

@@ -8,8 +8,8 @@
 
   <section class="content">
     <div class="container-fluid">
-      <table id="DataTableCamion" class="table table-bordered table-striped">
-        <thead>
+      <table id="DataTableServi" class="table table-bordered table-striped">
+        <thead class="text-center align-items-center justify-content-center">
           <tr>
             <th>COD. SERVICIO</th>
             <th>NOMBRE CLIENTE</th>
@@ -17,7 +17,7 @@
             <th>NRO BL/BILL</th>
             <th>FECHA ARRIBO</th>
             <th>ESTADO</th>
-            <th> <button class="btn btn-block btn-primary" onclick="MNuevoServicio()"><i class="fas fa-plus-circle"></i> NUEVO </button> </th>
+            <th> <button class="btn btn-primary" style="width: 80%;" onclick="MNuevoServicio()"><i class="fas fa-plus-circle"></i> NUEVO </button> </th>
           </tr>
         </thead>
         <tbody>
@@ -29,18 +29,20 @@
             $nroBl = $lista['num_bill'];
             $fechaArribo = $lista['fecha_arribo'];
             $estadoServicio = $lista['activo_serv'];
+
+            $fechaArriboContenedor = date('d-m-Y', strtotime($fechaArribo));
           ?>
             <tr>
               <td><?php echo $codServicio; ?></td>
               <td><?php echo $cli; ?></td>
 
               <td><?php echo $nroBl; ?></td>
-              <td><?php echo $fechaArribo; ?></td>
+              <td><?php echo $fechaArriboContenedor; ?></td>
 
               <?php
               if ($estadoServicio == 1) {
               ?>
-                <td><span class="badge bg-danger">Pendiente</span></td>
+                <td><span class="badge bg-danger">En progreso</span></td>
               <?php
               } else {
               ?>
@@ -51,9 +53,6 @@
 
               <td>
                 <div class="text-center">
-                  <button class="btn btn-sm btn-outline-success btn-circle" title="Seguimiento de Contenedor" onclick="MSeguimientoServicio(<?php echo $idServicio; ?>)">
-                    <i class="fas fa-flag-checkered"></i>
-                  </button>
                   <button class="btn btn-sm btn-outline-info btn-circle" title="Ver detalles de Servicio" onclick="MVerServicio(<?php echo $idServicio; ?>)">
                     <i class="fas fa-eye"></i>
                   </button>

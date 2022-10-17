@@ -26,12 +26,22 @@ class MServicio extends Model
     $resultado = $this->first();
     return $resultado;
   }
+
   public function InfoServicio2($id)
   {
     $this->select("*");
-
     $this->join("asignacion", 'asignacion.id_asignacion=servicio.id_asignacion');
     /* $this->join("contrato_camion", 'contrato_camion.id_contrato_camion=servicio.id_contrato_camion'); */
+    $this->where("id_servicio", $id);
+    $resultado = $this->first();
+    return $resultado;
+  }
+
+  public function InfoServicio3($id)
+  {
+    $this->select("*");
+    /* $this->join("asignacion", 'asignacion.id_asignacion=servicio.id_asignacion'); */
+    $this->join("contrato_camion", 'contrato_camion.id_contrato_camion=servicio.id_contrato_camion');
     $this->where("id_servicio", $id);
     $resultado = $this->first();
     return $resultado;
@@ -77,8 +87,6 @@ class MServicio extends Model
     $this->where("asignacion.id_conductor=$id");
  /*    $this->where("asignacion.id_conductor=$id") AND ("fecha_inicio_servicio BETWEEN $fechaDesde and $fechaHasta"); */
     $this->where("fecha_inicio_servicio between '$fechaDesde' and '$fechaHasta' "); 
-
-
     $resultado = $this->findAll();
     return $resultado;
   }

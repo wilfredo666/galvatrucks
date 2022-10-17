@@ -1,4 +1,4 @@
-<div class="page-content page-container" id="page-content">
+<div class="page-content page-container fondo-modal" id="page-content">
   <div class="padding">
     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
       <span aria-hidden="true">&times;</span>

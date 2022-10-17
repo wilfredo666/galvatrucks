@@ -9,15 +9,14 @@
 
     <div class="container-fluid">
       <table id="DataTableEmpresaMaritima" class="table table-bordered table-striped">
-        <thead>
+        <thead class="text-center align-items-center justify-content-center">
           <tr>
             <th>ID</th>
             <th>RAZON SOCIAL</th>
             <th>NIT </th>
-
             <th>CORREO</th>
             <th>CONTACTO</th>
-            <th> <button class="btn btn-block btn-primary" onclick="MNuevoEmpMaritima()"><i class="fas fa-plus-circle"></i> NUEVO </button> </th>
+            <th> <button class="btn btn-primary" style="width: 80%;" onclick="MNuevoEmpMaritima()"><i class="fas fa-plus-circle"></i> NUEVO </button> </th>
           </tr>
         </thead>
         <tbody>

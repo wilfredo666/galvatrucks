@@ -11,14 +11,14 @@
 
     <div class="container-fluid">
       <table id="DataTableAsignacion" class="table table-bordered table-striped">
-        <thead>
+        <thead class="text-center align-items-center justify-content-center">
           <tr>
             <th>ID</th>
             <th>CÓDIGO DE ASIGNACIÓN</th>
             <th>FECHA DE ASIGNACIÓN</th>
             <th>CONDUCTOR</th>
             <th>ESTADO</th>
-            <th> <button class="btn btn-block btn-primary" onclick="MNuevoAsignacion()"><i class="fas fa-plus-circle"></i> NUEVO </button> </th>
+            <th> <button class="btn btn-primary" style="width: 80%;" onclick="MNuevoAsignacion()"><i class="fas fa-plus-circle"></i> NUEVO </button> </th>
           </tr>
         </thead>
         <tbody>
@@ -32,11 +32,12 @@
             $nomCond = $lista['nombre_cond'];
             $apCond = $lista['apellido_cond'];
             $estado = $lista['activo_asig'];
+            
           ?>
             <tr>
               <td><?php echo $idAsig; ?></td>
               <td><?php echo $nombreAsig; ?></td>
-              <td><?php echo $fechaAsig; ?></td>
+              <td><?php echo date('d-m-Y', strtotime($fechaAsig)); ?></td>
               <td><?php echo $nomCond . " " . $apCond; ?></td>
               <?php
               if ($estado == 1) {

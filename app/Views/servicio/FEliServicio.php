@@ -1,12 +1,12 @@
 <div class="modal-header bg-danger">
-  <h3 class="modal-title" class="glyphicon glyphicon-trash"> <b> ELIMINAR SERVICIO</b> <i class="fas fa-trash"></i></h3>
+  <h4 class="modal-title" class="glyphicon glyphicon-trash"> <b> ELIMINAR SERVICIO</b> <i class="fas fa-trash"></i></h4>
   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button>
 </div>
 <div class="modal-body">
 
-<h4 class="text-dange font-italic"> ¿Está seguro de eliminar este registro?</h4>
+<h5 class="text-dange font-italic"> ¿Está seguro de eliminar este registro?</h5>
 
 </div>
 <div class="modal-footer justify-content-between">

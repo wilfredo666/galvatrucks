@@ -1,4 +1,4 @@
-<div class="modal-header bg-info">
+<div class="modal-header encabezado">
     <h4 class="modal-title">EDITAR RUTA</h4>
     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
         <span aria-hidden="true">&times;</span>
@@ -40,5 +40,5 @@
 </div>
 <div class="modal-footer justify-content-between">
     <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-    <button type="button" class="btn btn-info" onclick="EditRuta(<?php echo $ruta["id_ruta"]?>)">Guardar</button>
+    <button type="button" class="btn btn-success" onclick="EditRuta(<?php echo $ruta["id_ruta"]?>)">Actualizar</button>
 </div>

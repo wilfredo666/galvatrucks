@@ -32,7 +32,7 @@
                 <button type="button" class="btn btn-navbar btn-app bg-warning" onclick="reporteSolicitudes();">
                   <i class="fas fa-search "></i>
                 </button>
-                <button type="button" class="btn btn-navbar  btn-app bg-primary">
+                <button type="button" class="btn btn-navbar  btn-app bg-primary" onclick="javascript:window.print()">
                   <i class="fas fa-print"></i>
                 </button>
               </div>

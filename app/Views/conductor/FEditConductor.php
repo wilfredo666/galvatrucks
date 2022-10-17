@@ -1,5 +1,5 @@
-<div class="modal-header bg-info">
-    <h3 class="modal-title"> <b> EDITAR DATOS DEL CONDUCTOR </b></h3>
+<div class="modal-header encabezado">
+    <h3 class="modal-title">  EDITAR DATOS DEL CONDUCTOR </h3>
     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
         <span aria-hidden="true">&times;</span>
     </button>
@@ -99,5 +99,5 @@
 </div>
 <div class="modal-footer justify-content-between">
     <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-    <button type="button" class="btn btn-primary" onclick="EditConductor(<?php echo $conductor["id_conductor"];?>)" >Actualizar</button>
+    <button type="button" class="btn btn-success" onclick="EditConductor(<?php echo $conductor["id_conductor"];?>)" >Actualizar</button>
 </div>

@@ -9,7 +9,7 @@
 
         <div class="container-fluid">
             <table id="DataTableContratoCamion" class="table table-bordered table-striped">
-                <thead>
+                <thead class="text-center align-items-center justify-content-center">
                     <tr>
                         <th>ID</th>
                         <th>CÓD. DE CONTRATO</th>
@@ -18,7 +18,7 @@
                         <th>PLACA</th>
                         <th>PROPIETARIO DE CAMION</th>
 
-                        <th> <button class="btn btn-block btn-primary" onclick="MNuevoContratoCam()"><i class="fas fa-plus-circle"></i> NUEVO </button> </th>
+                        <th> <button class="btn btn-primary" style="width: 80%;" onclick="MNuevoContratoCam()"><i class="fas fa-plus-circle"></i> NUEVO </button> </th>
                     </tr>
                 </thead>
                 <tbody>
@@ -31,12 +31,15 @@
                         $placa = $lista['placa'];
                         $propietario = $lista['propietario_camion'];
                         $observacion = $lista['observacion'];
+
+                        $fechaInicio = date('d-m-Y', strtotime($fechaIni));
+                        $fechaFinal = date('d-m-Y', strtotime($fechaFin));
                     ?>
 
                         <tr>
                             <td><?php echo $idContrato; ?></td>
                             <td><?php echo $numContrato; ?></td>
-                            <td><?php echo $fechaIni; ?></td>
+                            <td><?php echo $fechaInicio; ?></td>
                             <td><?php echo $placa; ?></td>
                             <td><?php echo $propietario; ?></td>
 

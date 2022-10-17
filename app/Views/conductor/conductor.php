@@ -8,16 +8,16 @@
 
     <div class="container-fluid">
       <table id="DataTableConductor" class="table table-bordered table-striped">
-        <thead>
+        <thead class="text-center align-items-center justify-content-center">
           <tr>
             <th>ID</th>
             <th>NOMBRES</th>
             <th>APELLIDOS</th>
             <th> C.I.</th>
             <th>CAT. LICENCIA</th>
-            <th>CONTACTO</th>
+            
             <th>IMAGEN</th>
-            <th><button class="btn btn-block btn-primary" onclick="MNuevoConductor()"><i class="fas fa-plus-circle"></i> NUEVO</button></th>
+            <th><button class="btn btn-primary" style="width: 80%;" onclick="MNuevoConductor()"><i class="fas fa-plus-circle"></i> NUEVO</button></th>
           </tr>
         </thead>
         <tbody>
@@ -44,14 +44,14 @@
               <td><?php echo  $apellidoCond; ?></td>
               <td><?php echo  $ciCond; ?></td>
               <td><?php echo  $categoriaCond; ?></td>
-              <td><?php echo  $telefono; ?></td>
+              
               <?php if ($imagenCond == "") {
               ?>
-                <td><img src="<?php echo base_url(); ?>/assest/img/conductor/img-conductor-default.png" style="width:70px;"></td>
+                <td><img class="img1"  src="<?php echo base_url(); ?>/assest/img/conductor/img-conductor-default.png"></td>
               <?php
               } else {
               ?>
-                <td><img src="<?php echo base_url(); ?>/assest/img/conductor/<?php echo $imagenCond; ?>" style="width:70px;"></td>
+                <td class="text-center align-items-center justify-content-center"><img class="img1" src="<?php echo base_url(); ?>/assest/img/conductor/<?php echo $imagenCond; ?>" ></td>
               <?php
               }
               ?>
@@ -59,13 +59,13 @@
               <td class="text-center">
                 <div>
 
-                  <button class="btn btn-outline-info btn-circle" onclick="MVerConductor(<?php echo  $idCond; ?>)">
+                  <button class="btn btn-sm btn-outline-info btn-circle" title=" Ver registro" onclick="MVerConductor(<?php echo  $idCond; ?>)">
                     <i class="fas fa-eye"></i>
                   </button>
-                  <button class="btn btn-warning btn-circle" onclick="MEditarConductor(<?php echo  $idCond; ?>)">
+                  <button class="btn btn-sm  btn-warning btn-circle" title="Editar registro" onclick="MEditarConductor(<?php echo  $idCond; ?>)">
                     <i class="fas fa-edit"></i>
                   </button>
-                  <button class="btn btn-outline-danger btn-circle" onclick="MEliminarConductor(<?php echo  $idCond; ?>)">
+                  <button class="btn btn-sm  btn-outline-danger btn-circle" title="Eliminar registro" onclick="MEliminarConductor(<?php echo  $idCond; ?>)">
                     <i class="fas fa-trash-alt"></i>
                   </button>
 

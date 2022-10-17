@@ -1,5 +1,5 @@
-<div class="modal-header bg-info">
-  <h3 class="modal-title"> <b> EDITAR DATOS DEL USUARIO </b></h3>
+<div class="modal-header encabezado">
+  <h4 class="modal-title"> EDITAR DATOS DEL USUARIO</h4>
   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button>
@@ -36,6 +36,7 @@
         <div class="form-group col-md-6">
           <label>Password</label>
           <input type="password" class="form-control" id="password" name="password" value="<?php echo $usuario["pass_usuario"];?>">
+          <input type="hidden" class="form-control" name="passwordActual" value="<?php echo $usuario["pass_usuario"];?>">
         </div>
         <div class="form-group col-md-6">
           <label>Repetir password</label>
@@ -51,5 +52,5 @@
 </div>
 <div class="modal-footer justify-content-between">
   <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-  <button type="button" class="btn btn-primary" onclick="EditUsuario( <?php echo $usuario["id_usuario"];?> )">Guardar</button>
+  <button type="button" class="btn btn-success" onclick="EditUsuario( <?php echo $usuario["id_usuario"];?> )">Guardar</button>
 </div>

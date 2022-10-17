@@ -1,4 +1,4 @@
-<div class="page-content page-container" id="page-content">
+<div class="page-content page-container fondo-modal" id="page-content">
   <div class="padding">
     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
       <span aria-hidden="true">&times;</span>
@@ -38,11 +38,11 @@
                 <div class="row">
                   <div class="col-sm-6">
                     <p class="m-b-10 f-w-600">Fecha Inicio de Contrato</p>
-                    <h6 class="text-muted f-w-400"><?php echo $contratoCam["fecha_inicio_contrato"] ?></h6>
+                    <h6 class="text-muted f-w-400"><?php echo date('d-m-Y', strtotime($contratoCam["fecha_inicio_contrato"]))  ?></h6>
                   </div>
                   <div class="col-sm-6">
                     <p class="m-b-10 f-w-600">Fecha Final de Contrato</p>
-                    <p class="text-muted f-w-400"><?php echo $contratoCam["fecha_fin_contrato"] ?></p>
+                    <p class="text-muted f-w-400"><?php echo date('d-m-Y', strtotime($contratoCam["fecha_fin_contrato"] )) ?></p>
                   </div>
                 </div>
                 <div class="row">

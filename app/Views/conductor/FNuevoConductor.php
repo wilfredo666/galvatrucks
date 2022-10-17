@@ -1,5 +1,5 @@
-<div class="modal-header bg-primary">
-    <h3 class="modal-title"> <b> REGISTRO NUEVO CONDUCTOR </b></h3>
+<div class="modal-header encabezado">
+    <h3 class="modal-title">  REGISTRO NUEVO CONDUCTOR </h3>
     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
         <span aria-hidden="true">&times;</span>
     </button>

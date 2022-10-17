@@ -1,5 +1,5 @@
 <div class="modal-header bg-danger">
-  <h3 class="modal-title" class="glyphicon glyphicon-trash"> <b> ELIMINAR ASIGNACIÓN</b> <i class="fas fa-trash"></i></h3>
+  <h4 class="modal-title" class="glyphicon glyphicon-trash"> <b> ELIMINAR ASIGNACIÓN</b> <i class="fas fa-trash"></i></h4>
   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
     <span aria-hidden="true">&times;</span>
   </button>

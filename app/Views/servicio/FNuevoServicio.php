@@ -16,7 +16,7 @@
 
                 <div class="row">
                     <div class="form-group col-md-2">
-                        <label>Código de Servicio</label>
+                        <label>Cód. Servicio</label>
                         <input type="text" class="form-control font-italic" id="codServicio" name="codServicio" placeholder="Ejm. 'Imp-0001' ">
                         <p class="text-danger" id="error-rutaInicio"></p>
                     </div>
@@ -35,6 +35,7 @@
                             }
                             ?>
                         </select>
+                        <p class="text-danger" id="error-cliente"></p>
                     </div>
 
                     <div class="form-group col-md-3">
@@ -64,15 +65,15 @@
                 <hr style="color: #7577F0;" />
 
                 <div class="row">
-                    <div class="form-group col-md-2">
+                    <div class="form-group col-md-3">
                         <label>Nro BL/Bill of Lading</label>
                         <input type="text" class="form-control" id="nroBill" name="nroBill" placeholder="Ejm. 'COSU4522544'">
                     </div>
-                    <div class="form-group col-md-2">
+                    <div class="form-group col-md-3">
                         <label>Nro Contenedor</label>
                         <input type="text" class="form-control" id="nroCont" name="nroCont">
                     </div>
-                    <div class="form-group col-md-2">
+                    <div class="form-group col-md-3">
                         <label>Tamaño Contenedor</label>
                         <select name="tamCont" id="tamCont" class="form-control">
                             <option value="">-- Seleccionar --</option>
@@ -82,30 +83,30 @@
                             <option value="1x40 Hight">1x40 Hight</option>
                         </select>
                     </div>
-                    <div class="form-group col-md-2">
+                    <div class="form-group col-md-3">
                         <label>Peso Mercadería</label>
                         <input type="text" class="form-control" id="pesoMerc" name="pesoMerc">
                     </div>
-                    <div class="form-group col-md-4">
-                        <label>Detalle de Mercadería</label>
-                        <textarea rows="1" cols="50" class="form-control" id="detalleMerc" name="detalleMerc">  </textarea>
-                    </div>
-                    <div class="form-group col-md-4">
+                    <div class="form-group col-md-6">
                         <label>Origen Mercadería</label>
                         <input type="text" class="form-control" id="origenMerc" name="origenMerc">
                     </div>
-                    <div class="form-group col-md-4">
+                    <div class="form-group col-md-6">
                         <label>Destino de Mercadería</label>
                         <input type="text" class="form-control" id="destMerc" name="destMerc">
                     </div>
-                    <div class="form-group col-md-2">
+                    <div class="form-group col-md-6">
+                        <label>Detalle de Mercadería</label>
+                        <textarea rows="1" cols="50" class="form-control" id="detalleMerc" name="detalleMerc">  </textarea>
+                    </div>
+                    <div class="form-group col-md-3">
                         <label>Fecha de Arribo</label>
                         <input type="date" class="form-control" id="fechaArribo" name="fechaArribo">
                     </div>
-                    <div class="form-group col-md-2">
+                    <div class="form-group col-md-3">
                         <label>Fecha en Almacén</label>
                         <input type="date" class="form-control" id="fechaAlmacen" name="fechaAlmacen">
-                    </div>
+                    </div>                    
                 </div>
 
                 <!-- SECCION 3 -->
@@ -161,20 +162,17 @@
                             }
                             ?>
                         </select>
+                        <span class="text-danger chartjs-render-monitor" id="error-ruta"></span>
                     </div>
 
                 </div>
                 <div class="row">
-                    <div class="form-group col-md-2">
+                    <div class="form-group col-md-3">
                         <label>Costo de Servicio Bs.</label>
                         <input type="number" placeholder="Ejm. '600.00' " step="0.01" class="form-control" id="costoServ" name="costoServ">
                     </div>
-                    <div class="form-group col-md-4">
-                        <label>Documentos PDF <span class="font-italic">(MIC, CRT, FACTURA, PARTE REC.)</span></label>
-                        <input type="file" accept=".pdf" class="form-control" id="docImportacion" name="docImportacion">
-                    </div>
 
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-9">
                         <label>Observaciones</label>
                         <textarea rows="1" cols="50" class="form-control" id="observacion" name="observacion">  </textarea>
                     </div>

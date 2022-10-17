@@ -1,4 +1,4 @@
-<div class="page-content page-container" id="page-content">
+<div class="page-content page-container fondo-modal" id="page-content">
   <div class="padding">
     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
       <span aria-hidden="true">&times;</span>
@@ -9,7 +9,7 @@
         <!-- Widget: user widget style 2 -->
         <div class="card card-widget widget-user-2">
           <!-- Add the bg color to the header using any of the bg-* classes -->
-          <div class="widget-user-header bg-warning">
+          <div class="widget-user-header cuadro-marron">
             <div class="widget-user-image">
               <img class="img-circle elevation-2" src="<?php echo base_url(); ?>/assest/img/conductor/<?php echo $asignacion["imagen_cond"] ?>" alt="stack photo" class="img" alt="User Avatar" width="80%">
             </div>
@@ -31,12 +31,12 @@
               </li>
               <li class="nav-item">
                 <h5 class="nav-link font-weight-normal">
-                  Fecha de Asignación: <span class="float-right font-weight-light"><?php echo $asignacion["fecha_asig"] ?></span>
+                  Fecha de Asignación: <span class="float-right font-weight-light"><?php echo date('d-m-Y', strtotime($asignacion["fecha_asig"]))  ?></span>
                 </h5>
               </li>
               <li class="nav-item">
                 <h5 class="nav-link font-weight-normal">
-                  Fecha Baja de Asignación: <span class="float-right font-weight-light"><?php echo $asignacion["fecha_baja_asig"] ?></span>
+                  Fecha Baja de Asignación: <span class="float-right font-weight-light"><?php echo date('d-m-Y', strtotime($asignacion["fecha_baja_asig"]))  ?></span>
                 </h5>
               </li>
               <li class="nav-item">

@@ -9,15 +9,15 @@
 
     <div class="container-fluid">
       <table id="DataTableCliente" class="table table-bordered table-striped">
-        <thead>
+        <thead class="text-center align-items-center justify-content-center">
           <tr>
             <th>ID</th>
             <th>RAZON SOCIAL</th>
             <th>N.I.T.</th>
-            <th>CONTACTO</th>
+<!--             <th>CONTACTO</th> -->
             <th>TIPO DE CLIENTE</th>
             <th>IMAGEN</th>
-            <th> <button class="btn btn-block btn-primary" onclick="MNuevoCliente()"><i class="fas fa-plus-circle"></i> NUEVO </button> </th>
+            <th> <button class="btn btn-primary" style="width: 80%;" onclick="MNuevoCliente()"><i class="fas fa-plus-circle"></i> NUEVO </button> </th>
           </tr>
         </thead>
         <tbody>
@@ -44,29 +44,29 @@
               <td><?php echo $razonSocial; ?></td>
               <td><?php echo $ciNit; ?></td>
 
-              <td><?php echo $contacto; ?></td>
+           <!--    <td><?php echo $contacto; ?></td> -->
 
               <td><?php echo $tipoCli; ?></td>
               <?php if ($imagen == "") {
               ?>
-                <td><img src="<?php echo base_url(); ?>/assest/img/conductor/img-conductor-default.png" style="width:70px;"></td>
+                <td><img class="img1" src="<?php echo base_url(); ?>/assest/img/conductor/img-conductor-default.png" style="width:70px;"></td>
               <?php
               } else {
               ?>
-                <td><img src="<?php echo base_url(); ?>/assest/img/cliente/<?php echo $imagen; ?>" style="width:70px;"></td>
+                <td><img class="img1" src="<?php echo base_url(); ?>/assest/img/cliente/<?php echo $imagen; ?>" style="width:70px;"></td>
               <?php
               }
               ?>
 
               <td class="text-center">
                 <div>
-                  <button class="btn btn-outline-info btn-circle" onclick="MVerCliente(<?php echo $idCli; ?>)">
+                  <button class="btn btn-md btn-outline-info btn-circle" onclick="MVerCliente(<?php echo $idCli; ?>)">
                     <i class="fas fa-eye"></i>
                   </button>
-                  <button class="btn btn-warning btn-circle" onclick="MEditarCliente(<?php echo $idCli; ?>)">
+                  <button class="btn btn-md  btn-warning btn-circle" onclick="MEditarCliente(<?php echo $idCli; ?>)">
                     <i class="fas fa-edit"></i>
                   </button>
-                  <button class="btn btn-outline-danger btn-circle" onclick="MEliminarCliente(<?php echo $idCli; ?>)">
+                  <button class="btn btn-md btn-outline-danger btn-circle" onclick="MEliminarCliente(<?php echo $idCli; ?>)">
                     <i class="fas fa-trash-alt"></i>
                   </button>
                 </div>
