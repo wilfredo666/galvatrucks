@@ -214,19 +214,29 @@ function SeleccionServicio(){
     Seguimiento y actualizacion de contenedor del cliente 
                por parte del ADMINISTRADOR
 ==========================================================*/
-function MovimientoContenedor(){
-  $("#modal-default").modal("show")
+function MovimientoContenedor(id,cont){
+  $("#modal-lg").modal("show")
     var obj = "";
     $.ajax({
       type: "POST",
       url: "FNuevoMovimiento",
       data: obj,
       success: function (data) {
-        $("#content-default").html(data)
+        $("#content-lg").html(data)
       }
     })
 }
 /* PARA BUSCAR O RASTREAR UN CONTENEDOR */
 function buscarContenedor(){
   let numContenedor = document.getElementById("numContenedor").value
+  var obj = "";
+    $.ajax({
+      type: "POST",
+      url: "FBuscarMovimiento/"+numContenedor,
+      data: obj,
+      success: function (data) {
+        /* console.log(data) */
+        $("#LlenarContenedor").html(data)
+      }
+    })
 }

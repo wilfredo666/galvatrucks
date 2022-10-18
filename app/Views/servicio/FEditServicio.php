@@ -77,10 +77,10 @@
                         <label>Tamaño Contenedor</label>
                         <select name="tamañoCont" id="tamañoCont" class="form-control">
                             <option value="">-- Seleccionar --</option>
-                            <option value="1x20" <?php if ($servicio["medida_contenedor"] == "1x20") : ?> selected <?php endif; ?>>1x20</option>
-                            <option value="1x40" <?php if ($servicio["medida_contenedor"] == "1x40") : ?> selected <?php endif; ?>>1x40</option>
-                            <option value="1x20 Hight" <?php if ($servicio["medida_contenedor"] == "1x20 Hight") : ?> selected <?php endif; ?>>1x20 Hight</option>
-                            <option value="1x40 Hight" <?php if ($servicio["medida_contenedor"] == "1x40 Hight") : ?> selected <?php endif; ?>>1x40 Hight</option>
+                            <option value='1x20"'<?php if ($servicio["medida_contenedor"] == '1x20"') : ?> selected <?php endif; ?>>1x20</option>
+                            <option value='1x40"' <?php if ($servicio["medida_contenedor"] == '1x40"') : ?> selected <?php endif; ?>>1x40</option>
+                            <option value='1x20" Hight' <?php if ($servicio["medida_contenedor"] == '1x20" Hight' ) : ?> selected <?php endif; ?>>1x20 Hight</option>
+                            <option value='1x40" Hight' <?php if ($servicio["medida_contenedor"] == '1x40" Hight') : ?> selected <?php endif; ?>>1x40 Hight</option>
                         </select>
                     </div>
                     <div class="form-group col-md-3">

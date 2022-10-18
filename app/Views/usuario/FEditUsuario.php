@@ -26,7 +26,7 @@
           <select name="rolUsuario" id="rolUsuario" class="form-control">
             <option value="null">Seleccionar</option>
             <option value="Administrador" <?php if($usuario["rol"]=="Administrador"):?> selected <?php endif;?>>Administrador</option>
-            <option value="Conductor" <?php if($usuario["rol"]=="Conductor"):?> selected <?php endif;?>>Conductor</option>
+            <option value="Auxiliar" <?php if($usuario["rol"]=="Auxiliar"):?> selected <?php endif;?>>Auxiliar</option>
             <option value="Cliente" <?php if($usuario["rol"]=="Cliente"):?> selected <?php endif;?>>Cliente</option>
           </select>
           <p class="text-danger" id="error-rolUsuario"></p>

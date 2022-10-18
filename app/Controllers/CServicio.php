@@ -67,26 +67,26 @@ class CServicio extends BaseController
     $destMerc = $_POST["destMerc"];
     $fechaArribo = $_POST["fechaArribo"];
     $fechaAlmacen = $_POST["fechaAlmacen"];
-    
-    if(isset($_POST["conductorAsig"])){
+
+    if (isset($_POST["conductorAsig"])) {
       $conductorAsig = $_POST["conductorAsig"];
-    }else{
-      $conductorAsig=0;
+    } else {
+      $conductorAsig = 0;
     }
-    if(isset($_POST["contratoCam"])){
+    if (isset($_POST["contratoCam"])) {
       $contratoCam = $_POST["contratoCam"];
-    }else{
-      $contratoCam=0;
+    } else {
+      $contratoCam = 0;
     }
     /*$conductorAsig = $_POST["conductorAsig"];
     $contratoCam = $_POST["contratoCam"];*/
-    
+
     $rutas = $_POST["ruta"];
     $idSoli = $_POST["idSolicitud"];
     $costoServ = $_POST["costoServ"];
 
-    
-  /*   $docImportacion = $_FILES["docImportacion"];
+
+    /*   $docImportacion = $_FILES["docImportacion"];
     $ruta = "assest/documentos/servicios/";
     $doc = $docImportacion["name"];
     $tmpDoc = $docImportacion["tmp_name"];
@@ -174,15 +174,15 @@ class CServicio extends BaseController
     $fechaAlmacen = $_POST["fechaAlmacen"];
 
 
-    if(isset($_POST["conductorAsig"])){
+    if (isset($_POST["conductorAsig"])) {
       $conductorAsig = $_POST["conductorAsig"];
-    }else{
-      $conductorAsig=0;
+    } else {
+      $conductorAsig = 0;
     }
-    if(isset($_POST["contratoCam"])){
+    if (isset($_POST["contratoCam"])) {
       $contratoCam = $_POST["contratoCam"];
-    }else{
-      $contratoCam=0;
+    } else {
+      $contratoCam = 0;
     }
 
     $rutas = $_POST["ruta"];
@@ -227,7 +227,7 @@ class CServicio extends BaseController
 
     );
 
-/* var_dump($data); */
+    /* var_dump($data); */
     $this->MServicio->update($id, $data);
   }
   /* --------------------------------------
@@ -247,15 +247,25 @@ class CServicio extends BaseController
   /* --------------------------------------
       FUNCIONES PARA  SEGUIMIENTO DE CONTENEDORES
     --------------------------------------*/
-  public function seguimientoContenedor(){
+  public function seguimientoContenedor()
+  {
     echo view('header');
     echo view("servicio/seguimientoContenedor");
     echo view('footer');
   }
-
-  public function FNuevoMovimiento(){
-
+  /* buscar contenendor */
+  public function FBuscarMovimiento()
+  {
+    $contenedor = $this->request->uri->getSegment(3);
+    $data = array(
+      "busContenedor" => $this->MServicio->BusContendor($contenedor),
+    );
+    echo view("servicio/FLlenarContenedor", $data);
+    /* var_dump($data);  */
+  }
+  /* agregar  nnuevo movimiento */
+  public function FNuevoMovimiento()
+  {
     echo view("servicio/FNuevoMovimiento");
   }
 }
-
