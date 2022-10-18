@@ -258,7 +258,7 @@ class CServicio extends BaseController
   {
     $contenedor = $this->request->uri->getSegment(3);
     $data = array(
-      "busContenedor" => $this->MServicio->BusContendor($contenedor),
+      "busContenedor" => $this->MServicio->BusContendor($contenedor)
     );
     echo view("servicio/FLlenarContenedor", $data);
     /* var_dump($data);  */
@@ -266,6 +266,9 @@ class CServicio extends BaseController
   /* agregar  nnuevo movimiento */
   public function FNuevoMovimiento()
   {
+    $id_servicio = $this->request->uri->getSegment(3);
+    //consultar datos a la tabla servicio
+    
     echo view("servicio/FNuevoMovimiento");
   }
 }

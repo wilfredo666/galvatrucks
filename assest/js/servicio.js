@@ -214,12 +214,13 @@ function SeleccionServicio(){
     Seguimiento y actualizacion de contenedor del cliente 
                por parte del ADMINISTRADOR
 ==========================================================*/
-function MovimientoContenedor(id,cont){
+function MovimientoContenedor(id){
   $("#modal-lg").modal("show")
+
     var obj = "";
     $.ajax({
       type: "POST",
-      url: "FNuevoMovimiento",
+      url: "FNuevoMovimiento/"+id,
       data: obj,
       success: function (data) {
         $("#content-lg").html(data)

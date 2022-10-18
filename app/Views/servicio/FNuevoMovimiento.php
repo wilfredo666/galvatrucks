@@ -1,5 +1,6 @@
 <div class="modal-header encabezado">
     <h4 class="modal-title">REGISTRO NUEVO MOVIMIENTO</h4>
+
     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
         <span aria-hidden="true">&times;</span>
     </button>
