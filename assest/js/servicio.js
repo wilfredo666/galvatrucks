@@ -24,6 +24,7 @@ function MNuevoServicio(){
     let form3 = new FormData($("#FNuevoServicio3")[0]) */
 
     let cliente = document.getElementById("servCliente").selectedIndex;
+    let idSolicitud = document.getElementById("idSolicitud").selectedIndex;
     let ruta = document.getElementById("ruta").selectedIndex;
 
  /*    let placa=document.getElementById("placa").value
@@ -40,9 +41,12 @@ function MNuevoServicio(){
     }
 
     else{ */
-    if(cliente == null || cliente == 0){
-      document.getElementById("error-cliente").innerHTML="Seleccione el cliente"
+    if(idSolicitud == null || idSolicitud == 0){
+      document.getElementById("error-solicitud").innerHTML="Selecciona la solicitud de servicio"
     }
+    else if(cliente == null || cliente == 0){
+      document.getElementById("error-cliente").innerHTML="Seleccione el cliente"
+    } 
     else if(ruta == null || ruta == 0){
       document.getElementById("error-ruta").innerHTML="Selecciona una ruta para este servicio"
     }else{
@@ -210,6 +214,19 @@ function SeleccionServicio(){
     Seguimiento y actualizacion de contenedor del cliente 
                por parte del ADMINISTRADOR
 ==========================================================*/
-function MSeguimientoServicio(){
-
+function MovimientoContenedor(){
+  $("#modal-default").modal("show")
+    var obj = "";
+    $.ajax({
+      type: "POST",
+      url: "FNuevoMovimiento",
+      data: obj,
+      success: function (data) {
+        $("#content-default").html(data)
+      }
+    })
+}
+/* PARA BUSCAR O RASTREAR UN CONTENEDOR */
+function buscarContenedor(){
+  let numContenedor = document.getElementById("numContenedor").value
 }

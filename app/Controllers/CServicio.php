@@ -8,6 +8,7 @@ use App\Models\MEmpresaMaritima;
 use App\Models\MAsignacion;
 use App\Models\MContratoCamion;
 use App\Models\MRuta;
+use App\Models\MSolicitudServicio;
 
 class CServicio extends BaseController
 {
@@ -19,6 +20,7 @@ class CServicio extends BaseController
     $this->MAsignacion = new MAsignacion();
     $this->MContratoCamion = new MContratoCamion();
     $this->MRuta = new MRuta();
+    $this->MSolicitudServicio = new MSolicitudServicio();
   }
 
   public function index()
@@ -43,9 +45,11 @@ class CServicio extends BaseController
       'empMaritima' => $this->MEmpresaMaritima->findAll(),
       'asignacion' => $this->MAsignacion->ListaAsignaciones(),
       'contratoCam' => $this->MContratoCamion->findAll(),
-      'ruta' => $this->MRuta->findAll()
+      'ruta' => $this->MRuta->findAll(),
+      'solicitudServ' => $this->MSolicitudServicio->SolicitudesPendientes()
     );
     echo view("servicio/FNuevoServicio", $data);
+    /* var_dump($data); */
   }
 
   public function RegServicio()
@@ -78,6 +82,7 @@ class CServicio extends BaseController
     $contratoCam = $_POST["contratoCam"];*/
     
     $rutas = $_POST["ruta"];
+    $idSoli = $_POST["idSolicitud"];
     $costoServ = $_POST["costoServ"];
 
     
@@ -107,6 +112,7 @@ class CServicio extends BaseController
       "id_contrato_camion" => $contratoCam,
       "id_ruta" => $rutas,
       "costo_servicio" => $costoServ,
+      "id_solicitud" => $idSoli,
       /* "documento" => $doc, */
       "observaciones" => $observacion
     );
@@ -242,12 +248,14 @@ class CServicio extends BaseController
       FUNCIONES PARA  SEGUIMIENTO DE CONTENEDORES
     --------------------------------------*/
   public function seguimientoContenedor(){
-
-
     echo view('header');
     echo view("servicio/seguimientoContenedor");
     echo view('footer');
-    
+  }
+
+  public function FNuevoMovimiento(){
+
+    echo view("servicio/FNuevoMovimiento");
   }
 }
 

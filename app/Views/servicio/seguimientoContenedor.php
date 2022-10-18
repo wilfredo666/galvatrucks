@@ -13,11 +13,11 @@
             <div class="col-md-3">
             </div>
             <div class="col-md-5 col-sm-6">
-                <input type="text" class="form-control form-control input-seguimiento" id="seguimiento" name="seguimiento">
+                <input type="text" class="form-control form-control input-seguimiento" id="numContenedor" name="numContenedor">
                 <p class="font-italic intruzca" style="font-size: 1.2rem;">Introduzca el Número del Contenedor</p>
             </div>
             <div class="col-md-2 col-sm-6 butt">
-                <button type="button" class="btn btn-outline-warning form-control buttom-buscar" id="busqueda" name="busqueda"><i class="fas fa-search"></i> Búsqueda</button>
+                <button type="button" class="btn btn-outline-warning form-control buttom-buscar" id="busqueda" name="busqueda" onclick="buscarContenedor()"><i class="fas fa-search"></i> Búsqueda</button>
             </div>
             <div class="col-md-3">
             </div>
@@ -26,20 +26,16 @@
             <div class="row col-12 container-fluid">
                 <div class="col-9 container-fluid">
                     <h3 class="font-weight-bold">CONTENEDOR: <span class="font-weight-light ">COSU778823642</span></h3>
-
                 </div>
                 <div class="col-3">
-                    <button type="button" class="btn align-right">Imprimir <i class="fas fa-print fa-2x fa-lg text-primary"></i></button>
+                    <button type="button" class="btn align-right" onclick="javascript:window.print()">Imprimir <i class="fas fa-print fa-2x fa-lg text-primary"></i></button>
                 </div>
-
-
-
             </div>
         </div>
         <hr class="hr-2">
         <div class="container-fluid">
             <div class="row">
-                <div class="row col-md-12 align-items-start" >
+                <div class="row col-md-12 align-items-start">
                     <div class="col-md-2 col-sm-6">
                         <d>Bill of Lading/ BL</d>
                         <dd class="text font-weight-bold text-uppercase " style="font-size: 18px; margin-left: 0;">MEdunG121068</dd>
@@ -113,7 +109,10 @@
                     <div class="timeline">
                         <!-- timeline time label -->
                         <div class="time-label">
-                            <span class="bg-red">Movimientos</span>
+                            <span style="background-color: #f4f6f9;">Movimientos</span>
+                            <button class="btn btn-sm btn-success btn-circle" onclick="MovimientoContenedor();"> Agregar Movimiento
+                                <i class="fas fa-plus-square"></i>
+                            </button>
                         </div>
                         <!-- /.timeline-label -->
                         <!-- timeline item -->

@@ -11,17 +11,32 @@
         <div class="card-body">
             <div class="container">
                 <!-- SECCION 1 -->
-                <h3 class="font-italic" style="color: #252675; background:#E4E6F5;" ><i class="fas fa-user-check"></i> Datos Personales:</h3>
+                <h3 class="font-italic" style="color: #252675; background:#E4E6F5;"><i class="fas fa-user-check"></i> Datos Personales:</h3>
                 <hr style="color: #7577F0;" />
 
                 <div class="row">
-                    <div class="form-group col-md-2">
+                    <div class="form-group col-md-3">
                         <label>Cód. Servicio</label>
                         <input type="text" class="form-control font-italic" id="codServicio" name="codServicio" placeholder="Ejm. 'Imp-0001' ">
-                        <p class="text-danger" id="error-rutaInicio"></p>
                     </div>
-
-                    <div class="form-group col-md-4">
+                    <div class="form-group col-md-9">
+                        <label>Solicitud de Servicio: </label><span class="text-muted"> Seleccionar obligatorio</span>
+                        <select name="idSolicitud" id="idSolicitud" class="form-control ">
+                            <option value="">-- Seleccionar --</option>
+                            <?php
+                            foreach ($solicitudServ as $soli) {
+                                $idSoli = $soli['id_solicitud'];
+                                $fechaSoli= date('d-m-Y', strtotime($soli['fecha_solicitud']));
+                                $cli = $soli['razon_social_cli'];
+                            ?>
+                                <option value="<?php echo $idSoli ?>"><?php echo "Solicitud: ".$idSoli ." | ". $fechaSoli ." | ". $cli?></option>
+                            <?php
+                            }
+                            ?>
+                        </select>
+                        <span class="text-danger chartjs-render-monitor" id="error-solicitud"></span>
+                    </div>
+                    <div class="form-group col-md-6">
                         <label>Cliente</label>
                         <select name="servCliente" id="servCliente" class="form-control ">
                             <option value="">-- Seleccionar --</option>
@@ -59,7 +74,6 @@
                         <input type="date" class="form-control " id="servIni" name="servIni">
                     </div>
                 </div>
-
                 <!-- SECCION 2 -->
                 <h3 class="font-italic" style="color: #252675; background:#E4E6F5;"> <i class="fab fa-docker"></i> Datos de Importación:</h3>
                 <hr style="color: #7577F0;" />
@@ -106,7 +120,7 @@
                     <div class="form-group col-md-3">
                         <label>Fecha en Almacén</label>
                         <input type="date" class="form-control" id="fechaAlmacen" name="fechaAlmacen">
-                    </div>                    
+                    </div>
                 </div>
 
                 <!-- SECCION 3 -->
@@ -116,7 +130,7 @@
                 <div class="row">
                     <div class="form-group col-md-4">
                         <label>Conductor Asignado / Placa</label>
-                        <select name="conductorAsig" id="conductorAsig" class="form-control"  onchange="SeleccionServicio()">
+                        <select name="conductorAsig" id="conductorAsig" class="form-control" onchange="SeleccionServicio()">
                             <option value=0>-- Seleccionar --</option>
                             <?php
                             foreach ($asignacion as $asig) {
@@ -125,7 +139,7 @@
                                 $apCond = $asig['apellido_cond'];
                                 $placa = $asig['placa'];
                             ?>
-                                <option value="<?php echo $idAsig ?>"><?php echo $nomCond . $apCond . " - " . $placa ?></option>
+                                <option value="<?php echo $idAsig ?>"><?php echo $nomCond . " " . $apCond . " - " . $placa ?></option>
                             <?php
                             }
                             ?>

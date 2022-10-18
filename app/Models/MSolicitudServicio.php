@@ -51,8 +51,15 @@ class MSolicitudServicio extends Model
 
     $resultado=$this->findAll();
     return $resultado;
-
     /* var_dump($resultado); */
-    
+  }
+
+  public function SolicitudesPendientes(){
+    $this-> select("*");
+    $this-> join("cliente", 'cliente.id_cliente = solicitud_servicio.id_cliente');
+    $this-> where("activo_solicitud", "aceptado");
+    $resultado=$this->findAll();
+    return $resultado;
+    /* var_dump($resultado); */
   }
 }

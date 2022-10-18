@@ -26,9 +26,9 @@
 
   <link rel="stylesheet" href="<?php echo base_url(); ?>/assest/dist/css/style.css">
 
-<style>
- 
-</style>
+  <style>
+
+  </style>
 
 </head>
 
@@ -94,7 +94,10 @@ with font-awesome or any other icon font library -->
                   </p>
                 </a>
               </li>
-
+            <?php
+            } ?>
+            <?php if (session("rol") == "Administrador" || session("rol") == "Auxiliar") {
+            ?>
               <!--  Asignaciones -->
               <li class="nav-item">
                 <a href="#" class="nav-link">
@@ -198,7 +201,7 @@ with font-awesome or any other icon font library -->
                   <li class="nav-item">
                     <a href="<?php echo base_url(); ?>/CServicio" class="nav-link">
                       <i class="nav-icon fab fa-shirtsinbulk text-info"></i>
-                      <p>Nuevo Servicio</p>
+                      <p>Lista de Servicios</p>
                     </a>
                   </li>
                   <li class="nav-item">
