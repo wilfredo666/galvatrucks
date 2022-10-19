@@ -16,7 +16,7 @@
             <th>NIT </th>
             <th>CORREO</th>
             <th>CONTACTO</th>
-            <th> <button class="btn btn-primary" style="width: 80%;" onclick="MNuevoEmpMaritima()"><i class="fas fa-plus-circle"></i> NUEVO </button> </th>
+            <th> <button class="btn b-nuevo btn-primary" style="width: 80%;" onclick="MNuevoEmpMaritima()"><i class="fas fa-plus-circle"></i> NUEVO </button> </th>
           </tr>
         </thead>
         <tbody>

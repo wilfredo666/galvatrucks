@@ -9,6 +9,7 @@ use App\Models\MAsignacion;
 use App\Models\MContratoCamion;
 use App\Models\MRuta;
 use App\Models\MSolicitudServicio;
+use App\Models\MMovimientosContenedor;
 
 class CServicio extends BaseController
 {
@@ -21,6 +22,7 @@ class CServicio extends BaseController
     $this->MContratoCamion = new MContratoCamion();
     $this->MRuta = new MRuta();
     $this->MSolicitudServicio = new MSolicitudServicio();
+    $this->MMovimientosContenedor = new MMovimientosContenedor();
   }
 
   public function index()
@@ -258,7 +260,8 @@ class CServicio extends BaseController
   {
     $contenedor = $this->request->uri->getSegment(3);
     $data = array(
-      "busContenedor" => $this->MServicio->BusContendor($contenedor)
+      "busContenedor" => $this->MServicio->BusContendor($contenedor),
+      "movContenedor" => $this->MMovimientosContenedor->ListaMovContenedor($contenedor)
     );
     echo view("servicio/FLlenarContenedor", $data);
     /* var_dump($data);  */
@@ -268,7 +271,70 @@ class CServicio extends BaseController
   {
     $id_servicio = $this->request->uri->getSegment(3);
     //consultar datos a la tabla servicio
+    $data = array(
+      "servicioContenedor" => $this->MServicio->ServContenedor($id_servicio)
+    );
+    /* var_dump($data); */
+    echo view("servicio/FNuevoMovimiento", $data);
+  }
+
+  public function RegMovimiento()
+  {
+    $idServicio = $_POST["idServicio"];
+    $numContenedor = $_POST["numeroCont"];
+    $fechaMovimiento = $_POST["fechaHora"];
+    $ubicacionCont = $_POST["ubicacionCont"];
+    $descripcionCont = $_POST["descripcionCont"];
+    $estadoCont = $_POST["estadoCont"];
+
+    $data = array(
+      "id_servicio" => $idServicio,
+      "fecha_mov" => $fechaMovimiento,
+      "ubicacion_mov" => $ubicacionCont,
+      "descripcion_mov" => $descripcionCont,
+      "estado_mov" => $estadoCont,
+      "num_contenedor" => $numContenedor
+    );
+    $this->MMovimientosContenedor->insert($data);
+  }
+
+  public function FEditMovimiento()
+  {
+    $id = $this->request->uri->getSegment(3);
+
+    $data = array(
+      "movimiento" => $this->MMovimientosContenedor->InfoMovimiento($id)
+    );
+    /* var_dump($data); */
+    echo view("servicio/FEditMovimiento", $data);
+  }
+  public function EditMovimiento(){
+    $id = $this->request->uri->getSegment(3);
+
+    /* $idServicio = $_POST["idServicio"];
+    $numContenedor = $_POST["numeroCont"]; */
+    $fechaMovimiento = $_POST["fechaHora"];
+    $ubicacionCont = $_POST["ubicacionCont"];
+    $descripcionCont = $_POST["descripcionCont"];
+    $estadoCont = $_POST["estadoCont"];
+
+    $data = array(
+      "fecha_mov" => $fechaMovimiento,
+      "ubicacion_mov" => $ubicacionCont,
+      "descripcion_mov" => $descripcionCont,
+      "estado_mov" => $estadoCont
+    );
     
-    echo view("servicio/FNuevoMovimiento");
+    $this->MMovimientosContenedor->update($id,$data); 
+  }
+
+  public function FEliMovimiento(){
+    $id = $this->request->uri->getSegment(3);
+    echo view("servicio/FEliMovimiento", compact("id"));
+  }
+  public function EliMovimiento(){
+    $id = $this->request->uri->getSegment(3);
+    $this->MMovimientosContenedor->delete($id);
   }
 }
+

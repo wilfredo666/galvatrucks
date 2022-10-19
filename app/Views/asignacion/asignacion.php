@@ -53,13 +53,13 @@
 
               <td>
                 <div class="text-center">
-                  <button class="btn btn-outline-info btn-circle" onclick="MVerAsignacion(<?php echo $idAsig; ?>)">
+                  <button class="btn btn-sm  btn-outline-info btn-circle" onclick="MVerAsignacion(<?php echo $idAsig; ?>)">
                     <i class="fas fa-eye"></i>
                   </button>
-                  <button class="btn btn-warning btn-circle" onclick="MEditarAsignacion(<?php echo $idAsig; ?>)">
+                  <button class="btn btn-sm btn-warning btn-circle" onclick="MEditarAsignacion(<?php echo $idAsig; ?>)">
                     <i class="fas fa-edit"></i>
                   </button>
-                  <button class="btn btn-outline-danger btn-circle" onclick="MEliminarAsignacion(<?php echo $idAsig; ?>)">
+                  <button class="btn btn-sm  btn-outline-danger btn-circle" onclick="MEliminarAsignacion(<?php echo $idAsig; ?>)">
                     <i class="fas fa-trash-alt"></i>
                   </button>
                 </div>

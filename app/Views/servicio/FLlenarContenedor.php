@@ -103,141 +103,75 @@ foreach ($busContenedor as $datos) {
                         <!-- timeline time label -->
                         <div class="time-label">
                             <span style="background-color: #f4f6f9;">Movimientos</span>
-                            <button class="btn btn-sm btn-success btn-circle" onclick="MovimientoContenedor(<?php echo $idServicio?>);"> Agregar Movimiento
+                            <button class="btn btn-sm btn-success btn-circle" onclick="MovimientoContenedor(<?php echo $idServicio ?>);"> Agregar Movimiento
                                 <i class="fas fa-plus-square"></i>
                             </button>
                         </div>
                         <!-- /.timeline-label -->
                         <!-- timeline item -->
-                        <div>
-                            <i class="fas fa-ship bg-blue"></i>
-                            <div class="row container timeline-item col-10">
-                                <div class="col-md-3">
-                                    <dt class="ml-2">Fecha</dt>
-                                    <span class="ml-2">
-                                        17/10/2022
-                                    </span>
-                                </div>
-                                <div class="col-md-3">
-                                    <dt>Ubicación</dt>
-                                    <span>
-                                        ARICA, CHILE
-                                    </span>
-                                </div>
-                                <div class="col-md-3">
-                                    <dt>Descripción</dt>
-                                    <span>
-                                        Importación descargada del buque a puerto
-                                    </span>
-                                </div>
-                                <div class="col-md-3">
-                                    <dt>Estado</dt>
-                                    <span>
-                                        MSC NORA Voyage PM009A
-                                    </span>
-                                </div>
+                        <?php
+                        foreach ($movContenedor as $movi) {
+                            $id_servicio = $movi["id_servicio"];
+                            $fecha_mov = $movi["fecha_mov"];
+                            $ubicacion_mov = $movi["ubicacion_mov"];
+                            $descripcion_mov = $movi["descripcion_mov"];
+                            $estado_mov = $movi["estado_mov"];
+                            $num_contenedor = $movi["num_contenedor"];
+                            $id_movimiento = $movi['id_movimiento'];
+                        ?>
+                            <div>
+                                <!-- <i class="fas fa-flag-checkered bg-purple"></i> -->
+                                <i class="fas fa-ship bg-purple"></i>
+                                <div class="row container timeline-item col-10">
+                                    <div class="col-md-2">
+                                        <dt class="ml-1">Fecha</dt>
+                                        <span class="ml-1">
+                                            <?php echo $fecha_mov ?>
+                                        </span>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <dt>Ubicación</dt>
+                                        <span>
+                                            <?php echo $ubicacion_mov ?>
+                                        </span>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <dt>Descripción</dt>
+                                        <span>
+                                            <?php echo $descripcion_mov ?>
+                                        </span>
+                                    </div>
+                                    <div class="col-md-2">
+                                        <dt>Estado</dt>
+                                        <span>
+                                            <?php echo $estado_mov ?>
+                                        </span>
+                                    </div>
+                                    <!-- <div class="text-center col-md-2 ">
+                                        <dt>Acción</dt>
+                                        <button class="btn btn-sm btn-warning btn-circle" title="Editar Servicio" onclick="MEditarMovimiento()">
+                                            <i class="fas fa-edit"></i>
+                                        </button>
+                                        <button class="btn btn-sm btn-outline-danger btn-circle" title="Eliminar Servicio" onclick="MEliminarMovimiento()">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </button>
+                                    </div> -->
+                                    <div class="col-md-2 mt-1" role="group">
+                                        <dt></dt>
+                                        <button id="btnGroupDrop" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            Acciones
+                                        </button>
+                                        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                            <a class="dropdown-item btn " onclick="MEditarMovimiento(<?php echo $id_movimiento ?>)">Editar</a>
+                                            <a class="dropdown-item btn " onclick="MEliminarMovimiento(<?php echo $id_movimiento ?>)" >Eliminar</a>
+                                        </div>
+                                    </div>
 
+                                </div>
                             </div>
-                        </div>
-
-                        <!--  <div class="time-label">
-                            <span class="bg-green">3 Jan. 2014</span>
-                        </div> -->
-
-                        <div>
-                            <i class="fas fa-flag-checkered bg-purple"></i>
-
-                            <div class="row container timeline-item col-10">
-                                <div class="col-md-3">
-                                    <dt class="ml-2">Fecha</dt>
-                                    <span class="ml-2">
-                                        2/09/2022
-                                    </span>
-                                </div>
-                                <div class="col-md-3">
-                                    <dt>Ubicación</dt>
-                                    <span>
-                                        CALLAO, PE
-                                    </span>
-                                </div>
-                                <div class="col-md-3">
-                                    <dt>Descripción</dt>
-                                    <span>
-                                        Importar a consignatario
-                                    </span>
-                                </div>
-                                <div class="col-md-3">
-                                    <dt>Estado</dt>
-                                    <span>
-                                        CARGADO
-                                    </span>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <div>
-                            <i class="fas fa-flag-checkered bg-purple"></i>
-                            <div class="row container timeline-item col-10">
-                                <div class="col-md-3">
-                                    <dt class="ml-2">Fecha</dt>
-                                    <span class="ml-2">
-                                        23/08/2022
-                                    </span>
-                                </div>
-                                <div class="col-md-3">
-                                    <dt>Ubicación</dt>
-                                    <span>
-                                        CALLAO, PERÚ
-                                    </span>
-                                </div>
-                                <div class="col-md-3">
-                                    <dt>Descripción</dt>
-                                    <span>
-                                        Importación descargada del buque a puerto
-                                    </span>
-                                </div>
-                                <div class="col-md-3">
-                                    <dt>Estado</dt>
-                                    <span>
-                                        MSC NORA Voyage PM009A
-                                    </span>
-                                </div>
-
-                            </div>
-                        </div>
-
-                        <div>
-                            <i class="fas fa-flag-checkered bg-purple"></i>
-
-                            <div class="row container timeline-item col-10">
-                                <div class="col-md-3 ">
-                                    <dt class="ml-2">Fecha</dt>
-                                    <span class="ml-2">
-                                        5/08/2022
-                                    </span>
-                                </div>
-                                <div class="col-md-3">
-                                    <dt>Ubicación</dt>
-                                    <span>
-                                        NINGBO, CHINA
-                                    </span>
-                                </div>
-                                <div class="col-md-3">
-                                    <dt>Descripción</dt>
-                                    <span>
-                                        Importar a consignatario
-                                    </span>
-                                </div>
-                                <div class="col-md-3">
-                                    <dt>Estado</dt>
-                                    <span>
-                                        CARGADO
-                                    </span>
-                                </div>
-
-                            </div>
-                        </div>
+                        <?php
+                        }
+                        ?>
 
                         <div>
                             <i class="fas fa-clock bg-gray"></i>

@@ -16,8 +16,8 @@
             <th>N.I.T.</th>
 <!--             <th>CONTACTO</th> -->
             <th>TIPO DE CLIENTE</th>
-            <th>IMAGEN</th>
-            <th> <button class="btn btn-primary" style="width: 80%;" onclick="MNuevoCliente()"><i class="fas fa-plus-circle"></i> NUEVO </button> </th>
+            <th>LOGO</th>
+            <th> <button class="btn bg-blue" style="width: 80%;" onclick="MNuevoCliente()"><i class="fas fa-plus-circle"></i> NUEVO </button> </th>
           </tr>
         </thead>
         <tbody>

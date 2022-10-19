@@ -13,8 +13,8 @@
             <div class="col-md-3">
             </div>
             <div class="col-md-5 col-sm-6">
-                <input type="text" class="form-control form-control input-seguimiento" id="numContenedor" name="numContenedor">
-                <p class="font-italic intruzca" style="font-size: 1.2rem;">Introduzca el Número del Contenedor</p>
+                <input type="text" class="form-control form-control input-seguimiento" id="numContenedor" name="numContenedor" style='text-transform:uppercase'>
+                <p class="font-italic intruzca" style="font-size: 1.1rem;">Introduzca el Número del Contenedor</p>
             </div>
             <div class="col-md-2 col-sm-6 butt">
                 <button type="button" class="btn btn-outline-warning form-control buttom-buscar" id="busqueda" name="busqueda" onclick="buscarContenedor()"><i class="fas fa-search"></i> Búsqueda</button>

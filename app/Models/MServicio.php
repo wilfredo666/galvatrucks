@@ -94,7 +94,15 @@ class MServicio extends Model
   public function BusContendor($contenedor){
     $this->select("*");
     $this->join("cliente", 'cliente.id_cliente=servicio.id_cliente');
+
     $this->where("nro_contenedor", $contenedor);
+    $resultado = $this->findAll();
+    return $resultado; 
+  }
+  public function ServContenedor($id_servicio){
+    $this->select("*");
+    /* $this->join("cliente", 'cliente.id_cliente=servicio.id_cliente'); */
+    $this->where("id_servicio", $id_servicio);
     $resultado = $this->findAll();
     return $resultado; 
   }

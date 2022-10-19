@@ -241,3 +241,119 @@ function buscarContenedor(){
       }
     })
 }
+/*PARA REGISTRAR EL MOVIMIENTO DE CONTENEDOR */
+function RegMovimiento(id){
+  let form = new FormData($("#FNuevoMovimiento")[0])
+  let fecha = document.getElementById("fechaHora").value;
+  let ubicacionCont=document.getElementById("ubicacionCont").value;
+  
+    if(fecha == null || fecha == 0){
+      document.getElementById("error-fecha").innerHTML="Seleccione la fecha de movimiento"
+    }else if(ubicacionCont == null || ubicacionCont == 0){
+      document.getElementById("error-ubicacion").innerHTML="Debe registrar la ubicación del contenedor"
+    }
+    else{ 
+     $.ajax({
+       type: "POST",
+       url: "RegMovimiento/"+id,
+       data: form,
+       cache: false,
+       contentType: false,
+       processData: false,
+       success: function (data) {
+         /* console.log(data) */
+         Swal.fire({
+           title: 'Movimiento Registrado',
+           icon: 'success',
+           showConfirmButton: false,
+           timer: 1000
+         })
+           setTimeout(function(){
+               location.reload()
+             },1200)
+       }
+     })
+} 
+}
+/*EDITAR MOVIMIENTO */
+function MEditarMovimiento(id){
+  $("#modal-lg").modal("show")
+
+  var obj = "";
+  $.ajax({
+    type: "POST",
+    url: "FEditMovimiento/"+id,
+    data: obj,
+    success: function (data) {
+      $("#content-lg").html(data)
+    }
+  })
+}
+function EditMovimiento(id){
+  let form = new FormData($("#FEditMovimiento")[0])
+  /* let fecha = document.getElementById("fechaHora").value; */
+  let ubicacionCont=document.getElementById("ubicacionCont").value;
+  
+    if(ubicacionCont == null || ubicacionCont == 0){
+      document.getElementById("error-ubicacion").innerHTML="Debe registrar la ubicación del contenedor"
+    }
+  else{
+    $.ajax({
+      type: "POST",
+      url: "EditMovimiento/"+id,
+      data: form,
+      cache: false,
+      contentType: false,
+      processData: false,
+      success: function (data) {
+        /* console.log(data) */
+        Swal.fire({
+          title: 'Registro Actualizado',
+          icon: 'success',
+          showConfirmButton: false,
+          timer: 1000
+        })
+          setTimeout(function(){
+              location.reload()
+            },1200)
+      }
+    })
+  } 
+}
+/*FUNCION PARA ELIMINAR EL MOVIMIENTO */
+function MEliminarMovimiento(id){
+  $("#modal-default").modal("show");
+  
+    var obj = "";
+    $.ajax({
+      type: "POST",
+      url: "FEliMovimiento/"+id,
+      data: obj,
+      success: function (data) {
+        $("#content-default").html(data);
+      },
+    });
+}
+function EliMovimiento(id){
+  var obj = "";
+    $.ajax({
+      type: "POST",
+      url: "EliMovimiento/"+id,
+      data: obj,
+      cache: false,
+      contentType: false,
+      processData: false,
+      success: function (data) {
+           /*swit alerts */
+          Swal.fire({
+            title: 'Registro Eliminado',
+            icon: 'success',
+            showConfirmButton: false,
+            timer: 1000
+          })
+          setTimeout(function(){
+              location.reload()
+            },1200)
+      }
+    })
+}
