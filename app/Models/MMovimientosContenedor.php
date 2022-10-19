@@ -28,4 +28,19 @@ class MMovimientosContenedor extends Model
         $resultado = $this->first();
         return $resultado;
     }
+  
+  public function UltimoMovimiento($contenedor){
+    
+    $this->selectMax("id_movimiento");
+    $this->where("num_contenedor", $contenedor);
+
+    $id_movimiento = $this->first();
+    
+    $this->select("*");
+    $this->where("id_movimiento", $id_movimiento["id_movimiento"]);
+
+    $resultado = $this->first();
+    return $resultado;
+    
+  }
 }

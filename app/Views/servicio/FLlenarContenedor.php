@@ -8,6 +8,7 @@ foreach ($busContenedor as $datos) {
     $fechaArribo = date('d-m-Y', strtotime($datos['fecha_arribo']));
     $tam_cont = $datos['medida_contenedor'];
     $nomCliente = $datos['razon_social_cli'];
+  
 ?>
 
     <div class="row container-fluid col-md-12 ">
@@ -70,7 +71,7 @@ foreach ($busContenedor as $datos) {
             <div class="col-md-4 text-center  col-sm-12 arribo">
                 <i class="fas fa-map-marker-alt fa-2x fa-lg mt-4"></i>
                 <p class="parr">Ultimo punto de Movimiento</p>
-                <p class="parr">ARICA, CHILE</p>
+                <p class="parr"><?php echo $ultimoMovimiento["ubicacion_mov"];?></p>
             </div>
         </div>
         <div class="col-md-4">

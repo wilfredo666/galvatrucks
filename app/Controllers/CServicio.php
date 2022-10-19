@@ -261,10 +261,11 @@ class CServicio extends BaseController
     $contenedor = $this->request->uri->getSegment(3);
     $data = array(
       "busContenedor" => $this->MServicio->BusContendor($contenedor),
-      "movContenedor" => $this->MMovimientosContenedor->ListaMovContenedor($contenedor)
+      "movContenedor" => $this->MMovimientosContenedor->ListaMovContenedor($contenedor),
+      "ultimoMovimiento" => $this->MMovimientosContenedor->UltimoMovimiento($contenedor)
     );
     echo view("servicio/FLlenarContenedor", $data);
-    /* var_dump($data);  */
+     
   }
   /* agregar  nnuevo movimiento */
   public function FNuevoMovimiento()

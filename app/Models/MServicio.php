@@ -96,9 +96,12 @@ class MServicio extends Model
     $this->join("cliente", 'cliente.id_cliente=servicio.id_cliente');
 
     $this->where("nro_contenedor", $contenedor);
+    $this->where("activo_serv", 0);
     $resultado = $this->findAll();
     return $resultado; 
   }
+  
+  
   public function ServContenedor($id_servicio){
     $this->select("*");
     /* $this->join("cliente", 'cliente.id_cliente=servicio.id_cliente'); */

@@ -236,7 +236,7 @@ function buscarContenedor(){
       url: "FBuscarMovimiento/"+numContenedor,
       data: obj,
       success: function (data) {
-        /* console.log(data) */
+         /*console.log(data) */
         $("#LlenarContenedor").html(data)
       }
     })
