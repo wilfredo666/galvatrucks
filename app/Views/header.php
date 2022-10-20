@@ -321,7 +321,7 @@ with font-awesome or any other icon font library -->
                     </a>
                   </li>
                   <li class="nav-item">
-                    <a href="<?php echo base_url(); ?>/CCliente/seguimientoCont" class="nav-link">
+                    <a href="<?php echo base_url(); ?>/CServicio/seguimientoContenedor" class="nav-link">
                       <i class="nav-icon fas fa-map-marked-alt text-warning"></i>
                       <p>Seguimiento de contenedores</p>
                     </a>

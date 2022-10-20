@@ -8,7 +8,7 @@ foreach ($busContenedor as $datos) {
     $fechaArribo = date('d-m-Y', strtotime($datos['fecha_arribo']));
     $tam_cont = $datos['medida_contenedor'];
     $nomCliente = $datos['razon_social_cli'];
-  
+
 ?>
 
     <div class="row container-fluid col-md-12 ">
@@ -71,7 +71,7 @@ foreach ($busContenedor as $datos) {
             <div class="col-md-4 text-center  col-sm-12 arribo">
                 <i class="fas fa-map-marker-alt fa-2x fa-lg mt-4"></i>
                 <p class="parr">Ultimo punto de Movimiento</p>
-                <p class="parr"><?php echo $ultimoMovimiento["ubicacion_mov"];?></p>
+                <p class="parr"><?php echo $ultimoMovimiento["ubicacion_mov"]; ?></p>
             </div>
         </div>
         <div class="col-md-4">
@@ -102,12 +102,17 @@ foreach ($busContenedor as $datos) {
                     <!-- The time line -->
                     <div class="timeline">
                         <!-- timeline time label -->
-                        <div class="time-label">
-                            <span style="background-color: #f4f6f9;">Movimientos</span>
-                            <button class="btn btn-sm btn-success btn-circle" onclick="MovimientoContenedor(<?php echo $idServicio ?>);"> Agregar Movimiento
-                                <i class="fas fa-plus-square"></i>
-                            </button>
-                        </div>
+                        <?php if (session("rol") == "Administrador") {
+                        ?>
+                            <div class="time-label">
+                                <span style="background-color: #f4f6f9;">Movimientos</span>
+                                <button class="btn btn-sm btn-success btn-circle" onclick="MovimientoContenedor(<?php echo $idServicio ?>);"> Agregar Movimiento
+                                    <i class="fas fa-plus-square"></i>
+                                </button>
+                            </div>
+                        <?php
+                        }
+                        ?>
                         <!-- /.timeline-label -->
                         <!-- timeline item -->
                         <?php
@@ -157,17 +162,19 @@ foreach ($busContenedor as $datos) {
                                             <i class="fas fa-trash-alt"></i>
                                         </button>
                                     </div> -->
-                                    <div class="col-md-2 mt-1" role="group">
-                                        <dt></dt>
-                                        <button id="btnGroupDrop" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                            Acciones
-                                        </button>
-                                        <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
-                                            <a class="dropdown-item btn " onclick="MEditarMovimiento(<?php echo $id_movimiento ?>)">Editar</a>
-                                            <a class="dropdown-item btn " onclick="MEliminarMovimiento(<?php echo $id_movimiento ?>)" >Eliminar</a>
+                                    <?php if (session("rol") == "Administrador") {
+                                    ?>
+                                        <div class="col-md-2 mt-1" role="group">
+                                            <dt></dt>
+                                            <button id="btnGroupDrop" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Acciones
+                                            </button>
+                                            <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                                <a class="dropdown-item btn " onclick="MEditarMovimiento(<?php echo $id_movimiento ?>)">Editar</a>
+                                                <a class="dropdown-item btn " onclick="MEliminarMovimiento(<?php echo $id_movimiento ?>)">Eliminar</a>
+                                            </div>
                                         </div>
-                                    </div>
-
+                                    <?php } ?>
                                 </div>
                             </div>
                         <?php

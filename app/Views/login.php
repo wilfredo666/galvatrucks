@@ -26,7 +26,7 @@
         <div class="card-body login-card-body" style="border-radius: 20px; background-color:#a5adc5ba;">
 
           <div class="login-logo">
-            <img src="<?php echo base_url(); ?>/assest/img/logo.jpg" alt="logo" width="50%">
+            <img src="<?php echo base_url(); ?>/assest/img/galvanegro.png" alt="logo" width="50%">
           </div>
 
           <p class="login-box-msg">Ingresa al sistema con tu usuario</p>

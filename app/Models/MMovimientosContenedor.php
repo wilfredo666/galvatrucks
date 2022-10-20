@@ -16,7 +16,7 @@ class MMovimientosContenedor extends Model
     public function ListaMovContenedor($contenedor){
     $this->select("*");
     $this->where("num_contenedor", $contenedor);
-    $this->where("id_movimiento ORDER BY id_movimiento DESC"); 
+    $this->where("id_movimiento ORDER BY fecha_mov DESC"); 
     $resultado = $this->findAll();
     return $resultado; 
     }

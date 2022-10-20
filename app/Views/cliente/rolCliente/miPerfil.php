@@ -113,7 +113,7 @@ $razon_social = $cliente["razon_social_cli"];
                                 <div class="row">
                                     <div class="col-md-9"></div>
                                     <div class="col-md-3" style="border: 8px ; display: flex; justify-content: right">
-                                        <button class="btn btn-lg btn-success" type="button" onclick="ActualizarCli(<?php echo $cliente["id_cliente"] ?>);"><i class="fas fa-user-edit"></i> Actualizar</button>
+                                        <button class="btn btn-success" type="button" onclick="ActualizarCli(<?php echo $cliente["id_cliente"] ?>);"><i class="fas fa-user-edit"></i> Actualizar</button>
                                         <!--   <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button> -->
                                         <!--    <button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button> -->
                                     </div>
