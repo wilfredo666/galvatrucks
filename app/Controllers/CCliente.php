@@ -6,6 +6,7 @@ use App\Models\MCliente;
 use App\Models\MUsuario;
 use App\Models\MSolicitudServicio;
 use App\Models\MEmpresaMaritima;
+use App\Models\MServicio;
 
 class CCliente extends BaseController
 {
@@ -15,6 +16,7 @@ class CCliente extends BaseController
         $this->MUsuario = new MUsuario();
         $this->MSolicitudServicio = new MSolicitudServicio();
         $this->MEmpresaMaritima = new MEmpresaMaritima();
+        $this->MServicio = new MServicio();
     }
 
     public function index()
@@ -164,16 +166,36 @@ class CCliente extends BaseController
         $id = $this->request->uri->getSegment(3);
         $this->MCliente->delete($id);
     }
-
+    /* REPORTE CLIENTE */
     public function repCliente()
     {
         $data = array(
             "cliente" => $this->MCliente->findAll()
         );
-
+        /* var_dump($data); */
         echo view('header');
         echo view('cliente/repCliente', $data);
         echo view('footer');
+    }
+
+    public function reporteCli()
+    {
+        $id = $_POST["cliente"];
+        $fechaDesde = $_POST["fechaDesde"];
+        $fechaHasta = $_POST["fechaHasta"];
+
+        $serv = array(
+            "idCliente" => $id,
+            "fechaDesde" => $fechaDesde,
+            "fechaHasta" => $fechaHasta
+        );
+
+        $data = array(
+            "cliente" => $this->MCliente->InfoCliente($id),
+            "servicios" => $this->MServicio->InfoServCliente($serv)
+        );
+        /* var_dump($data); */
+        echo view('cliente/repLlenadoCliente', $data);
     }
     /* -----------------------------------------------
     FUNCIONES PARA EL ROL CLIENTE
@@ -316,7 +338,7 @@ PARA LA RESPUESTA A SOLICITUD DE SERVICIO DE CLIENTES
             "observaciones" => $observaciones,
             "activo_solicitud" => $estadoSoli
         );
-        $this -> MSolicitudServicio->update($id, $data);
+        $this->MSolicitudServicio->update($id, $data);
     }
     /*------------fin de respuesta solicitud clientes ---------*/
     public function seguimientoCont()

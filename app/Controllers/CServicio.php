@@ -265,7 +265,7 @@ class CServicio extends BaseController
       "ultimoMovimiento" => $this->MMovimientosContenedor->UltimoMovimiento($contenedor)
     );
     echo view("servicio/FLlenarContenedor", $data);
-     
+    /* var_dump($data); */
   }
   /* agregar  nnuevo movimiento */
   public function FNuevoMovimiento()

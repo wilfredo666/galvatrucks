@@ -2817,8 +2817,11 @@
         "renameTitle": "Cambiar Nombre Estado"
     }
 } 
-    }).buttons().container().appendTo('#tabla1_wrapper .col-md-6:eq(0)');
 
+}).buttons().container().appendTo('#Tabla1_wrapper .col-md-6:eq(0)');
+  });
+  
+  $(function () {
     $('#Tabla2').DataTable({
       "paging": true,
       "lengthChange": false,
@@ -3069,7 +3072,7 @@
         "renameTitle": "Cambiar Nombre Estado"
     }
 } 
-    });
+}).buttons().container().appendTo('#Tabla2_wrapper .col-md-6:eq(0)');
   });
 
  

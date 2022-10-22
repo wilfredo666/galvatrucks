@@ -189,22 +189,22 @@ function MNuevoCliente() {
   REPORTE POR CADA CLIENTE
   =====================================*/
   function reporteCliente(){
-    let formulario = new FormData($("#ReporteCliente")[0])
+    let form= new FormData($("#ReporteCliente")[0])
 
     $.ajax({
       type: "POST",
-      url: "repCliente",
-      data: formulario,
+      url: "reporteCli",
+      data: form,
       cache: false,
       contentType: false,
       processData: false,
       success: function(data){
-        console.log("llegaste al ajax")
-       /*  $("#reporte_ciente").html(data) */
+        /* console.log(data) */
+        $("#repServCliente").html(data)
       }
     })
   }
-   /*===================================
+     /*===================================
   ACTUALIZAR PERFIL DEL CLIENTE
   =====================================*/
  

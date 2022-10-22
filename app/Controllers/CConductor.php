@@ -171,7 +171,6 @@ class CConductor extends BaseController
 
   public function reporteCond()
   {
-
     $id = $_POST["conductor"];
     $fechaDesde = $_POST["fechaDesde"];
     $fechaHasta = $_POST["fechaHasta"];
@@ -182,13 +181,10 @@ class CConductor extends BaseController
       "fechaHasta" => $fechaHasta
     );
 
-
     $data = array(
       "conductor" => $this->MConductor->InfoConductor($id),
       "servicios" => $this->MServicio->InfoServConductor($sql)
     );
-
   echo view('conductor/conductors', $data);
-
   }
 }

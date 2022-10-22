@@ -6,13 +6,13 @@
 
   <div class="modal-body" style="padding-bottom: 0;">
     <div class="card">
-      <form id="ReporteConductor">
+      <form id="ReporteCliente">
         <div class="card-body" style="padding-bottom: 0;">
           <div class="container col-md-12">
             <div class="row">
               <div class="form-group col-md-5">
                 <label>Razón Social</label>
-                <select class="form-control" name="conductor" id="conductor">
+                <select class="form-control" name="cliente" id="cliente">
                   <option value="">-- Seleccionar --</option>
                   <?php
                   foreach ($cliente as $cli) {
@@ -68,7 +68,7 @@
             <th>FECHA</th>
           </tr>
         </thead>
-        <tbody id="repServConductor">
+        <tbody id="repServCliente">
 
         </tbody>
       </table>
