@@ -10,8 +10,8 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
   <link rel="stylesheet" href="<?php echo base_url(); ?>/assest/plugins/fontawesome-free/css/all.min.css">
-   <!-- Ionicons -->
-   <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
   <!-- icheck bootstrap -->
   <link rel="stylesheet" href="<?php echo base_url(); ?>/assest/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
   <!-- Theme style -->
@@ -27,7 +27,8 @@
   <link rel="stylesheet" href="<?php echo base_url(); ?>/assest/plugins/bs-stepper/css/bs-stepper.min.css">
 
   <link rel="stylesheet" href="<?php echo base_url(); ?>/assest/dist/css/style.css">
-
+  <!-- icono pagina -->
+  <link rel="icon" type="image/ico" href="<?php echo base_url(); ?>/assest/img/faviconG.ico" />
   <style>
 
   </style>
@@ -75,7 +76,7 @@
           <div class=" info">
             <!-- colocar para sessiones session('usuario') y descomentar la lineas SESSIONS Del controlador HOME linea 30,31 -->
             <a href="#" class="d-block"><?php echo session("nombre_usuario"); ?></a>
-            
+
           </div>
         </div>
 
@@ -203,19 +204,42 @@ with font-awesome or any other icon font library -->
                   </li>
                   <li class="nav-item">
                     <a href="<?php echo base_url(); ?>/CServicio" class="nav-link">
-                      <i class="nav-icon fab fa-shirtsinbulk text-info"></i>
+                      <i class="nav-icon fab fa-shirtsinbulk text-warning"></i>
                       <p>Lista de Servicios</p>
                     </a>
                   </li>
-                  <li class="nav-item">
+                  <!--  <li class="nav-item">
                     <a href="<?php echo base_url(); ?>/CPagos" class="nav-link">
                       <i class="nav-icon fas fa-credit-card text-info"></i>
                       <p>Pagos</p>
                     </a>
+                  </li> -->
+                </ul>
+              </li>
+              <!-- PAGOS -->
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fas fa-credit-card"></i>
+                  <p>
+                    Pagos
+                    <i class="fas fa-angle-left right"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="<?php echo base_url()?>/CPago/NuevoPago" class="nav-link">
+                      <i class="nav-icon fas fa-plus-circle text-warning"></i>
+                      <p>Nuevo Pago</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="<?php echo base_url(); ?>/CPago" class="nav-link">
+                      <i class="nav-icon fas fa-receipt text-warning"></i>
+                      <p>Lista de Pagos</p>
+                    </a>
                   </li>
                 </ul>
               </li>
-
               <!--  SEGUIMIENTOS DE CONTENEDOR -->
               <li class="nav-item">
                 <a href="<?php echo base_url(); ?>/CServicio/seguimientoContenedor" class="nav-link">
@@ -225,6 +249,7 @@ with font-awesome or any other icon font library -->
                   </p>
                 </a>
               </li>
+
 
               <!--  REPORTES -->
               <li class="nav-item">
@@ -329,7 +354,7 @@ with font-awesome or any other icon font library -->
                       <p>Seguimiento de contenedores</p>
                     </a>
                   </li>
-<!--                   <li class="nav-item">
+                  <!--                   <li class="nav-item">
                     <a href="#" class="nav-link">
                       <i class="nav-icon fas fa-file-upload text-warning"></i>
                       <p>Subir Archivos de Importacion</p>

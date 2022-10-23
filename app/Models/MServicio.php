@@ -68,6 +68,12 @@ class MServicio extends Model
     $resultado = $this->findAll();
     return $resultado;
   }
+  public function lista_consultas5(){
+    $this->select("*");
+    $this->join("cliente", 'cliente.id_cliente=servicio.id_cliente');
+    $resultado = $this->first();
+    return $resultado;
+  }
 
   /*para mostrar los datos de reporte por conductor */
   public function InfoServConductor($data)
@@ -102,6 +108,7 @@ class MServicio extends Model
     $this->join("ruta", 'ruta.id_ruta=servicio.id_ruta');
     $this->where("id_cliente", $id);
     $this->where("fecha_inicio_servicio between '$fechaDesde' and '$fechaHasta' ");
+    $this->where("fecha_inicio_servicio ORDER BY fecha_inicio_servicio  DESC ");
     $resultado = $this->findAll();
     return $resultado;
     /* var_dump($resultado); */

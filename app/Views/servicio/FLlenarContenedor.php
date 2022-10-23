@@ -207,7 +207,7 @@ foreach ($busContenedor as $datos) {
     } else {
     ?>
 
-        <p>EL CONTENEDOR NO ESTA DISPONIBLE</p>
+        <!-- <p>EL CONTENEDOR NO ESTA DISPONIBLE</p> -->
 
         <script>
             let $estadoServ = 0;

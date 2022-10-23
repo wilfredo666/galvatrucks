@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="<?php echo base_url(); ?>/assest/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="<?php echo base_url(); ?>/assest/dist/css/adminlte.css">
+    <!-- icono pagina -->
+    <link rel="icon" type="image/ico" href="<?php echo base_url(); ?>/assest/img/faviconG.ico" />
   </head>
 
 
