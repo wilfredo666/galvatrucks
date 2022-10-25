@@ -12,7 +12,29 @@ foreach ($busContenedor as $datos) {
 
 ?>
     <?php
-    if ($estadoServ == 1) {
+    if ($estadoServ == 0) {
+    ?>
+
+        <!-- <p>EL CONTENEDOR NO ESTA DISPONIBLE</p> -->
+
+        <script>
+            let $estadoServ = 0;
+            if ($estadoServ == 0) {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'El contenedor no esta activo.',
+                    text: 'Servicio Finalizado',
+                    showConfirmButton: false,
+                    /* footer: '<p>Consulte con la empresa GALVATRUCKS SRL</p>' */
+                })
+                setTimeout(function() {
+                    location.reload()
+                }, 2200)
+            }
+        </script>
+
+    <?php
+    } else {
     ?>
 
         <div class="row container-fluid col-md-12 ">
@@ -201,33 +223,8 @@ foreach ($busContenedor as $datos) {
 
         </section>
 
-
-
-    <?php
-    } else {
-    ?>
-
-        <!-- <p>EL CONTENEDOR NO ESTA DISPONIBLE</p> -->
-
-        <script>
-            let $estadoServ = 0;
-            if( $estadoServ == 0){
-            Swal.fire({
-                icon: 'error',
-                title: 'El contenedor no esta activo.',
-                text: 'Servicio Finalizado',
-                showConfirmButton: false,
-                /* footer: '<p>Consulte con la empresa GALVATRUCKS SRL</p>' */
-            })
-            setTimeout(function(){
-              location.reload()
-            },2200)
-        }
-        </script>
-
     <?php
     }
-
     ?>
 
 

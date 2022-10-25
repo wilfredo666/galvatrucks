@@ -39,7 +39,7 @@
                 <button type="button" class="btn btn-navbar btn-app bg-warning" onclick="reporteConductor();">
                   <i class="fas fa-search "></i>
                 </button>
-                <button type="button" class="btn btn-navbar  btn-app bg-primary">
+                <button type="button" class="btn btn-navbar  btn-app bg-primary" onclick="javascript:window.print()">
                   <i class="fas fa-print"></i>
                 </button>
               </div>
@@ -56,7 +56,7 @@
   <section class="content">
 
     <div class="container-fluid">
-      <table id="Tabla2" class="table table-bordered table-striped">  
+      <table id="Tabla3" class="table table-bordered table-striped">  
         <thead class="thead-dark">
           <tr>
             <th>COD. SERVICIO</th>

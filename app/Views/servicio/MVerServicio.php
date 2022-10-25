@@ -87,6 +87,9 @@
                                     <div class="col-md-3 col-sm-6">
                                         <p class="m-b-10 f-w-600">Contenedor</p>
                                         <h6 class="text-muted f-w-400"><?php echo $servicio["nro_contenedor"] ?></h6>
+<!--                                         <span class="align-items-center justify-content-center text-center">
+                                            <i class="fa fa-copy"> copiar</i>
+                                        </span> -->
                                     </div>
                                     <div class="col-md-3 col-sm-6">
                                         <p class="m-b-10 f-w-600">Tamaño</p>

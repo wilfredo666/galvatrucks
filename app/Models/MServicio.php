@@ -123,6 +123,8 @@ class MServicio extends Model
     /* $this->where("activo_serv", 1); */
     $resultado = $this->findAll();
     return $resultado;
+
+    /* var_dump($resultado); */
   }
 
   public function BusContendorGeneral($contenedor)
@@ -133,12 +135,27 @@ class MServicio extends Model
     return $resultado;
   }
 
-
   public function ServContenedor($id_servicio)
   {
     $this->select("*");
     /* $this->join("cliente", 'cliente.id_cliente=servicio.id_cliente'); */
     $this->where("id_servicio", $id_servicio);
+    $resultado = $this->findAll();
+    return $resultado;
+  }
+  public function ServicioBill($idServicio){
+    $this->select("*");
+    /* $this->join("cliente", 'cliente.id_cliente=servicio.id_cliente'); */
+    $this->where("id_servicio", $idServicio);
+    $resultado = $this->findAll();
+    return $resultado;
+  }
+  /* buscar bill para pagos */
+  public function BusNroBill($nroBillMayus){
+    $this-> select("*");
+    $this->join("cliente", 'cliente.id_cliente=servicio.id_cliente');
+    $this->join("empresa_maritima", 'empresa_maritima.id_emp_maritima=servicio.id_emp_maritima');
+    $this->where("num_bill", $nroBillMayus);
     $resultado = $this->findAll();
     return $resultado;
   }

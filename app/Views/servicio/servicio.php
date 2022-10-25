@@ -15,6 +15,7 @@
             <th>NOMBRE CLIENTE</th>
             <!--             <th>NAVIERA</th> -->
             <th>NRO BL/BILL</th>
+            <!-- <th>NRO BL/BILL</th> -->
             <th>FECHA ARRIBO</th>
             <th>ESTADO</th>
             <th> <button class="btn btn-primary" style="width: 80%;" onclick="MNuevoServicio()"><i class="fas fa-plus-circle"></i> NUEVO </button> </th>
@@ -35,8 +36,8 @@
             <tr>
               <td><?php echo $codServicio; ?></td>
               <td><?php echo $cli; ?></td>
-
               <td><?php echo $nroBl; ?></td>
+              
               <td><?php echo $fechaArriboContenedor; ?></td>
 
               <?php

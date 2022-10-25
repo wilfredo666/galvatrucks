@@ -49,7 +49,7 @@
   <section class="content">
 
     <div class="container-fluid ">
-      <table id="Tabla2" class="table table-bordered table-striped ">
+      <table id="Tabla3" class="table table-bordered table-striped ">
         <thead class="thead-dark ">
           <tr class="text-center">
             <th>ID</th>

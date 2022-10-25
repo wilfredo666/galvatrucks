@@ -99,7 +99,8 @@ class CCliente extends BaseController
         $id = $this->request->uri->getSegment(3);
 
         $data = array(
-            "cliente" => $this->MCliente->InfoCliente($id)
+            "cliente" => $this->MCliente->InfoCliente($id),
+            "accesos" => $this->MUsuario->InfoUsuarioAsigCredencial()
         );
 
         echo view("cliente/FEditCliente", $data);
@@ -133,6 +134,12 @@ class CCliente extends BaseController
             move_uploaded_file($tmpFoto, $ruta . $foto);
         }
 
+        $credenciales = $_POST["idUsuarioAcceso"];
+
+        $data2 = array(
+            "activo_usuario" => 1
+        );
+
         $data = array(
             "nombre_cli" => $nombreCli,
             "apellido_cli" => $apellidoCli,
@@ -147,10 +154,12 @@ class CCliente extends BaseController
             "contacto_cli" => $contactoCli,
             "persona_contacto_cli" => $personaContactoCli,
             "tipo_cli" => $tipoCli,
-            "imagen_cli" => $foto
+            "imagen_cli" => $foto,
+            "id_usuario" => $credenciales
         );
 
         $this->MCliente->update($id, $data);
+        $this->MUsuario->update($credenciales, $data2);
     }
     /* --------------------------------------
       FUNCIONES PARA ELIMNAR CLIENTE 

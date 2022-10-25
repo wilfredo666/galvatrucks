@@ -1,24 +1,116 @@
 <?php
-foreach ($servicios as $value) {
-  $cod_servicio = $value['cod_servicio'];
-  $num_bill = $value['num_bill'];
-  $servicioFecha = $value['fecha_inicio_servicio'];
-  $ruta_inicio = $value['ruta_inicio'];
-  $ruta_fin = $value['ruta_fin'];
+foreach ($busBill as $bill) {
+    $id_servicio = $bill["id_servicio"];
+    $num_bill = $bill["num_bill"];
+    $cliente = $bill["razon_social_cli"];
+    $fecha = $bill["fecha_arribo"];
+    $naviera = $bill["razon_social_emp"];
+    $origen_mercaderia = $bill["origen_mercaderia"];
+    $destino_mercaderia = $bill["destino_mercaderia"];
+    /* $fecha = $bill["fecha_arribo"]; */
+}
 ?>
-<tr>
-  <td><?php echo $cod_servicio; ?></td>
-  <td><?php echo $num_bill; ?></td>
-  <td><?php echo $ruta_inicio; ?></td>
-  <td><?php echo $ruta_fin; ?></td>
-  <td><?php echo $servicioFecha; ?></td>
-</tr>
 
-<?php } ?>
+<div class="container col-md-12">
+    <div class="row">
+        <div class="form-group col-md-3 col-sm-10 ">
+            <label>Nro Bill of Lading</label>
+            <input type="text" class="form-control" id="nroBill" name="nroBill" placeholder="Ingrese NRO de BILL/BL" style="text-transform: uppercase;" value="<?php echo $num_bill ?>">
+            <span class="text-danger chartjs-render-monitor" id="error-bill"></span>
+        </div>
+        <div class="form-group col-md-1 col-sm-2 text-center  align-items-center">
+            <label class="font-weight-light">Buscar</label>
+            <button type="button" class="btn btn-outline-warning butt" id="busqueda" name="busqueda" onclick="buscarBill()"><i class="fas fa-search"></i></button>
+        </div>
+        <div class="form-group col-md-5">
+            <label>Cliente</label>
+            <input type="text" class="form-control" id="nomCliente" name="nomCliente" placeholder="" value="<?php echo $cliente ?>" readonly>
+        </div>
+        <div class="form-group col-md-3" id="fecha">
+            <label>Fecha de Arribo</label>
+            <input type="date" class="form-control" id="fechaArribo" name="fechaArribo" placeholder="" value="<?php echo $fecha ?>" readonly>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group col-md-4">
+            <label>Naviera</label>
+            <input type="text" class="form-control" id="nomNaviera" name="nomNaviera" placeholder="" value="<?php echo $naviera ?>" readonly>
+        </div>
+        <div class="form-group col-md-4">
+            <label>Origen Mercadería</label>
+            <input type="text" class="form-control" id="origenMerc" name="origenMerc" value="<?php echo $origen_mercaderia ?>" readonly>
+        </div>
+        <div class="form-group col-md-4">
+            <label>Destino Mercadería</label>
+            <input type="text" class="form-control" id="destinoMerc" name="destinoMerc" value="<?php echo $destino_mercaderia ?>" readonly>
+        </div>
+        <input type="hidden" class="form-control" id="idServ" name="idServ" value="<?php echo $id_servicio ?>">
+    </div>
+</div>
+<div class="time-label mb-2">
+    <!-- <span style="background-color: #f4f6f9;">Añadir Pago</span> -->
+    <button class="btn btn-success btn-circle ml-1" style="width: 150px;" onclick="FAñadirPago(<?php echo  $id_servicio ?>);"> Añadir Pago
+        <i class="fas fa-plus-square"> </i>
+    </button>
+</div>
 
+
+<section class="content">
+    <div class="container-fluid">
+        <table id="Tabla2" class="table table-bordered table-striped">
+            <thead class="text-center align-items-center justify-content-center bg-dark">
+                <tr>
+                    <th>CONCEPTO</th>
+                    <th>MONTO PAGADO</th>
+                    <th>TIPO DE MONEDA</th>
+                    <th>FECHA DE PAGO</th>
+                    <th>ACCIONES</th>
+                </tr>
+            </thead>
+            <tbody>
+                <div class="container-llenado">
+
+                    <?php
+                    foreach ($pagosBill as $bill) {
+                        $id_pago = $bill["id_pago"];
+                        $concepto = $bill['concepto'];
+                        $monto = $bill['monto'];
+                        $tipo_moneda = $bill['tipo_moneda'];
+                        $fecha_pago = $bill['fecha_pago'];
+                        $id_servicio = $bill['id_servicio'];
+
+                        $fechaPago = date('d-m-Y', strtotime($fecha_pago));
+                    ?>
+                        <tr>
+                            <td><?php echo $concepto; ?></td>
+                            <td class="text-center"><?php echo $monto; ?></td>
+                            <td class="text-center"><?php echo $tipo_moneda; ?></td>
+                            <td class="text-center"><?php echo $fechaPago; ?></td>
+                            <td>
+                                <div class="col-md-2 mt-1" role="group">
+                                    <dt></dt>
+                                    <button id="btnGroupDrop" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Acciones
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                        <a class="dropdown-item btn " onclick="MEditarPago(<?php echo $id_pago ?>)">Editar</a>
+                                        <a class="dropdown-item btn " onclick="MEliminarPago(<?php echo $id_pago ?>)">Eliminar</a>
+                                    </div>
+                                </div>
+                            </td>
+
+                        </tr>
+
+                    <?php } ?>
+
+                </div>
+            </tbody>
+        </table>
+    </div>
+</section>
 <script>
     $(function () {
-    $('#Tabla3').DataTable({
+    $('#Tabla2').DataTable({
       "paging": true,
       "lengthChange": false,
       "searching": false,
@@ -268,6 +360,6 @@ foreach ($servicios as $value) {
         "renameTitle": "Cambiar Nombre Estado"
     }
 } 
-}).buttons().container().appendTo('#Tabla3_wrapper .col-md-6:eq(0)');
+}).buttons().container().appendTo('#Tabla2_wrapper .col-md-6:eq(0)');
   });
 </script>

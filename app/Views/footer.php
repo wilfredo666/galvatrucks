@@ -44,6 +44,7 @@
 <script src="<?php echo base_url(); ?>/assest/js/ruta.js"></script>
 <script src="<?php echo base_url(); ?>/assest/js/servicio.js"></script>
 <script src="<?php echo base_url(); ?>/assest/js/solicitudServicio.js"></script>
+<script src="<?php echo base_url(); ?>/assest/js/pago.js"></script>
 
 <!-- BS-Stepper -->
 <script src="<?php echo base_url(); ?>/assest/plugins/bs-stepper/js/bs-stepper.min.js"></script>

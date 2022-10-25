@@ -11,7 +11,7 @@ class MUsuario extends Model
 
     protected $returnType     = 'array';
 
-    protected $allowedFields = ['nombre_usuario', 'login_usuario', 'pass_usuario','rol'];
+    protected $allowedFields = ['nombre_usuario', 'login_usuario', 'pass_usuario','rol', 'activo_usuario'];
 
   
   public function acceso($data){
@@ -28,6 +28,14 @@ class MUsuario extends Model
     $this->where("id_usuario",$id);
     
     $resultado=$this->first();
+    return $resultado;
+  }
+
+  public function InfoUsuarioAsigCredencial(){
+    $this->select("*");   
+    $this->where("rol", "Cliente");
+    $this->where("activo_usuario", 0);
+    $resultado=$this->findAll();
     return $resultado;
   }
 
