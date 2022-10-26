@@ -37,5 +37,11 @@ class MPago extends Model
         $resultado = $this->first();
         return $resultado;
     }
+    public function BusPagosBillId($id){
+        $this->select("*");
+        $this->where("id_servicio", $id);
+        $resultado = $this->findAll();
+        return $resultado;
+    }
     
 }

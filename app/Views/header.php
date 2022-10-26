@@ -227,7 +227,7 @@ with font-awesome or any other icon font library -->
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="<?php echo base_url()?>/CPago/NuevoPago" class="nav-link">
+                    <a href="<?php echo base_url() ?>/CPago/NuevoPago" class="nav-link">
                       <i class="nav-icon fas fa-plus-circle text-warning"></i>
                       <p>Nuevo Pago</p>
                     </a>
@@ -261,6 +261,12 @@ with font-awesome or any other icon font library -->
                   </p>
                 </a>
                 <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="<?php echo base_url(); ?>/CServicio/notaDebito" class="nav-link">
+                      <i class="nav-icon far fa-circle text-warning"></i>
+                      <p>Generar Nota de Débito</p>
+                    </a>
+                  </li>
                   <li class="nav-item">
                     <a href="<?php echo base_url(); ?>/CCliente/repCliente" class="nav-link">
                       <i class="nav-icon far fa-circle text-warning"></i>

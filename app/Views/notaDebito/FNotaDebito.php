@@ -1,8 +1,8 @@
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <section class="content-header" style="padding-bottom: 0;">
+    <section class="content-header bg-galva" style="padding-bottom: 0;">
         <div class="card-header">
-            <h3 class="font-weight-light ">Pagos del Servicio de IMPORTACIÓN/EXPORTACIÓN </h3>
+            <h3 class="font-weight-light ">GENERAR NOTAS DE DÉBITO</h3>
         </div>
     </section>
     <div class="content-header">
@@ -25,9 +25,9 @@
                                         <input type="text" class="form-control" id="nroBill" name="nroBill" placeholder="Ingrese NRO de BILL/BL" style="text-transform: uppercase;">
                                         <span class="text-danger chartjs-render-monitor" id="error-bill"></span>
                                     </div>
-                                    <div class="form-group col-md-1 col-sm-2  ">
-                                        <label class="font-weight-light">Buscar BL</label>
-                                        <button type="button" class="btn btn-outline-warning form-control " style="width: 60px ;" id="busqueda" name="busqueda" onclick="buscarBill()"><i class="fas fa-search"></i></button>
+                                    <div class="form-group col-md-1 col-sm-2  col-xl-1 text-center align-items-center justify-content-center">
+                                        <label class="font-weight-light"> Búsqueda</label>
+                                        <button type="button" class="btn btn-outline-warning form-control " style="width: 60px ;" id="busqueda" name="busqueda" onclick="buscarBL()"><i class="fas fa-search"></i></button>
                                     </div>
                                     <div class="form-group col-md-5">
                                         <label>Cliente</label>

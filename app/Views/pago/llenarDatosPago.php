@@ -18,9 +18,9 @@ foreach ($busBill as $bill) {
             <input type="text" class="form-control" id="nroBill" name="nroBill" placeholder="Ingrese NRO de BILL/BL" style="text-transform: uppercase;" value="<?php echo $num_bill ?>">
             <span class="text-danger chartjs-render-monitor" id="error-bill"></span>
         </div>
-        <div class="form-group col-md-1 col-sm-2 text-center  align-items-center">
-            <label class="font-weight-light">Buscar</label>
-            <button type="button" class="btn btn-outline-warning butt" id="busqueda" name="busqueda" onclick="buscarBill()"><i class="fas fa-search"></i></button>
+        <div class="form-group col-md-1 col-sm-2">
+            <label class="font-weight-light">Buscar BL</label>
+            <button type="button" class="btn btn-outline-warning form-control" style="width: 60px ;" id="busqueda" name="busqueda" onclick="buscarBill()"><i class="fas fa-search"></i></button>
         </div>
         <div class="form-group col-md-5">
             <label>Cliente</label>
@@ -86,13 +86,13 @@ foreach ($busBill as $bill) {
                             <td class="text-center"><?php echo $monto; ?></td>
                             <td class="text-center"><?php echo $tipo_moneda; ?></td>
                             <td class="text-center"><?php echo $fechaPago; ?></td>
-                            <td>
-                                <div class="col-md-2 mt-1" role="group">
+                            <td  class="text-center align-items-center justify-content-center">
+                                <div class="col-md-2 mt-1  text-center" role="group">
                                     <dt></dt>
                                     <button id="btnGroupDrop" type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                         Acciones
                                     </button>
-                                    <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                                    <div class="dropdown-menu " aria-labelledby="btnGroupDrop1">
                                         <a class="dropdown-item btn " onclick="MEditarPago(<?php echo $id_pago ?>)">Editar</a>
                                         <a class="dropdown-item btn " onclick="MEliminarPago(<?php echo $id_pago ?>)">Eliminar</a>
                                     </div>

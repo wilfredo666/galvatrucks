@@ -48,5 +48,5 @@
 </div>
 <div class="modal-footer justify-content-between">
     <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
-    <button type="button" class="btn btn-primary" onclick="EditPago(<?php echo $pagosId["id_pago"] ?>)">Guardar</button>
+    <button type="button" class="btn btn-success" onclick="EditPago(<?php echo $pagosId["id_pago"] ?>)">Guardar</button>
 </div>

@@ -357,3 +357,43 @@ function EliMovimiento(id){
       }
     })
 }
+/* ================================
+FUNCION PARA BUSCAR BILL PARA REPORTES
+====================================*/
+function buscarBL(){
+  let nroBill = document.getElementById("nroBill").value
+  var obj = "";
+    $.ajax({
+      type: "POST",
+      url: "FBuscarBL/"+nroBill,
+      data: obj,
+      success: function (data) {
+         /* console.log(data) */
+        $("#contenido").html(data)
+      }
+    })
+}
+function FNotaDebito(id){
+  var obj = "";
+  $.ajax({
+    type: "POST",
+    url: "GeneraNotaDebito/"+id,
+    data: obj,
+    cache: false,
+    contentType: false,
+    processData: false,
+    success: function (data) {
+      
+        /* Swal.fire({
+          title: 'Registro Eliminado',
+          icon: 'success',
+          showConfirmButton: false,
+          timer: 1000
+        })
+        setTimeout(function(){
+            location.reload()
+          },1200) */
+          console.log(data)
+    }
+  })
+}

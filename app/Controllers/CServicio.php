@@ -10,6 +10,7 @@ use App\Models\MContratoCamion;
 use App\Models\MRuta;
 use App\Models\MSolicitudServicio;
 use App\Models\MMovimientosContenedor;
+use App\Models\MPago;
 
 class CServicio extends BaseController
 {
@@ -23,6 +24,7 @@ class CServicio extends BaseController
     $this->MRuta = new MRuta();
     $this->MSolicitudServicio = new MSolicitudServicio();
     $this->MMovimientosContenedor = new MMovimientosContenedor();
+    $this->MPago = new MPago();
   }
 
   public function index()
@@ -309,7 +311,8 @@ class CServicio extends BaseController
     /* var_dump($data); */
     echo view("servicio/FEditMovimiento", $data);
   }
-  public function EditMovimiento(){
+  public function EditMovimiento()
+  {
     $id = $this->request->uri->getSegment(3);
 
     /* $idServicio = $_POST["idServicio"];
@@ -325,17 +328,49 @@ class CServicio extends BaseController
       "descripcion_mov" => $descripcionCont,
       "estado_mov" => $estadoCont
     );
-    
-    $this->MMovimientosContenedor->update($id,$data); 
+
+    $this->MMovimientosContenedor->update($id, $data);
   }
 
-  public function FEliMovimiento(){
+  public function FEliMovimiento()
+  {
     $id = $this->request->uri->getSegment(3);
     echo view("servicio/FEliMovimiento", compact("id"));
   }
-  public function EliMovimiento(){
+  public function EliMovimiento()
+  {
     $id = $this->request->uri->getSegment(3);
     $this->MMovimientosContenedor->delete($id);
   }
-}
 
+  public function notaDebito()
+  {
+    echo view('header');
+    echo view('notaDebito/FNotaDebito');
+    echo view('footer');
+  }
+  public function FBuscarBL(){
+    $nroBill = $this->request->uri->getSegment(3);
+    $nroBillMayus = strtoupper($nroBill);
+    $data = array(
+      "busBill" => $this->MServicio->BusNroBill($nroBillMayus),
+      "pagosBill"=> $this->MPago->BusPagosBill($nroBillMayus)
+    );
+    echo view("notaDebito/llenarDatosReporte", $data);
+    /* var_dump($data); */
+  }
+  public function GeneraNotaDebito(){
+    /* $id = $this->request->uri->getSegment(3);
+    $data = array(
+      "busBill" => $this->MServicio->BusNroBillId($id),
+      "pagosBill"=> $this->MPago->BusPagosBillId($id)
+    ); */
+
+    /* var_dump($data); */
+    $dompdf = new \Dompdf\Dompdf();
+    $dompdf->loadHtml(view('pruebaImp'));
+    $dompdf->setPaper('A4','landscape');
+    $dompdf->render();
+    $dompdf->stream();
+  }
+}

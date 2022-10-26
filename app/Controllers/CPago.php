@@ -132,4 +132,12 @@ class CPago extends BaseController
     );
     $this->MPago->update($idPago,$data);
   }
+  public function pruebaImpresion(){
+
+    $dompdf = new \Dompdf\Dompdf();
+    $dompdf->loadHtml(view('pruebaImp'));
+    $dompdf->setPaper('A4','landscape');
+    $dompdf->render();
+    $dompdf->stream();
+  }
 }

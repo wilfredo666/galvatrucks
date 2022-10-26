@@ -159,4 +159,12 @@ class MServicio extends Model
     $resultado = $this->findAll();
     return $resultado;
   }
+  public function BusNroBillId($id){
+    $this-> select("*");
+    $this->join("cliente", 'cliente.id_cliente=servicio.id_cliente');
+    $this->join("empresa_maritima", 'empresa_maritima.id_emp_maritima=servicio.id_emp_maritima');
+    $this->where("id_servicio", $id);
+    $resultado = $this->findAll();
+    return $resultado;
+  }
 }
