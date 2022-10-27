@@ -45,6 +45,10 @@
         <li class="nav-item">
           <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="<?php echo base_url(); ?>/CUsuario/Panel" role="button"><i class="fas fa-home"></i> Panel Principal</i></a>
+        </li>
+
       </ul>
 
       <!-- Barra principal con fullscreen -->
@@ -61,7 +65,7 @@
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
       <!-- Brand Logo -->
-      <a href="<?php echo base_url(); ?>/Home/acceso" class="brand-link">
+      <a href="<?php echo base_url(); ?>/CUsuario/Panel" class="brand-link">
         <img src="<?php echo base_url(); ?>/assest/img/logo.jpg" alt="AdminLTE Logo" class="brand-image img-circle elevation-2" style="opacity: .8">
         <span class="brand-text font-weight-light">Galvatrucks SRL</span>
       </a>
@@ -73,10 +77,9 @@
           <div class="image">
             <img src="<?php echo base_url(); ?>/assest/img/cliente2.jpg" class="img-circle elevation-5" alt="User Image">
           </div>
-          <div class=" info">
+          <div class="info">
             <!-- colocar para sessiones session('usuario') y descomentar la lineas SESSIONS Del controlador HOME linea 30,31 -->
-            <a href="#" class="d-block"><?php echo session("nombre_usuario"); ?></a>
-
+            <a class=""><?php echo session("nombre_usuario"); ?></a>
           </div>
         </div>
 
@@ -114,13 +117,13 @@ with font-awesome or any other icon font library -->
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
                     <a href="<?php echo base_url(); ?>/CAsignacion" class="nav-link">
-                      <i class="nav-icon fas fa-file-signature text-info"></i>
+                      <i class="nav-icon far fa-circle text-warning"></i>
                       <p>Asignaciones</p>
                     </a>
                   </li>
                   <li class="nav-item">
                     <a href="<?php echo base_url(); ?>/CCamion" class="nav-link">
-                      <i class="nav-icon fas fa-shipping-fast text-info"></i>
+                      <i class="nav-icon fa fa-shipping-fast text-info"></i>
                       <p>Camión</p>
                     </a>
                   </li>
@@ -232,12 +235,12 @@ with font-awesome or any other icon font library -->
                       <p>Nuevo Pago</p>
                     </a>
                   </li>
-                  <li class="nav-item">
+                  <!-- <li class="nav-item">
                     <a href="<?php echo base_url(); ?>/CPago" class="nav-link">
                       <i class="nav-icon fas fa-receipt text-warning"></i>
                       <p>Lista de Pagos</p>
                     </a>
-                  </li>
+                  </li> -->
                 </ul>
               </li>
               <!--  SEGUIMIENTOS DE CONTENEDOR -->
@@ -289,6 +292,14 @@ with font-awesome or any other icon font library -->
             ?>
               <li class="nav-header">DOCUMENTACIÓN</li>
               <li class="nav-item">
+                <a href="<?php echo base_url(); ?>/CServicio/notaDebito" class="nav-link">
+                  <i class="nav-icon fas fa-folder-open"></i>
+                  <p>
+                    Generar Nota de Débito
+                  </p>
+                </a>
+              </li>
+              <!-- <li class="nav-item">
                 <a href="#" class="nav-link">
                   <i class="nav-icon fas fa-folder-open"></i>
                   <p>
@@ -317,7 +328,7 @@ with font-awesome or any other icon font library -->
                   </li>
 
                 </ul>
-              </li>
+              </li> -->
             <?php
             }
             ?>
@@ -385,8 +396,8 @@ with font-awesome or any other icon font library -->
             ?>
             <li class="nav-item">
               <a href="<?php echo base_url(); ?>/Home/salir" class="nav-link">
-                <i class="nav-icon fas fa-door-open text-info "></i>
-                <p>Salir</p>
+                <i class="nav-icon fas fa-power-off text-info "></i>
+                <p>Cerrar sesión</p>
               </a>
             </li>
           </ul>

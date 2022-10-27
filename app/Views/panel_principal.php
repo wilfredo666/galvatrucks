@@ -1,17 +1,10 @@
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <div class="content-header">
-        <div class="container-fluid">
-            <div class="row mb-2">
-                <div class="col-sm-6">
-                    <h1 class="m-0">Panel Principal</h1>
-                </div><!-- /.col -->
-                <div class="col-sm-6">
-
-                </div><!-- /.col -->
-            </div><!-- /.row -->
-        </div><!-- /.container-fluid -->
+    <section class="content-header">
+    <div class="card-header">
+      <h3 class="font-weight-light ">Panel Principal </h3>
     </div>
+  </section>
     <!-- /.content-header -->
 
     <?php if (session("rol") == "Administrador" || session("rol") == "Auxiliar") {
@@ -26,7 +19,6 @@
                         <div class="small-box encabezado3">
                             <div class="inner">
                                 <h3>150</h3>
-
                                 <p>CLIENTES REGISTRADOS</p>
                             </div>
                             <div class="icon">

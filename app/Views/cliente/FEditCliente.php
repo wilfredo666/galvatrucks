@@ -16,7 +16,7 @@
                     </div>
                     <div class="col-md-3 form-group">
                         <label>N. I. T.</label>
-                        <input type="text" class="form-control" id="nit" name="nit" value="<?php echo $cliente["ci_nit_cli"] ?>">
+                        <input type="number" class="form-control" id="nit" name="nit" value="<?php echo $cliente["ci_nit_cli"] ?>">
                     </div>
                     <div class="col-md-3 form-group">
                         <label>Tipo de Cliente</label>

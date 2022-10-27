@@ -349,28 +349,35 @@ class CServicio extends BaseController
     echo view('notaDebito/FNotaDebito');
     echo view('footer');
   }
-  public function FBuscarBL(){
+  public function FBuscarBL()
+  {
     $nroBill = $this->request->uri->getSegment(3);
     $nroBillMayus = strtoupper($nroBill);
     $data = array(
       "busBill" => $this->MServicio->BusNroBill($nroBillMayus),
-      "pagosBill"=> $this->MPago->BusPagosBill($nroBillMayus)
+      "pagosBill" => $this->MPago->BusPagosBill($nroBillMayus)
     );
     echo view("notaDebito/llenarDatosReporte", $data);
     /* var_dump($data); */
   }
-  public function GeneraNotaDebito(){
-    /* $id = $this->request->uri->getSegment(3);
+  public function GeneraNotaDebito()
+  {
+
+
+    $id = $this->request->uri->getSegment(3);
     $data = array(
       "busBill" => $this->MServicio->BusNroBillId($id),
-      "pagosBill"=> $this->MPago->BusPagosBillId($id)
-    ); */
-
+      "pagosBill" => $this->MPago->BusPagosBillId($id)
+    );
+    echo view("notaDebito/generaNotaDebito", $data);
     /* var_dump($data); */
+  }
+  /* public function ImprimirReporte()
+  {
     $dompdf = new \Dompdf\Dompdf();
-    $dompdf->loadHtml(view('pruebaImp'));
-    $dompdf->setPaper('A4','landscape');
+    $dompdf->loadHtml(view('notaDebito/generaNotaDebito'));
+    $dompdf->setPaper('A4', 'landscape');
     $dompdf->render();
     $dompdf->stream();
-  }
+  } */
 }

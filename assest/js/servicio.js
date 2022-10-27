@@ -383,17 +383,7 @@ function FNotaDebito(id){
     contentType: false,
     processData: false,
     success: function (data) {
-      
-        /* Swal.fire({
-          title: 'Registro Eliminado',
-          icon: 'success',
-          showConfirmButton: false,
-          timer: 1000
-        })
-        setTimeout(function(){
-            location.reload()
-          },1200) */
-          console.log(data)
+        console.log(data)
     }
   })
 }

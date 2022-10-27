@@ -16,7 +16,7 @@
                     </div>
                     <div class="col-md-3 form-group">
                         <label>N. I. T.</label>
-                        <input type="text" class="form-control" id="nit" name="nit">
+                        <input type="number" class="form-control" id="nit" name="nit">
                         <p class="text-danger" id="error-nit"></p>
                     </div>
                     <div class="col-md-3 form-group">

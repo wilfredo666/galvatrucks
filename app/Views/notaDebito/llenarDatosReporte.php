@@ -56,5 +56,5 @@ foreach ($busBill as $bill) {
                 <i class="fas fa-file-invoice"></i>
             </button>
         </div>
-    </div>
+    </div>   
 </div>
