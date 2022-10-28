@@ -52,9 +52,14 @@ foreach ($busBill as $bill) {
         </div>
         <div class="form-group  time-label col-md-4 mb-5 mt-3">
             <!-- <span style="background-color: #f4f6f9;">Añadir Pago</span> -->
-            <button class="btn btn-success btn-circle ml-1" style="width: 80%" onclick="FNotaDebito(<?php echo  $id_servicio ?>);"> Generar Nota de Débito
+            <!--<button class="btn btn-success btn-circle ml-1" style="width: 80%" onclick="FNotaDebito();"> Generar Nota de Débito
                 <i class="fas fa-file-invoice"></i>
-            </button>
+            </button>-->
+            
+            <a class="btn btn-success btn-circle ml-1" href="<?php echo base_url("CServicio/GeneraNotaDebito");?>?id=<?php echo $id_servicio;?>" class="btn btn-outline-dark btn-circle" target="_blank">
+                         Generar Nota de Débito
+                          <i class="fas fa-file-invoice"></i>
+                        </a>
         </div>
     </div>   
 </div>

@@ -368,7 +368,7 @@ function buscarBL(){
       url: "FBuscarBL/"+nroBill,
       data: obj,
       success: function (data) {
-         /* console.log(data) */
+          //console.log(data) 
         $("#contenido").html(data)
       }
     })

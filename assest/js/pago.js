@@ -1,7 +1,7 @@
 /* ================================
 FUNCION PARA AÑADIR MODAL DE PAGO
 ====================================*/
-function FAñadirPago(id){
+function FAnadirPago(id){
     $("#modal-default").modal("show");
     var obj = "";
     $.ajax({

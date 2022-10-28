@@ -169,7 +169,7 @@ class CServicio extends BaseController
     $servIni = $_POST["servIni"];
     $nroBill = $_POST["nroBill"];
     $nroCont = $_POST["nroCont"];
-    $tamañoCont = $_POST["tamañoCont"];
+    $tamanoCont = $_POST["tamañoCont"];
     $pesoMerc = $_POST["pesoMerc"];
     $detalleMerc = $_POST["detalleMerc"];
     $origenMerc = $_POST["origenMerc"];
@@ -358,19 +358,21 @@ class CServicio extends BaseController
       "pagosBill" => $this->MPago->BusPagosBill($nroBillMayus)
     );
     echo view("notaDebito/llenarDatosReporte", $data);
-    /* var_dump($data); */
+    //var_dump($data); 
   }
   public function GeneraNotaDebito()
   {
-
-
-    $id = $this->request->uri->getSegment(3);
+    $id=$_GET["id"];
     $data = array(
       "busBill" => $this->MServicio->BusNroBillId($id),
       "pagosBill" => $this->MPago->BusPagosBillId($id)
     );
-    echo view("notaDebito/generaNotaDebito", $data);
-    /* var_dump($data); */
+
+    $dompdf= new \Dompdf\Dompdf();
+    $dompdf->loadHtml(view('notaDebito/generaNotaDebito', $data));
+    $dompdf->setPaper('A4','landscape');
+    $dompdf->render();
+    $dompdf->stream("NotaDebito-".$id.".pdf", ["Attachment"=>0]);
   }
   /* public function ImprimirReporte()
   {
