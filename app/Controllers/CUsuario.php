@@ -3,12 +3,14 @@
 namespace App\Controllers;
 
 use App\Models\MUsuario;
+use App\Models\MServicio;
 
 class CUsuario extends BaseController
 {
   public function __construct()
   {
     $this->MUsuario = new MUsuario();
+    $this->MServicio = new MServicio();
   }
 
   public function index()
@@ -24,8 +26,13 @@ class CUsuario extends BaseController
 
   public function Panel()
   {
+    $id_cliente = session("id_cliente");
+        $data = array(
+            /* "cliente" => $this->MCliente->InfoCliente($id), */
+            "servicios" => $this->MServicio->InfoServClienteContador($id_cliente)
+        );
     echo view('header');
-    echo view('panel_principal');
+    echo view('panel_principal',$data);
     echo view('footer');
   }
   /* --------------------------------------

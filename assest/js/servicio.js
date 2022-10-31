@@ -26,6 +26,10 @@ function MNuevoServicio(){
     let cliente = document.getElementById("servCliente").selectedIndex;
     let idSolicitud = document.getElementById("idSolicitud").selectedIndex;
     let ruta = document.getElementById("ruta").selectedIndex;
+    let naviera = document.getElementById("servNaviera").selectedIndex;
+    let fechaSoli=document.getElementById("servIni").value
+    let nroBill=document.getElementById("nroBill").value
+    let nroCont=document.getElementById("nroCont").value
 
  /*    let placa=document.getElementById("placa").value
     let clase = document.getElementById("clase").selectedIndex;
@@ -46,6 +50,17 @@ function MNuevoServicio(){
     }
     else if(cliente == null || cliente == 0){
       document.getElementById("error-cliente").innerHTML="Seleccione el cliente"
+    } else if(naviera == null || naviera == 0){
+      document.getElementById("error-naviera").innerHTML="Seleccione la naviera"
+    } 
+    else if(fechaSoli == null || fechaSoli == 0){
+      document.getElementById("error-fecha").innerHTML="Seleccione la fecha de inicio"
+    } 
+    else if(nroBill == null || nroBill == 0){
+      document.getElementById("error-bill").innerHTML="Inserte el número de Bill"
+    } 
+    else if(nroCont == null || nroCont == 0){
+      document.getElementById("error-cont").innerHTML="Inserte el número de contenedor"
     } 
     else if(ruta == null || ruta == 0){
       document.getElementById("error-ruta").innerHTML="Selecciona una ruta para este servicio"

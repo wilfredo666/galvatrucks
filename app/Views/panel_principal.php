@@ -18,7 +18,7 @@
                         <!-- small box -->
                         <div class="small-box encabezado3">
                             <div class="inner">
-                                <h3>150</h3>
+                                <h3><i class="fas fa-users"></i></h3>
                                 <p>CLIENTES REGISTRADOS</p>
                             </div>
                             <div class="icon">
@@ -32,7 +32,7 @@
                         <!-- small box -->
                         <div class="small-box encabezado2">
                             <div class="inner">
-                                <h3>53<sup style="font-size: 20px">%</sup></h3>
+                                <h3><i class="fas fa-exclamation-circle"></i></h3>
 
                                 <p>SOLICITUDES PENDIENTES</p>
                             </div>
@@ -47,19 +47,19 @@
                         <!-- small box -->
                         <div class="small-box encabezado">
                             <div class="inner">
-                                <h3>44</h3>
+                                <h3><i class="fas fa-truck"></i></h3>
 
-                                <p>SERVICIOS EN PROGRESO</p>
+                                <p>SERVICIOS</p>
                             </div>
                             <div class="icon">
                                 <i class="ion ion-load-b"></i>
                             </div>
-                            <a href="#" class="small-box-footer">Más Información <i class="fas fa-arrow-circle-right"></i></a>
+                            <a href="<?php echo base_url(); ?>/CServicio" class="small-box-footer">Más Información <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                     <!-- ./col -->
-                    <div class="col-lg-3 col-6">
-                        <!-- small box -->
+                   <!--  <div class="col-lg-3 col-6">
+                      
                         <div class="small-box encabezado4">
                             <div class="inner">
                                 <h3>65</h3>
@@ -71,7 +71,7 @@
                             </div>
                             <a href="#" class="small-box-footer">Más Información <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
-                    </div>
+                    </div> -->
                     <!-- ./col -->
                 </div>
                 <!-- /.row -->
@@ -90,7 +90,7 @@
                         <!-- small box -->
                         <div class="small-box encabezado3">
                             <div class="inner">
-                                <h3>53<sup style="font-size: 20px">%</sup></h3>
+                                <h3><?php  $soli ?><i class="fas fa-map-marker-alt"></i></h3>
                                 <p>RASTREAR CONTENEDOR</p>
                             </div>
                             <div class="icon">
@@ -104,8 +104,8 @@
                         <!-- small box -->
                         <div class="small-box encabezado5">
                             <div class="inner">
-                                <h3>44</h3>
-                                <p>SERVICIOS EN PROGRESO</p>
+                                <h3><?php  $soli ?><i class="fas fa-sort-amount-down-alt"></i></h3>
+                                <p>MIS SOLICITUDES</p>
                             </div>
                             <div class="icon">
                                 <i class="ion ion-load-b"></i>
@@ -118,13 +118,13 @@
                         <!-- small box -->
                         <div class="small-box encabezado4">
                             <div class="inner">
-                                <h3>65</h3>
+                                <h3><?php  $servicios ?><i class="fab fa-atlassian"></i></h3>
                                 <p>SERVICIOS FINALIZADOS</p>
                             </div>
                             <div class="icon">
                                 <i class="ion ion-flag"></i>
                             </div>
-                            <a href="#" class="small-box-footer">Más Información <i class="fas fa-arrow-circle-right"></i></a>
+                            <a href="<?php echo base_url(); ?>/CCliente/repRolCliente" class="small-box-footer">Más Información <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                     <!-- ./col -->

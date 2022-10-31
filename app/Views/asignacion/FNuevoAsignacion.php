@@ -27,6 +27,7 @@
                             }
                             ?>
                         </select>
+                        <span class="text-danger chartjs-render-monitor" id="error-conductor"></span>
                     </div>
                     <div class="form-group col-md-4">
                         <label>Placa <span class="text-danger"> *</span></label>
@@ -42,13 +43,14 @@
                             }
                             ?>
                         </select>
+                        <span class="text-danger chartjs-render-monitor" id="error-placa"></span>
                     </div>
                 </div>
                 <div class="row">
                     <div class="form-group col-md-4">
                         <label>Fecha de Asignación <span class="text-danger"> *</span></label>
                         <input type="date" class="form-control" id="fechaIni" name="fechaIni">
-                        <p class="text-danger" id="error-fechaIni"></p>
+                        <p class="text-danger" id="error-fechaAsig"></p>
                     </div>
                     <div class="form-group col-md-4">
                         <label>Fecha Conclusión de Asig.<span class="text-primary"> °</span></label>

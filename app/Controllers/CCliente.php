@@ -186,7 +186,6 @@ class CCliente extends BaseController
         echo view('cliente/repCliente', $data);
         echo view('footer');
     }
-
     public function reporteCli()
     {
         $id = $_POST["cliente"];
@@ -206,6 +205,49 @@ class CCliente extends BaseController
         /* var_dump($data); */
         echo view('cliente/repLlenadoCliente', $data);
     }
+
+    public function repRolCliente()
+    {
+        $id_cliente = session("id_cliente");
+        $data = array(
+            "servicios" => $this->MServicio->lista_servicios($id_cliente)
+        );
+        echo view('header');
+        echo view('cliente/rolCliente/repRolCliente', $data);
+        echo view('footer');
+    }
+    public function reporteRolCli()
+    {
+        $id = $_POST["idCliente"];
+        $fechaDesde = $_POST["fechaDesde"];
+        $fechaHasta = $_POST["fechaHasta"];
+
+        $serv = array(
+            "idCliente" => $id,
+            "fechaDesde" => $fechaDesde,
+            "fechaHasta" => $fechaHasta
+        );
+
+        $data = array(
+            /* "cliente" => $this->MCliente->InfoCliente($id), */
+            "servicios" => $this->MServicio->InfoServClienteFechas($serv)
+        );
+        /* var_dump($data); */
+        echo view('cliente/rolCliente/repLlenadoRolCliente', $data);
+    }
+    public function contadorServicio(){
+        $id_cliente = session("id_cliente");
+        $data = array(
+            /* "cliente" => $this->MCliente->InfoCliente($id), */
+            "servicios" => $this->MServicio->InfoServClienteContador($id_cliente),
+            "soli" => $this->MSolicitudServicio->InfoServClienteContador2($id_cliente)
+        );
+        /* var_dump($data); */
+        echo view('header');
+        echo view('panel_principal', $data);
+        echo view('footer');
+    }
+
     /* -----------------------------------------------
     FUNCIONES PARA EL ROL CLIENTE
     ---------------------------------------------------*/

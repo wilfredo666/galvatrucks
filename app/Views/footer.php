@@ -2,10 +2,10 @@
 <footer class="main-footer">
   <!-- To the right -->
   <div class="float-right d-none d-sm-inline">
-    Anything you want
+    v 1.0
   </div>
   <!-- Default to the left -->
-  <strong>Copyright &copy; 2022 <a href="">Galvatrucks</a>.</strong> Todos los derechos reservados.
+  <strong>Copyright &copy; 2022 <a >Galvatrucks</a>.</strong> Todos los derechos reservados.
 </footer>
 </div>
 <!-- ./wrapper -->

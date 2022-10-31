@@ -24,6 +24,8 @@ class CSolicitudServicio extends BaseController
     echo view('header');
     echo view('solicitudServicio/solicitudServ', $data);
     echo view('footer');
+
+    /* var_dump($id_cliente); */
   }
   /* --------------------------------------
       FUNCIONES PARA REGISTRAR NUEVA SOLICITUD
@@ -176,5 +178,15 @@ class CSolicitudServicio extends BaseController
   {
     $id = $this->request->uri->getSegment(3);
     $this->MSolicitudServicio->delete($id);
+  }
+
+  public function ContarSolicitud(){
+    $data = array(
+      "solicitudServ" => $this->MSolicitudServicio->ContarSolicitudes(),
+    );
+    /* var_dump($data); */
+    echo view('header', $data);
+    /* echo view('panel_principal', $data); 
+    echo view('footer'); */
   }
 }

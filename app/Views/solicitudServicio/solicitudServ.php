@@ -68,20 +68,14 @@
                                     <?php
                                     if ($estadoSolicitud == "aceptado") {
                                     ?>
-                                        <button class="btn btn-warning btn-circle" onclick="MEditarSolicitud(<?php echo $idSolicitud; ?>)" title="Esta opción no esta habilitada." disabled>
+                                        <button class="btn btn-sm btn-warning btn-circle" onclick="MEditarSolicitud(<?php echo $idSolicitud; ?>)" title="Esta opción no esta habilitada." disabled>
                                             <i class="fas fa-edit"></i>
-                                        </button>
-                                        <button class="btn btn-info btn-circle" onclick="MAnularSolicitud(<?php echo $idSolicitud; ?>)" title="Anular Solicitud.">
-                                        <i class="fas fa-ban"></i>
                                         </button>
                                     <?php
                                     } else {
                                     ?>
-                                        <button class="btn btn-warning btn-circle" onclick="MEditarSolicitud(<?php echo $idSolicitud; ?>)" title="Editar Solicitud">
+                                        <button class="btn btn-sm btn-warning btn-circle" onclick="MEditarSolicitud(<?php echo $idSolicitud; ?>)" title="Editar Solicitud">
                                             <i class="fas fa-edit"></i>
-                                        </button>
-                                        <button class="btn btn-outline-info btn-circle" onclick="MAnularSolicitud(<?php echo $idSolicitud; ?>)" title="Anular Solicitud." disabled>
-                                        <i class="fas fa-ban"></i>
                                         </button>
                                     <?php
                                     }
@@ -90,13 +84,13 @@
                                     <?php
                                     if ($estadoSolicitud == "rechazado" || $estadoSolicitud == "aceptado") {
                                     ?>
-                                        <button class="btn btn-danger btn-circle" onclick="MEliminarSolicitud(<?php echo $idSolicitud; ?>)" title="Esta opción no esta habilitada." disabled>
+                                        <button class="btn btn-sm btn-danger btn-circle" onclick="MEliminarSolicitud(<?php echo $idSolicitud; ?>)" title="Esta opción no esta habilitada." disabled>
                                             <i class="fas fa-trash-alt"></i>
                                         </button>
                                     <?php
                                     } else {
                                     ?>
-                                        <button class="btn btn-danger btn-circle" onclick="MEliminarSolicitud(<?php echo $idSolicitud; ?>)" title="Eliminar Solicitud">
+                                        <button class="btn btn-sm btn-danger btn-circle" onclick="MEliminarSolicitud(<?php echo $idSolicitud; ?>)" title="Eliminar Solicitud">
                                             <i class="fas fa-trash-alt"></i>
                                         </button>
                                     <?php

@@ -204,6 +204,25 @@ function MNuevoCliente() {
       }
     })
   }
+/*===================================
+  REPORTE POR ROLES SEGUN EL CLIENTE
+  =====================================*/
+  function reporteRolCliente(){
+    let form= new FormData($("#ReporteCliente")[0])
+
+    $.ajax({
+      type: "POST",
+      url: "reporteRolCli",
+      data: form,
+      cache: false,
+      contentType: false,
+      processData: false,
+      success: function(data){
+        /* console.log(data) */
+        $("#repServRolCliente").html(data)
+      }
+    })
+  }
      /*===================================
   ACTUALIZAR PERFIL DEL CLIENTE
   =====================================*/

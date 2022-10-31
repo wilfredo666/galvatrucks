@@ -51,8 +51,25 @@
 
       </ul>
 
+      
+
       <!-- Barra principal con fullscreen -->
       <ul class="navbar-nav ml-auto">
+      <li class="nav-item dropdown">
+        <a class="nav-link" data-toggle="dropdown" href="#">
+          <i class="far fa-bell"></i>
+          <span class="badge badge-warning navbar-badge"><?php  $solicitudServ?></span>
+        </a>
+        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+          <span class="dropdown-item dropdown-header">Solicitudes</span>
+          <div class="dropdown-divider"></div>
+          <a href="#" class="dropdown-item">
+            <i class="fas fa-envelope mr-2"></i> Tienes 4 solicitudes pendientes
+          </a>
+          <div class="dropdown-divider"></div>
+          <a href="<?php echo base_url()?>/CCliente/solicitudServ" class="dropdown-item dropdown-footer">Ver todas las Solicitudes</a>
+        </div>
+      </li>
         <li class="nav-item">
           <a class="nav-link" data-widget="fullscreen" href="#" role="button">
             <i class="fas fa-expand-arrows-alt"></i>
@@ -264,12 +281,12 @@ with font-awesome or any other icon font library -->
                   </p>
                 </a>
                 <ul class="nav nav-treeview">
-                  <li class="nav-item">
+                  <!-- <li class="nav-item">
                     <a href="<?php echo base_url(); ?>/CServicio/notaDebito" class="nav-link">
                       <i class="nav-icon far fa-circle text-warning"></i>
                       <p>Generar Nota de Débito</p>
                     </a>
-                  </li>
+                  </li> -->
                   <li class="nav-item">
                     <a href="<?php echo base_url(); ?>/CCliente/repCliente" class="nav-link">
                       <i class="nav-icon far fa-circle text-warning"></i>
@@ -288,7 +305,7 @@ with font-awesome or any other icon font library -->
             } ?>
 
 
-            <?php if (session("rol") == "Administrador") {
+            <?php if (session("rol") == "Administrador" || session("rol") == "Auxiliar") {
             ?>
               <li class="nav-header">DOCUMENTACIÓN</li>
               <li class="nav-item">
@@ -299,6 +316,25 @@ with font-awesome or any other icon font library -->
                   </p>
                 </a>
               </li>
+              
+              <<!-- li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon  fas fa-cogs"></i>
+                  <p>
+                    Opciones del sistema
+                    <i class="fas fa-angle-left right"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="<?php echo base_url(); ?>/CUtilidades" class="nav-link">
+                      <i class="nav-icon fas fa-database text-warning"></i>
+                      <p>BackUp Base de Datos</p>
+                    </a>
+                  </li>
+                </ul>
+              </li> -->
+
               <!-- <li class="nav-item">
                 <a href="#" class="nav-link">
                   <i class="nav-icon fas fa-folder-open"></i>
@@ -378,7 +414,7 @@ with font-awesome or any other icon font library -->
                     </a>
                   </li> -->
                   <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="<?php echo base_url(); ?>/CCliente/repRolCliente"  class="nav-link">
                       <i class="nav-icon fas fa-print text-warning"></i>
                       <p>Mis Reportes</p>
                     </a>

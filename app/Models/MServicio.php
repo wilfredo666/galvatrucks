@@ -68,7 +68,8 @@ class MServicio extends Model
     $resultado = $this->findAll();
     return $resultado;
   }
-  public function lista_consultas5(){
+  public function lista_consultas5()
+  {
     $this->select("*");
     $this->join("cliente", 'cliente.id_cliente=servicio.id_cliente');
     $resultado = $this->first();
@@ -113,6 +114,42 @@ class MServicio extends Model
     return $resultado;
     /* var_dump($resultado); */
   }
+  /* PARA REPORTE DEL ROL CLIENTE */
+  public function lista_servicios($id_cliente)
+  {
+    $this->select("*");
+    $this->join("cliente", 'cliente.id_cliente=servicio.id_cliente');
+    $this->where("servicio.id_cliente", $id_cliente);
+    /* $this->where("activo_serv", 1); */
+    $resultado = $this->findAll();
+    return $resultado;
+  }
+  /* para ver servicios rol cliente consulta por fechas */
+  public function InfoServClienteFechas($serv)
+  {
+    $id = $serv["idCliente"];
+    $fechaDesde = $serv["fechaDesde"];
+    $fechaHasta = $serv["fechaHasta"];
+
+    $this->select("*");
+    /*   $this->join("cliente", 'cliente.id_cliente=servicio.id_cliente');  */
+    /* $this->join("ruta", 'ruta.id_ruta=servicio.id_ruta'); */
+    $this->where("id_cliente", $id);
+    $this->where("fecha_inicio_servicio between '$fechaDesde' and '$fechaHasta' ");
+    $this->where("fecha_inicio_servicio ORDER BY fecha_inicio_servicio  DESC ");
+    $resultado = $this->findAll();
+    return $resultado;
+  }
+  /* contador de servicios finalizados cliente */
+  public function InfoServClienteContador($id_cliente)
+  {
+    $this->select("*");
+    $this->where("id_cliente", $id_cliente);
+    $this->where("activo_serv", 0);
+    $resultado = $this->countAllResults();
+    return $resultado;
+  }
+  
   /* --------------------------------------------- */
   public function BusContendor($contenedor)
   {
@@ -143,7 +180,8 @@ class MServicio extends Model
     $resultado = $this->findAll();
     return $resultado;
   }
-  public function ServicioBill($idServicio){
+  public function ServicioBill($idServicio)
+  {
     $this->select("*");
     /* $this->join("cliente", 'cliente.id_cliente=servicio.id_cliente'); */
     $this->where("id_servicio", $idServicio);
@@ -151,16 +189,18 @@ class MServicio extends Model
     return $resultado;
   }
   /* buscar bill para pagos */
-  public function BusNroBill($nroBillMayus){
-    $this-> select("*");
+  public function BusNroBill($nroBillMayus)
+  {
+    $this->select("*");
     $this->join("cliente", 'cliente.id_cliente=servicio.id_cliente');
     $this->join("empresa_maritima", 'empresa_maritima.id_emp_maritima=servicio.id_emp_maritima');
     $this->where("num_bill", $nroBillMayus);
     $resultado = $this->findAll();
     return $resultado;
   }
-  public function BusNroBillId($id){
-    $this-> select("*");
+  public function BusNroBillId($id)
+  {
+    $this->select("*");
     $this->join("cliente", 'cliente.id_cliente=servicio.id_cliente');
     $this->join("empresa_maritima", 'empresa_maritima.id_emp_maritima=servicio.id_emp_maritima');
     $this->where("id_servicio", $id);

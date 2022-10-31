@@ -43,5 +43,12 @@ class MPago extends Model
         $resultado = $this->findAll();
         return $resultado;
     }
+
+    public function sumarPagos($id){
+        $this->select("sum(monto) AS sumaMonto");
+        $this->where("id_servicio", $id);
+        $resultado = $this->first();
+        return $resultado;
+    }
     
 }

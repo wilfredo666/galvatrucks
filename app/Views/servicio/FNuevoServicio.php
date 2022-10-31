@@ -67,11 +67,13 @@
                             }
                             ?>
                         </select>
+                        <span class="text-danger chartjs-render-monitor" id="error-naviera"></span>
                     </div>
 
                     <div class="form-group col-md-3">
                         <label>Fecha Inicio Servicio</label>
                         <input type="date" class="form-control " id="servIni" name="servIni">
+                        <span class="text-danger chartjs-render-monitor" id="error-fecha"></span>
                     </div>
                 </div>
                 <!-- SECCION 2 -->
@@ -82,10 +84,12 @@
                     <div class="form-group col-md-3">
                         <label>Nro BL/Bill of Lading</label>
                         <input type="text" class="form-control" id="nroBill" name="nroBill" placeholder="Ejm. 'COSU4522544'">
+                        <span class="text-danger chartjs-render-monitor" id="error-bill"></span>
                     </div>
                     <div class="form-group col-md-3">
                         <label>Nro Contenedor</label>
                         <input type="text" class="form-control" id="nroCont" name="nroCont">
+                        <span class="text-danger chartjs-render-monitor" id="error-cont"></span>
                     </div>
                     <div class="form-group col-md-3">
                         <label>Tamaño Contenedor</label>

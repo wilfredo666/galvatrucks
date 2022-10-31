@@ -6,7 +6,6 @@
     </div>
   </section>
   <section class="content">
-
     <div class="container-fluid">
       <table id="DataTableUsuario" class="table table-bordered table-striped">
         <thead class="text-center align-items-center justify-content-center"> 
@@ -26,7 +25,6 @@
             $login = $lista['login_usuario'];
             $pass = $lista['pass_usuario'];
             $rol = $lista['rol'];
-
           ?>
             <tr>
               <td><?php echo $idUsu; ?></td>

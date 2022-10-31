@@ -62,4 +62,19 @@ class MSolicitudServicio extends Model
     return $resultado;
     /* var_dump($resultado); */
   }
+  /* CONTADOR SOLICTUDES PARA PANEL CLIENTE */
+  public function InfoServClienteContador2($id_cliente)
+  {
+    $this->select("*");
+    $this->where("id_cliente", $id_cliente);
+    $resultado = $this->countAllResults();
+    return $resultado;
+  }
+  /* para contar las solicitudes */
+  public function ContarSolicitudes(){
+    $this->select("*");
+    $this->where("activo_solicitud","pendiente");
+    $resultado = $this->countAllResults();
+    return $resultado;
+  }
 }

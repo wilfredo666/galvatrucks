@@ -4,12 +4,18 @@ namespace App\Controllers;
 
 use App\Models\MUsuario;
 use App\Models\MCliente;
+use App\Models\MServicio;
 
 class Home extends BaseController
 {
   public function index()
   {
     return view('login');
+  }
+  public function __construct()
+  {
+    $this->MUsuario = new MUsuario();
+    $this->MServicio = new MServicio();
   }
 
   public function acceso()
@@ -55,9 +61,8 @@ class Home extends BaseController
       }else{
         $session->set($consulta);
       }      
-
       echo view('header');
-      echo view('panel_principal');
+      echo view('bienvenidos');
       echo view('footer');
     }
   }

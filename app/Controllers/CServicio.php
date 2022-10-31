@@ -214,7 +214,7 @@ class CServicio extends BaseController
       "fecha_inicio_servicio" => $servIni,
       "num_bill" => $nroBill,
       "nro_contenedor" => $nroCont,
-      "medida_contenedor" => $tamañoCont,
+      "medida_contenedor" => $tamanoCont,
       "peso_mercaderia" => $pesoMerc,
       "detalle_mercaderia" => $detalleMerc,
       "origen_mercaderia" => $origenMerc,
@@ -365,12 +365,14 @@ class CServicio extends BaseController
     $id=$_GET["id"];
     $data = array(
       "busBill" => $this->MServicio->BusNroBillId($id),
-      "pagosBill" => $this->MPago->BusPagosBillId($id)
+      "pagosBill" => $this->MPago->BusPagosBillId($id),
+      "sumaPagos" => $this->MPago->sumarPagos($id),
     );
 
+/* var_dump($data); */
     $dompdf= new \Dompdf\Dompdf();
     $dompdf->loadHtml(view('notaDebito/generaNotaDebito', $data));
-    $dompdf->setPaper('A4','landscape');
+    $dompdf->setPaper('Latter','portrait');
     $dompdf->render();
     $dompdf->stream("NotaDebito-".$id.".pdf", ["Attachment"=>0]);
   }
