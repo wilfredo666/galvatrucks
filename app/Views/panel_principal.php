@@ -7,7 +7,7 @@
   </section>
     <!-- /.content-header -->
 
-    <?php if (session("rol") == "Administrador" || session("rol") == "Auxiliar") {
+    <?php if (session("usuario.rol") == "Administrador" || session("usuario.rol") == "Auxiliar") {
     ?>
         <!-- Main content -->
         <section class="content">
@@ -79,7 +79,7 @@
         </section>
     <?php
     } ?>
-    <?php if (session("rol") == "Cliente") {
+    <?php if (session("usuario.rol") == "Cliente") {
     ?>
         <section class="content">
             <div class="container-fluid">

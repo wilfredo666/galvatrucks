@@ -26,7 +26,7 @@ class CUsuario extends BaseController
 
   public function Panel()
   {
-    $id_cliente = session("id_cliente");
+    $id_cliente = session("usuario.id_cliente");
         $data = array(
             /* "cliente" => $this->MCliente->InfoCliente($id), */
             "servicios" => $this->MServicio->InfoServClienteContador($id_cliente)

@@ -414,7 +414,7 @@ with font-awesome or any other icon font library -->
                     </a>
                   </li> -->
                   <li class="nav-item">
-                    <a href="<?php echo base_url(); ?>/CCliente/repusuario.rolCliente"  class="nav-link">
+                    <a href="<?php echo base_url(); ?>/CCliente/repRolCliente"  class="nav-link">
                       <i class="nav-icon fas fa-print text-warning"></i>
                       <p>Mis Reportes</p>
                     </a>

@@ -17,7 +17,7 @@ class CSolicitudServicio extends BaseController
 
   public function index()
   {
-    $id_cliente=session("id_cliente");
+    $id_cliente=session("usuario.id_cliente");
     $data = array(
       "solicitud" => $this->MSolicitudServicio->lista_consultas($id_cliente)
     );
@@ -32,7 +32,7 @@ class CSolicitudServicio extends BaseController
     --------------------------------------*/
   public function FNuevoServicio()
   {
-    $id_usuario = session("id_usuario");
+    $id_usuario = session("usuario.id_usuario");
 
     $data = array(
       "empMaritima" => $this->MEmpresaMaritima->findAll(),
