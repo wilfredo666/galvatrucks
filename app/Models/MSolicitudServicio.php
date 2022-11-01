@@ -71,9 +71,9 @@ class MSolicitudServicio extends Model
     return $resultado;
   }
   /* para contar las solicitudes */
-  public function ContarSolicitudes(){
+  public function ContarSolicitudes($estado){
     $this->select("*");
-    $this->where("activo_solicitud","pendiente");
+    $this->where("activo_solicitud",$estado);
     $resultado = $this->countAllResults();
     return $resultado;
   }

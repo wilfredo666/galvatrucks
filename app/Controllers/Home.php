@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Models\MUsuario;
 use App\Models\MCliente;
 use App\Models\MServicio;
+use App\Models\MSolicitudServicio;
 
 class Home extends BaseController
 {
@@ -12,16 +13,20 @@ class Home extends BaseController
   {
     return view('login');
   }
+  /*
   public function __construct()
   {
     $this->MUsuario = new MUsuario();
     $this->MServicio = new MServicio();
+    $this->MSolicitudServicio = new MSolicitudServicio();
   }
+*/
 
   public function acceso()
   {
     $MUsuario = new MUsuario();
     $MCliente = new MCliente();
+    $MSolicitudServicio = new MSolicitudServicio();
 
     // Validamos los campos de usuario
     if (!$this->validate(
@@ -46,24 +51,34 @@ class Home extends BaseController
 
     $consulta = $MUsuario->acceso($data);
     /*para cuando nos da un nulo */
-    //DESCOMENTAR 3 LINEAS
     if ($consulta == null || password_verify( $password,$consulta['pass_usuario'])==false) {
       return redirect()->to(base_url('/'))->with("errors", ["credenciales" => "Credenciales de acceso inválidas"]);
     }
 
     if (sizeof($consulta) > 0 && password_verify($password, $consulta['pass_usuario'])) {
       $id=$consulta["id_usuario"];
-      $data=$MCliente->InfoClienteUsuario($id);
-      $session = session();
 
-      if($data>0){
-        $session->set($data);
+      $ClienteUsuario=$MCliente->InfoClienteUsuario($id);
+
+      if($ClienteUsuario>0){
+        $data=array(
+          "usuario"=>$ClienteUsuario,
+          "solPendiente"=>$MSolicitudServicio->ContarSolicitudes("pendiente")
+        );
       }else{
-        $session->set($consulta);
-      }      
+        $data=array(
+          "usuario"=>$consulta,
+          "solPendiente"=>$MSolicitudServicio->ContarSolicitudes("pendiente")
+        );
+      }
+
+      $session = session();
+      $session->set($data);
+
       echo view('header');
       echo view('bienvenidos');
       echo view('footer');
+
     }
   }
   /*-----------------------------------

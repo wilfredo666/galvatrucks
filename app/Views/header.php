@@ -58,13 +58,13 @@
       <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#">
           <i class="far fa-bell"></i>
-          <span class="badge badge-warning navbar-badge"><?php  $solicitudServ?></span>
+          <span class="badge badge-warning navbar-badge"><?php echo session("solPendiente");?></span>
         </a>
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
           <span class="dropdown-item dropdown-header">Solicitudes</span>
           <div class="dropdown-divider"></div>
           <a href="#" class="dropdown-item">
-            <i class="fas fa-envelope mr-2"></i> Tienes 4 solicitudes pendientes
+            <i class="fas fa-envelope mr-2"></i> Tienes <?php echo session("solPendiente");?> solicitudes pendientes
           </a>
           <div class="dropdown-divider"></div>
           <a href="<?php echo base_url()?>/CCliente/solicitudServ" class="dropdown-item dropdown-footer">Ver todas las Solicitudes</a>
