@@ -21,6 +21,7 @@ function MNuevoContratoCam() {
     let form = new FormData($("#FNuevoContratoCam")[0])
 
 /*     let nomContrato=document.getElementById("nomContrato").value */
+    let propietario=document.getElementById("propietario").value
     let placaCon=document.getElementById("placaCon").value
     let fechaIni=document.getElementById("fechaIni").value
   
@@ -30,7 +31,14 @@ function MNuevoContratoCam() {
     else if(!(/^GALVA\-\d/g.test(nomContrato))){
       document.getElementById("error-nomContrato").innerHTML="Inicie con el prefijo: Ejm. 'GALVA-0001' "
     }
-    else */ if(!(/^\d{3,4}[-]\w{3}$/.test(placaCon))){
+    else */ 
+    if(propietario == null || propietario.length == 0){
+      document.getElementById("error-propietario").innerHTML="El campo propietario no puede estar vacío..!!"
+    }
+    else if(!(/^[a-zA-ZÀ-ÿ\s]{1,40}$/.test(propietario))){
+      document.getElementById("error-propietario").innerHTML="El campo no puede tener caracteres especiales: Utilice combinaciones de letras y numeros 'Ej: JUAN CEl-788541' "
+    }
+    else if(!(/^\d{3,4}[-]\w{3}$/.test(placaCon))){
       document.getElementById("error-placaCon").innerHTML="Llene la placa en este formato: Ejm. '2452-DSE' "
     }
     else if(fechaIni == null || fechaIni.length == 0){

@@ -8,12 +8,8 @@
     <form id="FEditPago">
         <div class="card-body">
             <div class="row">
-                <div class="form-group col-md-4">
-                    <label>Fecha de Pago</label>
-                    <input type="date" class="form-control" id="fechaPago" name="fechaPago" value="<?php echo $pagosId["fecha_pago"]?>">
-                    <p class="text-danger" id="error-loginUsuario"></p>
-                </div>
-                <div class="form-group col-md-8">
+                
+                <div class="form-group col-md-12">
                     <label>Concepto de Pago</label>
                     <input type="text" class="form-control" id="conceptoPago" name="conceptoPago" value="<?php echo  $pagosId["concepto"]?>">
                 </div>
@@ -22,22 +18,16 @@
                 <div class="form-group col-md-6">
                     <label>Monto Pagado</label>
                     <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">$</span>
-                        </div>
                         <input type="number" class="form-control" title="Digite monto numérico" id="montoPago" name="montoPago" value="<?php echo $pagosId["monto"] ?>">
                         <div class="input-group-append">
-                            <span class="input-group-text">.00</span>
+                            <span class="input-group-text">Bs.</span>
                         </div>
                     </div>
                 </div>
                 <div class="form-group col-md-6">
-                    <label>Tipo de Moneda</label>
-                    <select class="form-control" name="tipoMoneda" id="tipoMoneda">
-                        <option value="">--- Seleccionar ---</option>
-                        <option value="BS" <?php if($pagosId["tipo_moneda"] == "BS"):?> selected <?php endif;?>>[BS]-Bolivianos</option>
-                        <option value="USD" <?php if($pagosId["tipo_moneda"]  == "USD"):?> selected <?php endif;?>>[USD]-Dolares Americanos</option>
-                    </select>
+                    <label>Fecha de Pago</label>
+                    <input type="date" class="form-control" id="fechaPago" name="fechaPago" value="<?php echo $pagosId["fecha_pago"]?>">
+                    <p class="text-danger" id="error-loginUsuario"></p>
                 </div>
 
             </div>

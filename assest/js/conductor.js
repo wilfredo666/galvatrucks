@@ -28,11 +28,17 @@ function RegConductor() {
   if(nomConductor == null || nomConductor.length == 0){
     document.getElementById("error-nomConductor").innerHTML="El campo Nombre Conductor no puede estar vacio"
   }
+  else if(!(/^[a-zA-ZÀ-ÿ\s]{1,40}$/i.test(nomConductor))){
+    document.getElementById("error-nomConductor").innerHTML="El nombre conductor no admite caracteres especiales, utilizar combinación de letras: Ejm. 'JUAN' "
+  }
   else if(!(/^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i.test(correoCond))){
     document.getElementById("error-correoCond").innerHTML="Llene el correo en este formato: Ejm. 'ejemplo@gmail.com' "
   }
-  if(contactoCond == null || contactoCond.length == 0){
+  else if(contactoCond == null || contactoCond.length == 0){
     document.getElementById("error-contactoCond").innerHTML="Digite un número de contacto"
+  }
+  else if(!(/^\d{8,12}$/.test(contactoCond))){
+    document.getElementById("error-contactoCond").innerHTML="Introduzca un número válido entre 8 a 12 digitos Ejm. '78745455'"
   }
   else if(categoria == null || categoria == 0){
     document.getElementById("error-categoria").innerHTML="Seleccione la categoria de su Licencia"

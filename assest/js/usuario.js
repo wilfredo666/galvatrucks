@@ -1,3 +1,10 @@
+const expresiones = {
+	usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
+	nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
+	password: /^.{4,12}$/, // 4 a 12 digitos.
+	correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+	telefono: /^\d{7,14}$/ // 7 a 14 numeros.
+}
 /*===================================
 Modal formulario nuevo usuario
 =====================================*/
@@ -42,13 +49,20 @@ function RegUsuario() {
   let nomUsuario = document.getElementById("nomUsuario").value
   let loginUsuario = document.getElementById("loginUsuario").value
   let rolUsuario = document.getElementById("rolUsuario").selectedIndex;
+  let password = document.getElementById("password").value
 
   if (nomUsuario == null || nomUsuario.length == 0) {
     document.getElementById("error-nomUsuario").innerHTML = "El campo usuario no puede estar vacio"
+  } else if (!(/^[a-zA-ZÀ-ÿ\s]{1,40}$/i.test(nomUsuario))) {
+    document.getElementById("error-nomUsuario").innerHTML = "El nombre de usuario no admite caracteres especiales y números Ej.'#$&/(=54'"
   } else if (loginUsuario == null || loginUsuario.length == 0) {
     document.getElementById("error-loginUsuario").innerHTML = "El campo login no puede estar vacio"
+  } else if (!(/^[a-zA-Z0-9\_\-]{4,16}$/i.test(loginUsuario))) {
+    document.getElementById("error-loginUsuario").innerHTML = "El campo login no puede tener caracteres especiales Ej. '#$&/(='"
   } else if (rolUsuario == null || rolUsuario == 0) {
     document.getElementById("error-rolUsuario").innerHTML = "Debes seleccionar un ROL para este usuario"
+  } else if (password == null || password == 0) {
+    document.getElementById("error-pass1").innerHTML = "Ingrese una contraseña: 'el campo password no puede estar vacío'"
   }
 
   else {
@@ -124,13 +138,20 @@ function EditUsuario(id) {
   let nomUsuario = document.getElementById("nomUsuario").value
   let loginUsuario = document.getElementById("loginUsuario").value
   let rolUsuario = document.getElementById("rolUsuario").selectedIndex;
+  let password = document.getElementById("password").value
 
   if (nomUsuario == null || nomUsuario.length == 0) {
     document.getElementById("error-nomUsuario").innerHTML = "El campo usuario no puede estar vacio"
+  } else if (!(/^[a-zA-ZÀ-ÿ\s]{1,40}$/i.test(nomUsuario))) {
+    document.getElementById("error-nomUsuario").innerHTML = "El nombre de usuario no admite caracteres especiales y números Ej.'#$&/(=54'"
   } else if (loginUsuario == null || loginUsuario.length == 0) {
     document.getElementById("error-loginUsuario").innerHTML = "El campo login no puede estar vacio"
+  } else if (!(/^[a-zA-Z0-9\_\-]{4,16}$/i.test(loginUsuario))) {
+    document.getElementById("error-loginUsuario").innerHTML = "El campo login no puede tener caracteres especiales Ej. '#$&/(='"
   } else if (rolUsuario == null || rolUsuario == 0) {
     document.getElementById("error-rolUsuario").innerHTML = "Debes seleccionar un ROL para este usuario"
+  } else if (password == null || password == 0) {
+    document.getElementById("error-pass1").innerHTML = "Ingrese una contraseña: 'el campo password no puede estar vacío'"
   }
 
   else {

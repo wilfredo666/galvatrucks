@@ -64,7 +64,7 @@ class CPago extends BaseController
     $fechaPago = $_POST["fechaPago"];
     $conceptoPago = $_POST["conceptoPago"];
     $montoPago = $_POST["montoPago"];
-    $tipoMoneda = $_POST["tipoMoneda"];
+    /* $tipoMoneda = $_POST["tipoMoneda"]; */
     $numBill = $_POST["numBill"];
     $idServicio = $_POST["idServicio"];
 
@@ -72,7 +72,7 @@ class CPago extends BaseController
       "numero_bill" => $numBill,
       "concepto" => $conceptoPago,
       "monto" => $montoPago,
-      "tipo_moneda" => $tipoMoneda,
+      /* "tipo_moneda" => $tipoMoneda, */
       "fecha_pago" => $fechaPago,
       "id_servicio" => $idServicio
     );
