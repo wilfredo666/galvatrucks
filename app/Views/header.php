@@ -43,10 +43,10 @@
       <!-- Left navbar pushmenu -->
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+          <a class="nav-link" data-widget="pushmenu" href="#" usuario.role="button"><i class="fas fa-bars"></i></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="<?php echo base_url(); ?>/CUsuario/Panel" role="button"><i class="fas fa-home"></i> Panel Principal</i></a>
+          <a class="nav-link" href="<?php echo base_url(); ?>/CUsuario/Panel" usuario.role="button"><i class="fas fa-home"></i> Panel Principal</i></a>
         </li>
 
       </ul>
@@ -71,7 +71,7 @@
         </div>
       </li>
         <li class="nav-item">
-          <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+          <a class="nav-link" data-widget="fullscreen" href="#" usuario.role="button">
             <i class="fas fa-expand-arrows-alt"></i>
           </a>
         </li>
@@ -95,19 +95,19 @@
             <img src="<?php echo base_url(); ?>/assest/img/cliente2.jpg" class="img-circle elevation-5" alt="User Image">
           </div>
           <div class="info">
-            <!-- colocar para sessiones session('usuario') y descomentar la lineas SESSIONS Del controlador HOME linea 30,31 -->
-            <a class=""><?php echo session("nombre_usuario"); ?></a>
+            <!-- colocar para sessiones session('usuario') y descomentar la lineas SESSIONS Del contusuario.rolador HOME linea 30,31 -->
+            <a class=""><?php echo session("usuario.nombre_usuario"); ?></a>
           </div>
         </div>
 
 
         <!-- Sidebar Menu -->
         <nav class="mt-2">
-          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" usuario.role="menu" data-accordion="false">
             <!-- Add icons to the links using the .nav-icon class
 with font-awesome or any other icon font library -->
             <!--  Usuario  -->
-            <?php if (session("rol") == "Administrador") {
+            <?php if (session("usuario.rol") == "Administrador") {
             ?>
 
               <li class="nav-item">
@@ -120,7 +120,7 @@ with font-awesome or any other icon font library -->
               </li>
             <?php
             } ?>
-            <?php if (session("rol") == "Administrador" || session("rol") == "Auxiliar") {
+            <?php if (session("usuario.rol") == "Administrador" || session("usuario.rol") == "Auxiliar") {
             ?>
               <!--  Asignaciones -->
               <li class="nav-item">
@@ -188,7 +188,7 @@ with font-awesome or any other icon font library -->
               <!-- Para Conductor y tambien Administrador -->
 
               <!--  <php
-            if (session("rol") == "Conductor" || session("rol") == "Administrador") {
+            if (session("usuario.rol") == "Conductor" || session("usuario.rol") == "Administrador") {
             ?> -->
               <!--  Rutas  -->
               <li class="nav-item">
@@ -305,7 +305,7 @@ with font-awesome or any other icon font library -->
             } ?>
 
 
-            <?php if (session("rol") == "Administrador" || session("rol") == "Auxiliar") {
+            <?php if (session("usuario.rol") == "Administrador" || session("usuario.rol") == "Auxiliar") {
             ?>
               <li class="nav-header">DOCUMENTACIÓN</li>
               <li class="nav-item">
@@ -371,9 +371,9 @@ with font-awesome or any other icon font library -->
 
 
 
-            <!-- PARA LAS VISTAS DEL ROL CLIENTE -->
+            <!-- PARA LAS VISTAS DEL usuario.rol CLIENTE -->
             <?php
-            if (session("rol") == "Cliente") {
+            if (session("usuario.rol") == "Cliente") {
             ?>
               <!-- MI PERFIL -->
               <li class="nav-item">
@@ -384,7 +384,7 @@ with font-awesome or any other icon font library -->
                   </p>
                 </a>
               </li>
-              <!-- FUNCIONES DEL ROL CLIENTE -->
+              <!-- FUNCIONES DEL usuario.rol CLIENTE -->
               <li class="nav-header">OPCIONES</li>
               <li class="nav-item">
                 <a href="#" class="nav-link">
@@ -414,7 +414,7 @@ with font-awesome or any other icon font library -->
                     </a>
                   </li> -->
                   <li class="nav-item">
-                    <a href="<?php echo base_url(); ?>/CCliente/repRolCliente"  class="nav-link">
+                    <a href="<?php echo base_url(); ?>/CCliente/repusuario.rolCliente"  class="nav-link">
                       <i class="nav-icon fas fa-print text-warning"></i>
                       <p>Mis Reportes</p>
                     </a>

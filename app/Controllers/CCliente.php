@@ -208,7 +208,7 @@ class CCliente extends BaseController
 
     public function repRolCliente()
     {
-        $id_cliente = session("id_cliente");
+        $id_cliente = session("usuario.id_cliente");
         $data = array(
             "servicios" => $this->MServicio->lista_servicios($id_cliente)
         );
@@ -236,7 +236,7 @@ class CCliente extends BaseController
         echo view('cliente/rolCliente/repLlenadoRolCliente', $data);
     }
     public function contadorServicio(){
-        $id_cliente = session("id_cliente");
+        $id_cliente = session("usuario.id_cliente");
         $data = array(
             /* "cliente" => $this->MCliente->InfoCliente($id), */
             "servicios" => $this->MServicio->InfoServClienteContador($id_cliente),
@@ -253,7 +253,7 @@ class CCliente extends BaseController
     ---------------------------------------------------*/
     public function miPerfil()
     {
-        $id_usuario = session("id_usuario");
+        $id_usuario = session("usuario.id_usuario");
         /* para enviar ID a miPerfil */
         /* $data=array(
         "idUsuario"=>$id_usuario
@@ -272,7 +272,7 @@ class CCliente extends BaseController
         $id = $this->request->uri->getSegment(3);
 
         /* id del usuario */
-        $idUsuario = session("id_usuario");
+        $idUsuario = session("usuario.id_usuario");
 
         $correo = $_POST["correoCli"];
         $contacto = $_POST["contactoCli"];
