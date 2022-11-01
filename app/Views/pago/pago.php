@@ -26,7 +26,7 @@
                             $idPago = $pag['id_pago'];
                             $concepto = $pag['concepto'];
                             $monto = $pag['monto'];
-                            /* $tipo_moneda = $pag['tipo_moneda']; */
+                            $tipo_moneda = $pag['tipo_moneda'];
                             $fecha_pago = $pag['fecha_pago'];
                             $id_servicio = $pag['id_servicio'];
                             $num_bill = $pag['num_bill'];
@@ -36,8 +36,8 @@
                                 <td><?php echo $num_bill; ?></td>
                                 <td><?php echo $id_servicio; ?></td>
                                 <td><?php echo $concepto; ?></td>
-                                <td><?php echo $monto . "Bs."; ?></td>
-                                <!--  -->
+                                <td><?php echo $monto; ?></td>
+                                <td><?php echo $tipo_moneda; ?></td>
                                 <td><?php echo date('d-m-Y', strtotime($fecha_pago)); ?></td>
                                 <td>
                                     <div class="text-center">

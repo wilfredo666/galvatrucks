@@ -20,10 +20,9 @@ function MNuevoCamion() {
   function RegCamion() {
     let form = new FormData($("#FNuevoCamion")[0])
 
-    let placa = document.getElementById("placa").value
+    let placa=document.getElementById("placa").value
     let clase = document.getElementById("clase").selectedIndex;
     let capacidad = document.getElementById("capacidad").selectedIndex;
-    /* let chasis = document.getElementById("chasis").value */
 
     if(!(/^\d{3,4}[-]\w{3}$/.test(placa))){
       document.getElementById("error-placa").innerHTML="Llene la placa en este formato: Ejm. '2452-DSE' "
@@ -32,9 +31,7 @@ function MNuevoCamion() {
       document.getElementById("error-clase").innerHTML="Debes seleccionar una clase para este camión"
     }else if(capacidad == null || capacidad == 0){
       document.getElementById("error-capacidad").innerHTML="Seleccione la capacidad de carga para el camión"
-    }/* else if(!(/^[a-zA-Z0-9\_\-]{3,20}$/.test(chasis))){
-      document.getElementById("error-chasis").innerHTML="No se admiten caracteres especiales, Utilice una combinación de letras y números 'Ej: 2RZTD54S'"
-    } */
+    }
 
     else{
       $.ajax({

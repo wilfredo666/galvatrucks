@@ -5,7 +5,7 @@
     </button>
 </div>
 <div class="modal-body">
-<h5 class="text font-italic">¿Está seguro de eliminar este registro?</h5>
+<h4 class="text font-italic">¿Está seguro de eliminar este registro?</h4>
 </div>
 <div class="modal-footer justify-content-between">
     <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>

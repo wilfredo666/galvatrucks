@@ -25,7 +25,6 @@
                             <option value="SEMIREMOLQUE">SEMIREMOLQUE</option>
                             <option value="REMOLQUE">REMOLQUE</option>
                             <option value="SEMIREMOLQUE CON BARANDAS">SEMIREMOLQUE CON BARANDAS</option>
-                            <option value="OTROS">OTROS</option>
                         </select>
                         <p class="text-danger" id="error-clase"></p>
                     </div>
@@ -47,7 +46,6 @@
                     <div class="form-group col-md-6">
                         <label>Nro. de Chasis</label>
                         <input type="text" class="form-control" id="chasis" name="chasis">
-                        <span class="text-danger chartjs-render-monitor" id="error-chasis"></span>
                     </div>
                     
                     
@@ -71,7 +69,6 @@
                             <option value="VOLVO">VOLVO</option>
                             <option value="NISSAN">NISSAN</option>
                             <option value="RENAULT-Nissan">RENAULT-Nissan</option>
-                            <option value="OTROS">OTROS</option>
                         </select>
                     </div>
                     <div class="form-group col-md-4">

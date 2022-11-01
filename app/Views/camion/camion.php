@@ -38,13 +38,13 @@
               <td><?php echo $marca; ?></td>
               <td>
                 <div class="text-center">
-                  <button class="btn btn-sm btn-outline-info btn-circle" onclick="MVerCamion(<?php echo $idCam; ?>)">
+                  <button class="btn btn-outline-info btn-circle" onclick="MVerCamion(<?php echo $idCam; ?>)">
                     <i class="fas fa-eye"></i>
                   </button>
-                  <button class="btn btn-sm btn-warning btn-circle" onclick="MEditarCamion(<?php echo $idCam; ?>)">
+                  <button class="btn btn-warning btn-circle" onclick="MEditarCamion(<?php echo $idCam; ?>)">
                     <i class="fas fa-edit"></i>
                   </button>
-                  <button class="btn btn-sm btn-outline-danger btn-circle" onclick="MEliminarCamion(<?php echo $idCam; ?>)">
+                  <button class="btn btn-outline-danger btn-circle" onclick="MEliminarCamion(<?php echo $idCam; ?>)">
                     <i class="fas fa-trash-alt"></i>
                   </button>
                 </div>

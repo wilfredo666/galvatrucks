@@ -33,13 +33,13 @@
               <td><?php echo $rol; ?></td>
               <td>
                 <div class="text-center">
-                  <button class="btn btn-sm btn-outline-info btn-circle" title="Ver información" onclick="MVerUsuario(<?php echo $idUsu; ?>)">
+                  <button class="btn btn-outline-info btn-circle" title="Ver información" onclick="MVerUsuario(<?php echo $idUsu; ?>)">
                     <i class="fas fa-eye"></i>
                   </button>
-                  <button class="btn btn-sm btn-warning btn-circle" title="Editar registro" onclick="MEditarUsuario(<?php echo $idUsu; ?>)">
+                  <button class="btn btn-warning btn-circle" title="Editar registro" onclick="MEditarUsuario(<?php echo $idUsu; ?>)">
                     <i class="fas fa-edit"></i>
                   </button>
-                  <button class="btn btn-sm btn-outline-danger btn-circle"  title="Eliminar registro" onclick="MEliminarUsuario(<?php echo $idUsu; ?>)">
+                  <button class="btn btn-outline-danger btn-circle"  title="Eliminar registro" onclick="MEliminarUsuario(<?php echo $idUsu; ?>)">
                     <i class="fas fa-trash-alt"></i>
                   </button>
                 </div>

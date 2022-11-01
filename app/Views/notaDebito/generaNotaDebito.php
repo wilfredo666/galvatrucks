@@ -279,7 +279,7 @@ foreach ($busBill as $datos) {
     </div>
     <br>
 
-    <div class="col-9 interlineado" style="margin-top: 100px; justify-content: space-between;">
+    <div class="col-9 interlineado" style="margin-top: 120px; justify-content: space-between;">
         <p class="interlineado" style="font-weight: bold; padding-left: 180px;  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; ">RECIBÍ CONFORME <span class="interlineado" style="font-weight: bold; padding-left: 150px;  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; ">ENTREGUE CONFORME </span></p>
     </div>
 

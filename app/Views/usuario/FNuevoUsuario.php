@@ -36,7 +36,6 @@
         <div class="form-group col-md-6">
           <label>Password</label>
           <input type="password" class="form-control" id="password" name="password">
-          <span class="text-danger chartjs-render-monitor" id="error-pass1"></span>
         </div>
         <div class="form-group col-md-6">
           <label>Repetir password</label>

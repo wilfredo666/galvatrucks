@@ -51,7 +51,7 @@
 
       </ul>
 
-      
+
 
       <!-- Barra principal con fullscreen -->
       <ul class="navbar-nav ml-auto">
@@ -66,10 +66,16 @@
           <a href="#" class="dropdown-item">
             <i class="fas fa-envelope mr-2"></i> Tienes <?php echo session("solPendiente");?> solicitudes pendientes
           </a>
-          <div class="dropdown-divider"></div>
-          <a href="<?php echo base_url()?>/CCliente/solicitudServ" class="dropdown-item dropdown-footer">Ver todas las Solicitudes</a>
-        </div>
-      </li>
+          <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+            <span class="dropdown-item dropdown-header">Solicitudes</span>
+            <div class="dropdown-divider"></div>
+            <a href="#" class="dropdown-item">
+              <i class="fas fa-envelope mr-2"></i> Tienes 4 solicitudes pendientes
+            </a>
+            <div class="dropdown-divider"></div>
+            <a href="<?php echo base_url() ?>/CCliente/solicitudServ" class="dropdown-item dropdown-footer">Ver todas las Solicitudes</a>
+          </div>
+        </li>
         <li class="nav-item">
           <a class="nav-link" data-widget="fullscreen" href="#" usuario.role="button">
             <i class="fas fa-expand-arrows-alt"></i>
@@ -90,16 +96,33 @@
       <!-- Sidebar -->
       <div class="sidebar">
         <!-- Sidebar user panel (optional) -->
-        <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-          <div class="image">
-            <img src="<?php echo base_url(); ?>/assest/img/cliente2.jpg" class="img-circle elevation-5" alt="User Image">
+        <?php if (session("usuario.rol") == "Administrador") {
+        ?>
+          <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <div class="image">
+              <img src="<?php echo base_url(); ?>/assest/img/cliente2.jpg" class="img-circle elevation-5" alt="User Image">
+            </div>
+            <div class="info">
+              <!-- colocar para sessiones session('usuario') y descomentar la lineas SESSIONS Del controlador HOME linea 30,31 -->
+              <a class=""><?php echo session("usuario.nombre_usuario"); ?></a>
+            </div>
           </div>
-          <div class="info">
-            <!-- colocar para sessiones session('usuario') y descomentar la lineas SESSIONS Del contusuario.rolador HOME linea 30,31 -->
-            <a class=""><?php echo session("usuario.nombre_usuario"); ?></a>
-          </div>
-        </div>
+        <?php
+        } ?>
 
+        <?php if (session("usuario.rol") == "Cliente") {
+        ?>
+          <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <div class="image">
+              <img src="<?php echo base_url(); ?>/assest/img/cli.jpg" class="img-circle elevation-5" alt="User Image" style="width: 40px;">
+            </div>
+            <div class="info">
+              <!-- colocar para sessiones session('usuario') y descomentar la lineas SESSIONS Del controlador HOME linea 30,31 -->
+              <a class=""><?php echo session("usuario.nombre_usuario"); ?></a>
+            </div>
+          </div>
+        <?php
+        } ?>
 
         <!-- Sidebar Menu -->
         <nav class="mt-2">
@@ -237,29 +260,16 @@ with font-awesome or any other icon font library -->
                 </ul>
               </li>
               <!-- PAGOS -->
+
               <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="<?php echo base_url() ?>/CPago/NuevoPago" class="nav-link">
                   <i class="nav-icon fas fa-credit-card"></i>
                   <p>
                     Pagos
-                    <i class="fas fa-angle-left right"></i>
                   </p>
                 </a>
-                <ul class="nav nav-treeview">
-                  <li class="nav-item">
-                    <a href="<?php echo base_url() ?>/CPago/NuevoPago" class="nav-link">
-                      <i class="nav-icon fas fa-plus-circle text-warning"></i>
-                      <p>Nuevo Pago</p>
-                    </a>
-                  </li>
-                  <!-- <li class="nav-item">
-                    <a href="<?php echo base_url(); ?>/CPago" class="nav-link">
-                      <i class="nav-icon fas fa-receipt text-warning"></i>
-                      <p>Lista de Pagos</p>
-                    </a>
-                  </li> -->
-                </ul>
               </li>
+
               <!--  SEGUIMIENTOS DE CONTENEDOR -->
               <li class="nav-item">
                 <a href="<?php echo base_url(); ?>/CServicio/seguimientoContenedor" class="nav-link">
@@ -316,8 +326,8 @@ with font-awesome or any other icon font library -->
                   </p>
                 </a>
               </li>
-              
-              <<!-- li class="nav-item">
+
+             <!-- < li class="nav-item">
                 <a href="#" class="nav-link">
                   <i class="nav-icon  fas fa-cogs"></i>
                   <p>
@@ -327,15 +337,15 @@ with font-awesome or any other icon font library -->
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="<?php echo base_url(); ?>/CUtilidades" class="nav-link">
+                    <a href="<?php  base_url(); ?>/CUtilidades" class="nav-link">
                       <i class="nav-icon fas fa-database text-warning"></i>
                       <p>BackUp Base de Datos</p>
                     </a>
                   </li>
                 </ul>
-              </li> -->
+                </li> -->
 
-              <!-- <li class="nav-item">
+                <!-- <li class="nav-item">
                 <a href="#" class="nav-link">
                   <i class="nav-icon fas fa-folder-open"></i>
                   <p>
@@ -365,77 +375,77 @@ with font-awesome or any other icon font library -->
 
                 </ul>
               </li> -->
-            <?php
+              <?php
             }
-            ?>
+              ?>
 
 
 
-            <!-- PARA LAS VISTAS DEL usuario.rol CLIENTE -->
-            <?php
-            if (session("usuario.rol") == "Cliente") {
-            ?>
-              <!-- MI PERFIL -->
-              <li class="nav-item">
-                <a href="<?php echo base_url(); ?>/CCliente/miPerfil" class="nav-link">
-                  <i class="nav-icon fas fa-user-cog"></i>
-                  <p>
-                    Mi Perfil
-                  </p>
-                </a>
-              </li>
-              <!-- FUNCIONES DEL usuario.rol CLIENTE -->
-              <li class="nav-header">OPCIONES</li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="nav-icon fas fa-layer-group"></i>
-                  <p>
-                    Funciones
-                    <i class="fas fa-angle-left right"></i>
-                  </p>
-                </a>
-                <ul class="nav nav-treeview">
-                  <li class="nav-item">
-                    <a href="<?php echo base_url(); ?>/CSolicitudServicio" class="nav-link">
-                      <i class="nav-icon far fa-plus-square text-warning"></i>
-                      <p>Solicitar Servicio</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="<?php echo base_url(); ?>/CServicio/seguimientoContenedor" class="nav-link">
-                      <i class="nav-icon fas fa-map-marked-alt text-warning"></i>
-                      <p>Seguimiento de contenedores</p>
-                    </a>
-                  </li>
-                  <!--                   <li class="nav-item">
+              <!-- PARA LAS VISTAS DEL ROL CLIENTE -->
+              <?php
+              if (session("usuario.rol") == "Cliente") {
+              ?>
+                <!-- MI PERFIL -->
+                <li class="nav-item">
+                  <a href="<?php echo base_url(); ?>/CCliente/miPerfil" class="nav-link">
+                    <i class="nav-icon fas fa-user-cog"></i>
+                    <p>
+                      Mi Perfil
+                    </p>
+                  </a>
+                </li>
+                <!-- FUNCIONES DEL ROL CLIENTE -->
+                <li class="nav-header">OPCIONES</li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link">
+                    <i class="nav-icon fas fa-layer-group"></i>
+                    <p>
+                      Funciones
+                      <i class="fas fa-angle-left right"></i>
+                    </p>
+                  </a>
+                  <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                      <a href="<?php echo base_url(); ?>/CSolicitudServicio" class="nav-link">
+                        <i class="nav-icon far fa-plus-square text-warning"></i>
+                        <p>Solicitar Servicio</p>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="<?php echo base_url(); ?>/CServicio/seguimientoContenedor" class="nav-link">
+                        <i class="nav-icon fas fa-map-marked-alt text-warning"></i>
+                        <p>Seguimiento de contenedores</p>
+                      </a>
+                    </li>
+                    <!--                   <li class="nav-item">
                     <a href="#" class="nav-link">
                       <i class="nav-icon fas fa-file-upload text-warning"></i>
                       <p>Subir Archivos de Importacion</p>
                     </a>
                   </li> -->
-                  <li class="nav-item">
-                    <a href="<?php echo base_url(); ?>/CCliente/repRolCliente"  class="nav-link">
-                      <i class="nav-icon fas fa-print text-warning"></i>
-                      <p>Mis Reportes</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="#" class="nav-link">
-                      <i class="nav-icon fas fa-money-check text-warning"></i>
-                      <p>Mis notas de Débito</p>
-                    </a>
-                  </li>
-                </ul>
+                    <li class="nav-item">
+                      <a href="<?php echo base_url(); ?>/CCliente/repRolCliente" class="nav-link">
+                        <i class="nav-icon fas fa-print text-warning"></i>
+                        <p>Mis Reportes</p>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="#" class="nav-link">
+                        <i class="nav-icon fas fa-money-check text-warning"></i>
+                        <p>Mis notas de Débito</p>
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+              <?php
+              }
+              ?>
+              <li class="nav-item">
+                <a href="<?php echo base_url(); ?>/Home/salir" class="nav-link">
+                  <i class="nav-icon fas fa-power-off text-info "></i>
+                  <p>Cerrar sesión</p>
+                </a>
               </li>
-            <?php
-            }
-            ?>
-            <li class="nav-item">
-              <a href="<?php echo base_url(); ?>/Home/salir" class="nav-link">
-                <i class="nav-icon fas fa-power-off text-info "></i>
-                <p>Cerrar sesión</p>
-              </a>
-            </li>
           </ul>
         </nav>
         <!-- /.sidebar-menu -->
