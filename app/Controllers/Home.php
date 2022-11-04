@@ -26,6 +26,7 @@ class Home extends BaseController
   {
     $MUsuario = new MUsuario();
     $MCliente = new MCliente();
+    $MServicio = new MServicio();
     $MSolicitudServicio = new MSolicitudServicio();
 
     // Validamos los campos de usuario
@@ -68,7 +69,10 @@ class Home extends BaseController
       }else{
         $data=array(
           "usuario"=>$consulta,
-          "solPendiente"=>$MSolicitudServicio->ContarSolicitudes("pendiente")
+          "solPendiente"=>$MSolicitudServicio->ContarSolicitudes("pendiente"),
+          "clientes"=>$MCliente->ContarCliente(),
+          "servicio"=>$MServicio->ContarServicio(),
+          /* "fotoCli"=>$MCliente->fotoCliente($id), */
         );
       }
 

@@ -60,13 +60,13 @@
 
               <td class="text-center">
                 <div>
-                  <button class="btn btn-md btn-outline-info btn-circle" onclick="MVerCliente(<?php echo $idCli; ?>)">
+                  <button class="btn btn-sm btn-outline-info btn-circle" onclick="MVerCliente(<?php echo $idCli; ?>)">
                     <i class="fas fa-eye"></i>
                   </button>
-                  <button class="btn btn-md  btn-warning btn-circle" onclick="MEditarCliente(<?php echo $idCli; ?>)">
+                  <button class="btn btn-sm  btn-warning btn-circle" onclick="MEditarCliente(<?php echo $idCli; ?>)">
                     <i class="fas fa-edit"></i>
                   </button>
-                  <button class="btn btn-md btn-outline-danger btn-circle" onclick="MEliminarCliente(<?php echo $idCli; ?>)">
+                  <button class="btn btn-sm btn-outline-danger btn-circle" onclick="MEliminarCliente(<?php echo $idCli; ?>)">
                     <i class="fas fa-trash-alt"></i>
                   </button>
                 </div>

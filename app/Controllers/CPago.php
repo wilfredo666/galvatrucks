@@ -49,7 +49,7 @@ class CPago extends BaseController
     var_dump($campo); */
   }
   /* para registra pago con botonon añadir pago */
-  public function CAñadirPago()
+  public function CAnadirPago()
   {
     $idServicio = $this->request->uri->getSegment(3);
 
@@ -57,14 +57,14 @@ class CPago extends BaseController
       "datosServicio" => $this->MServicio->ServicioBill($idServicio)
     );
     echo view('pago/FnuevoPago', $data);
-    /*     var_dump($data); */
+        /* var_dump($idServicio); */
   }
   /* para registrar el Pago */
   public function RegPago(){
     $fechaPago = $_POST["fechaPago"];
     $conceptoPago = $_POST["conceptoPago"];
     $montoPago = $_POST["montoPago"];
-    $tipoMoneda = $_POST["tipoMoneda"];
+    /* $tipoMoneda = $_POST["tipoMoneda"]; */
     $numBill = $_POST["numBill"];
     $idServicio = $_POST["idServicio"];
 
@@ -72,7 +72,7 @@ class CPago extends BaseController
       "numero_bill" => $numBill,
       "concepto" => $conceptoPago,
       "monto" => $montoPago,
-      "tipo_moneda" => $tipoMoneda,
+      /* "tipo_moneda" => $tipoMoneda, */
       "fecha_pago" => $fechaPago,
       "id_servicio" => $idServicio
     );
@@ -106,12 +106,12 @@ class CPago extends BaseController
     $fechaPago = $_POST["fechaPago"];
     $conceptoPago = $_POST["conceptoPago"];
     $montoPago = $_POST["montoPago"];
-    $tipoMoneda = $_POST["tipoMoneda"];
+    /* $tipoMoneda = $_POST["tipoMoneda"]; */
 
     $data = array(
       "concepto" => $conceptoPago,
       "monto" => $montoPago,
-      "tipo_moneda" => $tipoMoneda,
+      /* "tipo_moneda" => $tipoMoneda, */
       "fecha_pago" => $fechaPago
     );
     $this->MPago->update($idPago,$data);

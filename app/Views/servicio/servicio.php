@@ -11,10 +11,11 @@
       <table id="DataTableServi" class="table table-bordered table-striped">
         <thead class="text-center align-items-center justify-content-center">
           <tr>
-            <th>COD. SERVICIO</th>
+            <th>CÓDIGO SERV</th>
             <th>NOMBRE CLIENTE</th>
             <!--             <th>NAVIERA</th> -->
             <th>NRO BL/BILL</th>
+            <th>NRO CONTENEDOR</th>
             <!-- <th>NRO BL/BILL</th> -->
             <th>FECHA ARRIBO</th>
             <th>ESTADO</th>
@@ -28,6 +29,7 @@
             $cli = $lista['razon_social_cli'];
             $naviera = $lista['razon_social_emp'];
             $nroBl = $lista['num_bill'];
+            $nroCont = $lista['nro_contenedor'];
             $fechaArribo = $lista['fecha_arribo'];
             $estadoServicio = $lista['activo_serv'];
 
@@ -37,6 +39,7 @@
               <td><?php echo $codServicio; ?></td>
               <td><?php echo $cli; ?></td>
               <td><?php echo $nroBl; ?></td>
+              <td><?php echo $nroCont; ?></td>
               
               <td><?php echo $fechaArriboContenedor; ?></td>
 
@@ -54,13 +57,13 @@
 
               <td>
                 <div class="text-center">
-                  <button class="btn btn-sm btn-outline-info btn-circle" title="Ver detalles de Servicio" onclick="MVerServicio(<?php echo $idServicio; ?>)">
+                  <button class="btn btn-xs btn-outline-info btn-circle" title="Ver detalles de Servicio" onclick="MVerServicio(<?php echo $idServicio; ?>)">
                     <i class="fas fa-eye"></i>
                   </button>
-                  <button class="btn btn-sm btn-warning btn-circle" title="Editar Servicio" onclick="MEditarServicio(<?php echo $idServicio; ?>)">
+                  <button class="btn btn-xs btn-warning btn-circle" title="Editar Servicio" onclick="MEditarServicio(<?php echo $idServicio; ?>)">
                     <i class="fas fa-edit"></i>
                   </button>
-                  <button class="btn btn-sm btn-outline-danger btn-circle" title="Eliminar Servicio" onclick="MEliminarServicio(<?php echo $idServicio; ?>)">
+                  <button class="btn btn-xs btn-outline-danger btn-circle" title="Eliminar Servicio" onclick="MEliminarServicio(<?php echo $idServicio; ?>)">
                     <i class="fas fa-trash-alt"></i>
                   </button>
                 </div>

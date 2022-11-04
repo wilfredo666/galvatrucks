@@ -291,7 +291,7 @@ class CCliente extends BaseController
             $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
         }
 
-        /* $fotoCli = $_FILES["fotoCli"];
+        $fotoCli = $_FILES["fotoCli"];
 
         if ($fotoCli["name"] == "") {
             $foto = $_POST["fotoCliActual"];
@@ -300,7 +300,7 @@ class CCliente extends BaseController
             $foto = $fotoCli["name"];
             $tmpFoto = $fotoCli["tmp_name"];
             move_uploaded_file($tmpFoto, $ruta . $foto);
-        }  */
+        } 
 
         /* $pass1 = password_hash($_POST["password"], PASSWORD_DEFAULT); */
         /* var_dump($pass1); */
@@ -312,8 +312,8 @@ class CCliente extends BaseController
             "apellido_cli" => $apellidoCli,
             "num_cuenta_cli" => $ctaBancaria,
             "direccion_cli" => $direccion,
-            "email_cli" => $correo
-            /* "imagen_cli" => $foto    */
+            "email_cli" => $correo,
+            "imagen_cli" => $foto   
         );
         $datoPassword = array(
             "pass_usuario" => $password
@@ -397,5 +397,14 @@ PARA LA RESPUESTA A SOLICITUD DE SERVICIO DE CLIENTES
         echo view('header');
         echo view('cliente/rolCliente/seguimiento');
         echo view('footer');
+    }
+
+    public function foto(){
+        $id_cliente=session("usuario.id_cliente");
+        $data = array(
+            "fotoCli" => $this->MCliente->fotoCliente($id_cliente)
+          );
+        /* var_dump($data); */
+          /* echo view('header',$data); */
     }
 }

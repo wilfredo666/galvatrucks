@@ -24,7 +24,7 @@ function MNuevoServicio(){
     let form3 = new FormData($("#FNuevoServicio3")[0]) */
 
     let cliente = document.getElementById("servCliente").selectedIndex;
-    let idSolicitud = document.getElementById("idSolicitud").selectedIndex;
+    /* let idSolicitud = document.getElementById("idSolicitud").selectedIndex; */
     let ruta = document.getElementById("ruta").selectedIndex;
     let naviera = document.getElementById("servNaviera").selectedIndex;
     let fechaSoli=document.getElementById("servIni").value
@@ -45,10 +45,10 @@ function MNuevoServicio(){
     }
 
     else{ */
-    if(idSolicitud == null || idSolicitud == 0){
+    /* if(idSolicitud == null || idSolicitud == 0){
       document.getElementById("error-solicitud").innerHTML="Selecciona la solicitud de servicio"
     }
-    else if(cliente == null || cliente == 0){
+    else */ if(cliente == null || cliente == 0){
       document.getElementById("error-cliente").innerHTML="Seleccione el cliente"
     } else if(naviera == null || naviera == 0){
       document.getElementById("error-naviera").innerHTML="Seleccione la naviera"
@@ -69,11 +69,11 @@ function MNuevoServicio(){
         type: "POST",
         url: "CServicio/RegServicio",
         data: form,
-    /*     data: form1,form2,form3, */
         cache: false,
         contentType: false,
         processData: false,
         success: function (data) {
+          /* console.log(data); */
           Swal.fire({
             title: 'Registro Exitoso',
             icon: 'success',
@@ -83,7 +83,6 @@ function MNuevoServicio(){
             setTimeout(function(){
                 location.reload()
               },1200)
-         /*  console.log(data); */
         }
       })
     }
@@ -101,7 +100,7 @@ Modal formulario VER SERVICIO
       data: obj,
       success: function (data) {
         $("#content-xl").html(data)
-      
+      /* console.log(data) */
       }
     })
   }
@@ -388,6 +387,9 @@ function buscarBL(){
       }
     })
 }
+/* ================================
+FUNCION PARA BUSCAR BILL PARA IMPRIMIR PDF REPORTES
+====================================*/
 function FNotaDebito(id){
   var obj = "";
   $.ajax({
@@ -401,4 +403,18 @@ function FNotaDebito(id){
         console.log(data)
     }
   })
+}
+/* para buscar solo contenedores del cliente */
+function buscarContenedorCli(){
+  let numContenedor = document.getElementById("numContenedor").value
+  var obj = "";
+    $.ajax({
+      type: "POST",
+      url: "FBuscarMovimientoCli/"+numContenedor,
+      data: obj,
+      success: function (data) {
+         /* console.log(data) */
+        $("#LlenarContenedorCli").html(data)
+      }
+    })
 }

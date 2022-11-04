@@ -5,7 +5,7 @@
     </button>
 </div>
 <div class="modal-body">
-    <form id="FNuevoConductor">
+    <form id="FNuevoConductor" >
         <div class="card-body">
             <div class="container">
                 <div class="row">
@@ -23,6 +23,7 @@
                     <div class="col-md-4 form-group">
                         <label>Cédula de Identidad</label>
                         <input type="text" class="form-control" id="ciCond" name="ciCond">
+                        <span class="text-danger chartjs-render-monitor" id="error-cedula"></span>
                     </div>
                     <div class="form-group col-md-4">
                         <label>Estado Civil</label>

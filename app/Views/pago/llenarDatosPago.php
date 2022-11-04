@@ -19,7 +19,7 @@ foreach ($busBill as $bill) {
             <span class="text-danger chartjs-render-monitor" id="error-bill"></span>
         </div>
         <div class="form-group col-md-1 col-sm-2">
-            <label class="font-weight-light">Buscar BL</label>
+            <label class="font-weight-light">Búsqueda</label>
             <button type="button" class="btn btn-outline-warning form-control" style="width: 60px ;" id="busqueda" name="busqueda" onclick="buscarBill()"><i class="fas fa-search"></i></button>
         </div>
         <div class="form-group col-md-5">
@@ -49,7 +49,7 @@ foreach ($busBill as $bill) {
 </div>
 <div class="time-label mb-2">
     <!-- <span style="background-color: #f4f6f9;">Añadir Pago</span> -->
-    <button class="btn btn-success btn-circle ml-1" style="width: 150px;" onclick="FAñadirPago(<?php echo  $id_servicio ?>);"> Añadir Pago
+    <button class="btn btn-success btn-circle ml-1" style="width: 150px;" onclick="FAnadirPago(<?php echo  $id_servicio ?>);"> Añadir Pago
         <i class="fas fa-plus-square"> </i>
     </button>
 </div>
@@ -62,7 +62,7 @@ foreach ($busBill as $bill) {
                 <tr>
                     <th>CONCEPTO</th>
                     <th>MONTO PAGADO</th>
-                    <th>TIPO DE MONEDA</th>
+                    <!-- <th>TIPO DE MONEDA</th> -->
                     <th>FECHA DE PAGO</th>
                     <th>ACCIONES</th>
                 </tr>
@@ -75,7 +75,7 @@ foreach ($busBill as $bill) {
                         $id_pago = $bill["id_pago"];
                         $concepto = $bill['concepto'];
                         $monto = $bill['monto'];
-                        $tipo_moneda = $bill['tipo_moneda'];
+                        /* $tipo_moneda = $bill['tipo_moneda']; */
                         $fecha_pago = $bill['fecha_pago'];
                         $id_servicio = $bill['id_servicio'];
 
@@ -83,8 +83,8 @@ foreach ($busBill as $bill) {
                     ?>
                         <tr>
                             <td><?php echo $concepto; ?></td>
-                            <td class="text-center"><?php echo $monto; ?></td>
-                            <td class="text-center"><?php echo $tipo_moneda; ?></td>
+                            <td class="text-center"><?php echo $monto . " Bs."; ?></td>
+                            
                             <td class="text-center"><?php echo $fechaPago; ?></td>
                             <td  class="text-center align-items-center justify-content-center">
                                 <div class="col-md-2 mt-1  text-center" role="group">

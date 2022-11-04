@@ -20,6 +20,14 @@ class MMovimientosContenedor extends Model
     $resultado = $this->findAll();
     return $resultado; 
     }
+    /* para ver movimientos solo del cliente */
+    public function ListaMovContenedorCli($contenedor, $id_cliente){
+      $this->select("*");
+      $this->where("num_contenedor", $contenedor);
+      $this->where("id_movimiento ORDER BY fecha_mov DESC"); 
+      $resultado = $this->findAll();
+      return $resultado; 
+    }
 
     public function InfoMovimiento($id)
     {

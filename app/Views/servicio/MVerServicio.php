@@ -129,7 +129,7 @@
                                 <h6 class="m-b-es p-b-5 b-b-default f-w-600" style="color: #252675; background:#E4E6F5; font-family: Segoe UI Emoji;">INFORMACIÓN DE LA ASIGNACIÓN DEL SERVICIO</h6>
                                 <div class="row">
                                     <?php
-                                    if ($servicio2["nombre_asig"] != "") {
+                                    if (/* $servicio2["nombre_asig"] != "" */ $servicio2 != null ) {
 
                                     ?>
                                         <div class="col-md-6 col-sm-12">

@@ -11,7 +11,7 @@ class MSolicitudServicio extends Model
 
   protected $returnType     = 'array';
 
-  protected $allowedFields = ['id_emp_maritima', 'numero_bill', 'numero_cont', 'tam_cont', 'peso_cont', 'fecha_solicitud', 'doc_bill', 'doc_factura', 'doc_lista_empaque', 'doc_otros', 'observaciones', 'id_cliente', 'activo_solicitud'];
+  protected $allowedFields = ['id_emp_maritima', 'numero_bill', 'numero_cont', 'tam_cont', 'peso_cont', 'fecha_solicitud', 'doc_bill', 'doc_factura', 'doc_lista_empaque', 'doc_otros', 'observaciones', 'id_cliente', 'activo_solicitud', 'activo_soli_serv'];
 
 
 
@@ -58,6 +58,7 @@ class MSolicitudServicio extends Model
     $this-> select("*");
     $this-> join("cliente", 'cliente.id_cliente = solicitud_servicio.id_cliente');
     $this-> where("activo_solicitud", "aceptado");
+    $this-> where("activo_soli_serv", 0);
     $resultado=$this->findAll();
     return $resultado;
     /* var_dump($resultado); */
@@ -74,6 +75,13 @@ class MSolicitudServicio extends Model
   public function ContarSolicitudes($estado){
     $this->select("*");
     $this->where("activo_solicitud",$estado);
+    $resultado = $this->countAllResults();
+    return $resultado;
+  }
+  public function contarServPenCli($idCli, $estado){
+    $this->select("*");
+    $this->where("id_cliente", $idCli);
+    $this->where("activo_solicitud", $estado);
     $resultado = $this->countAllResults();
     return $resultado;
   }

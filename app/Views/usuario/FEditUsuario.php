@@ -37,6 +37,7 @@
           <label>Password</label>
           <input type="password" class="form-control" id="password" name="password" value="<?php echo $usuario["pass_usuario"];?>">
           <input type="hidden" class="form-control" name="passwordActual" value="<?php echo $usuario["pass_usuario"];?>">
+          <p class="text-danger" id="error-pass1"></p>
         </div>
         <div class="form-group col-md-6">
           <label>Repetir password</label>

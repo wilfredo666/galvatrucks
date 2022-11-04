@@ -36,6 +36,7 @@
         <div class="form-group col-md-6">
           <label>Password</label>
           <input type="password" class="form-control" id="password" name="password">
+          <p class="text-danger" id="error-pass1"></p>
         </div>
         <div class="form-group col-md-6">
           <label>Repetir password</label>

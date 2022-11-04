@@ -76,6 +76,17 @@ class MServicio extends Model
     return $resultado;
   }
 
+  /* para mostrar servicios por cliente */
+   public function lista_servPorCliente($idCliente){
+    $this->select("*");
+    $this->join("cliente", 'cliente.id_cliente=servicio.id_cliente');
+    $this->join("empresa_maritima", 'empresa_maritima.id_emp_maritima=servicio.id_emp_maritima');
+    $this->join("ruta", 'ruta.id_ruta=servicio.id_ruta');
+    $this->where("servicio.id_cliente", $idCliente);
+    $resultado = $this->findAll();
+    return $resultado;
+   }
+
   /*para mostrar los datos de reporte por conductor */
   public function InfoServConductor($data)
   {
@@ -163,6 +174,15 @@ class MServicio extends Model
 
     /* var_dump($resultado); */
   }
+  public function BusContendorCli($contenedor,$id_cliente){
+    $this->select("*");
+    $this->join("cliente", 'cliente.id_cliente=servicio.id_cliente');
+
+    $this->where("nro_contenedor", $contenedor);
+    $this->where("servicio.id_cliente", $id_cliente);
+    $resultado = $this->findAll();
+    return $resultado;
+  }
 
   public function BusContendorGeneral($contenedor)
   {
@@ -207,4 +227,16 @@ class MServicio extends Model
     $resultado = $this->findAll();
     return $resultado;
   }
+  public function ContarServicio(){
+    $this->select("*");
+    $resultado = $this->countAllResults();
+    return $resultado;
+  }
+  public function contarServCli($idCli){
+    $this->select("*");
+    $this->where("id_cliente", $idCli);
+    $resultado = $this->countAllResults();
+    return $resultado;
+  }
+  
 }

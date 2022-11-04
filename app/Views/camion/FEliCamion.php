@@ -6,7 +6,7 @@
 </div>
 <div class="modal-body">
 
-<h4 class="text-dange font-italic"> ¿Está seguro de eliminar este registro?</h4>
+<h5 class="text-dange font-italic"> ¿Está seguro de eliminar este registro?</h5>
 
 </div>
 <div class="modal-footer justify-content-between">

@@ -38,4 +38,17 @@ class MCliente extends Model
         $resultado = $this->first();
         return $resultado;
     }
+
+    public function ContarCliente(){
+        $this->select("*");
+        $resultado = $this->countAllResults();
+        return $resultado;
+      }
+    
+      public function fotoCliente($idCli){
+        $this->select("*");
+        $this->where("id_cliente", $idCli);
+        $resultado = $this->first();
+        return $resultado;
+      }
 }

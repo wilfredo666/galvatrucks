@@ -14,6 +14,7 @@
             <div class="form-group col-md-6">
                     <label>Propietario de Camión / Celular</label>
                     <input type="text" class="form-control" id="propietario" name="propietario" value="<?php echo $contratoCam["propietario_camion"];?>" onchange="codigoContrato()">
+                    <span class="text-danger chartjs-render-monitor" id="error-propietario"></span>
                 </div>
                 <div class="form-group col-md-6">
                     <label>Placa</label>

@@ -53,8 +53,9 @@ foreach ($servicios as $serv) {
             <table id="Tabla3" class="table table-bordered table-striped">
                 <thead class="thead-dark">
                     <tr>
-                        <th>COD. SERVICIO</th>
+                        <!-- <th>COD. SERVICIO</th> -->
                         <th>NRO BL/BILL</th>
+                        <th>NRO CONTENEDOR</th>
                         <th>LUGAR PARTIDA</th>
                         <th>DESTINO</th>
                         <th>ESTADO</th>

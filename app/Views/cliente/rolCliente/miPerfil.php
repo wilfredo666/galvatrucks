@@ -10,20 +10,20 @@ $razon_social = $cliente["razon_social_cli"];
         <div class="container col-md-11">
 
             <br>
+            <form id="actualizarDatosCli">
             <div class="row">
-
                 <div class="col-sm-3">
                     <!--left col 3-->
-                    <form id="actualizarDatosCliente">
+                    <!-- <form id="actualizarDatosCliente"> -->
 
-                        <div class="text-center">
-                            <img src="<?php echo base_url(); ?>/assest/img/cliente/<?php echo $cliente["imagen_cli"] ?>" class="avatar img-circle img-thumbnail" alt="avatar" width="75%">
+                    <div class="text-center">
+                        <img src="<?php echo base_url(); ?>/assest/img/cliente/<?php echo $cliente["imagen_cli"] ?>" class="avatar img-circle img-thumbnail" alt="avatar" width="75%">
 
-                            <h6>Cargar Logotipo de la Empresa</h6>
-                            <input type="file" class="form-control" id="fotoCli" name="fotoCli">
-                            <input type="hidden" class="form-control" id="fotoCliActual" name="fotoCliActual" value="<?php echo $cliente["imagen_cli"] ?>">
-                        </div>
-                    </form>
+                        <h6>Cargar Logotipo de la Empresa</h6>
+                        <input type="file" class="form-control" id="fotoCli" name="fotoCli">
+                        <input type="hidden" class="form-control" id="fotoCliActual" name="fotoCliActual" value="<?php echo $cliente["imagen_cli"] ?>">
+                    </div>
+                    <!-- </form> -->
                     </hr><br>
                     <ul class="list-group">
                         <li class="list-group-item text-center bg-info">Información Importante <i class="fas fa-info-circle"></i></li>
@@ -40,7 +40,7 @@ $razon_social = $cliente["razon_social_cli"];
                     <div class="tab-content">
                         <div class="tab-pane active">
                             <hr>
-                            <form id="actualizarDatosCli">
+                            <div>
                                 <div class="row">
                                     <div class="form-group col-md-6">
                                         <label>Razón Social </label>
@@ -98,7 +98,7 @@ $razon_social = $cliente["razon_social_cli"];
                                     <div class="form-group col-md-6">
                                         <label>Contraseña</label>
                                         <input type="password" class="form-control" name="password" id="password" value="<?php echo $cliente["pass_usuario"]; ?>">
-                                        <input type="hidden" name="passwordActual"  value="<?php echo $cliente["pass_usuario"]; ?>">
+                                        <input type="hidden" name="passwordActual" value="<?php echo $cliente["pass_usuario"]; ?>">
                                         <p class="text-danger font-italic" id="error-password"></p>
                                     </div>
                                     <div class="form-group col-md-6">
@@ -118,7 +118,7 @@ $razon_social = $cliente["razon_social_cli"];
                                         <!--    <button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button> -->
                                     </div>
                                 </div>
-                            </form>
+                            </div>
 
                             <hr>
 
@@ -129,7 +129,7 @@ $razon_social = $cliente["razon_social_cli"];
                 </div>
                 <!--/tab-content-->
             </div>
-
+            </form>
 
 
 

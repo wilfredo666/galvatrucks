@@ -21,20 +21,32 @@
                     </div>
                     <div class="form-group col-md-9">
                         <label>Solicitud de Servicio: </label><span class="text-muted"> Seleccionar obligatorio</span>
-                        <select name="idSolicitud" id="idSolicitud" class="form-control ">
-                            <option value="">-- Seleccionar --</option>
-                            <?php
-                            foreach ($solicitudServ as $soli) {
-                                $idSoli = $soli['id_solicitud'];
-                                $fechaSoli= date('d-m-Y', strtotime($soli['fecha_solicitud']));
-                                $cli = $soli['razon_social_cli'];
-                            ?>
-                                <option value="<?php echo $idSoli ?>"><?php echo "Solicitud: ".$idSoli ." | ". $fechaSoli ." | ". $cli?></option>
-                            <?php
+
+
+                        <?php
+                        if ($solicitudServ != null) {
+                        ?>
+                           <select name="idSolicitud" id="idSolicitud" class="form-control ">
+                                <option value="">-- Seleccionar --</option>
+                                <?php
+                                foreach ($solicitudServ as $soli) {
+                                    $idSoli = $soli['id_solicitud'];
+                                    $fechaSoli = date('d-m-Y', strtotime($soli['fecha_solicitud']));
+                                    $cli = $soli['razon_social_cli'];
+                                ?>
+                                    <option value="<?php echo $idSoli ?>"><?php echo "Solicitud: " . $idSoli . " | " . $fechaSoli . " | " . $cli ?></option>
+                            </select>
+                            <input type="hidden" class="form-control font-italic" id="IdSolicitado" name="IdSolicitado" value="<?php echo $idSoli ?>">
+                            <span class="text-danger chartjs-render-monitor" id="error-solicitud"></span> 
+                        <?php
+                        }  } else {
+                        ?>
+                           <input type="text" class="form-control font-italic" id="idSolicitud" name="idSolicitud" value="<?php echo 0 ?>"> 
+
+                    <?php
+                               
                             }
-                            ?>
-                        </select>
-                        <span class="text-danger chartjs-render-monitor" id="error-solicitud"></span>
+                    ?>
                     </div>
                     <div class="form-group col-md-6">
                         <label>Cliente</label>

@@ -98,6 +98,10 @@ class CServicio extends BaseController
 
     $observacion = $_POST["observacion"];
 
+    $data2 = array(
+      "activo_soli_serv" => 1
+  );
+
     $data = array(
       "cod_servicio" => $codServicio,
       "id_cliente" => $servCliente,
@@ -122,6 +126,7 @@ class CServicio extends BaseController
     );
     /* var_dump($data); */
     $this->MServicio->insert($data);
+    $this->MSolicitudServicio->update($idSoli,$data2);
   }
 
   /* --------------------------------------
@@ -136,6 +141,7 @@ class CServicio extends BaseController
       "servicio2" => $this->MServicio->InfoServicio2($id),
       "servicio3" => $this->MServicio->InfoServicio3($id)
     );
+    /* var_dump($data); */
     echo view("servicio/MVerServicio", $data);
   }
 
@@ -384,4 +390,40 @@ class CServicio extends BaseController
     $dompdf->render();
     $dompdf->stream();
   } */
+/* ===========================================================
+    ---------------SERVICIOS DEL CLIENTE EN PANEL CLIENTE ====
+==============================================================*/
+  public function servCliente(){
+    $id_cliente=session("usuario.id_cliente");
+
+    $data = array(
+      "servicio" => $this->MServicio->lista_servPorCliente($id_cliente)
+    );
+
+    echo view('header');
+    echo view('servicio/servicioCliente', $data);
+    echo view('footer');
+    /* var_dump($data); */
+  }
+  /* PARA BUCAR CONT SOLO DE CLIENTE */
+  public function seguimientoContCli(){
+    echo view('header');
+    echo view("servicio/seguimientoContCli");
+    echo view('footer');
+  }
+  public function FBuscarMovimientoCli(){
+
+    $id_cliente=session("usuario.id_cliente");
+    $contenedor = $this->request->uri->getSegment(3);
+
+    $data = array(
+      "busContenedor" => $this->MServicio->BusContendorCli($contenedor,$id_cliente),
+      "movContenedor" => $this->MMovimientosContenedor->ListaMovContenedor($contenedor),
+      "ultimoMovimiento" => $this->MMovimientosContenedor->UltimoMovimiento($contenedor)
+    );
+    echo view("servicio/FLlenarContenedorCli", $data);
+
+    /* var_dump($data); */
+  }
+
 }

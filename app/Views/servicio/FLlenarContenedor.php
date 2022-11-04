@@ -1,3 +1,24 @@
+<!-- <?php
+if ($ultimoMovimiento == null and $movContenedor== " ") {
+?>
+    <script>
+        /* let $ultimoMovimiento = 0;
+            if ($ultimoMovimiento != null) { */
+        Swal.fire({
+            icon: 'error',
+            title: 'El contenedor no existe...!',
+            text: 'Verifique el número de contenedor ingresado',
+            showConfirmButton: false,
+        })
+        setTimeout(function() {
+            location.reload()
+        }, 2800)
+    /* } */
+    </script>
+<?php
+}
+?> -->
+
 <?php
 foreach ($busContenedor as $datos) {
     $idServicio = $datos["id_servicio"];
@@ -21,15 +42,15 @@ foreach ($busContenedor as $datos) {
             let $estadoServ = 0;
             if ($estadoServ == 0) {
                 Swal.fire({
-                    icon: 'error',
-                    title: 'El contenedor no esta activo.',
-                    text: 'Servicio Finalizado',
+                    icon: 'success',
+                    title: 'Servicio Finalizado',
+                    text: 'Éste servicio se encuentra finalizado',
                     showConfirmButton: false,
                     /* footer: '<p>Consulte con la empresa GALVATRUCKS SRL</p>' */
                 })
                 setTimeout(function() {
                     location.reload()
-                }, 2200)
+                }, 2600)
             }
         </script>
 
@@ -96,8 +117,17 @@ foreach ($busContenedor as $datos) {
                 </div>
                 <div class="col-md-4 text-center  col-sm-12 arribo">
                     <i class="fas fa-map-marker-alt fa-2x fa-lg mt-4"></i>
-                    <p class="parr">Ultimo punto de Movimiento</p>
-                    <p class="parr"><?php echo $ultimoMovimiento["ubicacion_mov"]; ?></p>
+                    <p class="parr">Último punto de Movimiento</p>
+                    <?php if ($ultimoMovimiento != null) {
+                    ?>
+                        <p class="parr"><?php echo $ultimoMovimiento["ubicacion_mov"]; ?></p>
+                    <?php
+                    } else {
+                    ?>
+                        <p class="parr text-red">Sin Movimientos</p>
+                    <?php
+                    } ?>
+
                 </div>
             </div>
             <div class="col-md-4">
@@ -128,7 +158,7 @@ foreach ($busContenedor as $datos) {
                         <!-- The time line -->
                         <div class="timeline">
                             <!-- timeline time label -->
-                            <?php if (session("rol") == "Administrador") {
+                            <?php if (session("usuario.rol") == "Administrador") {
                             ?>
                                 <div class="time-label">
                                     <span style="background-color: #f4f6f9;">Movimientos</span>

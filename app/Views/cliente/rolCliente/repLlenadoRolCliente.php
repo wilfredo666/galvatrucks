@@ -1,7 +1,8 @@
 <?php
 foreach ($servicios as $value) {
-    $cod_servicio = $value['cod_servicio'];
+    /* $cod_servicio = $value['cod_servicio']; */
     $num_bill = $value['num_bill'];
+    $nro_contenedor = $value['nro_contenedor'];
     $servicioFecha = $value['fecha_inicio_servicio'];
     $origenMerc = $value['origen_mercaderia'];
     $DestinoMerc = $value['destino_mercaderia'];
@@ -10,8 +11,8 @@ foreach ($servicios as $value) {
     $fechaServ = date('d-m-Y', strtotime($servicioFecha));
 ?>
     <tr>
-        <td><?php echo $cod_servicio; ?></td>
         <td><?php echo $num_bill; ?></td>
+        <td><?php echo $nro_contenedor; ?></td>
         <td><?php echo $origenMerc; ?></td>
         <td><?php echo $DestinoMerc; ?></td>
         <?php

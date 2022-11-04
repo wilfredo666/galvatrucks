@@ -6,7 +6,7 @@ function FAnadirPago(id){
     var obj = "";
     $.ajax({
       type: "POST",
-      url: "CAñadirPago/"+id,
+      url: "CAnadirPago/"+id,
       data: obj,
       success: function (data) {
         /* console.log(data) */
@@ -52,7 +52,7 @@ function buscarBill(){
         url: "FBuscarBill/"+nroBill,
         data: obj,
         success: function (data) {
-           /* console.log(data)*/
+           /* console.log(data) */
           $("#contenido").html(data)
         }
       })

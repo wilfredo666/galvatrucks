@@ -25,6 +25,7 @@
                             <option value="SEMIREMOLQUE">SEMIREMOLQUE</option>
                             <option value="REMOLQUE">REMOLQUE</option>
                             <option value="SEMIREMOLQUE CON BARANDAS">SEMIREMOLQUE CON BARANDAS</option>
+                            <option value="OTROS">OTROS</option>
                         </select>
                         <p class="text-danger" id="error-clase"></p>
                     </div>
@@ -69,6 +70,7 @@
                             <option value="VOLVO">VOLVO</option>
                             <option value="NISSAN">NISSAN</option>
                             <option value="RENAULT-Nissan">RENAULT-Nissan</option>
+                            <option value="OTROS">OTROS</option>
                         </select>
                     </div>
                     <div class="form-group col-md-4">

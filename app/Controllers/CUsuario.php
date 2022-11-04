@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\MUsuario;
 use App\Models\MServicio;
+use App\Models\MSolicitudServicio;
 
 class CUsuario extends BaseController
 {
@@ -11,6 +12,7 @@ class CUsuario extends BaseController
   {
     $this->MUsuario = new MUsuario();
     $this->MServicio = new MServicio();
+    $this->MSolicitudServicio = new MSolicitudServicio();
   }
 
   public function index()
@@ -29,7 +31,9 @@ class CUsuario extends BaseController
     $id_cliente = session("usuario.id_cliente");
         $data = array(
             /* "cliente" => $this->MCliente->InfoCliente($id), */
-            "servicios" => $this->MServicio->InfoServClienteContador($id_cliente)
+            "servicios" => $this->MServicio->InfoServClienteContador($id_cliente),
+            "servicio" => $this->MServicio->contarServCli($id_cliente),
+            "servicioPen" => $this->MSolicitudServicio->contarServPenCli($id_cliente,"pendiente"),
         );
     echo view('header');
     echo view('panel_principal',$data);

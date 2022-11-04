@@ -55,27 +55,26 @@
 
       <!-- Barra principal con fullscreen -->
       <ul class="navbar-nav ml-auto">
+      <?php if (session("usuario.rol") == "Administrador" || session("usuario.rol") == "Auxiliar") {
+        ?>
       <li class="nav-item dropdown">
         <a class="nav-link" data-toggle="dropdown" href="#">
           <i class="far fa-bell"></i>
           <span class="badge badge-warning navbar-badge"><?php echo session("solPendiente");?></span>
         </a>
+       
         <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
           <span class="dropdown-item dropdown-header">Solicitudes</span>
           <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
+          <a href="<?php echo base_url() ?>/CCliente/solicitudServ" class="dropdown-item">
             <i class="fas fa-envelope mr-2"></i> Tienes <?php echo session("solPendiente");?> solicitudes pendientes
           </a>
-          <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-            <span class="dropdown-item dropdown-header">Solicitudes</span>
-            <div class="dropdown-divider"></div>
-            <a href="#" class="dropdown-item">
-              <i class="fas fa-envelope mr-2"></i> Tienes 4 solicitudes pendientes
-            </a>
             <div class="dropdown-divider"></div>
             <a href="<?php echo base_url() ?>/CCliente/solicitudServ" class="dropdown-item dropdown-footer">Ver todas las Solicitudes</a>
           </div>
         </li>
+        <?php
+        } ?>
         <li class="nav-item">
           <a class="nav-link" data-widget="fullscreen" href="#" usuario.role="button">
             <i class="fas fa-expand-arrows-alt"></i>
@@ -92,7 +91,6 @@
         <img src="<?php echo base_url(); ?>/assest/img/logo.jpg" alt="AdminLTE Logo" class="brand-image img-circle elevation-2" style="opacity: .8">
         <span class="brand-text font-weight-light">Galvatrucks SRL</span>
       </a>
-
       <!-- Sidebar -->
       <div class="sidebar">
         <!-- Sidebar user panel (optional) -->
@@ -100,9 +98,9 @@
         ?>
           <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
-              <img src="<?php echo base_url(); ?>/assest/img/cliente2.jpg" class="img-circle elevation-5" alt="User Image">
+              <img src="<?php echo base_url(); ?>/assest/img/admin.jpg" class="img-circle elevation-5" alt="User Image">
             </div>
-            <div class="info">
+            <div class="info" style="font-size: 15px;">
               <!-- colocar para sessiones session('usuario') y descomentar la lineas SESSIONS Del controlador HOME linea 30,31 -->
               <a class=""><?php echo session("usuario.nombre_usuario"); ?></a>
             </div>
@@ -114,9 +112,9 @@
         ?>
           <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
-              <img src="<?php echo base_url(); ?>/assest/img/cli.jpg" class="img-circle elevation-5" alt="User Image" style="width: 40px;">
+              <img src="<?php echo base_url(); ?>/assest/img/cliente/<?php echo session("usuario.imagen_cli"); ?>" class="img-circle elevation-5" alt="User Image" style="width: 40px;">
             </div>
-            <div class="info">
+            <div class="info" style="font-size: 15px;">
               <!-- colocar para sessiones session('usuario') y descomentar la lineas SESSIONS Del controlador HOME linea 30,31 -->
               <a class=""><?php echo session("usuario.nombre_usuario"); ?></a>
             </div>
@@ -412,7 +410,13 @@ with font-awesome or any other icon font library -->
                       </a>
                     </li>
                     <li class="nav-item">
-                      <a href="<?php echo base_url(); ?>/CServicio/seguimientoContenedor" class="nav-link">
+                      <a href="<?php echo base_url(); ?>/CServicio/servCliente" class="nav-link">
+                        <i class="nav-icon fas fa-truck text-warning"></i>
+                        <p>Mis Servicios</p>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="<?php echo base_url(); ?>/CServicio/seguimientoContCli" class="nav-link">
                         <i class="nav-icon fas fa-map-marked-alt text-warning"></i>
                         <p>Seguimiento de contenedores</p>
                       </a>
@@ -429,12 +433,12 @@ with font-awesome or any other icon font library -->
                         <p>Mis Reportes</p>
                       </a>
                     </li>
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                       <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-money-check text-warning"></i>
                         <p>Mis notas de Débito</p>
                       </a>
-                    </li>
+                    </li> -->
                   </ul>
                 </li>
               <?php

@@ -39,13 +39,13 @@
               <td><?php echo $contacto; ?></td>
               <td>
                 <div class="text-center">
-                  <button class="btn btn-outline-info btn-circle" onclick="MVerEmpMaritima(<?php echo $idEmp; ?>)">
+                  <button class="btn btn-sm btn-outline-info btn-circle" onclick="MVerEmpMaritima(<?php echo $idEmp; ?>)">
                     <i class="fas fa-eye"></i>
                   </button>
-                  <button class="btn btn-warning btn-circle" onclick="MEditarEmpMaritima(<?php echo $idEmp; ?>)">
+                  <button class="btn btn-sm btn-warning btn-circle" onclick="MEditarEmpMaritima(<?php echo $idEmp; ?>)">
                     <i class="fas fa-edit"></i>
                   </button>
-                  <button class="btn btn-outline-danger btn-circle" onclick="MEliminarEmpMaritima(<?php echo $idEmp; ?>)">
+                  <button class="btn btn-sm btn-outline-danger btn-circle" onclick="MEliminarEmpMaritima(<?php echo $idEmp; ?>)">
                     <i class="fas fa-trash-alt"></i>
                   </button>
                 </div>

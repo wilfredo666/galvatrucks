@@ -40,6 +40,7 @@ class MPago extends Model
     public function BusPagosBillId($id){
         $this->select("*");
         $this->where("id_servicio", $id);
+        $this->where("activo_pago", 1);
         $resultado = $this->findAll();
         return $resultado;
     }
@@ -47,6 +48,7 @@ class MPago extends Model
     public function sumarPagos($id){
         $this->select("sum(monto) AS sumaMonto");
         $this->where("id_servicio", $id);
+        $this->where("activo_pago", 1);
         $resultado = $this->first();
         return $resultado;
     }

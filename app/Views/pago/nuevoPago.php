@@ -26,7 +26,7 @@
                                         <span class="text-danger chartjs-render-monitor" id="error-bill"></span>
                                     </div>
                                     <div class="form-group col-md-1 col-sm-2  ">
-                                        <label class="font-weight-light">Buscar BL</label>
+                                        <label class="font-weight-light">Búsqueda</label>
                                         <button type="button" class="btn btn-outline-warning form-control " style="width: 60px ;" id="busqueda" name="busqueda" onclick="buscarBill()"><i class="fas fa-search"></i></button>
                                     </div>
                                     <div class="form-group col-md-5">

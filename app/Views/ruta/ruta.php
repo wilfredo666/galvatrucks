@@ -35,13 +35,13 @@
               <td><?php echo $combustible; ?></td>
               <td>
                 <div class="text-center">
-                  <button class="btn btn-outline-info btn-circle" onclick="MVerRuta(<?php echo $idRuta; ?>)">
+                  <button class="btn btn-sm btn-outline-info btn-circle" onclick="MVerRuta(<?php echo $idRuta; ?>)">
                     <i class="fas fa-eye"></i>
                   </button>
-                  <button class="btn btn-warning btn-circle" onclick="MEditarRuta(<?php echo $idRuta; ?>)">
+                  <button class="btn btn-sm btn-warning btn-circle" onclick="MEditarRuta(<?php echo $idRuta; ?>)">
                     <i class="fas fa-edit"></i>
                   </button>
-                  <button class="btn btn-outline-danger btn-circle" onclick="MEliminarRuta(<?php echo $idRuta; ?>)">
+                  <button class="btn btn-sm btn-outline-danger btn-circle" onclick="MEliminarRuta(<?php echo $idRuta; ?>)">
                     <i class="fas fa-trash-alt"></i>
                   </button>
                 </div>
