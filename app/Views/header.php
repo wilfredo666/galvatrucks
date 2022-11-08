@@ -55,24 +55,24 @@
 
       <!-- Barra principal con fullscreen -->
       <ul class="navbar-nav ml-auto">
-      <?php if (session("usuario.rol") == "Administrador" || session("usuario.rol") == "Auxiliar") {
+        <?php if (session("usuario.rol") == "Administrador" || session("usuario.rol") == "Auxiliar") {
         ?>
-      <li class="nav-item dropdown">
-        <a class="nav-link" data-toggle="dropdown" href="#">
-          <i class="far fa-bell"></i>
-          <span class="badge badge-warning navbar-badge"><?php echo session("solPendiente");?></span>
-        </a>
-       
-        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-          <span class="dropdown-item dropdown-header">Solicitudes</span>
-          <div class="dropdown-divider"></div>
-          <a href="<?php echo base_url() ?>/CCliente/solicitudServ" class="dropdown-item">
-            <i class="fas fa-envelope mr-2"></i> Tienes <?php echo session("solPendiente");?> solicitudes pendientes
-          </a>
-            <div class="dropdown-divider"></div>
-            <a href="<?php echo base_url() ?>/CCliente/solicitudServ" class="dropdown-item dropdown-footer">Ver todas las Solicitudes</a>
-          </div>
-        </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link" data-toggle="dropdown" href="#">
+              <i class="far fa-bell"></i>
+              <span class="badge badge-warning navbar-badge"><?php echo session("solPendiente"); ?></span>
+            </a>
+
+            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+              <span class="dropdown-item dropdown-header">Solicitudes</span>
+              <div class="dropdown-divider"></div>
+              <a href="<?php echo base_url() ?>/CCliente/solicitudServ" class="dropdown-item">
+                <i class="fas fa-envelope mr-2"></i> Tienes <?php echo session("solPendiente"); ?> solicitudes pendientes
+              </a>
+              <div class="dropdown-divider"></div>
+              <a href="<?php echo base_url() ?>/CCliente/solicitudServ" class="dropdown-item dropdown-footer">Ver todas las Solicitudes</a>
+            </div>
+          </li>
         <?php
         } ?>
         <li class="nav-item">
@@ -94,7 +94,7 @@
       <!-- Sidebar -->
       <div class="sidebar">
         <!-- Sidebar user panel (optional) -->
-        <?php if (session("usuario.rol") == "Administrador") {
+        <?php if (session("usuario.rol") == "Administrador" || session("usuario.rol") == "Auxiliar") {
         ?>
           <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
@@ -237,12 +237,18 @@ with font-awesome or any other icon font library -->
                   </p>
                 </a>
                 <ul class="nav nav-treeview">
-                  <li class="nav-item">
-                    <a href="<?php echo base_url(); ?>/CCliente/solicitudServ" class="nav-link">
-                      <i class="nav-icon fas fa-check-circle text-warning"></i>
-                      <p>Solicitud de Servicios</p>
-                    </a>
-                  </li>
+
+                  <?php if (session("usuario.rol") == "Administrador") {
+                  ?>
+                    <li class="nav-item">
+                      <a href="<?php echo base_url(); ?>/CCliente/solicitudServ" class="nav-link">
+                        <i class="nav-icon fas fa-check-circle text-warning"></i>
+                        <p>Solicitud de Servicios</p>
+                      </a>
+                    </li>
+                  <?php
+                  } ?>
+
                   <li class="nav-item">
                     <a href="<?php echo base_url(); ?>/CServicio" class="nav-link">
                       <i class="nav-icon fab fa-shirtsinbulk text-warning"></i>
@@ -325,7 +331,7 @@ with font-awesome or any other icon font library -->
                 </a>
               </li>
 
-             <!-- < li class="nav-item">
+              <!-- < li class="nav-item">
                 <a href="#" class="nav-link">
                   <i class="nav-icon  fas fa-cogs"></i>
                   <p>
@@ -335,7 +341,7 @@ with font-awesome or any other icon font library -->
                 </a>
                 <ul class="nav nav-treeview">
                   <li class="nav-item">
-                    <a href="<?php  base_url(); ?>/CUtilidades" class="nav-link">
+                    <a href="<?php base_url(); ?>/CUtilidades" class="nav-link">
                       <i class="nav-icon fas fa-database text-warning"></i>
                       <p>BackUp Base de Datos</p>
                     </a>
@@ -343,7 +349,7 @@ with font-awesome or any other icon font library -->
                 </ul>
                 </li> -->
 
-                <!-- <li class="nav-item">
+              <!-- <li class="nav-item">
                 <a href="#" class="nav-link">
                   <i class="nav-icon fas fa-folder-open"></i>
                   <p>
@@ -373,83 +379,83 @@ with font-awesome or any other icon font library -->
 
                 </ul>
               </li> -->
-              <?php
+            <?php
             }
-              ?>
+            ?>
 
 
 
-              <!-- PARA LAS VISTAS DEL ROL CLIENTE -->
-              <?php
-              if (session("usuario.rol") == "Cliente") {
-              ?>
-                <!-- MI PERFIL -->
-                <li class="nav-item">
-                  <a href="<?php echo base_url(); ?>/CCliente/miPerfil" class="nav-link">
-                    <i class="nav-icon fas fa-user-cog"></i>
-                    <p>
-                      Mi Perfil
-                    </p>
-                  </a>
-                </li>
-                <!-- FUNCIONES DEL ROL CLIENTE -->
-                <li class="nav-header">OPCIONES</li>
-                <li class="nav-item">
-                  <a href="#" class="nav-link">
-                    <i class="nav-icon fas fa-layer-group"></i>
-                    <p>
-                      Funciones
-                      <i class="fas fa-angle-left right"></i>
-                    </p>
-                  </a>
-                  <ul class="nav nav-treeview">
-                    <li class="nav-item">
-                      <a href="<?php echo base_url(); ?>/CSolicitudServicio" class="nav-link">
-                        <i class="nav-icon far fa-plus-square text-warning"></i>
-                        <p>Solicitar Servicio</p>
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="<?php echo base_url(); ?>/CServicio/servCliente" class="nav-link">
-                        <i class="nav-icon fas fa-truck text-warning"></i>
-                        <p>Mis Servicios</p>
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="<?php echo base_url(); ?>/CServicio/seguimientoContCli" class="nav-link">
-                        <i class="nav-icon fas fa-map-marked-alt text-warning"></i>
-                        <p>Seguimiento de contenedores</p>
-                      </a>
-                    </li>
-                    <!--                   <li class="nav-item">
+            <!-- PARA LAS VISTAS DEL ROL CLIENTE -->
+            <?php
+            if (session("usuario.rol") == "Cliente") {
+            ?>
+              <!-- MI PERFIL -->
+              <li class="nav-item">
+                <a href="<?php echo base_url(); ?>/CCliente/miPerfil" class="nav-link">
+                  <i class="nav-icon fas fa-user-cog"></i>
+                  <p>
+                    Mi Perfil
+                  </p>
+                </a>
+              </li>
+              <!-- FUNCIONES DEL ROL CLIENTE -->
+              <li class="nav-header">OPCIONES</li>
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fas fa-layer-group"></i>
+                  <p>
+                    Funciones
+                    <i class="fas fa-angle-left right"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="<?php echo base_url(); ?>/CSolicitudServicio" class="nav-link">
+                      <i class="nav-icon far fa-plus-square text-warning"></i>
+                      <p>Solicitar Servicio</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="<?php echo base_url(); ?>/CServicio/servCliente" class="nav-link">
+                      <i class="nav-icon fas fa-truck text-warning"></i>
+                      <p>Mis Servicios</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="<?php echo base_url(); ?>/CServicio/seguimientoContCli" class="nav-link">
+                      <i class="nav-icon fas fa-map-marked-alt text-warning"></i>
+                      <p>Seguimiento de contenedores</p>
+                    </a>
+                  </li>
+                  <!--                   <li class="nav-item">
                     <a href="#" class="nav-link">
                       <i class="nav-icon fas fa-file-upload text-warning"></i>
                       <p>Subir Archivos de Importacion</p>
                     </a>
                   </li> -->
-                    <li class="nav-item">
-                      <a href="<?php echo base_url(); ?>/CCliente/repRolCliente" class="nav-link">
-                        <i class="nav-icon fas fa-print text-warning"></i>
-                        <p>Mis Reportes</p>
-                      </a>
-                    </li>
-                    <!-- <li class="nav-item">
+                  <li class="nav-item">
+                    <a href="<?php echo base_url(); ?>/CCliente/repRolCliente" class="nav-link">
+                      <i class="nav-icon fas fa-print text-warning"></i>
+                      <p>Mis Reportes</p>
+                    </a>
+                  </li>
+                  <!-- <li class="nav-item">
                       <a href="#" class="nav-link">
                         <i class="nav-icon fas fa-money-check text-warning"></i>
                         <p>Mis notas de Débito</p>
                       </a>
                     </li> -->
-                  </ul>
-                </li>
-              <?php
-              }
-              ?>
-              <li class="nav-item">
-                <a href="<?php echo base_url(); ?>/Home/salir" class="nav-link">
-                  <i class="nav-icon fas fa-power-off text-info "></i>
-                  <p>Cerrar sesión</p>
-                </a>
+                </ul>
               </li>
+            <?php
+            }
+            ?>
+            <li class="nav-item">
+              <a href="<?php echo base_url(); ?>/Home/salir" class="nav-link">
+                <i class="nav-icon fas fa-power-off text-info "></i>
+                <p>Cerrar sesión</p>
+              </a>
+            </li>
           </ul>
         </nav>
         <!-- /.sidebar-menu -->
