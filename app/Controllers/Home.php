@@ -43,6 +43,11 @@ class Home extends BaseController
     $usuario = $_POST["usuario"];
     $password = $_POST["password"];
     //fin de la validación
+    
+    if(session("usuario.login_usuario")==$usuario){
+      return redirect()->to(base_url('/'))->with("errors", ["credenciales" => "Acceso no autorizado, usuario en uso"]);
+    }
+
     $data = array(
       "usuario" => $usuario
       /*solo quitar para pass no hasheados */
@@ -75,7 +80,7 @@ class Home extends BaseController
           /* "fotoCli"=>$MCliente->fotoCliente($id), */
         );
       }
-
+      
       $session = session();
       $session->set($data);
 

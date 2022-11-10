@@ -9,36 +9,36 @@ use CodeIgniter\Filters\Honeypot;
 
 class Filters extends BaseConfig
 {
-    /**
+  /**
      * Configures aliases for Filter classes to
      * make reading things nicer and simpler.
      *
      * @var array
      */
-    public $aliases = [
-        'csrf'     => CSRF::class,
-        'toolbar'  => DebugToolbar::class,
-        'honeypot' => Honeypot::class,
-        'acceso' => \App\Filters\acceso::class
-    ];
+  public $aliases = [
+    'csrf'     => CSRF::class,
+    'toolbar'  => DebugToolbar::class,
+    'honeypot' => Honeypot::class,
+    'acceso' => \App\Filters\acceso::class
+  ];
 
-    /**
+  /**
      * List of filter aliases that are always
      * applied before and after every request.
      *
      * @var array
      */
-    public $globals = [
-        'before' => [
+  public $globals = [
+    'before' => [
 
-        ],
-        'after' => [
-            'toolbar',
-            // 'honeypot',
-        ],
-    ];
+    ],
+    'after' => [
+      'toolbar',
+      // 'honeypot',
+    ],
+  ];
 
-    /**
+  /**
      * List of filter aliases that works on a
      * particular HTTP method (GET, POST, etc.).
      *
@@ -47,9 +47,9 @@ class Filters extends BaseConfig
      *
      * @var array
      */
-    public $methods = [];
+  public $methods = [];
 
-    /**
+  /**
      * List of filter aliases that should run on any
      * before or after URI patterns.
      *
@@ -58,21 +58,21 @@ class Filters extends BaseConfig
      *
      * @var array
      */
-    public $filters = [
-        'acceso'=>[
-            'before'=>[
-                "/CAsignacion",
-                "/CCamion",
-                "/CCliente",
-                "/CConductor",
-                "/CContratoCamion",
-                "/CEmpresaMaritima",
-                "/CUsuario",
-                "/CServicio",
-                "/CRuta"
-            ]
-            
-        ]
+  public $filters = [
+    'acceso'=>[
+      'before'=>[
+        "/CAsignacion",
+        "/CCamion",
+        "/CCliente",
+        "/CConductor",
+        "/CContratoCamion",
+        "/CEmpresaMaritima",
+        "/CUsuario",
+        "/CServicio",
+        "/CRuta"
+      ]
 
-    ];
+    ]
+
+  ];
 }

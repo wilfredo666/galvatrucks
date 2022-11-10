@@ -282,9 +282,11 @@ function RegMovimiento(id){
            showConfirmButton: false,
            timer: 1000
          })
-           setTimeout(function(){
+         $("#modal-lg").modal("hide")
+         buscarContenedor()
+/*           setTimeout(function(){
                location.reload()
-             },1200)
+             },1200)*/
        }
      })
 } 
