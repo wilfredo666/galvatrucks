@@ -34,9 +34,11 @@ function RegPago(){
             showConfirmButton: false,
             timer: 1000
           })
-            setTimeout(function(){
+            /* setTimeout(function(){
                 location.reload()
-              },1200)
+              },1200) */
+              $("#modal-default").modal("hide")
+              buscarBill()
          /*  console.log(data); */
         }
       })
