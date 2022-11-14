@@ -15,7 +15,17 @@
                 </div>
 
                 <div class="col-md-4 col-sm-6">
-                    <input type="text" class="form-control form-control input-seguimiento" id="numContenedor" name="numContenedor" style='text-transform:uppercase'>
+                    <input type="text" class="form-control form-control input-seguimiento" autocomplete="off" id="numContenedor" name="numContenedor" style='text-transform:uppercase' list="listaContenedores">
+                    <datalist id="listaContenedores">
+                        <?php
+                        foreach ($buscarContenedor as $bus) {
+                            $cont = $bus["nro_contenedor"];
+                        ?>
+                            <option value="<?php echo $cont ?>"></option>
+                        <?php
+                        }
+                        ?>
+                    </datalist>
                     <p class="font-italic intruzca" style="font-size: 1.1rem;">Introduzca el Número del Contenedor</p>
                 </div>
                 <div class="col-md-2 col-sm-6 butt">

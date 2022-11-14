@@ -100,7 +100,7 @@ class CServicio extends BaseController
 
     $data2 = array(
       "activo_soli_serv" => 1
-  );
+    );
 
     $data = array(
       "cod_servicio" => $codServicio,
@@ -126,7 +126,7 @@ class CServicio extends BaseController
     );
     /* var_dump($data); */
     $this->MServicio->insert($data);
-    $this->MSolicitudServicio->update($idSoli,$data2);
+    $this->MSolicitudServicio->update($idSoli, $data2);
   }
 
   /* --------------------------------------
@@ -259,9 +259,14 @@ class CServicio extends BaseController
     --------------------------------------*/
   public function seguimientoContenedor()
   {
+
+    $data = array(
+      "buscarContenedor" => $this->MServicio->BuscarContendor(),
+    );
     echo view('header');
-    echo view("servicio/seguimientoContenedor");
+    echo view("servicio/seguimientoContenedor", $data);
     echo view('footer');
+    /* var_dump($data); */
   }
   /* buscar contenendor */
   public function FBuscarMovimiento()
@@ -351,8 +356,11 @@ class CServicio extends BaseController
 
   public function notaDebito()
   {
+    $data = array(
+      "datosServ" => $this->MServicio->findAll()
+    );
     echo view('header');
-    echo view('notaDebito/FNotaDebito');
+    echo view('notaDebito/FNotaDebito',$data);
     echo view('footer');
   }
   public function FBuscarBL()
@@ -368,19 +376,19 @@ class CServicio extends BaseController
   }
   public function GeneraNotaDebito()
   {
-    $id=$_GET["id"];
+    $id = $_GET["id"];
     $data = array(
       "busBill" => $this->MServicio->BusNroBillId($id),
       "pagosBill" => $this->MPago->BusPagosBillId($id),
       "sumaPagos" => $this->MPago->sumarPagos($id),
     );
 
-/* var_dump($data); */
-    $dompdf= new \Dompdf\Dompdf();
+    /* var_dump($data); */
+    $dompdf = new \Dompdf\Dompdf();
     $dompdf->loadHtml(view('notaDebito/generaNotaDebito', $data));
-    $dompdf->setPaper('Latter','portrait');
+    $dompdf->setPaper('Latter', 'portrait');
     $dompdf->render();
-    $dompdf->stream("NotaDebito-".$id.".pdf", ["Attachment"=>0]);
+    $dompdf->stream("NotaDebito-" . $id . ".pdf");
   }
   /* public function ImprimirReporte()
   {
@@ -390,11 +398,12 @@ class CServicio extends BaseController
     $dompdf->render();
     $dompdf->stream();
   } */
-/* ===========================================================
+  /* ===========================================================
     ---------------SERVICIOS DEL CLIENTE EN PANEL CLIENTE ====
 ==============================================================*/
-  public function servCliente(){
-    $id_cliente=session("usuario.id_cliente");
+  public function servCliente()
+  {
+    $id_cliente = session("usuario.id_cliente");
 
     $data = array(
       "servicio" => $this->MServicio->lista_servPorCliente($id_cliente)
@@ -406,18 +415,24 @@ class CServicio extends BaseController
     /* var_dump($data); */
   }
   /* PARA BUCAR CONT SOLO DE CLIENTE */
-  public function seguimientoContCli(){
+  public function seguimientoContCli()
+  {
+    $id_cliente = session("usuario.id_cliente");
+    $data = array(
+      "buscarContenedor" => $this->MServicio->BuscarContendorCliente($id_cliente),
+    );
     echo view('header');
-    echo view("servicio/seguimientoContCli");
+    echo view("servicio/seguimientoContCli",$data);
     echo view('footer');
   }
-  public function FBuscarMovimientoCli(){
+  public function FBuscarMovimientoCli()
+  {
 
-    $id_cliente=session("usuario.id_cliente");
+    $id_cliente = session("usuario.id_cliente");
     $contenedor = $this->request->uri->getSegment(3);
 
     $data = array(
-      "busContenedor" => $this->MServicio->BusContendorCli($contenedor,$id_cliente),
+      "busContenedor" => $this->MServicio->BusContendorCli($contenedor, $id_cliente),
       "movContenedor" => $this->MMovimientosContenedor->ListaMovContenedor($contenedor),
       "ultimoMovimiento" => $this->MMovimientosContenedor->UltimoMovimiento($contenedor)
     );
@@ -425,5 +440,4 @@ class CServicio extends BaseController
 
     /* var_dump($data); */
   }
-
 }

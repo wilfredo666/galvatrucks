@@ -191,6 +191,18 @@ class MServicio extends Model
     $resultado = $this->findAll();
     return $resultado;
   }
+/* para buscar contenedores en el seguimiento y mandar al datalist */
+  public function BuscarContendor(){
+    $this->select("*");
+    $resultado = $this->findAll();
+    return $resultado;
+  }
+  public function BuscarContendorCliente($id_cliente){
+    $this->select("*");
+    $this->where("id_cliente", $id_cliente);
+    $resultado = $this->findAll();
+    return $resultado;
+  }
 
   public function ServContenedor($id_servicio)
   {
