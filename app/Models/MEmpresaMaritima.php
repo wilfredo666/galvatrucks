@@ -11,8 +11,15 @@ class MEmpresaMaritima extends Model
 
     protected $returnType     = 'array';
 
-    protected $allowedFields = ['razon_social_emp', 'nit_emp', 'direccion_emp', 'correo_emp', 'contacto_emp'];
+    protected $allowedFields = ['razon_social_emp', 'nit_emp', 'direccion_emp', 'correo_emp', 'contacto_emp', 'estado_emp_maritima'];
 
+    public function listaNavieras()
+    {
+        $this->select("*");
+        $this->where("estado_emp_maritima", 1);
+        $resultado = $this->findAll();
+        return $resultado;
+    }
 
     public function InfoEmpMaritima($id)
     {

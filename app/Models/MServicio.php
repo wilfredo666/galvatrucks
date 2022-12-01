@@ -11,7 +11,7 @@ class MServicio extends Model
 
   protected $returnType     = 'array';
 
-  protected $allowedFields = ['cod_servicio', 'id_cliente', 'id_emp_maritima', 'fecha_inicio_servicio', 'num_bill', 'nro_contenedor', 'medida_contenedor', 'peso_mercaderia', 'detalle_mercaderia', 'origen_mercaderia', 'destino_mercaderia', 'fecha_arribo', 'fecha_almacen', 'id_asignacion', 'id_contrato_camion', 'id_ruta', 'costo_servicio', 'documento', 'observaciones', 'id_solicitud', 'activo_serv'];
+  protected $allowedFields = ['cod_servicio', 'id_cliente', 'id_emp_maritima', 'fecha_inicio_servicio', 'num_bill', 'nro_contenedor', 'medida_contenedor', 'peso_mercaderia', 'detalle_mercaderia', 'origen_mercaderia', 'destino_mercaderia', 'fecha_arribo', 'fecha_almacen', 'id_asignacion', 'id_contrato_camion', 'id_ruta', 'costo_servicio', 'documento', 'observaciones', 'id_solicitud', 'activo_serv', 'estado_servicio'];
 
   public function InfoServicio($id)
   {
@@ -64,7 +64,7 @@ class MServicio extends Model
     $this->join("cliente", 'cliente.id_cliente=servicio.id_cliente');
     $this->join("empresa_maritima", 'empresa_maritima.id_emp_maritima=servicio.id_emp_maritima');
     $this->join("ruta", 'ruta.id_ruta=servicio.id_ruta');
-    /* $this->where("fecha_arribo ORDER BY fecha_arribo");  */
+    $this->where("estado_servicio", 1); 
     $resultado = $this->findAll();
     return $resultado;
   }

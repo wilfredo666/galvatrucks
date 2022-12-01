@@ -14,7 +14,7 @@ class CRuta extends BaseController
   public function index()
   {
     $data = array(
-      "ruta" => $this->MRuta->findAll()
+      "ruta" => $this->MRuta->listaRutas()
     );
 
     echo view('header');
@@ -101,6 +101,12 @@ class CRuta extends BaseController
   public function EliRuta()
   {
     $id = $this->request->uri->getSegment(3);
-    $this->MRuta->delete($id);
+    /* $this->MRuta->delete($id); */
+
+    $estado_ruta = 0;
+    $data = array(
+      "estado_ruta" => $estado_ruta
+    );
+    $this->MRuta->update($id,$data);
   }
 }

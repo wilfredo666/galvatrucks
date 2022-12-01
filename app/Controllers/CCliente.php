@@ -22,7 +22,7 @@ class CCliente extends BaseController
     public function index()
     {
         $data = array(
-            "cliente" => $this->MCliente->findAll()
+            "cliente" => $this->MCliente->listaClientes()
         );
 
         echo view('header');
@@ -173,7 +173,13 @@ class CCliente extends BaseController
     public function EliCliente()
     {
         $id = $this->request->uri->getSegment(3);
-        $this->MCliente->delete($id);
+       /*  $this->MCliente->delete($id); */
+
+        $estado_cliente = 0;
+        $data = array(
+            "estado_cliente" => $estado_cliente
+        );
+        $this->MCliente->update($id, $data);
     }
     /* REPORTE CLIENTE */
     public function repCliente()
@@ -235,7 +241,8 @@ class CCliente extends BaseController
         /* var_dump($data); */
         echo view('cliente/rolCliente/repLlenadoRolCliente', $data);
     }
-    public function contadorServicio(){
+    public function contadorServicio()
+    {
         $id_cliente = session("usuario.id_cliente");
         $data = array(
             /* "cliente" => $this->MCliente->InfoCliente($id), */
@@ -300,7 +307,7 @@ class CCliente extends BaseController
             $foto = $fotoCli["name"];
             $tmpFoto = $fotoCli["tmp_name"];
             move_uploaded_file($tmpFoto, $ruta . $foto);
-        } 
+        }
 
         /* $pass1 = password_hash($_POST["password"], PASSWORD_DEFAULT); */
         /* var_dump($pass1); */
@@ -313,7 +320,7 @@ class CCliente extends BaseController
             "num_cuenta_cli" => $ctaBancaria,
             "direccion_cli" => $direccion,
             "email_cli" => $correo,
-            "imagen_cli" => $foto   
+            "imagen_cli" => $foto
         );
         $datoPassword = array(
             "pass_usuario" => $password
@@ -399,12 +406,13 @@ PARA LA RESPUESTA A SOLICITUD DE SERVICIO DE CLIENTES
         echo view('footer');
     }
 
-    public function foto(){
-        $id_cliente=session("usuario.id_cliente");
+    public function foto()
+    {
+        $id_cliente = session("usuario.id_cliente");
         $data = array(
             "fotoCli" => $this->MCliente->fotoCliente($id_cliente)
-          );
+        );
         /* var_dump($data); */
-          /* echo view('header',$data); */
+        /* echo view('header',$data); */
     }
 }

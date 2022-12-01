@@ -14,7 +14,7 @@ class CEmpresaMaritima extends BaseController
     public function index()
     {
         $data = array(
-            "empresaMaritima" => $this->MEmpresaMaritima->findAll()
+            "empresaMaritima" => $this->MEmpresaMaritima->listaNavieras()
         );
 
         echo view('header');
@@ -105,6 +105,12 @@ class CEmpresaMaritima extends BaseController
     public function EliEmpMaritima()
     {
         $id = $this->request->uri->getSegment(3);
-        $this->MEmpresaMaritima->delete($id);
+        /* $this->MEmpresaMaritima->delete($id); */
+
+        $estado_emp_maritima = 0;
+        $data = array(
+            "estado_emp_maritima" => $estado_emp_maritima
+        );
+        $this->MEmpresaMaritima->update($id, $data);
     }
 }

@@ -69,10 +69,21 @@ class Filters extends BaseConfig
         "/CEmpresaMaritima",
         "/CUsuario",
         "/CServicio",
-        "/CRuta"
+        "/CServicio/seguimientoContenedor",
+        "/CServicio/notaDebito",
+        "/CRuta",
+        "/CPago",
+        "/CPago/NuevoPago",
+        "/CCliente/solicitudServ",
+        "/CCliente/repCliente",
+        "/CConductor/repConductor",
+        /* para clientes */
+        "/CCliente/miPerfil",
+        "/CSolicitudServicio",
+        "/CServicio/servCliente",
+        "/CServicio/seguimientoContCli",
+        "/CCliente/repRolCliente"
       ]
-
     ]
-
   ];
 }

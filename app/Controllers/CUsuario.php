@@ -18,7 +18,7 @@ class CUsuario extends BaseController
   public function index()
   {
     $data = array(
-      "usuario" => $this->MUsuario->findAll()
+      "usuario" => $this->MUsuario->Usuarios()
     );
 
     echo view('header');
@@ -145,6 +145,13 @@ class CUsuario extends BaseController
   public function EliUsuario()
   {
     $id = $this->request->uri->getSegment(3);
-    $this->MUsuario->delete($id);
+    /* $this->MUsuario->delete($id); */
+
+    $estado_usuario = 0;
+    $data = array(
+      "estado_usuario" => $estado_usuario
+    );
+    $this->MUsuario->update($id,$data);
+
   }
 }

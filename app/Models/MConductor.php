@@ -11,8 +11,16 @@ class MConductor extends Model
 
     protected $returnType     = 'array';
 
-    protected $allowedFields = ['nombre_cond', 'apellido_cond', 'ci_cond', 'tipo_licencia', 'fecha_nac_cond', 'direccion_cond', 'email_cond', 'contacto_cond', 'persona_contacto_cond', 'estado_civil_cond', 'num_cuenta_cond', 'num_cuenta2_cond', 'imagen_cond', 'activo_cond'];
+    protected $allowedFields = ['nombre_cond', 'apellido_cond', 'ci_cond', 'tipo_licencia', 'fecha_nac_cond', 'direccion_cond', 'email_cond', 'contacto_cond', 'persona_contacto_cond', 'estado_civil_cond', 'num_cuenta_cond', 'num_cuenta2_cond', 'imagen_cond', 'activo_cond', 'estado_conductor'];
 
+
+    public function listaConductores()
+    {
+        $this->select("*");
+        $this->where("estado_conductor", 1);
+        $resultado = $this->findAll();
+        return $resultado;
+    }
 
     public function InfoConductor($id)
     {

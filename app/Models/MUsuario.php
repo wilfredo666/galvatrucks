@@ -11,7 +11,7 @@ class MUsuario extends Model
 
     protected $returnType     = 'array';
 
-    protected $allowedFields = ['nombre_usuario', 'login_usuario', 'pass_usuario','rol', 'activo_usuario'];
+    protected $allowedFields = ['nombre_usuario', 'login_usuario', 'pass_usuario','rol', 'activo_usuario', 'estado_usuario'];
 
   
   public function acceso($data){
@@ -23,6 +23,14 @@ class MUsuario extends Model
     return $resultado;
   }
   
+  public function Usuarios(){
+    $this->select("*");
+    $this->where("estado_usuario", 1);
+    
+    $resultado=$this->findAll();
+    return $resultado;
+  }
+
   public function InfoUsuario($id){
     $this->select("*");
     $this->where("id_usuario",$id);

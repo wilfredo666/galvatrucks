@@ -18,7 +18,7 @@ class CAsignacion extends BaseController
 
     public function index()
     {
-       /*  $data = array(
+        /*  $data = array(
             "asignacion" => $this->MAsignacion->findAll()
         ); */
         $data = array(
@@ -35,12 +35,12 @@ class CAsignacion extends BaseController
     --------------------------------------*/
     public function FNuevoAsignacion()
     {
-        $data=array(
-            'lista_conductor'=>$this->MConductor->findAll(),
-            'lista_camion'=>$this->MCamion->findAll()
+        $data = array(
+            'lista_conductor' => $this->MConductor->findAll(),
+            'lista_camion' => $this->MCamion->findAll()
         );
 
-        echo view("asignacion/FNuevoAsignacion",$data);
+        echo view("asignacion/FNuevoAsignacion", $data);
     }
 
     public function RegAsignacion()
@@ -83,8 +83,8 @@ class CAsignacion extends BaseController
 
         $data = array(
             "asignacion" => $this->MAsignacion->InfoAsignacion($id),
-            'lista_conductor'=>$this->MConductor->findAll(),
-            'lista_camion'=>$this->MCamion->findAll()
+            'lista_conductor' => $this->MConductor->findAll(),
+            'lista_camion' => $this->MCamion->findAll()
         );
         echo view("asignacion/FEditAsignacion", $data);
     }
@@ -123,6 +123,12 @@ class CAsignacion extends BaseController
     public function EliAsignacion()
     {
         $id = $this->request->uri->getSegment(3);
-        $this->MAsignacion->delete($id);
+        /* $this->MAsignacion->delete($id); */
+
+        $estado_asignacion = 0;
+        $data = array(
+            "estado_asignacion" => $estado_asignacion
+        );
+        $this->MAsignacion->update($id, $data);
     }
 }

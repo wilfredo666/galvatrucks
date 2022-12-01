@@ -16,7 +16,7 @@ class CConductor extends BaseController
   public function index()
   {
     $data = array(
-      "conductor" => $this->MConductor->findAll()
+      "conductor" => $this->MConductor->listaConductores()
     );
 
     echo view('header');
@@ -154,7 +154,12 @@ class CConductor extends BaseController
   public function EliConductor()
   {
     $id = $this->request->uri->getSegment(3);
-    $this->MConductor->delete($id);
+    /* $this->MConductor->delete($id); */
+    $estado_conductor = 0;
+    $data = array(
+      "estado_conductor" => $estado_conductor
+    );
+    $this->MConductor->update($id,$data);
   }
 
   /*Reportes de servicio por conductor */

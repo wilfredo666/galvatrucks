@@ -14,7 +14,7 @@ class CCamion extends BaseController
   public function index()
   {
     $data = array(
-      "camion" => $this->MCamion->findAll()
+      "camion" => $this->MCamion->listaCamiones()
     );
 
     echo view('header');
@@ -115,6 +115,12 @@ class CCamion extends BaseController
   public function EliCamion()
   {
     $id = $this->request->uri->getSegment(3);
-    $this->MCamion->delete($id);
+    /* $this->MCamion->delete($id); */
+
+    $estado_camion = 0;
+    $data = array(
+      "estado_camion" => $estado_camion
+    );
+    $this->MCamion->update($id,$data);
   }
 }

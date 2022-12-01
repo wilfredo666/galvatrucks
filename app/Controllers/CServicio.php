@@ -252,7 +252,13 @@ class CServicio extends BaseController
   public function EliServicio()
   {
     $id = $this->request->uri->getSegment(3);
-    $this->MServicio->delete($id);
+    /* $this->MServicio->delete($id); */
+
+    $estado_servicio = 0;
+    $data = array(
+      "estado_servicio" => $estado_servicio
+    );
+    $this->MServicio->update($id,$data);
   }
   /* --------------------------------------
       FUNCIONES PARA  SEGUIMIENTO DE CONTENEDORES

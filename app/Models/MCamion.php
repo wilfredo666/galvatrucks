@@ -11,8 +11,16 @@ class MCamion extends Model
 
     protected $returnType     = 'array';
 
-    protected $allowedFields = ['placa', 'clase', 'ejes', 'capacidad', 'chasis', 'marca', 'color', 'activo_cam'];
+    protected $allowedFields = ['placa', 'clase', 'ejes', 'capacidad', 'chasis', 'marca', 'color', 'activo_cam', 'estado_camion'];
 
+
+    public function listaCamiones()
+    {
+        $this->select("*");
+        $this->where("estado_camion", 1 );
+        $resultado = $this->findAll();
+        return $resultado;
+    }
 
     public function InfoCamion($id)
     {

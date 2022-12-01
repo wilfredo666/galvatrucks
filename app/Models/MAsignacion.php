@@ -11,7 +11,7 @@ class MAsignacion extends Model
 
     protected $returnType     = 'array';
 
-    protected $allowedFields = ['nombre_asig', 'fecha_asig', 'fecha_baja_asig','id_camion','id_conductor','activo_asig'];
+    protected $allowedFields = ['nombre_asig', 'fecha_asig', 'fecha_baja_asig','id_camion','id_conductor','activo_asig', 'estado_asignacion'];
 
 
     public function InfoAsignacion($id)
@@ -28,6 +28,7 @@ class MAsignacion extends Model
         $this->select("*");
         $this->join('camion','camion.id_camion=asignacion.id_camion');
         $this->join('conductor','conductor.id_conductor=asignacion.id_conductor');
+        $this->where("estado_asignacion", 1);
         $resultado=$this->findAll();
         return $resultado;
     }

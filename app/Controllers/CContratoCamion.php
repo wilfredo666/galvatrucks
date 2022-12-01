@@ -14,7 +14,7 @@ class CContratoCamion extends BaseController
   public function index()
   {
     $data = array(
-      "contratoCamion" => $this->MContratoCamion->findAll()
+      "contratoCamion" => $this->MContratoCamion->listaContrato()
     );
 
     echo view('header');
@@ -110,6 +110,11 @@ class CContratoCamion extends BaseController
   }
   public function EliContratoCam(){
     $id = $this->request->uri->getSegment(3);
-    $this->MContratoCamion->delete($id);
+    /* $this->MContratoCamion->delete($id); */
+    $estado_contrato = 0;
+    $data = array(
+      "estado_contrato" => $estado_contrato
+    );
+    $this->MContratoCamion->update($id,$data);
   }
 }
