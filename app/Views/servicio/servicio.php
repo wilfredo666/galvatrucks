@@ -57,7 +57,12 @@
 
               <td>
                 <div class="text-center">
-                  <button class="btn btn-xs btn-outline-info btn-circle" title="Ver detalles de Servicio" onclick="MVerServicio(<?php echo $idServicio; ?>)">
+                  <button class="btn btn-xs btn-outline-info btn-circle" style=" width: 30px;
+            height: 30px;
+            padding: 6px 0px;
+            border-radius: 15px;
+            font-size: 12px;
+            text-align: center;" title="Ver detalles de Servicio" onclick="MVerServicio(<?php echo $idServicio; ?>)">
                     <i class="fas fa-eye"></i>
                   </button>
                   <button class="btn btn-xs btn-warning btn-circle" title="Editar Servicio" onclick="MEditarServicio(<?php echo $idServicio; ?>)">

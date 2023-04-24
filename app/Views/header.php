@@ -29,6 +29,9 @@
   <link rel="stylesheet" href="<?php echo base_url(); ?>/assest/dist/css/style.css">
   <!-- icono pagina -->
   <link rel="icon" type="image/ico" href="<?php echo base_url(); ?>/assest/img/faviconG.ico" />
+  <!-- Select2 -->
+  <link rel="stylesheet" href="assest/plugins/select2/css/select2.min.css">
+  <link rel="stylesheet" href="assest/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css">
   <style>
 
   </style>
@@ -321,6 +324,31 @@ with font-awesome or any other icon font library -->
 
             <?php if (session("usuario.rol") == "Administrador" || session("usuario.rol") == "Auxiliar") {
             ?>
+              <!--  EFECTIVO CUENTA -->
+              <li class="nav-item">
+                <a href="#" class="nav-link">
+                  <i class="nav-icon fas fa-hand-holding-usd"></i>
+                  <p>
+                    Efectivo / Cuentas
+                    <i class="fas fa-angle-left right"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="<?php echo base_url(); ?>/CEfectivo" class="nav-link">
+                      <i class="nav-icon far fa-circle text-warning"></i>
+                      <p>Cuentas clientes</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="<?php echo base_url(); ?>/CEfectivo/creditoCliente" class="nav-link">
+                      <i class="nav-icon far fa-circle text-warning"></i>
+                      <p>Créditos Clientes</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <!-- DOCUMENTACION -->
               <li class="nav-header">DOCUMENTACIÓN</li>
               <li class="nav-item">
                 <a href="<?php echo base_url(); ?>/CServicio/notaDebito" class="nav-link">
@@ -330,55 +358,6 @@ with font-awesome or any other icon font library -->
                   </p>
                 </a>
               </li>
-
-              <!-- < li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="nav-icon  fas fa-cogs"></i>
-                  <p>
-                    Opciones del sistema
-                    <i class="fas fa-angle-left right"></i>
-                  </p>
-                </a>
-                <ul class="nav nav-treeview">
-                  <li class="nav-item">
-                    <a href="<?php base_url(); ?>/CUtilidades" class="nav-link">
-                      <i class="nav-icon fas fa-database text-warning"></i>
-                      <p>BackUp Base de Datos</p>
-                    </a>
-                  </li>
-                </ul>
-                </li> -->
-
-              <!-- <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="nav-icon fas fa-folder-open"></i>
-                  <p>
-                    Documentos
-                    <i class="fas fa-angle-left right"></i>
-                  </p>
-                </a>
-                <ul class="nav nav-treeview">
-                  <li class="nav-item">
-                    <a href="pages/layout/top-nav.html" class="nav-link">
-                      <i class="nav-icon fas fa-copy text-info"></i>
-                      <p>Clientes</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
-                      <i class="nav-icon fas fa-copy text-info"></i>
-                      <p>Conductores</p>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a href="pages/layout/top-nav-sidebar.html" class="nav-link">
-                      <i class="nav-icon fas fa-copy text-info"></i>
-                      <p>Contrato Camiones</p>
-                    </a>
-                  </li>
-
-                </ul>
-              </li> -->
             <?php
             }
             ?>
